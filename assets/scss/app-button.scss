@@ -1,0 +1,35 @@
+button.app-button {
+    width: 100%;
+    border-radius: 14px;
+    background-color: #ffcc01;
+    border: none;
+    color: white;
+    padding: 14px 6px;
+    font-size: 18px !important;
+    min-height: 55px;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: #BBB;
+        cursor: default;
+    }
+    &.disabled {
+        background-color: #BBB;
+        cursor: default;
+    }
+
+    &.inverted {
+        color: #ffcc01;
+        background-color: #2a2d32;
+        border: 2px solid #ffcc01;
+    }
+
+    &.dark-text {
+        font-weight: bold;
+        color: black;
+    }
+
+    &.small-text {
+        font-size: 16px !important;
+    }
+}
