@@ -351,7 +351,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"block-chain-container\" #scrollable>\n    <div class=\"block-chain-info\">\n        <div class=\"block-chain-row\" *ngFor=\"let block of blocks\">\n            <div>{{block.blockHeight}}</div>\n            <div class=\"hash\">{{block.blockHash}}</div>\n            <div>{{block.date | date : 'h:mm:ss'}}</div>\n        </div>\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"block-chain-container\" #scrollable>\n    <div class=\"block-chain-info\">\n        <div class=\"block-chain-row\" [@slideInOut] *ngFor=\"let block of blocks\">\n            <div>{{block.blockHeight}}</div>\n            <div class=\"hash\">{{block.blockHash}}</div>\n            <div>{{block.date | date : 'h:mm:ss'}}</div>\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -2354,32 +2354,36 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _services_lottery_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    var _services_block_chain_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! ./services/block-chain.service */
+    "./src/app/services/block-chain.service.ts");
+    /* harmony import */
+
+
+    var _services_lottery_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
     /*! ./services/lottery.service */
     "./src/app/services/lottery.service.ts");
     /* harmony import */
 
 
-    var _services_navigation_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    var _services_navigation_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! ./services/navigation.service */
     "./src/app/services/navigation.service.ts");
     /* harmony import */
 
 
-    var _services_translate_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+    var _services_translate_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! ./services/translate.service */
     "./src/app/services/translate.service.ts");
     /* harmony import */
 
 
-    var _services_payout_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    var _services_payout_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! ./services/payout.service */
     "./src/app/services/payout.service.ts"); // Modules
     // Components
     // Services
 
-
-    ;
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -2388,7 +2392,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]],
       imports: [_account_account_module__WEBPACK_IMPORTED_MODULE_6__["AccountModule"], _common_app_common_module__WEBPACK_IMPORTED_MODULE_7__["AppCommonModule"], _routing_app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _home_home_module__WEBPACK_IMPORTED_MODULE_9__["HomeModule"], _how_to_play_how_to_play_module__WEBPACK_IMPORTED_MODULE_10__["HowToPlayModule"], _my_entries_my_entries_module__WEBPACK_IMPORTED_MODULE_11__["MyEntriesModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"], _payout_payout_module__WEBPACK_IMPORTED_MODULE_12__["PayoutModule"]],
-      providers: [_services_account_service__WEBPACK_IMPORTED_MODULE_14__["AccountService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_15__["AuthService"], _services_lottery_service__WEBPACK_IMPORTED_MODULE_16__["LotteryService"], _services_navigation_service__WEBPACK_IMPORTED_MODULE_17__["NavigationService"], _services_payout_service__WEBPACK_IMPORTED_MODULE_19__["PayoutService"], _services_translate_service__WEBPACK_IMPORTED_MODULE_18__["TranslateService"]],
+      providers: [_services_account_service__WEBPACK_IMPORTED_MODULE_14__["AccountService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_15__["AuthService"], _services_block_chain_service__WEBPACK_IMPORTED_MODULE_16__["BlockChainService"], _services_lottery_service__WEBPACK_IMPORTED_MODULE_17__["LotteryService"], _services_navigation_service__WEBPACK_IMPORTED_MODULE_18__["NavigationService"], _services_payout_service__WEBPACK_IMPORTED_MODULE_20__["PayoutService"], _services_translate_service__WEBPACK_IMPORTED_MODULE_19__["TranslateService"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]]
     })], AppModule);
     /***/
@@ -3290,7 +3294,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".block-chain-container {\n  scroll-behavior: smooth;\n  background-color: #00000088;\n  height: 130px;\n  font-size: 12px;\n  overflow: hidden;\n  color: #9194ad;\n  width: 100%;\n}\n.block-chain-container .block-chain-info {\n  padding-top: 130px;\n  width: 100%;\n}\n.block-chain-container .block-chain-info .hash {\n  max-width: 50%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  direction: rtl;\n}\n.block-chain-container .block-chain-info .block-chain-row {\n  display: flex;\n  justify-content: space-evenly;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxibG9jay1jaGFpbi1pbmZvXFxibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7RUFDQSwyQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NKO0FEQUk7RUFDSSxrQkFBQTtFQUNBLFdBQUE7QUNFUjtBRERRO0VBQ0ksY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7QUNHWjtBREFRO0VBQ0ksYUFBQTtFQUNBLDZCQUFBO0FDRVoiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XHJcbiAgICBzY3JvbGwtYmVoYXZpb3I6IHNtb290aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDAwMDA4ODtcclxuICAgIGhlaWdodDogMTMwcHg7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgY29sb3I6ICM5MTk0YWQ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIC5ibG9jay1jaGFpbi1pbmZvIHtcclxuICAgICAgICBwYWRkaW5nLXRvcDogMTMwcHg7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgLmhhc2gge1xyXG4gICAgICAgICAgICBtYXgtd2lkdGg6IDUwJTtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgIGRpcmVjdGlvbjogcnRsO1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5ibG9jay1jaGFpbi1yb3cge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTsgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XG4gIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XG4gIGhlaWdodDogMTMwcHg7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICM5MTk0YWQ7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyB7XG4gIHBhZGRpbmctdG9wOiAxMzBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYmxvY2stY2hhaW4tY29udGFpbmVyIC5ibG9jay1jaGFpbi1pbmZvIC5oYXNoIHtcbiAgbWF4LXdpZHRoOiA1MCU7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICBkaXJlY3Rpb246IHJ0bDtcbn1cbi5ibG9jay1jaGFpbi1jb250YWluZXIgLmJsb2NrLWNoYWluLWluZm8gLmJsb2NrLWNoYWluLXJvdyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".block-chain-container {\n  scroll-behavior: smooth;\n  background-color: #00000088;\n  height: 130px;\n  font-size: 12px;\n  overflow: hidden;\n  color: #9194ad;\n  width: 100%;\n}\n.block-chain-container .block-chain-info {\n  width: 100%;\n}\n.block-chain-container .block-chain-info .hash {\n  max-width: 50%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  direction: rtl;\n}\n.block-chain-container .block-chain-info .block-chain-row {\n  display: flex;\n  justify-content: space-evenly;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxibG9jay1jaGFpbi1pbmZvXFxibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7RUFDQSwyQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NKO0FEQUk7RUFDSSxXQUFBO0FDRVI7QUREUTtFQUNJLGNBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSxjQUFBO0FDR1o7QURBUTtFQUNJLGFBQUE7RUFDQSw2QkFBQTtBQ0VaIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vYmxvY2stY2hhaW4taW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ibG9jay1jaGFpbi1jb250YWluZXIge1xyXG4gICAgc2Nyb2xsLWJlaGF2aW9yOiBzbW9vdGg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XHJcbiAgICBoZWlnaHQ6IDEzMHB4O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIGNvbG9yOiAjOTE5NGFkO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICAuYmxvY2stY2hhaW4taW5mbyB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgLmhhc2gge1xyXG4gICAgICAgICAgICBtYXgtd2lkdGg6IDUwJTtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgIGRpcmVjdGlvbjogcnRsO1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5ibG9jay1jaGFpbi1yb3cge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTsgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XG4gIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XG4gIGhlaWdodDogMTMwcHg7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICM5MTk0YWQ7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyAuaGFzaCB7XG4gIG1heC13aWR0aDogNTAlO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgZGlyZWN0aW9uOiBydGw7XG59XG4uYmxvY2stY2hhaW4tY29udGFpbmVyIC5ibG9jay1jaGFpbi1pbmZvIC5ibG9jay1jaGFpbi1yb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn0iXX0= */";
     /***/
   },
 
@@ -3325,6 +3329,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/animations */
+    "./node_modules/@angular/animations/fesm2015/animations.js");
 
     var BlockChainInfoComponent = /*#__PURE__*/function () {
       function BlockChainInfoComponent() {
@@ -3346,7 +3356,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           setInterval(function () {
             _this9.count++;
 
-            _this9.blocks.push({
+            _this9.blocks.unshift({
               blockHeight: _this9.count.toString(),
               blockHash: 'k254k5j27bhxyhoe7nesvnsiufhnvjkxh5483n59rnto4389nstiernvy43914677cvxcv66',
               date: new Date()
@@ -3354,20 +3364,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }, 2000);
         }
       }, {
-        key: "scroll",
-        value: function scroll() {
-          var _this10 = this;
-
-          this.scrollable.nativeElement.scrollTop += 1;
-          setTimeout(function () {
-            _this10.scroll();
-          }, 100);
-        }
-      }, {
         key: "ngAfterViewInit",
-        value: function ngAfterViewInit() {
-          this.scroll();
-        }
+        value: function ngAfterViewInit() {}
       }]);
 
       return BlockChainInfoComponent;
@@ -3383,6 +3381,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./block-chain-info.component.html */
       "./node_modules/raw-loader/dist/cjs.js!./src/app/common/block-chain-info/block-chain-info.component.html"))["default"],
+      animations: [[Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('slideInOut', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+        height: '*',
+        opacity: 0
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])(':enter', [Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+        height: '0',
+        transform: 'translateY(-15px)',
+        opacity: 0
+      }), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["group"])([Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-in-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+        transform: 'translateY(0)',
+        height: '*'
+      })), Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('300ms ease-in-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+        'opacity': '1'
+      }))])])])]],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./block-chain-info.component.scss */
       "./src/app/common/block-chain-info/block-chain-info.component.scss"))["default"]]
@@ -3471,14 +3482,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTickets",
         value: function buyTickets() {
-          var _this11 = this;
+          var _this10 = this;
 
           if (this.amount > 0 && this.amount <= this.authService.user.amountAvailable) {
             this.lotteryService.buyTicket(this.amount).subscribe(function () {});
             this.showAnimation = true;
             setTimeout(function () {
-              _this11.showAnimation = false;
-              console.log(_this11.showAnimation);
+              _this10.showAnimation = false;
+              console.log(_this10.showAnimation);
             }, 2000);
           }
         }
@@ -4226,26 +4237,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "monitorWinnings",
         value: function monitorWinnings() {
-          var _this12 = this;
+          var _this11 = this;
 
           this.checkWinningInterval = setTimeout(function () {
-            if (_this12.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
-              _this12.incrementInterval = 500;
-              _this12.myWinningsIncrement = 0;
+            if (_this11.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
+              _this11.incrementInterval = 500;
+              _this11.myWinningsIncrement = 0;
             } else {
-              _this12.incrementInterval = 20;
-              var winners = _this12.lotteryService.currentLotteryInfo.winners;
+              _this11.incrementInterval = 20;
+              var winners = _this11.lotteryService.currentLotteryInfo.winners;
               var myWinnings = (winners.first.myWinnings || 0) + (winners.second.myWinnings || 0) + (winners.third.myWinnings || 0) + (winners.minipool.winningAmount || 0);
 
-              if (!myWinnings || _this12.myWinningsIncrement >= myWinnings) {
-                _this12.myWinningsIncrement = _this12.myWinningsIncrement;
-                _this12.incrementInterval = 500;
-              } else if (_this12.myWinningsIncrement < myWinnings) {
-                _this12.myWinningsIncrement += 1;
+              if (!myWinnings || _this11.myWinningsIncrement >= myWinnings) {
+                _this11.myWinningsIncrement = _this11.myWinningsIncrement;
+                _this11.incrementInterval = 500;
+              } else if (_this11.myWinningsIncrement < myWinnings) {
+                _this11.myWinningsIncrement += 1;
               }
             }
 
-            _this12.monitorWinnings();
+            _this11.monitorWinnings();
           }, this.incrementInterval);
         }
       }, {
@@ -4969,19 +4980,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "sortedMyEntries",
         value: function sortedMyEntries() {
-          var _this13 = this;
+          var _this12 = this;
 
           return this.lotteryService.currentLotteryInfo.myEntries.sort(function (a, b) {
-            return _this13.sortMyEntries ? a.start - b.start : b.start - a.start;
+            return _this12.sortMyEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }, {
         key: "sortedAllEntries",
         value: function sortedAllEntries() {
-          var _this14 = this;
+          var _this13 = this;
 
           return this.lotteryService.currentLotteryInfo.allEntries.sort(function (a, b) {
-            return _this14.sortAllEntries ? a.start - b.start : b.start - a.start;
+            return _this13.sortAllEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }]);
@@ -5226,13 +5237,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this15 = this;
+          var _this14 = this;
 
           this.payoutService.getPayoutHistory().subscribe(function (data) {
-            _this15.payoutData = data;
+            _this14.payoutData = data;
 
-            _this15.payoutData.forEach(function (item) {
-              _this15.setPlaceMap(item.amount);
+            _this14.payoutData.forEach(function (item) {
+              _this14.setPlaceMap(item.amount);
             });
           });
         }
@@ -5770,7 +5781,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthService, [{
         key: "login",
         value: function login(loginObj) {
-          var _this16 = this;
+          var _this15 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -5787,22 +5798,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/getAccessToken"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this16.user.userName = loginObj.userName;
+              _this15.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this16.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
-                _this16.user.token = results.msg.token;
+                _this15.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                _this15.user.token = results.msg.token;
               }
 
-              _this16.isLoggedIn = true;
-              return _this16.user;
+              _this15.isLoggedIn = true;
+              return _this15.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this17 = this;
+          var _this16 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -5813,7 +5824,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this17.login(registrationObj);
+              return _this16.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -5831,6 +5842,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()], AuthService);
+    /***/
+  },
+
+  /***/
+  "./src/app/services/block-chain.service.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/services/block-chain.service.ts ***!
+    \*************************************************/
+
+  /*! exports provided: BlockChainService */
+
+  /***/
+  function srcAppServicesBlockChainServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "BlockChainService", function () {
+      return BlockChainService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var BlockChainService = function BlockChainService() {
+      _classCallCheck(this, BlockChainService);
+    };
+
+    BlockChainService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], BlockChainService);
     /***/
   },
 
@@ -5922,7 +5973,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, httpClient) {
-        var _this18 = this;
+        var _this17 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -5951,15 +6002,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status;
           var currentEntries = parseInt(msg.currententry || '0', 10);
           var currentStatus;
-          _this18.availablePrizePool = prizePool;
+          _this17.availablePrizePool = prizePool;
 
-          if (!_this18.lotteryObj[prizePool]) {
-            _this18.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries);
+          if (!_this17.lotteryObj[prizePool]) {
+            _this17.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries);
           } else {
-            currentStatus = _this18.lotteryObj[prizePool].lotteryStatus;
-            _this18.lotteryObj[prizePool].gameId = gameId;
-            _this18.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this18.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            currentStatus = _this17.lotteryObj[prizePool].lotteryStatus;
+            _this17.lotteryObj[prizePool].gameId = gameId;
+            _this17.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this17.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -5971,13 +6022,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case '2':
-                clearInterval(_this18.checkStatusInterval);
+                clearInterval(_this17.checkStatusInterval);
 
-                _this18.setPrizePool(msg.prizelist);
+                _this17.setPrizePool(msg.prizelist);
 
-                _this18.setDrawWinners(prizePool);
+                _this17.setDrawWinners(prizePool);
 
-                _this18.finishPendingProcess(prizePool);
+                _this17.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -5985,17 +6036,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this18.lotteryObj[prizePool];
+          var currentPrizePool = _this17.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== '0') {
             return;
           }
 
-          _this18.setLotteryStatus('1', prizePool);
+          _this17.setLotteryStatus('1', prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this18.lotteryObj[prizePool];
+          var currentPrizePool = _this17.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
 
           if (currentPrizePool.countDownInterval) {
@@ -6006,10 +6057,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this18.startStatusCheckInterval();
+              _this17.startStatusCheckInterval();
             }
 
-            _this18.lotteryObj[prizePool].countDown--;
+            _this17.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -6019,7 +6070,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this19 = this;
+          var _this18 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -6027,9 +6078,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this19.statusSubscription.unsubscribe();
+            _this18.statusSubscription.unsubscribe();
 
-            _this19.statusSubscription = _this19.checkGameStatus().subscribe(function () {});
+            _this18.statusSubscription = _this18.checkGameStatus().subscribe(function () {});
           }, 2000);
         }
       }, {
@@ -6045,7 +6096,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this20 = this;
+          var _this19 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token || 'anonymous')
@@ -6054,7 +6105,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('type', 'active');
           return this.httpClient.post("".concat(this.url, "/getActiveGame"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (results) {
             if (results.code === 200 && results.msg) {
-              _this20.setAvailablePrizePool(results.msg);
+              _this19.setAvailablePrizePool(results.msg);
 
               return results.msg;
             }
@@ -6074,7 +6125,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(prizeList) {
-          var _this21 = this;
+          var _this20 = this;
 
           this.clearWinners();
 
@@ -6082,17 +6133,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             prizeList.forEach(function (prize) {
               switch (prize.win) {
                 case '1':
-                  _this21.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this21.authService.user && _this21.authService.user.userName)));
+                  _this20.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this20.authService.user && _this20.authService.user.userName)));
 
                   break;
 
                 case '2':
-                  _this21.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this21.authService.user && _this21.authService.user.userName)));
+                  _this20.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this20.authService.user && _this20.authService.user.userName)));
 
                   break;
 
                 case '3':
-                  _this21.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this21.authService.user && _this21.authService.user.userName)));
+                  _this20.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this20.authService.user && _this20.authService.user.userName)));
 
                   break;
               }
@@ -6156,7 +6207,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTicket",
         value: function buyTicket(amount) {
-          var _this22 = this;
+          var _this21 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
@@ -6166,9 +6217,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('gameid', this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (results) {
             if (results.code === 200) {
-              _this22.authService.user.amountAvailable = results.msg.balance;
+              _this21.authService.user.amountAvailable = results.msg.balance;
 
-              _this22.startStatusCheckInterval();
+              _this21.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -6195,7 +6246,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "drawMinipool",
         value: function drawMinipool(num) {
-          var _this23 = this;
+          var _this22 = this;
 
           this.setMinipool().subscribe(function () {});
           var prizePool = this.lotteryObj[this.availablePrizePool];
@@ -6211,7 +6262,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
 
           usedNum.forEach(function (num) {
-            if (!!_this23.checkIfEntryMatches(prizePool.myEntries, num)) {
+            if (!!_this22.checkIfEntryMatches(prizePool.myEntries, num)) {
               prizePool.winners.minipool.winningAmount += Math.floor(prizePool.availablePrizePool * .001);
             }
           });
@@ -6285,7 +6336,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this24 = this;
+      var _this23 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -6294,7 +6345,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this24.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this23.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 

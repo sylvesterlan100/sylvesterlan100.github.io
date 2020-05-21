@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"block-chain-container\" #scrollable>\n    <div class=\"block-chain-info\">\n        <div class=\"block-chain-row\" *ngFor=\"let block of blocks\">\n            <div>{{block.blockHeight}}</div>\n            <div class=\"hash\">{{block.blockHash}}</div>\n            <div>{{block.date | date : 'h:mm:ss'}}</div>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"block-chain-container\" #scrollable>\n    <div class=\"block-chain-info\">\n        <div class=\"block-chain-row\" [@slideInOut] *ngFor=\"let block of blocks\">\n            <div>{{block.blockHeight}}</div>\n            <div class=\"hash\">{{block.blockHash}}</div>\n            <div>{{block.date | date : 'h:mm:ss'}}</div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -1299,10 +1299,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _services_account_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/account.service */ "./src/app/services/account.service.ts");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _services_lottery_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/lottery.service */ "./src/app/services/lottery.service.ts");
-/* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/services/navigation.service.ts");
-/* harmony import */ var _services_translate_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/translate.service */ "./src/app/services/translate.service.ts");
-/* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/payout.service */ "./src/app/services/payout.service.ts");
+/* harmony import */ var _services_block_chain_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/block-chain.service */ "./src/app/services/block-chain.service.ts");
+/* harmony import */ var _services_lottery_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/lottery.service */ "./src/app/services/lottery.service.ts");
+/* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/services/navigation.service.ts");
+/* harmony import */ var _services_translate_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/translate.service */ "./src/app/services/translate.service.ts");
+/* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/payout.service */ "./src/app/services/payout.service.ts");
 
 
 
@@ -1325,7 +1326,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-;
+
 
 let AppModule = class AppModule {
 };
@@ -1350,10 +1351,11 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providers: [
             _services_account_service__WEBPACK_IMPORTED_MODULE_14__["AccountService"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_15__["AuthService"],
-            _services_lottery_service__WEBPACK_IMPORTED_MODULE_16__["LotteryService"],
-            _services_navigation_service__WEBPACK_IMPORTED_MODULE_17__["NavigationService"],
-            _services_payout_service__WEBPACK_IMPORTED_MODULE_19__["PayoutService"],
-            _services_translate_service__WEBPACK_IMPORTED_MODULE_18__["TranslateService"]
+            _services_block_chain_service__WEBPACK_IMPORTED_MODULE_16__["BlockChainService"],
+            _services_lottery_service__WEBPACK_IMPORTED_MODULE_17__["LotteryService"],
+            _services_navigation_service__WEBPACK_IMPORTED_MODULE_18__["NavigationService"],
+            _services_payout_service__WEBPACK_IMPORTED_MODULE_20__["PayoutService"],
+            _services_translate_service__WEBPACK_IMPORTED_MODULE_19__["TranslateService"]
         ],
         bootstrap: [
             _app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]
@@ -1899,7 +1901,7 @@ AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".block-chain-container {\n  scroll-behavior: smooth;\n  background-color: #00000088;\n  height: 130px;\n  font-size: 12px;\n  overflow: hidden;\n  color: #9194ad;\n  width: 100%;\n}\n.block-chain-container .block-chain-info {\n  padding-top: 130px;\n  width: 100%;\n}\n.block-chain-container .block-chain-info .hash {\n  max-width: 50%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  direction: rtl;\n}\n.block-chain-container .block-chain-info .block-chain-row {\n  display: flex;\n  justify-content: space-evenly;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxibG9jay1jaGFpbi1pbmZvXFxibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7RUFDQSwyQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NKO0FEQUk7RUFDSSxrQkFBQTtFQUNBLFdBQUE7QUNFUjtBRERRO0VBQ0ksY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7QUNHWjtBREFRO0VBQ0ksYUFBQTtFQUNBLDZCQUFBO0FDRVoiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XHJcbiAgICBzY3JvbGwtYmVoYXZpb3I6IHNtb290aDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDAwMDA4ODtcclxuICAgIGhlaWdodDogMTMwcHg7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgY29sb3I6ICM5MTk0YWQ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIC5ibG9jay1jaGFpbi1pbmZvIHtcclxuICAgICAgICBwYWRkaW5nLXRvcDogMTMwcHg7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgLmhhc2gge1xyXG4gICAgICAgICAgICBtYXgtd2lkdGg6IDUwJTtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgIGRpcmVjdGlvbjogcnRsO1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5ibG9jay1jaGFpbi1yb3cge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTsgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XG4gIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XG4gIGhlaWdodDogMTMwcHg7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICM5MTk0YWQ7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyB7XG4gIHBhZGRpbmctdG9wOiAxMzBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG4uYmxvY2stY2hhaW4tY29udGFpbmVyIC5ibG9jay1jaGFpbi1pbmZvIC5oYXNoIHtcbiAgbWF4LXdpZHRoOiA1MCU7XG4gIHdoaXRlLXNwYWNlOiBub3dyYXA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHRleHQtb3ZlcmZsb3c6IGVsbGlwc2lzO1xuICBkaXJlY3Rpb246IHJ0bDtcbn1cbi5ibG9jay1jaGFpbi1jb250YWluZXIgLmJsb2NrLWNoYWluLWluZm8gLmJsb2NrLWNoYWluLXJvdyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".block-chain-container {\n  scroll-behavior: smooth;\n  background-color: #00000088;\n  height: 130px;\n  font-size: 12px;\n  overflow: hidden;\n  color: #9194ad;\n  width: 100%;\n}\n.block-chain-container .block-chain-info {\n  width: 100%;\n}\n.block-chain-container .block-chain-info .hash {\n  max-width: 50%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  direction: rtl;\n}\n.block-chain-container .block-chain-info .block-chain-row {\n  display: flex;\n  justify-content: space-evenly;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxibG9jay1jaGFpbi1pbmZvXFxibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7RUFDQSwyQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NKO0FEQUk7RUFDSSxXQUFBO0FDRVI7QUREUTtFQUNJLGNBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSxjQUFBO0FDR1o7QURBUTtFQUNJLGFBQUE7RUFDQSw2QkFBQTtBQ0VaIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vYmxvY2stY2hhaW4taW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ibG9jay1jaGFpbi1jb250YWluZXIge1xyXG4gICAgc2Nyb2xsLWJlaGF2aW9yOiBzbW9vdGg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XHJcbiAgICBoZWlnaHQ6IDEzMHB4O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIGNvbG9yOiAjOTE5NGFkO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICAuYmxvY2stY2hhaW4taW5mbyB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgLmhhc2gge1xyXG4gICAgICAgICAgICBtYXgtd2lkdGg6IDUwJTtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgIGRpcmVjdGlvbjogcnRsO1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5ibG9jay1jaGFpbi1yb3cge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTsgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XG4gIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XG4gIGhlaWdodDogMTMwcHg7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICM5MTk0YWQ7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyAuaGFzaCB7XG4gIG1heC13aWR0aDogNTAlO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgZGlyZWN0aW9uOiBydGw7XG59XG4uYmxvY2stY2hhaW4tY29udGFpbmVyIC5ibG9jay1jaGFpbi1pbmZvIC5ibG9jay1jaGFpbi1yb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1915,6 +1917,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlockChainInfoComponent", function() { return BlockChainInfoComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm2015/animations.js");
+
 
 
 let BlockChainInfoComponent = class BlockChainInfoComponent {
@@ -1931,21 +1935,14 @@ let BlockChainInfoComponent = class BlockChainInfoComponent {
     ngOnInit() {
         setInterval(() => {
             this.count++;
-            this.blocks.push({
+            this.blocks.unshift({
                 blockHeight: this.count.toString(),
                 blockHash: 'k254k5j27bhxyhoe7nesvnsiufhnvjkxh5483n59rnto4389nstiernvy43914677cvxcv66',
                 date: new Date()
             });
         }, 2000);
     }
-    scroll() {
-        this.scrollable.nativeElement.scrollTop += 1;
-        setTimeout(() => {
-            this.scroll();
-        }, 100);
-    }
     ngAfterViewInit() {
-        this.scroll();
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1961,6 +1958,24 @@ BlockChainInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-block-chain-info',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./block-chain-info.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/block-chain-info/block-chain-info.component.html")).default,
+        animations: [
+            [
+                Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["trigger"])('slideInOut', [
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["state"])('in', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ height: '*', opacity: 0 })),
+                    Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["transition"])(':enter', [
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({
+                            height: '0',
+                            transform: 'translateY(-15px)',
+                            opacity: 0
+                        }),
+                        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["group"])([
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('250ms ease-in-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ transform: 'translateY(0)', height: '*' })),
+                            Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["animate"])('300ms ease-in-out', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_2__["style"])({ 'opacity': '1' }))
+                        ])
+                    ])
+                ])
+            ]
+        ],
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./block-chain-info.component.scss */ "./src/app/common/block-chain-info/block-chain-info.component.scss")).default]
     })
 ], BlockChainInfoComponent);
@@ -3527,6 +3542,31 @@ AuthService.ctorParameters = () => [
 AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
 ], AuthService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/block-chain.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/block-chain.service.ts ***!
+  \*************************************************/
+/*! exports provided: BlockChainService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlockChainService", function() { return BlockChainService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let BlockChainService = class BlockChainService {
+    constructor() { }
+};
+BlockChainService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], BlockChainService);
 
 
 
