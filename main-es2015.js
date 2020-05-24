@@ -357,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{authService.user.block}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{authService.user.blockHeight}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -2923,13 +2923,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class PrizePool {
-    constructor(prize, gameId, lotteryStatus = '0', currentEntries = 0) {
+    constructor(prize, gameId, lotteryStatus = '0', currentEntries = 0, myEntries) {
         this.openedDate = new Date();
         this.availablePrizePool = prize;
         this.lotteryStatus = lotteryStatus;
         this.countDown = 60;
         this.gameId = gameId;
-        this.myEntries = [];
+        this.myEntries = myEntries;
         this.allEntries = [];
         this.currentEntries = currentEntries;
         this.winners = {
@@ -2960,6 +2960,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class LotteryObj {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/lottery/my-entries.ts":
+/*!**********************************************!*\
+  !*** ./src/app/models/lottery/my-entries.ts ***!
+  \**********************************************/
+/*! exports provided: MyEntries */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyEntries", function() { return MyEntries; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class MyEntries {
 }
 
 
@@ -3686,9 +3704,9 @@ let BlockChainService = class BlockChainService {
                     .subscribe((response) => {
                     if (response.result) {
                         this.currentBlock = (parseInt(this.currentBlock, 16) + 1).toString(16);
-                        this.rollingLog.push(response.result);
+                        this.rollingLog.unshift(response.result);
                         if (this.rollingLog.length > 20) {
-                            this.rollingLog.shift();
+                            this.rollingLog.pop();
                         }
                     }
                 });
@@ -3701,8 +3719,15 @@ let BlockChainService = class BlockChainService {
         this.rollingLog = [];
     }
     setSingleBlock(blockNumber) {
+        console.log('block num', blockNumber);
         this.isSingleRow = true;
-        console.log(blockNumber);
+        this.stopLog();
+        this.getSpecificBlock('0x' + blockNumber.toString(16))
+            .subscribe((response) => {
+            if (response.result) {
+                this.rollingLog = [response.result];
+            }
+        });
     }
     getLatestBlock() {
         const url = `${this.url}?module=proxy&action=eth_blockNumber&apikey=${this.apiKey}`;
@@ -3738,14 +3763,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _models_lottery_lottery_obj__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/lottery/lottery-obj */ "./src/app/models/lottery/lottery-obj.ts");
 /* harmony import */ var _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../models/lottery/available-prize-pool */ "./src/app/models/lottery/available-prize-pool.ts");
-/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
-/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../models/lottery/winner-info */ "./src/app/models/lottery/winner-info.ts");
-/* harmony import */ var _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/lottery/ticket */ "./src/app/models/lottery/ticket.ts");
-/* harmony import */ var _block_chain_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./block-chain.service */ "./src/app/services/block-chain.service.ts");
+/* harmony import */ var _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/lottery/my-entries */ "./src/app/models/lottery/my-entries.ts");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/lottery/winner-info */ "./src/app/models/lottery/winner-info.ts");
+/* harmony import */ var _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/lottery/ticket */ "./src/app/models/lottery/ticket.ts");
+/* harmony import */ var _block_chain_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./block-chain.service */ "./src/app/services/block-chain.service.ts");
+
 
 
 
@@ -3778,9 +3805,9 @@ let LotteryService = class LotteryService {
             },
         ];
         this.selectedOption = this.options[0];
-        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].url;
-        this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subscription"]();
-        this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subscription"]();
+        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].url;
+        this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
+        this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.setAvailablePrizePool = (msg) => {
             let prizePool = parseInt(msg.entrylimit || '0', 10);
             let gameId = msg.gameid;
@@ -3788,28 +3815,38 @@ let LotteryService = class LotteryService {
             let currentEntries = parseInt(msg.currententry || '0', 10);
             let currentStatus;
             this.availablePrizePool = prizePool;
+            let myEntries = [];
+            if (msg.mytickets) {
+                myEntries = msg.mytickets.map((ticket) => {
+                    let entry = new _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__["MyEntries"]();
+                    entry.userName = ticket.user;
+                    entry.start = parseInt(ticket.start, 10);
+                    entry.end = parseInt(ticket.end, 10);
+                    return entry;
+                });
+            }
             if (!this.lotteryObj[prizePool]) {
-                this.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries);
+                this.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries);
             }
             else {
                 currentStatus = this.lotteryObj[prizePool].lotteryStatus;
                 this.lotteryObj[prizePool].gameId = gameId;
                 this.lotteryObj[prizePool].currentEntries = currentEntries;
                 this.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+                this.lotteryObj[prizePool].myEntries = myEntries;
             }
             if (currentStatus !== lotteryStatus) {
                 switch (lotteryStatus) {
                     case '0':
-                        this.blockChainService.startLog();
                         break;
                     case '1':
                         this.authService.user.blockHeight = msg.targetblockheight;
                         break;
                     case '2':
                         clearInterval(this.checkStatusInterval);
-                        this.blockChainService.setSingleBlock(msg.targetblockheight);
                         this.setPrizePool(msg.prizelist);
                         this.setDrawWinners(prizePool);
+                        this.blockChainService.setSingleBlock(msg.targetblockheight);
                         this.finishPendingProcess(prizePool);
                         break;
                 }
@@ -3832,6 +3869,7 @@ let LotteryService = class LotteryService {
                 if (currentPrizePool.countDown <= 1) {
                     clearInterval(currentPrizePool.countDownInterval);
                     this.startStatusCheckInterval();
+                    this.blockChainService.startLog();
                 }
                 this.lotteryObj[prizePool].countDown--;
             }, 1000);
@@ -3842,12 +3880,15 @@ let LotteryService = class LotteryService {
         if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
         }
+        if (this.statusSubscription) {
+            this.statusSubscription.unsubscribe();
+        }
         this.statusSubscription = this.checkGameStatus().subscribe(() => {
         });
         this.checkStatusInterval = setInterval(() => {
             this.statusSubscription.unsubscribe();
             this.statusSubscription = this.checkGameStatus().subscribe(() => { });
-        }, 2000);
+        }, 3000);
     }
     get currentLotteryInfo() {
         return this.lotteryObj[this.availablePrizePool];
@@ -3860,13 +3901,13 @@ let LotteryService = class LotteryService {
     }
     checkGameStatus() {
         let options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
                 .set('token', this.authService.user.token || 'anonymous')
         };
         let request = new URLSearchParams();
         request.set('type', 'active');
         return this.httpClient.post(`${this.url}/game/status`, request.toString(), options)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])((results) => {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results) {
                 this.setAvailablePrizePool(results);
                 return results;
@@ -3875,9 +3916,9 @@ let LotteryService = class LotteryService {
         }));
     }
     clearWinners() {
-        this.currentLotteryInfo.winners.first = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__["WinnerInfo"]();
-        this.currentLotteryInfo.winners.second = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__["WinnerInfo"]();
-        this.currentLotteryInfo.winners.third = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__["WinnerInfo"]();
+        this.currentLotteryInfo.winners.first = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+        this.currentLotteryInfo.winners.second = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+        this.currentLotteryInfo.winners.third = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
         this.currentLotteryInfo.winners.minipool.isDrawing = false;
         this.currentLotteryInfo.winners.minipool.winningAmount = 0;
     }
@@ -3886,14 +3927,14 @@ let LotteryService = class LotteryService {
         if (prizeList) {
             prizeList.forEach((prize) => {
                 switch (prize.win) {
-                    case '1':
-                        this.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
+                    case 1:
+                        this.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
                         break;
-                    case '2':
-                        this.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
+                    case 2:
+                        this.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
                         break;
-                    case '3':
-                        this.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
+                    case 3:
+                        this.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
                         break;
                 }
             });
@@ -3930,10 +3971,6 @@ let LotteryService = class LotteryService {
         }, 3500);
         currentPrizePool.winners.minipool.isDrawing = true;
     }
-    startPoolProcess(prizePool, gameId) {
-        this.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId || this.lotteryObj[prizePool].gameId);
-        // this.updateTickets(prizePool);
-    }
     checkIfEntryMatches(entries, num) {
         for (let i = 0; i < entries.length; i++) {
             if (entries[i].start <= num && entries[i].end >= num) {
@@ -3947,14 +3984,14 @@ let LotteryService = class LotteryService {
     }
     buyTicket(amount) {
         let options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
                 .set('token', this.authService.user.token)
         };
         let request = new URLSearchParams();
         request.set('amount', amount.toString());
         request.set('gameid', this.currentLotteryInfo.gameId);
         return this.httpClient.post(`${this.url}/bets/buyTickets`, request.toString(), options)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])((results) => {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results.code === 200) {
                 this.authService.user.amountAvailable = results.msg.balance;
                 this.startStatusCheckInterval();
@@ -3965,13 +4002,13 @@ let LotteryService = class LotteryService {
     }
     setMinipool() {
         let options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
                 .set('token', this.authService.user.token)
         };
         let request = new URLSearchParams();
         request.set('gameid', this.currentLotteryInfo.gameId);
         return this.httpClient.post(`${this.url}/getBonusPrizeList`, request.toString(), options)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])((results) => {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results.code === 200) {
                 return results;
             }
@@ -3999,9 +4036,9 @@ let LotteryService = class LotteryService {
     }
 };
 LotteryService.ctorParameters = () => [
-    { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
-    { type: _block_chain_service__WEBPACK_IMPORTED_MODULE_11__["BlockChainService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"] }
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
+    { type: _block_chain_service__WEBPACK_IMPORTED_MODULE_12__["BlockChainService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"] }
 ];
 LotteryService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()

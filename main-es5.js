@@ -551,7 +551,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{authService.user.block}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{authService.user.blockHeight}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>";
     /***/
   },
 
@@ -4897,6 +4897,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var PrizePool = function PrizePool(prize, gameId) {
       var lotteryStatus = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '0';
       var currentEntries = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
+      var myEntries = arguments.length > 4 ? arguments[4] : undefined;
 
       _classCallCheck(this, PrizePool);
 
@@ -4905,7 +4906,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.lotteryStatus = lotteryStatus;
       this.countDown = 60;
       this.gameId = gameId;
-      this.myEntries = [];
+      this.myEntries = myEntries;
       this.allEntries = [];
       this.currentEntries = currentEntries;
       this.winners = {
@@ -4950,6 +4951,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryObj = function LotteryObj() {
       _classCallCheck(this, LotteryObj);
+    };
+    /***/
+
+  },
+
+  /***/
+  "./src/app/models/lottery/my-entries.ts":
+  /*!**********************************************!*\
+    !*** ./src/app/models/lottery/my-entries.ts ***!
+    \**********************************************/
+
+  /*! exports provided: MyEntries */
+
+  /***/
+  function srcAppModelsLotteryMyEntriesTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MyEntries", function () {
+      return MyEntries;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var MyEntries = function MyEntries() {
+      _classCallCheck(this, MyEntries);
     };
     /***/
 
@@ -6102,10 +6136,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 if (response.result) {
                   _this16.currentBlock = (parseInt(_this16.currentBlock, 16) + 1).toString(16);
 
-                  _this16.rollingLog.push(response.result);
+                  _this16.rollingLog.unshift(response.result);
 
                   if (_this16.rollingLog.length > 20) {
-                    _this16.rollingLog.shift();
+                    _this16.rollingLog.pop();
                   }
                 }
               });
@@ -6122,8 +6156,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
+          var _this17 = this;
+
+          console.log('block num', blockNumber);
           this.isSingleRow = true;
-          console.log(blockNumber);
+          this.stopLog();
+          this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
+            if (response.result) {
+              _this17.rollingLog = [response.result];
+            }
+          });
         }
       }, {
         key: "getLatestBlock",
@@ -6198,55 +6240,61 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../models/lottery/my-entries */
+    "./src/app/models/lottery/my-entries.ts");
+    /* harmony import */
+
+
+    var _auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./auth.service */
     "./src/app/services/auth.service.ts");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var src_environments_environment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var src_environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! src/environments/environment */
     "./src/environments/environment.ts");
     /* harmony import */
 
 
-    var _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ../models/lottery/winner-info */
     "./src/app/models/lottery/winner-info.ts");
     /* harmony import */
 
 
-    var _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ../models/lottery/ticket */
     "./src/app/models/lottery/ticket.ts");
     /* harmony import */
 
 
-    var _block_chain_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _block_chain_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./block-chain.service */
     "./src/app/services/block-chain.service.ts");
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this17 = this;
+        var _this18 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -6266,9 +6314,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           background: '#e5b902'
         }];
         this.selectedOption = this.options[0];
-        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_8__["environment"].url;
-        this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subscription"]();
-        this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_5__["Subscription"]();
+        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_9__["environment"].url;
+        this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
+        this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
 
         this.setAvailablePrizePool = function (msg) {
           var prizePool = parseInt(msg.entrylimit || '0', 10);
@@ -6276,38 +6324,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = parseInt(msg.currententry || '0', 10);
           var currentStatus;
-          _this17.availablePrizePool = prizePool;
+          _this18.availablePrizePool = prizePool;
+          var myEntries = [];
 
-          if (!_this17.lotteryObj[prizePool]) {
-            _this17.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries);
+          if (msg.mytickets) {
+            myEntries = msg.mytickets.map(function (ticket) {
+              var entry = new _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__["MyEntries"]();
+              entry.userName = ticket.user;
+              entry.start = parseInt(ticket.start, 10);
+              entry.end = parseInt(ticket.end, 10);
+              return entry;
+            });
+          }
+
+          if (!_this18.lotteryObj[prizePool]) {
+            _this18.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries);
           } else {
-            currentStatus = _this17.lotteryObj[prizePool].lotteryStatus;
-            _this17.lotteryObj[prizePool].gameId = gameId;
-            _this17.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this17.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            currentStatus = _this18.lotteryObj[prizePool].lotteryStatus;
+            _this18.lotteryObj[prizePool].gameId = gameId;
+            _this18.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this18.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this18.lotteryObj[prizePool].myEntries = myEntries;
           }
 
           if (currentStatus !== lotteryStatus) {
             switch (lotteryStatus) {
               case '0':
-                _this17.blockChainService.startLog();
-
                 break;
 
               case '1':
-                _this17.authService.user.blockHeight = msg.targetblockheight;
+                _this18.authService.user.blockHeight = msg.targetblockheight;
                 break;
 
               case '2':
-                clearInterval(_this17.checkStatusInterval);
+                clearInterval(_this18.checkStatusInterval);
 
-                _this17.blockChainService.setSingleBlock(msg.targetblockheight);
+                _this18.setPrizePool(msg.prizelist);
 
-                _this17.setPrizePool(msg.prizelist);
+                _this18.setDrawWinners(prizePool);
 
-                _this17.setDrawWinners(prizePool);
+                _this18.blockChainService.setSingleBlock(msg.targetblockheight);
 
-                _this17.finishPendingProcess(prizePool);
+                _this18.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -6315,17 +6373,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this17.lotteryObj[prizePool];
+          var currentPrizePool = _this18.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== '0') {
             return;
           }
 
-          _this17.setLotteryStatus('1', prizePool);
+          _this18.setLotteryStatus('1', prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this17.lotteryObj[prizePool];
+          var currentPrizePool = _this18.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
 
           if (currentPrizePool.countDownInterval) {
@@ -6336,10 +6394,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this17.startStatusCheckInterval();
+              _this18.startStatusCheckInterval();
+
+              _this18.blockChainService.startLog();
             }
 
-            _this17.lotteryObj[prizePool].countDown--;
+            _this18.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -6349,18 +6409,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this18 = this;
+          var _this19 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
           }
 
+          if (this.statusSubscription) {
+            this.statusSubscription.unsubscribe();
+          }
+
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this18.statusSubscription.unsubscribe();
+            _this19.statusSubscription.unsubscribe();
 
-            _this18.statusSubscription = _this18.checkGameStatus().subscribe(function () {});
-          }, 2000);
+            _this19.statusSubscription = _this19.checkGameStatus().subscribe(function () {});
+          }, 3000);
         }
       }, {
         key: "clearLotteryObj",
@@ -6375,16 +6439,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this19 = this;
+          var _this20 = this;
 
           var options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token || 'anonymous')
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token || 'anonymous')
           };
           var request = new URLSearchParams();
           request.set('type', 'active');
-          return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (results) {
+          return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this19.setAvailablePrizePool(results);
+              _this20.setAvailablePrizePool(results);
 
               return results;
             }
@@ -6395,34 +6459,34 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "clearWinners",
         value: function clearWinners() {
-          this.currentLotteryInfo.winners.first = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__["WinnerInfo"]();
-          this.currentLotteryInfo.winners.second = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__["WinnerInfo"]();
-          this.currentLotteryInfo.winners.third = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_9__["WinnerInfo"]();
+          this.currentLotteryInfo.winners.first = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+          this.currentLotteryInfo.winners.second = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+          this.currentLotteryInfo.winners.third = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
           this.currentLotteryInfo.winners.minipool.isDrawing = false;
           this.currentLotteryInfo.winners.minipool.winningAmount = 0;
         }
       }, {
         key: "setPrizePool",
         value: function setPrizePool(prizeList) {
-          var _this20 = this;
+          var _this21 = this;
 
           this.clearWinners();
 
           if (prizeList) {
             prizeList.forEach(function (prize) {
               switch (prize.win) {
-                case '1':
-                  _this20.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this20.authService.user && _this20.authService.user.userName)));
+                case 1:
+                  _this21.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (_this21.authService.user && _this21.authService.user.userName)));
 
                   break;
 
-                case '2':
-                  _this20.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this20.authService.user && _this20.authService.user.userName)));
+                case 2:
+                  _this21.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (_this21.authService.user && _this21.authService.user.userName)));
 
                   break;
 
-                case '3':
-                  _this20.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_10__["Ticket"](prize.ticket, prize.user, prize.user === (_this20.authService.user && _this20.authService.user.userName)));
+                case 3:
+                  _this21.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (_this21.authService.user && _this21.authService.user.userName)));
 
                   break;
               }
@@ -6463,11 +6527,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           currentPrizePool.winners.minipool.isDrawing = true;
         }
       }, {
-        key: "startPoolProcess",
-        value: function startPoolProcess(prizePool, gameId) {
-          this.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId || this.lotteryObj[prizePool].gameId); // this.updateTickets(prizePool);
-        }
-      }, {
         key: "checkIfEntryMatches",
         value: function checkIfEntryMatches(entries, num) {
           for (var i = 0; i < entries.length; i++) {
@@ -6486,19 +6545,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTicket",
         value: function buyTicket(amount) {
-          var _this21 = this;
+          var _this22 = this;
 
           var options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
           };
           var request = new URLSearchParams();
           request.set('amount', amount.toString());
           request.set('gameid', this.currentLotteryInfo.gameId);
-          return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (results) {
+          return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this21.authService.user.amountAvailable = results.msg.balance;
+              _this22.authService.user.amountAvailable = results.msg.balance;
 
-              _this21.startStatusCheckInterval();
+              _this22.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -6510,11 +6569,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "setMinipool",
         value: function setMinipool() {
           var options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
           };
           var request = new URLSearchParams();
           request.set('gameid', this.currentLotteryInfo.gameId);
-          return this.httpClient.post("".concat(this.url, "/getBonusPrizeList"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_7__["map"])(function (results) {
+          return this.httpClient.post("".concat(this.url, "/getBonusPrizeList"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
               return results;
             }
@@ -6525,7 +6584,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "drawMinipool",
         value: function drawMinipool(num) {
-          var _this22 = this;
+          var _this23 = this;
 
           this.setMinipool().subscribe(function () {});
           var prizePool = this.lotteryObj[this.availablePrizePool];
@@ -6541,7 +6600,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
 
           usedNum.forEach(function (num) {
-            if (!!_this22.checkIfEntryMatches(prizePool.myEntries, num)) {
+            if (!!_this23.checkIfEntryMatches(prizePool.myEntries, num)) {
               prizePool.winners.minipool.winningAmount += Math.floor(prizePool.availablePrizePool * .001);
             }
           });
@@ -6560,11 +6619,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     LotteryService.ctorParameters = function () {
       return [{
-        type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
+        type: _auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
       }, {
-        type: _block_chain_service__WEBPACK_IMPORTED_MODULE_11__["BlockChainService"]
+        type: _block_chain_service__WEBPACK_IMPORTED_MODULE_12__["BlockChainService"]
       }, {
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClient"]
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]
       }];
     };
 
@@ -6617,7 +6676,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this23 = this;
+      var _this24 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -6626,7 +6685,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this23.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this24.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 
