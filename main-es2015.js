@@ -1354,14 +1354,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _how_to_play_how_to_play_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./how-to-play/how-to-play.module */ "./src/app/how-to-play/how-to-play.module.ts");
 /* harmony import */ var _my_entries_my_entries_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./my-entries/my-entries.module */ "./src/app/my-entries/my-entries.module.ts");
 /* harmony import */ var _payout_payout_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./payout/payout.module */ "./src/app/payout/payout.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _services_account_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/account.service */ "./src/app/services/account.service.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _services_block_chain_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/block-chain.service */ "./src/app/services/block-chain.service.ts");
-/* harmony import */ var _services_lottery_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/lottery.service */ "./src/app/services/lottery.service.ts");
-/* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/services/navigation.service.ts");
-/* harmony import */ var _services_translate_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/translate.service */ "./src/app/services/translate.service.ts");
-/* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/payout.service */ "./src/app/services/payout.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _services_account_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/account.service */ "./src/app/services/account.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _services_block_chain_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/block-chain.service */ "./src/app/services/block-chain.service.ts");
+/* harmony import */ var _services_lottery_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/lottery.service */ "./src/app/services/lottery.service.ts");
+/* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/services/navigation.service.ts");
+/* harmony import */ var _services_translate_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/translate.service */ "./src/app/services/translate.service.ts");
+/* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/payout.service */ "./src/app/services/payout.service.ts");
 
 
 
@@ -1369,6 +1370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Modules
+
 
 
 
@@ -1391,7 +1393,7 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_14__["AppComponent"]
         ],
         imports: [
             _account_account_module__WEBPACK_IMPORTED_MODULE_6__["AccountModule"],
@@ -1407,16 +1409,17 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _payout_payout_module__WEBPACK_IMPORTED_MODULE_12__["PayoutModule"]
         ],
         providers: [
-            _services_account_service__WEBPACK_IMPORTED_MODULE_14__["AccountService"],
-            _services_auth_service__WEBPACK_IMPORTED_MODULE_15__["AuthService"],
-            _services_block_chain_service__WEBPACK_IMPORTED_MODULE_16__["BlockChainService"],
-            _services_lottery_service__WEBPACK_IMPORTED_MODULE_17__["LotteryService"],
-            _services_navigation_service__WEBPACK_IMPORTED_MODULE_18__["NavigationService"],
-            _services_payout_service__WEBPACK_IMPORTED_MODULE_20__["PayoutService"],
-            _services_translate_service__WEBPACK_IMPORTED_MODULE_19__["TranslateService"]
+            _services_account_service__WEBPACK_IMPORTED_MODULE_15__["AccountService"],
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_16__["AuthService"],
+            _services_block_chain_service__WEBPACK_IMPORTED_MODULE_17__["BlockChainService"],
+            _services_lottery_service__WEBPACK_IMPORTED_MODULE_18__["LotteryService"],
+            _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__["NavigationService"],
+            _services_payout_service__WEBPACK_IMPORTED_MODULE_21__["PayoutService"],
+            _services_translate_service__WEBPACK_IMPORTED_MODULE_20__["TranslateService"],
+            { provide: _angular_common__WEBPACK_IMPORTED_MODULE_13__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_13__["HashLocationStrategy"] }
         ],
         bootstrap: [
-            _app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_14__["AppComponent"]
         ]
     })
 ], AppModule);
