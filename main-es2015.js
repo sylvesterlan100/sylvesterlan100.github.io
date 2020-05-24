@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\n<div class=\"deposit\">\n    <div class=\"qr-container\">\n        <div class=\"qr-code\">\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\n        </div>\n    </div>\n\n    <div class=\"message\">\n        <div>\n            {{'only-deposit-post-to-this-address' | translate}}.\n        </div>\n        <div>\n            {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\n        </div>\n    </div>\n\n    <div class=\"address copy-pastable\">\n        {{address}}\n    </div>\n\n    <div>\n        <button class=\"app-button\">\n            {{'copy-address' | translate | uppercase}}\n            <i class=\"icon-documentcopy\"></i>\n        </button>\n    </div>\n    <div class=\"amount\">\n        <div class=\"available\">{{'available' | translate}}</div>\n        <div>10000000.000000 POST</div>\n    </div>\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\n        {{'history' | translate}}\n    </div>\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\n        {{'withdraw' | translate}}\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\n<div class=\"deposit\">\n    <!-- <div class=\"qr-container\">\n        <div class=\"qr-code\">\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\n        </div>\n    </div> -->\n\n    <div class=\"message\">\n        <div>\n            {{'only-deposit-post-to-this-address' | translate}}.\n        </div>\n        <div>\n            {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\n        </div>\n    </div>\n    <div class=\"address copy-pastable\">\n        <div>\n            {{authService.user.depositAccount}} \n        </div>\n        <div>\n            {{authService.user.memo}}\n        </div>\n    </div>\n    <div class=\"btn-container\">\n        <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\n            {{'copy-account' | translate | uppercase}}\n            <i class=\"icon-documentcopy\"></i>\n        </button>\n        <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\n            {{'copy-memo' | translate | uppercase}}\n            <i class=\"icon-documentcopy\"></i>\n        </button>\n    </div>\n\n    <div class=\"amount\">\n        <div class=\"available\">{{'available' | translate}}</div>\n        <div>{{authService.user.amountAvailable}} POST</div>\n    </div>\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\n        {{'history' | translate}}\n    </div>\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\n        {{'withdraw' | translate}}\n    </div>\n</div>");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\n<div class=\"withdraw\">\n    <div class=\"message\">\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\n    </div>\n    <div class=\"amount\">\n        <div class=\"available\">{{'available' | translate}}</div>\n        <div>10000 POST</div>\n    </div>\n    <div class=\"row\">\n        <input type=\"text\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\n    </div>\n    <div class=\"row\">\n        <div class=\"withdraw-address\">\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\n                {{'withdrawal-address' | translate}}...\n            </div>\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\n            <div *ngIf=\"showIcon\">\n                {{address}}\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\n    </div>\n    <div class=\"message\">\n        {{'please-confirm-your-withdrawal-address' | translate}}\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\n<div class=\"withdraw\">\n    <div class=\"message\">\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\n    </div>\n    <div class=\"amount\">\n        <div class=\"available\">{{'available' | translate}}</div>\n        <div>{{authService.user.amountAvailable}} POST</div>\n    </div>\n    <div class=\"row\">\n        <input type=\"text\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\n    </div>\n    <div class=\"row\">\n        <div class=\"withdraw-address\">\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\n                {{'withdrawal-address' | translate}}...\n            </div>\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\n            <div *ngIf=\"showIcon\">\n                {{address || 'work-in-progress' | translate}}\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\n    </div>\n    <div class=\"message\">\n        {{'please-confirm-your-withdrawal-address' | translate}}\n    </div>\n</div>");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-settings></app-account-settings>\n<div class=\"main-container\">\n  <div class=\"main-content\">\n      <router-outlet></router-outlet>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-container\">\n  <div class=\"main-content\">\n    <app-account-settings></app-account-settings>\n      <router-outlet></router-outlet>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -227,7 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"block-chain-container\" #scrollable>\n    <div class=\"block-chain-info\">\n        <div class=\"block-chain-row\" [@slideInOut] *ngFor=\"let block of blocks\">\n            <div>{{block.blockHeight}}</div>\n            <div class=\"hash\">{{block.blockHash}}</div>\n            <div>{{block.date | date : 'h:mm:ss'}}</div>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"block-chain-container\" #scrollable>\n    <div class=\"block-chain-info\">\n        <div class=\"block-chain-row\" [@slideInOut] *ngFor=\"let block of blockChainService.rollingLog\" (click)=\"openTab(parseNumber(block.number))\">\n            <div>{{parseNumber(block.number)}}</div>\n            <div class=\"hash\">{{block.hash}}</div>\n            <div>{{parseDate(block.timestamp) | date : 'h:mm:ss'}}</div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"block-info\">\r\n        {{'block' | translate}} {{authService.user.block}}\r\n    </div>\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"block-info\">\r\n        {{'target-block-height' | translate}} {{authService.user.blockHeight}}\r\n    </div>\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -729,7 +729,7 @@ AccountHistoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".overlay.show {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(0, 0, 0, 0.8);\n  transition: background-color 0.3s;\n  z-index: 10;\n}\n\n.account-settings {\n  font-weight: 500;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  width: 80vw;\n  max-width: 600px;\n  transform: translateX(-100%);\n  transition: transform 0.3s;\n  background-color: #2a2d32;\n  text-align: center;\n  z-index: 11;\n  color: #ffcc01;\n  padding-bottom: 5vh;\n}\n\n.account-settings.show {\n  transform: translateX(0);\n}\n\n.account-settings .account-container {\n  height: 100%;\n  max-height: 750px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.account-settings .header {\n  text-align: left;\n  padding: 16px;\n  width: 100%;\n  position: relative;\n  color: white;\n}\n\n.account-settings .header .language-select {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-45%, -50%);\n}\n\n.account-settings .header .close {\n  font-size: 28px;\n}\n\n.account-settings .info-container {\n  position: relative;\n  height: 30vh;\n  max-height: 200px;\n}\n\n.account-settings .info-container .background {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: -2;\n}\n\n.account-settings .info-container .info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  height: 100%;\n}\n\n.account-settings .info-container .info .label {\n  color: white;\n}\n\n.account-settings .info-container .info .username {\n  font-size: 28px;\n}\n\n.account-settings .link {\n  font-size: 24px;\n  padding: 8px 24px;\n}\n\n.account-settings .link.logout {\n  color: #605f64;\n}\n\n.account-settings .link.how-to-play {\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LXNldHRpbmdzL0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGFjY291bnQtc2V0dGluZ3NcXGFjY291bnQtc2V0dGluZ3MuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1zZXR0aW5ncy9hY2NvdW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNJO0VBQ0ksZUFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxvQ0FBQTtFQUNBLGlDQUFBO0VBQ0EsV0FBQTtBQ0FSOztBRElBO0VBQ0ksZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSw0QkFBQTtFQUNBLDBCQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxjQUFBO0VBQ0EsbUJBQUE7QUNESjs7QURHSTtFQUNJLHdCQUFBO0FDRFI7O0FESUk7RUFDSSxZQUFBO0VBQ0EsaUJBQUE7RUFFQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSw4QkFBQTtBQ0hSOztBRE1JO0VBQ0ksZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtBQ0pSOztBRE1RO0VBQ0ksa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLGdDQUFBO0FDSlo7O0FET1E7RUFDSSxlQUFBO0FDTFo7O0FEU0k7RUFDSSxrQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ1BSOztBRFNRO0VBQ0ksa0JBQUE7RUFDQSxNQUFBO0VBQ0EsU0FBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsV0FBQTtBQ1BaOztBRFVRO0VBQ0ksYUFBQTtFQUNBLHNCQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FDUlo7O0FEVVk7RUFDSSxZQUFBO0FDUmhCOztBRFdZO0VBQ0ksZUFBQTtBQ1RoQjs7QURrQkk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNoQlI7O0FEa0JRO0VBQ0ksY0FBQTtBQ2hCWjs7QURtQlE7RUFDSSxZQUFBO0FDakJaIiwiZmlsZSI6InNyYy9hcHAvYWNjb3VudC9hY2NvdW50LXNldHRpbmdzL2FjY291bnQtc2V0dGluZ3MuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIub3ZlcmxheSB7XHJcbiAgICAmLnNob3cge1xyXG4gICAgICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgICAgICB0b3A6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogcmdiKDAsMCwwLCAuOCk7XHJcbiAgICAgICAgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAuM3M7XHJcbiAgICAgICAgei1pbmRleDogMTA7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5hY2NvdW50LXNldHRpbmdzIHtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICB3aWR0aDogODB2dztcclxuICAgIG1heC13aWR0aDogNjAwcHg7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTEwMCUpO1xyXG4gICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIC4zcztcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJkMzI7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICB6LWluZGV4OiAxMTtcclxuICAgIGNvbG9yOiAjZmZjYzAxO1xyXG4gICAgcGFkZGluZy1ib3R0b206IDV2aDtcclxuXHJcbiAgICAmLnNob3cge1xyXG4gICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcclxuICAgIH1cclxuXHJcbiAgICAuYWNjb3VudC1jb250YWluZXIge1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBtYXgtaGVpZ2h0OiA3NTBweDtcclxuXHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgIH1cclxuXHJcbiAgICAuaGVhZGVyIHtcclxuICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgICAgIHBhZGRpbmc6IDE2cHg7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuXHJcbiAgICAgICAgLmxhbmd1YWdlLXNlbGVjdCB7XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICAgICAgdG9wOiA1MCU7XHJcbiAgICAgICAgICAgIGxlZnQ6IDUwJTtcclxuICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTQ1JSwgLTUwJSk7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuY2xvc2Uge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDI4cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5pbmZvLWNvbnRhaW5lciB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGhlaWdodDogMzB2aDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiAyMDBweDtcclxuXHJcbiAgICAgICAgLmJhY2tncm91bmQge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHRvcDogMDtcclxuICAgICAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgICAgICByaWdodDogMDtcclxuICAgICAgICAgICAgei1pbmRleDogLTI7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuaW5mbyB7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcblxyXG4gICAgICAgICAgICAubGFiZWwge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICB9XHJcbiAgICBcclxuICAgICAgICAgICAgLnVzZXJuYW1lIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgXHJcbiAgICAgICAgICAgIC5hbW91bnQge1xyXG4gICAgXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLmxpbmsge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgICAgICBwYWRkaW5nOiA4cHggMjRweDtcclxuXHJcbiAgICAgICAgJi5sb2dvdXQge1xyXG4gICAgICAgICAgICBjb2xvcjogIzYwNWY2NDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgICYuaG93LXRvLXBsYXkge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59IiwiLm92ZXJsYXkuc2hvdyB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDAsIDAsIDAuOCk7XG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC4zcztcbiAgei1pbmRleDogMTA7XG59XG5cbi5hY2NvdW50LXNldHRpbmdzIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgcG9zaXRpb246IGZpeGVkO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgd2lkdGg6IDgwdnc7XG4gIG1heC13aWR0aDogNjAwcHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMTAwJSk7XG4gIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHotaW5kZXg6IDExO1xuICBjb2xvcjogI2ZmY2MwMTtcbiAgcGFkZGluZy1ib3R0b206IDV2aDtcbn1cbi5hY2NvdW50LXNldHRpbmdzLnNob3cge1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XG59XG4uYWNjb3VudC1zZXR0aW5ncyAuYWNjb3VudC1jb250YWluZXIge1xuICBoZWlnaHQ6IDEwMCU7XG4gIG1heC1oZWlnaHQ6IDc1MHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uYWNjb3VudC1zZXR0aW5ncyAuaGVhZGVyIHtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgcGFkZGluZzogMTZweDtcbiAgd2lkdGg6IDEwMCU7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmhlYWRlciAubGFuZ3VhZ2Utc2VsZWN0IHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNDUlLCAtNTAlKTtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5oZWFkZXIgLmNsb3NlIHtcbiAgZm9udC1zaXplOiAyOHB4O1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmluZm8tY29udGFpbmVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDMwdmg7XG4gIG1heC1oZWlnaHQ6IDIwMHB4O1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmluZm8tY29udGFpbmVyIC5iYWNrZ3JvdW5kIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIHotaW5kZXg6IC0yO1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmluZm8tY29udGFpbmVyIC5pbmZvIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XG4gIGhlaWdodDogMTAwJTtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5pbmZvLWNvbnRhaW5lciAuaW5mbyAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG59XG4uYWNjb3VudC1zZXR0aW5ncyAuaW5mby1jb250YWluZXIgLmluZm8gLnVzZXJuYW1lIHtcbiAgZm9udC1zaXplOiAyOHB4O1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmxpbmsge1xuICBmb250LXNpemU6IDI0cHg7XG4gIHBhZGRpbmc6IDhweCAyNHB4O1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmxpbmsubG9nb3V0IHtcbiAgY29sb3I6ICM2MDVmNjQ7XG59XG4uYWNjb3VudC1zZXR0aW5ncyAubGluay5ob3ctdG8tcGxheSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".overlay.show {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: rgba(0, 0, 0, 0.8);\n  transition: background-color 0.3s;\n  z-index: 10;\n}\n\n.account-settings {\n  font-weight: 500;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 80vw;\n  max-width: 600px;\n  transform: translateX(-100%);\n  transition: transform 0.3s;\n  background-color: #2a2d32;\n  text-align: center;\n  z-index: 11;\n  color: #ffcc01;\n  padding-bottom: 5vh;\n}\n\n.account-settings.show {\n  transform: translateX(0);\n}\n\n.account-settings .account-container {\n  height: 100%;\n  max-height: 750px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n\n.account-settings .header {\n  text-align: left;\n  padding: 16px;\n  width: 100%;\n  position: relative;\n  color: white;\n}\n\n.account-settings .header .language-select {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-45%, -50%);\n}\n\n.account-settings .header .close {\n  font-size: 28px;\n}\n\n.account-settings .info-container {\n  position: relative;\n  height: 30vh;\n  max-height: 200px;\n}\n\n.account-settings .info-container .background {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: -2;\n}\n\n.account-settings .info-container .info {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  height: 100%;\n}\n\n.account-settings .info-container .info .label {\n  color: white;\n}\n\n.account-settings .info-container .info .username {\n  font-size: 28px;\n}\n\n.account-settings .link {\n  font-size: 24px;\n  padding: 8px 24px;\n}\n\n.account-settings .link.logout {\n  color: #605f64;\n}\n\n.account-settings .link.how-to-play {\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LXNldHRpbmdzL0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGFjY291bnQtc2V0dGluZ3NcXGFjY291bnQtc2V0dGluZ3MuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1zZXR0aW5ncy9hY2NvdW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNJO0VBQ0ksZUFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxvQ0FBQTtFQUNBLGlDQUFBO0VBQ0EsV0FBQTtBQ0FSOztBRElBO0VBQ0ksZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsNEJBQUE7RUFDQSwwQkFBQTtFQUNBLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLG1CQUFBO0FDREo7O0FER0k7RUFDSSx3QkFBQTtBQ0RSOztBRElJO0VBQ0ksWUFBQTtFQUNBLGlCQUFBO0VBRUEsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsOEJBQUE7QUNIUjs7QURNSTtFQUNJLGdCQUFBO0VBQ0EsYUFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFlBQUE7QUNKUjs7QURNUTtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLFNBQUE7RUFDQSxnQ0FBQTtBQ0paOztBRE9RO0VBQ0ksZUFBQTtBQ0xaOztBRFNJO0VBQ0ksa0JBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUNQUjs7QURTUTtFQUNJLGtCQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLFdBQUE7QUNQWjs7QURVUTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLDZCQUFBO0VBQ0EsWUFBQTtBQ1JaOztBRFVZO0VBQ0ksWUFBQTtBQ1JoQjs7QURXWTtFQUNJLGVBQUE7QUNUaEI7O0FEa0JJO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDaEJSOztBRGtCUTtFQUNJLGNBQUE7QUNoQlo7O0FEbUJRO0VBQ0ksWUFBQTtBQ2pCWiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1zZXR0aW5ncy9hY2NvdW50LXNldHRpbmdzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm92ZXJsYXkge1xyXG4gICAgJi5zaG93IHtcclxuICAgICAgICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgICAgICAgdG9wOiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIHJpZ2h0OiAwO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6IHJnYigwLDAsMCwgLjgpO1xyXG4gICAgICAgIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgLjNzO1xyXG4gICAgICAgIHotaW5kZXg6IDEwO1xyXG4gICAgfVxyXG59XHJcblxyXG4uYWNjb3VudC1zZXR0aW5ncyB7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgd2lkdGg6IDgwdnc7XHJcbiAgICBtYXgtd2lkdGg6IDYwMHB4O1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0xMDAlKTtcclxuICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAuM3M7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgei1pbmRleDogMTE7XHJcbiAgICBjb2xvcjogI2ZmY2MwMTtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1dmg7XHJcblxyXG4gICAgJi5zaG93IHtcclxuICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XHJcbiAgICB9XHJcblxyXG4gICAgLmFjY291bnQtY29udGFpbmVyIHtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgbWF4LWhlaWdodDogNzUwcHg7XHJcblxyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcblxyXG4gICAgLmhlYWRlciB7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgICAgICBwYWRkaW5nOiAxNnB4O1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcblxyXG4gICAgICAgIC5sYW5ndWFnZS1zZWxlY3Qge1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHRvcDogNTAlO1xyXG4gICAgICAgICAgICBsZWZ0OiA1MCU7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC00NSUsIC01MCUpO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmNsb3NlIHtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyOHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuaW5mby1jb250YWluZXIge1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBoZWlnaHQ6IDMwdmg7XHJcbiAgICAgICAgbWF4LWhlaWdodDogMjAwcHg7XHJcblxyXG4gICAgICAgIC5iYWNrZ3JvdW5kIHtcclxuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgICAgICB0b3A6IDA7XHJcbiAgICAgICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICAgICAgbGVmdDogMDtcclxuICAgICAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgICAgIHotaW5kZXg6IC0yO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmluZm8ge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG5cclxuICAgICAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgfVxyXG4gICAgXHJcbiAgICAgICAgICAgIC51c2VybmFtZSB7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDI4cHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgICAgICAuYW1vdW50IHtcclxuICAgIFxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5saW5rIHtcclxuICAgICAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICAgICAgcGFkZGluZzogOHB4IDI0cHg7XHJcblxyXG4gICAgICAgICYubG9nb3V0IHtcclxuICAgICAgICAgICAgY29sb3I6ICM2MDVmNjQ7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAmLmhvdy10by1wbGF5IHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufSIsIi5vdmVybGF5LnNob3cge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIHRvcDogMDtcbiAgYm90dG9tOiAwO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgwLCAwLCAwLCAwLjgpO1xuICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuM3M7XG4gIHotaW5kZXg6IDEwO1xufVxuXG4uYWNjb3VudC1zZXR0aW5ncyB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIHdpZHRoOiA4MHZ3O1xuICBtYXgtd2lkdGg6IDYwMHB4O1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTEwMCUpO1xuICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4zcztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB6LWluZGV4OiAxMTtcbiAgY29sb3I6ICNmZmNjMDE7XG4gIHBhZGRpbmctYm90dG9tOiA1dmg7XG59XG4uYWNjb3VudC1zZXR0aW5ncy5zaG93IHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDApO1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmFjY291bnQtY29udGFpbmVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICBtYXgtaGVpZ2h0OiA3NTBweDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmhlYWRlciB7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHBhZGRpbmc6IDE2cHg7XG4gIHdpZHRoOiAxMDAlO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5oZWFkZXIgLmxhbmd1YWdlLXNlbGVjdCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiA1MCU7XG4gIGxlZnQ6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTQ1JSwgLTUwJSk7XG59XG4uYWNjb3VudC1zZXR0aW5ncyAuaGVhZGVyIC5jbG9zZSB7XG4gIGZvbnQtc2l6ZTogMjhweDtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5pbmZvLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiAzMHZoO1xuICBtYXgtaGVpZ2h0OiAyMDBweDtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5pbmZvLWNvbnRhaW5lciAuYmFja2dyb3VuZCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB6LWluZGV4OiAtMjtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5pbmZvLWNvbnRhaW5lciAuaW5mbyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uYWNjb3VudC1zZXR0aW5ncyAuaW5mby1jb250YWluZXIgLmluZm8gLmxhYmVsIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmluZm8tY29udGFpbmVyIC5pbmZvIC51c2VybmFtZSB7XG4gIGZvbnQtc2l6ZTogMjhweDtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5saW5rIHtcbiAgZm9udC1zaXplOiAyNHB4O1xuICBwYWRkaW5nOiA4cHggMjRweDtcbn1cbi5hY2NvdW50LXNldHRpbmdzIC5saW5rLmxvZ291dCB7XG4gIGNvbG9yOiAjNjA1ZjY0O1xufVxuLmFjY291bnQtc2V0dGluZ3MgLmxpbmsuaG93LXRvLXBsYXkge1xuICBjb2xvcjogd2hpdGU7XG59Il19 */");
 
 /***/ }),
 
@@ -850,6 +850,52 @@ AccountModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/account/authguard.guard.ts":
+/*!********************************************!*\
+  !*** ./src/app/account/authguard.guard.ts ***!
+  \********************************************/
+/*! exports provided: AuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+
+let AuthGuard = class AuthGuard {
+    constructor(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    canActivate() {
+        if (!(this.authService.user && this.authService.user.token)) {
+            this.router.navigate(['/login']);
+            return false;
+        }
+        // you can save redirect url so after authing we can move them back to the page they requested
+        return true;
+    }
+};
+AuthGuard.ctorParameters = () => [
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AuthGuard);
+
+
+
+/***/ }),
+
 /***/ "./src/app/account/deposit/deposit.component.scss":
 /*!********************************************************!*\
   !*** ./src/app/account/deposit/deposit.component.scss ***!
@@ -859,7 +905,7 @@ AccountModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".deposit {\n  text-align: center;\n  padding: 0 16px 24px;\n}\n.deposit .qr-container {\n  margin-top: 12px;\n  height: 45vw;\n  max-height: 250px;\n}\n.deposit .qr-container .qr-code {\n  display: inline-block;\n  height: 100%;\n  border-radius: 12px;\n  background-color: white;\n}\n.deposit .qr-container .qr-code img {\n  height: 100%;\n}\n.deposit .message {\n  padding: 0 40px;\n  margin-top: 6px;\n  color: white;\n  font-size: 16px;\n  line-height: 18px;\n}\n.deposit .address {\n  word-break: break-all;\n  color: #ffcc00;\n  background-color: #2a2e31;\n  border: 2px solid #5d6164;\n  font-size: 16px;\n  border-radius: 12px;\n  padding: 12px;\n  margin: 12px 0;\n}\n.deposit .icon-documentcopy {\n  margin-left: 12px;\n}\n.deposit .amount {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n  color: #ffcc00;\n}\n.deposit .amount .available {\n  color: white;\n}\n.deposit .link {\n  margin-top: 24px;\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGRlcG9zaXRcXGRlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtBQ0NKO0FEQ0k7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0NSO0FEQVE7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDRVo7QUREWTtFQUNJLFlBQUE7QUNHaEI7QURFSTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQ0FSO0FER0k7RUFDSSxxQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7QUNEUjtBRElJO0VBQ0ksaUJBQUE7QUNGUjtBREtJO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FDSFI7QURJUTtFQUNJLFlBQUE7QUNGWjtBRE1JO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQ0pSIiwiZmlsZSI6InNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L2RlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVwb3NpdCB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAwIDE2cHggMjRweDtcclxuICAgIFxyXG4gICAgLnFyLWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICBoZWlnaHQ6IDQ1dnc7XHJcbiAgICAgICAgbWF4LWhlaWdodDogMjUwcHg7XHJcbiAgICAgICAgLnFyLWNvZGUge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLm1lc3NhZ2Uge1xyXG4gICAgICAgIHBhZGRpbmc6IDAgNDBweDtcclxuICAgICAgICBtYXJnaW4tdG9wOiA2cHg7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAuYWRkcmVzcyB7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstYWxsO1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJlMzE7XHJcbiAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzVkNjE2NDtcclxuICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4O1xyXG4gICAgICAgIG1hcmdpbjogMTJweCAwO1xyXG4gICAgfVxyXG5cclxuICAgIC5pY29uLWRvY3VtZW50Y29weSB7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDEycHg7XHJcbiAgICB9XHJcblxyXG4gICAgLmFtb3VudCB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICBjb2xvcjogI2ZmY2MwMDtcclxuICAgICAgICAuYXZhaWxhYmxlIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubGluayB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjRweDtcclxuICAgICAgICBjb2xvcjogI2ZmY2MwMDtcclxuICAgICAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICB9XHJcbn0iLCIuZGVwb3NpdCB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogMCAxNnB4IDI0cHg7XG59XG4uZGVwb3NpdCAucXItY29udGFpbmVyIHtcbiAgbWFyZ2luLXRvcDogMTJweDtcbiAgaGVpZ2h0OiA0NXZ3O1xuICBtYXgtaGVpZ2h0OiAyNTBweDtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIgLnFyLWNvZGUge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGhlaWdodDogMTAwJTtcbiAgYm9yZGVyLXJhZGl1czogMTJweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG59XG4uZGVwb3NpdCAucXItY29udGFpbmVyIC5xci1jb2RlIGltZyB7XG4gIGhlaWdodDogMTAwJTtcbn1cbi5kZXBvc2l0IC5tZXNzYWdlIHtcbiAgcGFkZGluZzogMCA0MHB4O1xuICBtYXJnaW4tdG9wOiA2cHg7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBsaW5lLWhlaWdodDogMThweDtcbn1cbi5kZXBvc2l0IC5hZGRyZXNzIHtcbiAgd29yZC1icmVhazogYnJlYWstYWxsO1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmUzMTtcbiAgYm9yZGVyOiAycHggc29saWQgIzVkNjE2NDtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICBwYWRkaW5nOiAxMnB4O1xuICBtYXJnaW46IDEycHggMDtcbn1cbi5kZXBvc2l0IC5pY29uLWRvY3VtZW50Y29weSB7XG4gIG1hcmdpbi1sZWZ0OiAxMnB4O1xufVxuLmRlcG9zaXQgLmFtb3VudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgbWFyZ2luLXRvcDogMTJweDtcbiAgY29sb3I6ICNmZmNjMDA7XG59XG4uZGVwb3NpdCAuYW1vdW50IC5hdmFpbGFibGUge1xuICBjb2xvcjogd2hpdGU7XG59XG4uZGVwb3NpdCAubGluayB7XG4gIG1hcmdpbi10b3A6IDI0cHg7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBmb250LXNpemU6IDIwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".deposit {\n  text-align: center;\n  padding: 0 16px 24px;\n}\n.deposit .qr-container {\n  margin-top: 12px;\n  height: 45vw;\n  max-height: 250px;\n}\n.deposit .qr-container .qr-code {\n  display: inline-block;\n  height: 100%;\n  border-radius: 12px;\n  background-color: white;\n}\n.deposit .qr-container .qr-code img {\n  height: 100%;\n}\n.deposit .btn-container {\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .btn-container button.app-button {\n  font-size: 15px !important;\n  flex-basis: 49%;\n}\n.deposit .message {\n  padding: 0 40px;\n  margin-top: 24px;\n  color: white;\n  font-size: 16px;\n  line-height: 18px;\n}\n.deposit .address {\n  word-break: break-all;\n  color: #ffcc00;\n  background-color: #2a2e31;\n  border: 2px solid #5d6164;\n  font-size: 16px;\n  border-radius: 12px;\n  padding: 12px;\n  margin: 12px 0;\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .icon-documentcopy {\n  margin-left: 12px;\n}\n.deposit .amount {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n  color: #ffcc00;\n}\n.deposit .amount .available {\n  color: white;\n}\n.deposit .link {\n  margin-top: 24px;\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGRlcG9zaXRcXGRlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtBQ0NKO0FEQ0k7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0NSO0FEQVE7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDRVo7QUREWTtFQUNJLFlBQUE7QUNHaEI7QURFSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtBQ0FSO0FERVE7RUFDSSwwQkFBQTtFQUNBLGVBQUE7QUNBWjtBRElJO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQ0ZSO0FES0k7RUFDSSxxQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7QUNIUjtBRE1JO0VBQ0ksaUJBQUE7QUNKUjtBRE9JO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FDTFI7QURNUTtFQUNJLFlBQUE7QUNKWjtBRFFJO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQ05SIiwiZmlsZSI6InNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L2RlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVwb3NpdCB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAwIDE2cHggMjRweDtcclxuICAgIFxyXG4gICAgLnFyLWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICBoZWlnaHQ6IDQ1dnc7XHJcbiAgICAgICAgbWF4LWhlaWdodDogMjUwcHg7XHJcbiAgICAgICAgLnFyLWNvZGUge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLmJ0bi1jb250YWluZXIge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cclxuICAgICAgICBidXR0b24uYXBwLWJ1dHRvbiB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBmbGV4LWJhc2lzOiA0OSU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5tZXNzYWdlIHtcclxuICAgICAgICBwYWRkaW5nOiAwIDQwcHg7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjRweDtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAxOHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5hZGRyZXNzIHtcclxuICAgICAgICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XHJcbiAgICAgICAgY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmUzMTtcclxuICAgICAgICBib3JkZXI6IDJweCBzb2xpZCAjNWQ2MTY0O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDEycHg7XHJcbiAgICAgICAgbWFyZ2luOiAxMnB4IDA7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcblxyXG4gICAgLmljb24tZG9jdW1lbnRjb3B5IHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTJweDtcclxuICAgIH1cclxuXHJcbiAgICAuYW1vdW50IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIC5hdmFpbGFibGUge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5saW5rIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIH1cclxufSIsIi5kZXBvc2l0IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAwIDE2cHggMjRweDtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBoZWlnaHQ6IDQ1dnc7XG4gIG1heC1oZWlnaHQ6IDI1MHB4O1xufVxuLmRlcG9zaXQgLnFyLWNvbnRhaW5lciAucXItY29kZSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIgLnFyLWNvZGUgaW1nIHtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuLmRlcG9zaXQgLmJ0bi1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uZGVwb3NpdCAuYnRuLWNvbnRhaW5lciBidXR0b24uYXBwLWJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xuICBmbGV4LWJhc2lzOiA0OSU7XG59XG4uZGVwb3NpdCAubWVzc2FnZSB7XG4gIHBhZGRpbmc6IDAgNDBweDtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xufVxuLmRlcG9zaXQgLmFkZHJlc3Mge1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZTMxO1xuICBib3JkZXI6IDJweCBzb2xpZCAjNWQ2MTY0O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gIHBhZGRpbmc6IDEycHg7XG4gIG1hcmdpbjogMTJweCAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uZGVwb3NpdCAuaWNvbi1kb2N1bWVudGNvcHkge1xuICBtYXJnaW4tbGVmdDogMTJweDtcbn1cbi5kZXBvc2l0IC5hbW91bnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIG1hcmdpbi10b3A6IDEycHg7XG4gIGNvbG9yOiAjZmZjYzAwO1xufVxuLmRlcG9zaXQgLmFtb3VudCAuYXZhaWxhYmxlIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmRlcG9zaXQgLmxpbmsge1xuICBtYXJnaW4tdG9wOiAyNHB4O1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -875,15 +921,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DepositComponent", function() { return DepositComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 let DepositComponent = class DepositComponent {
-    constructor() {
-        this.address = '123h12hhfdjhg4j34ijaoisjfio4o2ih423ho3ui4h23kjhkjhdfudsdifjhu';
+    constructor(authService) {
+        this.authService = authService;
     }
     ngOnInit() {
+        console.log(this.authService.user);
     }
 };
+DepositComponent.ctorParameters = () => [
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+];
 DepositComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-deposit',
@@ -1210,16 +1262,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WithdrawComponent", function() { return WithdrawComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 let WithdrawComponent = class WithdrawComponent {
-    constructor() {
+    constructor(authService) {
+        this.authService = authService;
         this.showIcon = false;
-        this.address = "123lk41k24jasdfjijefjeijfi3i2jrfajsdifjasifjasdfasdfasdfasdfasdfsij";
+        this.address = "";
     }
     ngOnInit() {
     }
 };
+WithdrawComponent.ctorParameters = () => [
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+];
 WithdrawComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-withdraw',
@@ -1241,7 +1299,7 @@ WithdrawComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".main-container {\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  width: 100vw;\n}\n.main-container .main-content {\n  width: 100%;\n  height: 100%;\n  flex-basis: 100%;\n  max-width: 650px;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ0NKO0FEQ0k7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtBQ0NSIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW4tY29udGFpbmVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAxMDB2dztcclxuXHJcbiAgICAubWFpbi1jb250ZW50IHtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgZmxleC1iYXNpczogMTAwJTtcclxuICAgICAgICBtYXgtd2lkdGg6IDY1MHB4O1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIH1cclxufSIsIi5tYWluLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiAxMDB2dztcbn1cbi5tYWluLWNvbnRhaW5lciAubWFpbi1jb250ZW50IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgZmxleC1iYXNpczogMTAwJTtcbiAgbWF4LXdpZHRoOiA2NTBweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".main-container {\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  width: 100vw;\n}\n.main-container .main-content {\n  width: 100%;\n  height: 100%;\n  flex-basis: 100%;\n  max-width: 650px;\n  overflow: hidden;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ0NKO0FEQ0k7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FDQ1IiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFpbi1jb250YWluZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMHZ3O1xyXG5cclxuICAgIC5tYWluLWNvbnRlbnQge1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBmbGV4LWJhc2lzOiAxMDAlO1xyXG4gICAgICAgIG1heC13aWR0aDogNjUwcHg7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB9XHJcbn0iLCIubWFpbi1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwdnc7XG59XG4ubWFpbi1jb250YWluZXIgLm1haW4tY29udGVudCB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGZsZXgtYmFzaXM6IDEwMCU7XG4gIG1heC13aWR0aDogNjUwcHg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn0iXX0= */");
 
 /***/ }),
 
@@ -1806,20 +1864,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm2015/select.js");
 /* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
-/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
-/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
-/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
-/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
-/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
-/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
-/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
-/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
-/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
-/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
-/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
-/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
+/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
+/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
+/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
+/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
+/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
+/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
+/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
+/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
+/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
+/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
+/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
+/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
+/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
+
 
 
 
@@ -1847,43 +1907,45 @@ let AppCommonModule = class AppCommonModule {
 AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_6__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_7__["AnimatedBackgroundComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_15__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_16__["AnimatedTicketsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedConfettiComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedCoinsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_19__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_11__["BuyTicketInputComponent"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_13__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_8__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_10__["PoolSelectComponent"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_9__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_14__["WinnerPanelComponent"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_7__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_8__["AnimatedBackgroundComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_16__["AnimatedQuestionComponent"],
+            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedTicketsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedConfettiComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedCoinsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_20__["BlockChainInfoComponent"],
+            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_12__["BuyTicketInputComponent"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_14__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_9__["MainHeaderComponent"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_11__["PoolSelectComponent"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_10__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_15__["WinnerPanelComponent"],
         ],
         imports: [
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__["ClipboardModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _angular_material_select__WEBPACK_IMPORTED_MODULE_4__["MatSelectModule"],
             _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__["MatSliderModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"]
+            _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"]
         ],
         exports: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_6__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_7__["AnimatedBackgroundComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedCoinsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedConfettiComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_15__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_16__["AnimatedTicketsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_19__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_11__["BuyTicketInputComponent"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_7__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_8__["AnimatedBackgroundComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedCoinsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedConfettiComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_16__["AnimatedQuestionComponent"],
+            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedTicketsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_20__["BlockChainInfoComponent"],
+            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_12__["BuyTicketInputComponent"],
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__["ClipboardModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_13__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_8__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_10__["PoolSelectComponent"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_9__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_14__["WinnerPanelComponent"]
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_14__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_9__["MainHeaderComponent"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_11__["PoolSelectComponent"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_10__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_15__["WinnerPanelComponent"]
         ]
     })
 ], AppCommonModule);
@@ -1901,7 +1963,7 @@ AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".block-chain-container {\n  scroll-behavior: smooth;\n  background-color: #00000088;\n  height: 130px;\n  font-size: 12px;\n  overflow: hidden;\n  color: #9194ad;\n  width: 100%;\n}\n.block-chain-container .block-chain-info {\n  width: 100%;\n}\n.block-chain-container .block-chain-info .hash {\n  max-width: 50%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  direction: rtl;\n}\n.block-chain-container .block-chain-info .block-chain-row {\n  display: flex;\n  justify-content: space-evenly;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxibG9jay1jaGFpbi1pbmZvXFxibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7RUFDQSwyQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NKO0FEQUk7RUFDSSxXQUFBO0FDRVI7QUREUTtFQUNJLGNBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSxjQUFBO0FDR1o7QURBUTtFQUNJLGFBQUE7RUFDQSw2QkFBQTtBQ0VaIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vYmxvY2stY2hhaW4taW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ibG9jay1jaGFpbi1jb250YWluZXIge1xyXG4gICAgc2Nyb2xsLWJlaGF2aW9yOiBzbW9vdGg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XHJcbiAgICBoZWlnaHQ6IDEzMHB4O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgIGNvbG9yOiAjOTE5NGFkO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICAuYmxvY2stY2hhaW4taW5mbyB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgLmhhc2gge1xyXG4gICAgICAgICAgICBtYXgtd2lkdGg6IDUwJTtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgIGRpcmVjdGlvbjogcnRsO1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5ibG9jay1jaGFpbi1yb3cge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTsgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmJsb2NrLWNoYWluLWNvbnRhaW5lciB7XG4gIHNjcm9sbC1iZWhhdmlvcjogc21vb3RoO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XG4gIGhlaWdodDogMTMwcHg7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICM5MTk0YWQ7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyAuaGFzaCB7XG4gIG1heC13aWR0aDogNTAlO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgZGlyZWN0aW9uOiBydGw7XG59XG4uYmxvY2stY2hhaW4tY29udGFpbmVyIC5ibG9jay1jaGFpbi1pbmZvIC5ibG9jay1jaGFpbi1yb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".block-chain-container {\n  scroll-behavior: smooth;\n  background-color: #00000088;\n  height: 84px;\n  font-size: 12px;\n  overflow: hidden;\n  color: #9194ad;\n  width: 100%;\n}\n.block-chain-container.selected {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  color: #DDD;\n}\n.block-chain-container.selected .hash {\n  font-weight: bold;\n}\n.block-chain-container .block-chain-info {\n  width: 100%;\n}\n.block-chain-container .block-chain-info .hash {\n  max-width: 50%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  direction: rtl;\n}\n.block-chain-container .block-chain-info .block-chain-row {\n  cursor: pointer;\n  display: flex;\n  justify-content: space-evenly;\n}\n.block-chain-container .block-chain-info .block-chain-row:hover {\n  color: #BBB;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxibG9jay1jaGFpbi1pbmZvXFxibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vYmxvY2stY2hhaW4taW5mby9ibG9jay1jaGFpbi1pbmZvLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksdUJBQUE7RUFDQSwyQkFBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtBQ0NKO0FEQ0k7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxXQUFBO0FDQ1I7QURDUTtFQUNJLGlCQUFBO0FDQ1o7QURHSTtFQUNJLFdBQUE7QUNEUjtBREVRO0VBQ0ksY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7QUNBWjtBREdRO0VBQ0ksZUFBQTtFQUlBLGFBQUE7RUFDQSw2QkFBQTtBQ0paO0FEQVk7RUFDSSxXQUFBO0FDRWhCIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2Jsb2NrLWNoYWluLWluZm8vYmxvY2stY2hhaW4taW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ibG9jay1jaGFpbi1jb250YWluZXIge1xyXG4gICAgc2Nyb2xsLWJlaGF2aW9yOiBzbW9vdGg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwODg7XHJcbiAgICBoZWlnaHQ6IDg0cHg7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgY29sb3I6ICM5MTk0YWQ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuXHJcbiAgICAmLnNlbGVjdGVkIHtcclxuICAgICAgICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgICAgIGNvbG9yOiAjREREO1xyXG5cclxuICAgICAgICAuaGFzaCB7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuYmxvY2stY2hhaW4taW5mbyB7XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgLmhhc2gge1xyXG4gICAgICAgICAgICBtYXgtd2lkdGg6IDUwJTtcclxuICAgICAgICAgICAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICAgICAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICAgICAgdGV4dC1vdmVyZmxvdzogZWxsaXBzaXM7XHJcbiAgICAgICAgICAgIGRpcmVjdGlvbjogcnRsO1xyXG4gICAgICAgIH1cclxuICAgIFxyXG4gICAgICAgIC5ibG9jay1jaGFpbi1yb3cge1xyXG4gICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgICAgICY6aG92ZXIge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICNCQkI7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7ICAgXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcbiIsIi5ibG9jay1jaGFpbi1jb250YWluZXIge1xuICBzY3JvbGwtYmVoYXZpb3I6IHNtb290aDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDg4O1xuICBoZWlnaHQ6IDg0cHg7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgY29sb3I6ICM5MTk0YWQ7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lci5zZWxlY3RlZCB7XG4gIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gIGNvbG9yOiAjREREO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lci5zZWxlY3RlZCAuaGFzaCB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyB7XG4gIHdpZHRoOiAxMDAlO1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyAuaGFzaCB7XG4gIG1heC13aWR0aDogNTAlO1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICB0ZXh0LW92ZXJmbG93OiBlbGxpcHNpcztcbiAgZGlyZWN0aW9uOiBydGw7XG59XG4uYmxvY2stY2hhaW4tY29udGFpbmVyIC5ibG9jay1jaGFpbi1pbmZvIC5ibG9jay1jaGFpbi1yb3cge1xuICBjdXJzb3I6IHBvaW50ZXI7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xufVxuLmJsb2NrLWNoYWluLWNvbnRhaW5lciAuYmxvY2stY2hhaW4taW5mbyAuYmxvY2stY2hhaW4tcm93OmhvdmVyIHtcbiAgY29sb3I6ICNCQkI7XG59Il19 */");
 
 /***/ }),
 
@@ -1918,42 +1980,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/animations */ "./node_modules/@angular/animations/fesm2015/animations.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var src_app_services_block_chain_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/block-chain.service */ "./src/app/services/block-chain.service.ts");
+
+
 
 
 
 let BlockChainInfoComponent = class BlockChainInfoComponent {
-    constructor() {
-        this.blocks = [
-            {
-                blockHeight: '1209873453',
-                blockHash: 'k254k5j27bhxyhoe7nesvnsiufhnvjkxh5483n59rnto4389nstiernvy439nvsyiunyv',
-                date: new Date()
-            }
-        ];
-        this.count = 1209873466;
+    constructor(blockChainService) {
+        this.blockChainService = blockChainService;
+        this.getLatestSub = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+        this.getBlockSub = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+    }
+    openTab(block) {
+        window.open(`https://etherscan.io/block/${block}`, '_blank');
     }
     ngOnInit() {
-        setInterval(() => {
-            this.count++;
-            this.blocks.unshift({
-                blockHeight: this.count.toString(),
-                blockHash: 'k254k5j27bhxyhoe7nesvnsiufhnvjkxh5483n59rnto4389nstiernvy43914677cvxcv66',
-                date: new Date()
-            });
-        }, 2000);
+    }
+    parseNumber(string) {
+        return parseInt(string, 16);
+    }
+    parseDate(dateString) {
+        return new Date(parseInt(dateString, 16) * 1000);
     }
     ngAfterViewInit() {
     }
 };
+BlockChainInfoComponent.ctorParameters = () => [
+    { type: src_app_services_block_chain_service__WEBPACK_IMPORTED_MODULE_4__["BlockChainService"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('scrollable', { static: false })
 ], BlockChainInfoComponent.prototype, "scrollable", void 0);
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], BlockChainInfoComponent.prototype, "blocks", void 0);
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], BlockChainInfoComponent.prototype, "selectedBlockHeight", void 0);
 BlockChainInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-block-chain-info',
@@ -2318,21 +2377,23 @@ __webpack_require__.r(__webpack_exports__);
 const ChineseTranslations = {
     '2fa-verification': '2FA验证',
     '6-digit-code': '6位数代码',
-    'all-tickets': '(t) All Tickets',
+    'all-tickets': '入票总数',
     'available': '可用余额',
     'balance': '余额',
     'bind-2fa': '绑定2FA',
     'block': '封锁',
     'buy': '购买',
     'buy-tickets': '购买 {0} 票',
-    'buying-tickets': '购票',
+    'buying-tickets': '购买彩票',
     'buying-tickets-etc': '在主页上，您可以使用可用的资金购买彩票。购买彩票后，您必须等到满足奖池要求之后才能选出中奖者。',
     'confirm': '确认',
     'connect-2fa': '连接2FA',
     'copy-address': '复制地址',
+    'copy-account': '复制帐户',
     'copy-code': '复制代码',
+    'copy-memo': '复制备忘录',
     'create-new-account': '建立新帐户',
-    'current-tickets': '(t) Current Tickets',
+    'current-tickets': '当前票',
     'current-users-entered': '当前加入的玩家',
     'deposit': '存款',
     'depositing-any-other-asset-here-may-result-in-permanent-loss': '在此处存放任何其他资产可能会导致永久损失。',
@@ -2387,20 +2448,22 @@ const ChineseTranslations = {
     'sign-up-for-an-anonymous-acount-and-start-playing-today': '立即注册一个匿名帐户并开始游戏!',
     'submit-withdrawal': '申请提款',
     'success': '成功',
+    'target-block-height': '目标封锁高度',
     'ticket': '彩票',
-    'ticket-entry-limit-reached': '(t) Ticket Entry Limit Reached',
-    'total-tickets': '总入票数',
+    'ticket-entry-limit-reached': '达到入项限制',
+    'total-tickets': '区块数量',
     'try-again-next-time': '再试一次',
     'username': '用户名',
     'win': '赢得',
-    'winning': '赢额',
-    'winning-etc': '当您赢钱时，您的奖金将自动添加到您的可用余额中。',
+    'winning': '中奖',
+    'winning-etc': '当您中奖时，您的奖金将自动添加到您的可用余额中。',
     'withdraw': '提款',
     'withdrawing-funds': '提取资金',
     'withdrawing-funds-etc': '您可以通过“提款”页面提款。请按照说明进行操作，并确保验证您的提款地址。',
     'withdraw-process-usually-takes-about-1-hour-or-less': '提款过程通常需要大约1小时或更短。',
     'withdrawal-address': '提款地址',
     'withdrawal-amount': '提款金额',
+    'work-in-progress': '工作正在进行中',
     'you-won': '你赢了！',
     'your-account-is-now-bound': '您的帐户现已绑定。'
 };
@@ -2435,7 +2498,9 @@ const EnglishTranslations = {
     'confirm': 'Confirm',
     'connect-2fa': 'Connect 2FA',
     'copy-address': 'Copy Address',
+    'copy-account': 'Copy Account',
     'copy-code': 'Copy Code',
+    'copy-memo': 'Copy Memo',
     'create-new-account': 'Create New Account',
     'current-tickets': 'Current Tickets',
     'deposit': 'Deposit',
@@ -2490,6 +2555,7 @@ const EnglishTranslations = {
     'sign-up-for-an-anonymous-acount-and-start-playing-today': 'Sign up for an anonymous account and start playing today',
     'submit-withdrawal': 'Submit Withdrawal',
     'success': 'Success',
+    'target-block-height': 'Target Block Height',
     'ticket': 'Ticket',
     'ticket-entry-limit-reached': 'Ticket Entry Limit Reached',
     'total-tickets': 'Total Tickets',
@@ -2504,6 +2570,7 @@ const EnglishTranslations = {
     'withdraw-process-usually-takes-about-1-hour-or-less': 'Withdraw process usually takes about 1 hour or less',
     'withdrawal-address': 'Withdrawal Address',
     'withdrawal-amount': 'Withdrawal Amount',
+    'work-in-progress': 'Work in Progress',
     'you-won': 'YOU WON!',
     'your-account-is-now-bound': 'Your account is now bound'
 };
@@ -3336,6 +3403,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _payout_payout_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../payout/payout.component */ "./src/app/payout/payout.component.ts");
 /* harmony import */ var _how_to_play_how_to_play_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../how-to-play/how-to-play.component */ "./src/app/how-to-play/how-to-play.component.ts");
 /* harmony import */ var _my_entries_my_entries_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../my-entries/my-entries.component */ "./src/app/my-entries/my-entries.component.ts");
+/* harmony import */ var _account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../account/authguard.guard */ "./src/app/account/authguard.guard.ts");
+
 
 
 
@@ -3371,27 +3440,33 @@ const routes = [
     // Account
     {
         path: 'deposit',
-        component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"]
+        component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'withdraw',
-        component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"]
+        component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'account-history',
-        component: _account_account_history_account_history_component__WEBPACK_IMPORTED_MODULE_10__["AccountHistoryComponent"]
+        component: _account_account_history_account_history_component__WEBPACK_IMPORTED_MODULE_10__["AccountHistoryComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: '2fa',
-        component: _account_two_factor_two_factor_component__WEBPACK_IMPORTED_MODULE_8__["TwoFactorComponent"]
+        component: _account_two_factor_two_factor_component__WEBPACK_IMPORTED_MODULE_8__["TwoFactorComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'payout-history',
-        component: _payout_payout_component__WEBPACK_IMPORTED_MODULE_11__["PayoutComponent"]
+        component: _payout_payout_component__WEBPACK_IMPORTED_MODULE_11__["PayoutComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'my-entries',
-        component: _my_entries_my_entries_component__WEBPACK_IMPORTED_MODULE_13__["MyEntriesComponent"]
+        component: _my_entries_my_entries_component__WEBPACK_IMPORTED_MODULE_13__["MyEntriesComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'how-to-play',
@@ -3488,9 +3563,11 @@ let AuthService = class AuthService {
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
         this.user = {
             userName: null,
-            amountAvailable: 1000000,
-            block: 376123948123948,
-            token: null
+            amountAvailable: null,
+            token: null,
+            blockHeight: null,
+            depositAccount: null,
+            memo: null
         };
     }
     login(loginObj) {
@@ -3513,6 +3590,8 @@ let AuthService = class AuthService {
                 if (results && results.msg) {
                     this.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
                     this.user.token = results.msg.token;
+                    this.user.memo = results.msg.memo;
+                    this.user.depositAccount = results.msg.depositaccount;
                 }
                 this.isLoggedIn = true;
                 return this.user;
@@ -3559,11 +3638,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlockChainService", function() { return BlockChainService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
 
 
 let BlockChainService = class BlockChainService {
-    constructor() { }
+    constructor(httpClient) {
+        this.httpClient = httpClient;
+        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].etherscanUrl;
+        this.apiKey = '4Z4DB6ZJBZ3E49XWIXJBY3ED44P5ZDDPHI';
+        this.getLatestBlockSub = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subscription"]();
+        this.getBlockSub = new rxjs__WEBPACK_IMPORTED_MODULE_4__["Subscription"]();
+        this.rollingLog = [];
+        this.currentBlock = null;
+        this.singleRow = false;
+        this.startLog();
+    }
+    startLog() {
+        this.singleRow = false;
+        if (!(this.rollingLog && this.rollingLog.length)) {
+            if (this.getLatestBlockSub) {
+                this.getLatestBlockSub.unsubscribe();
+            }
+            this.getLatestBlockSub = this.getLatestBlock().subscribe((response) => {
+                this.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+                if (this.getBlockSub) {
+                    this.getBlockSub.unsubscribe();
+                }
+                this.getBlockSub = this.getSpecificBlock(response.result)
+                    .subscribe((response) => {
+                    if (response.result) {
+                        this.rollingLog.push(response.result);
+                    }
+                });
+            });
+        }
+        if (!this.rollingInterval) {
+            this.rollingInterval = setInterval(() => {
+                if (this.getBlockSub) {
+                    this.getBlockSub.unsubscribe();
+                }
+                this.getBlockSub = this.getSpecificBlock('0x' + this.currentBlock)
+                    .subscribe((response) => {
+                    if (response.result) {
+                        this.currentBlock = (parseInt(this.currentBlock, 16) + 1).toString(16);
+                        this.rollingLog.push(response.result);
+                        if (this.rollingLog.length > 20) {
+                            this.rollingLog.shift();
+                        }
+                    }
+                });
+            }, 2000);
+        }
+    }
+    stopLog() {
+        clearInterval(this.rollingInterval);
+        this.rollingInterval = null;
+        this.rollingLog = [];
+    }
+    setSingleBlock(blockNumber) {
+        this.singleRow = true;
+        console.log(blockNumber);
+    }
+    getLatestBlock() {
+        const url = `${this.url}?module=proxy&action=eth_blockNumber&apikey=${this.apiKey}`;
+        return this.httpClient.get(url);
+    }
+    getSpecificBlock(tagNumber) {
+        const url = `${this.url}?module=proxy&action=eth_getBlockByNumber&tag=${tagNumber}&boolean=true&apikey=${this.apiKey}`;
+        return this.httpClient.get(url);
+    }
 };
+BlockChainService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
 BlockChainService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
 ], BlockChainService);
@@ -3647,6 +3799,7 @@ let LotteryService = class LotteryService {
                     case '0':
                         break;
                     case '1':
+                        this.authService.user.blockHeight = msg.targetblockheight;
                         break;
                     case '2':
                         clearInterval(this.checkStatusInterval);
@@ -4145,7 +4298,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    url: 'http://api.arowpay.io/lotto'
+    url: 'http://api.arowpay.io/lotto',
+    etherscanUrl: 'https://api-cn.etherscan.com/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file
