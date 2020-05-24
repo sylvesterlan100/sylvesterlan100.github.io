@@ -471,7 +471,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-in' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" (dblclick)=\"lotteryService.currentLotteryInfo.countDown=1\">\r\n            0:{{lotteryService.currentLotteryInfo.countDown | number:'2.0' }}s\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.first.isDrawing}\" >\r\n                <app-winner-panel [place]=\"1\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.first\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.second.isDrawing}\">\r\n                <app-winner-panel [place]=\"2\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.second\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.third.isDrawing}\">\r\n                <app-winner-panel [place]=\"3\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.third\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-in' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" (dblclick)=\"lotteryService.currentLotteryInfo.countDown=1\">\r\n            <!-- 0:{{lotteryService.currentLotteryInfo.countDown | number:'2.0' }}s -->\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.first.isDrawing}\" >\r\n                <app-winner-panel [place]=\"1\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.first\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.second.isDrawing}\">\r\n                <app-winner-panel [place]=\"2\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.second\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.third.isDrawing}\">\r\n                <app-winner-panel [place]=\"3\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.third\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n";
     /***/
   },
 
@@ -491,7 +491,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"footer\">\r\n    <div class=\"block-info\" *ngIf=\"authService.user && authService.user.blockHeight\">\r\n        {{'target-block-height' | translate}} {{authService.user.blockHeight}}\r\n    </div>\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"footer\">\r\n    <div class=\"block-info\" *ngIf=\"authService.user && lotteryService.currentLotteryInfo.targetBlockHeight\">\r\n        {{'target-block-height' | translate}} {{lotteryService.currentLotteryInfo.targetBlockHeight}}\r\n    </div>\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -551,7 +551,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{authService.user.blockHeight}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{lotteryService.currentLotteryInfo.targetBlockHeight}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>";
     /***/
   },
 
@@ -4102,6 +4102,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'balance': '余额',
       'bind-2fa': '绑定2FA',
       'block': '封锁',
+      'blocks': '封锁',
       'buy': '购买',
       'buy-tickets': '购买 {0} 票',
       'buying-tickets': '购买彩票',
@@ -4224,6 +4225,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'balance': 'Balance',
       'bind-2fa': 'Bind 2FA',
       'block': 'Block',
+      'blocks': 'Blocks',
       'buy': 'Buy',
       'buy-tickets': 'Buy {0} tickets',
       'buying-tickets': 'Buying Tickets',
@@ -4367,11 +4369,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! src/app/services/lottery.service */
     "./src/app/services/lottery.service.ts");
+    /* harmony import */
+
+
+    var src_app_services_block_chain_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/services/block-chain.service */
+    "./src/app/services/block-chain.service.ts");
+    /* harmony import */
+
+
+    var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/services/auth.service */
+    "./src/app/services/auth.service.ts");
 
     var DrawingInfoComponent = /*#__PURE__*/function () {
-      function DrawingInfoComponent(lotteryService) {
+      function DrawingInfoComponent(authService, blockchainService, lotteryService) {
         _classCallCheck(this, DrawingInfoComponent);
 
+        this.authService = authService;
+        this.blockchainService = blockchainService;
         this.lotteryService = lotteryService;
         this.myWinningsIncrement = 0;
         this.incrementInterval = 500;
@@ -4408,6 +4424,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }, this.incrementInterval);
         }
       }, {
+        key: "getRemainingBlocks",
+        value: function getRemainingBlocks() {
+          if (this.blockchainService.rollingLog && this.blockchainService.rollingLog.length && this.lotteryService.currentLotteryInfo.targetBlockHeight) {
+            var count = parseInt(this.lotteryService.currentLotteryInfo.targetBlockHeight, 10) - parseInt(this.blockchainService.rollingLog[0].number, 16);
+
+            if (count < 0) {
+              return 0;
+            }
+
+            return count;
+          } else return '....';
+        }
+      }, {
         key: "finalizeWinning",
         value: function finalizeWinning() {
           var winners = this.lotteryService.currentLotteryInfo.winners;
@@ -4427,6 +4456,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     DrawingInfoComponent.ctorParameters = function () {
       return [{
+        type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
+      }, {
+        type: src_app_services_block_chain_service__WEBPACK_IMPORTED_MODULE_3__["BlockChainService"]
+      }, {
         type: src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_2__["LotteryService"]
       }];
     };
@@ -4907,6 +4940,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var lotteryStatus = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '0';
       var currentEntries = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
       var myEntries = arguments.length > 4 ? arguments[4] : undefined;
+      var targetBlockHeight = arguments.length > 5 ? arguments[5] : undefined;
 
       _classCallCheck(this, PrizePool);
 
@@ -4916,6 +4950,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.countDown = 60;
       this.gameId = gameId;
       this.myEntries = myEntries;
+      this.targetBlockHeight = targetBlockHeight;
       this.allEntries = [];
       this.currentEntries = currentEntries;
       this.winners = {
@@ -5820,7 +5855,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+      imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, {
+        useHash: true
+      })],
       exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })], AppRoutingModule);
     /***/
@@ -6342,18 +6379,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               entry.userName = ticket.user;
               entry.start = parseInt(ticket.start, 10);
               entry.end = parseInt(ticket.end, 10);
+              entry.count = entry.end - entry.start + 1;
               return entry;
             });
           }
 
           if (!_this18.lotteryObj[prizePool]) {
-            _this18.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries);
+            _this18.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
             currentStatus = _this18.lotteryObj[prizePool].lotteryStatus;
             _this18.lotteryObj[prizePool].gameId = gameId;
             _this18.lotteryObj[prizePool].currentEntries = currentEntries;
             _this18.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
             _this18.lotteryObj[prizePool].myEntries = myEntries;
+            _this18.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -6362,7 +6401,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case '1':
-                _this18.authService.user.blockHeight = msg.targetblockheight;
                 break;
 
               case '2':
