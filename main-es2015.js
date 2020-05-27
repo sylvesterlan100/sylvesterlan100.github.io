@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{authService.isLoggedIn ? authService.user.amountAvailable : 0}}\r\n            POST</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'ticket-entry-limit-reached' | translate | uppercase}}\r\n        </div>\r\n    </ng-container>\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            [routerLink]=\"['/login']\">\r\n            {{'login-register-to-play' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{authService.isLoggedIn ? authService.user.amountAvailable : 0}}\r\n            POST</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            [routerLink]=\"['/login']\">\r\n            {{'login-register-to-play' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -305,7 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'now-drawing-winners') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\" (dblclick)=\"lotteryService.currentLotteryInfo.countDown=1\">\r\n            <!-- 0:{{lotteryService.currentLotteryInfo.countDown | number:'2.0' }}s -->\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.first.isDrawing}\" >\r\n                <app-winner-panel [place]=\"1\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.first\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.second.isDrawing}\">\r\n                <app-winner-panel [place]=\"2\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.second\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.third.isDrawing}\">\r\n                <app-winner-panel [place]=\"3\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.third\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'ticket-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\" (dblclick)=\"lotteryService.currentLotteryInfo.countDown=1\">\r\n            <!-- 0:{{lotteryService.currentLotteryInfo.countDown | number:'2.0' }}s -->\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n            \r\n            <div class=\"small\" *ngIf=\"lotteryService.currentLotteryInfo.targetBlockHeight\">\r\n                {{'target-block-height' | translate}}: {{lotteryService.currentLotteryInfo.targetBlockHeight}}\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.first.isDrawing}\" >\r\n                <app-winner-panel [place]=\"1\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.first\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.second.isDrawing}\">\r\n                <app-winner-panel [place]=\"2\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.second\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.third.isDrawing}\">\r\n                <app-winner-panel [place]=\"3\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.third\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"block-info\" *ngIf=\"authService.user && lotteryService.currentLotteryInfo.targetBlockHeight\">\r\n        {{'target-block-height' | translate}} {{lotteryService.currentLotteryInfo.targetBlockHeight}}\r\n    </div>\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div> \r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -370,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"payout-history-item\">\n    <div class=\"item-row info-row\"> \n        <div>{{payoutItem.userName}}</div>\n        <div class=\"amount\">\n            <div class=\"place-icon\" [ngClass]=\"[place]\"></div>\n            {{payoutItem.amount}}\n            {{payoutItem.currency}}\n        </div>\n    </div>\n    <div class=\"item-row info-two-row\">\n        <div>{{payoutItem.date | date: 'MM-dd-yyyy H:mm'}}</div>\n        <div>\n            {{'block'| translate}}\n            {{payoutItem.block}}\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"payout-history-item\">\n    <div class=\"item-row info-row\"> \n        <div>{{payoutItem.user}}</div>\n        <div class=\"amount\">\n            <div class=\"place-icon\" [ngClass]=\"[place]\"></div>\n            {{payoutItem.prize}}\n            POST\n        </div>\n    </div>\n    <div class=\"item-row info-two-row\">\n        <div>{{payoutItem.time | date: 'MM-dd-yyyy H:mm'}}</div>\n        <div>\n            {{'ticket'| translate}}\n            #{{payoutItem.ticket}}\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -383,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'payouts' | translate | uppercase\"></app-account-header>\n<div class=\"payout\">\n    <app-payout-history-item [payoutItem]=\"item\" [place]=\"getPlace(item.amount)\" *ngFor=\"let item of payoutData\"></app-payout-history-item>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'payouts' | translate | uppercase\"></app-account-header>\n<div class=\"payout\"\ninfiniteScroll\n[infiniteScrollDistance]=\"1\"\n[infiniteScrollThrottle]=\"50\"\n(scrolled)=\"onScroll()\"\n[scrollWindow]=\"false\">\n    <app-payout-history-item \n        [payoutItem]=\"item\" \n        [place]=\"getPlace(item.prize)\" \n        *ngFor=\"let item of payoutData\"></app-payout-history-item>\n</div>");
 
 /***/ }),
 
@@ -660,15 +660,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountHistoryComponent", function() { return AccountHistoryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/lottery.service */ "./src/app/services/lottery.service.ts");
+/* harmony import */ var src_app_services_account_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/account.service */ "./src/app/services/account.service.ts");
+
+
 
 
 let AccountHistoryComponent = class AccountHistoryComponent {
-    constructor() {
+    constructor(lotteryService, accountService) {
+        this.lotteryService = lotteryService;
+        this.accountService = accountService;
         this.typeMap = {
-            '0': 'deposit',
-            '1': 'withdraw',
-            '2': 'buy',
-            '3': 'win'
+            '1': 'buy',
+            '2': 'withdraw',
+            '3': 'deposit',
+            '4': 'win'
         };
         this.history = [
             {
@@ -706,8 +712,13 @@ let AccountHistoryComponent = class AccountHistoryComponent {
         ];
     }
     ngOnInit() {
+        this.accountService.getAccountActivity(1, 20);
     }
 };
+AccountHistoryComponent.ctorParameters = () => [
+    { type: src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_2__["LotteryService"] },
+    { type: src_app_services_account_service__WEBPACK_IMPORTED_MODULE_3__["AccountService"] }
+];
 AccountHistoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-account-history',
@@ -1868,20 +1879,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm2015/select.js");
 /* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
 /* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
-/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
-/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
-/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
-/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
-/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
-/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
-/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
-/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
-/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
-/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
-/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
-/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
+/* harmony import */ var ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-infinite-scroll */ "./node_modules/ngx-infinite-scroll/modules/ngx-infinite-scroll.js");
+/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
+/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
+/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
+/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
+/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
+/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
+/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
+/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
+/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
+/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
+/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
+/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
+
 
 
 
@@ -1910,45 +1923,47 @@ let AppCommonModule = class AppCommonModule {
 AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_7__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_8__["AnimatedBackgroundComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_16__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedTicketsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedConfettiComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedCoinsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_20__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_12__["BuyTicketInputComponent"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_14__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_9__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_11__["PoolSelectComponent"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_10__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_15__["WinnerPanelComponent"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_8__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_9__["AnimatedBackgroundComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedQuestionComponent"],
+            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedTicketsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedConfettiComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedCoinsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_21__["BlockChainInfoComponent"],
+            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_13__["BuyTicketInputComponent"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_15__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_10__["MainHeaderComponent"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_12__["PoolSelectComponent"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_11__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_16__["WinnerPanelComponent"],
         ],
         imports: [
             ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__["ClipboardModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_7__["InfiniteScrollModule"],
             _angular_material_select__WEBPACK_IMPORTED_MODULE_4__["MatSelectModule"],
             _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__["MatSliderModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"]
+            _angular_router__WEBPACK_IMPORTED_MODULE_14__["RouterModule"]
         ],
         exports: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_7__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_8__["AnimatedBackgroundComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedCoinsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedConfettiComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_16__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedTicketsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_20__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_12__["BuyTicketInputComponent"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_8__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_9__["AnimatedBackgroundComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedCoinsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedConfettiComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedQuestionComponent"],
+            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedTicketsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_21__["BlockChainInfoComponent"],
+            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_13__["BuyTicketInputComponent"],
             ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__["ClipboardModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_14__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_9__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_11__["PoolSelectComponent"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_10__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_15__["WinnerPanelComponent"]
+            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_7__["InfiniteScrollModule"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_15__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_10__["MainHeaderComponent"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_12__["PoolSelectComponent"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_14__["RouterModule"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_11__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_16__["WinnerPanelComponent"]
         ]
     })
 ], AppCommonModule);
@@ -2110,7 +2125,9 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
         this.amount = Math.ceil(numerator / 4 * (this.authService.user.amountAvailable > diff ? diff : this.authService.user.amountAvailable));
     }
     isWithinRatio(numerator) {
-        const percent = this.amount / this.authService.user.amountAvailable;
+        const diff = this.lotteryService.currentLotteryInfo.availablePrizePool - this.lotteryService.currentLotteryInfo.currentEntries;
+        var denoninator = this.authService.user.amountAvailable > diff ? diff : this.authService.user.amountAvailable;
+        const percent = this.amount / denoninator;
         if (percent === 0) {
             return false;
         }
@@ -2592,7 +2609,7 @@ const EnglishTranslations = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".drawing-info {\n  text-align: center;\n  color: white;\n  letter-spacing: 1px;\n}\n.drawing-info .heading {\n  white-space: pre-wrap;\n  font-weight: 400;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  line-height: 28px;\n  height: 70px;\n  font-size: 27px;\n  margin-bottom: 22px;\n}\n.drawing-info .heading.small {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding-top: 6px;\n  margin-bottom: 0;\n}\n.drawing-info .subtitle {\n  font-size: 18px;\n}\n.drawing-info .value {\n  font-size: 50px;\n  line-height: 46px;\n}\n.drawing-info .winnings-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  overflow: hidden;\n  width: 100%;\n}\n.drawing-info .winnings-container .winning-panel {\n  margin-top: 8px;\n  padding: 0 16px;\n  transform: translateX(0);\n  transition: transform 1s;\n}\n.drawing-info .winnings-container .winning-panel.isHidden {\n  transform: translateX(100vw);\n}\n.drawing-info .winnings-container .hideText {\n  visibility: hidden;\n}\n.drawing-info .my-winnings {\n  padding: 12px 8px;\n  background-color: #2a2d32;\n  display: flex;\n  justify-content: space-between;\n  height: 65px;\n  border-radius: 16px;\n}\n.drawing-info .my-winnings .winning-icon {\n  height: 100%;\n  width: 60px;\n}\n.drawing-info .my-winnings .winning-icon img {\n  height: 100%;\n}\n.drawing-info .my-winnings .label {\n  color: white;\n  font-size: 14px;\n}\n.drawing-info .my-winnings .amount {\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZHJhd2luZy1pbmZvXFxkcmF3aW5nLWluZm8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0FDQ0o7QURDSTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDQ1o7QURHSTtFQUNJLGVBQUE7QUNEUjtBRElJO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDRlI7QURLSTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FDSFI7QURLUTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0Esd0JBQUE7RUFDQSx3QkFBQTtBQ0haO0FES1k7RUFDSSw0QkFBQTtBQ0hoQjtBRE9RO0VBQ0Usa0JBQUE7QUNMVjtBRFVJO0VBQ0ksaUJBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQ1JSO0FEVVE7RUFDSSxZQUFBO0VBQ0EsV0FBQTtBQ1JaO0FEU1k7RUFDSSxZQUFBO0FDUGhCO0FEV1E7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ1RaO0FEV1E7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQ1RaIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vZHJhd2luZy1pbmZvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdpbmctaW5mbyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cclxuICAgIC5oZWFkaW5nIHtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjhweDtcclxuICAgICAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAyN3B4O1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDIycHg7XHJcblxyXG4gICAgICAgICYuc21hbGwge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogNnB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuc3VidGl0bGUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAudmFsdWUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogNTBweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogNDZweDtcclxuICAgIH1cclxuXHJcbiAgICAud2lubmluZ3MtY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICAgICAgICAud2lubmluZy1wYW5lbCB7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDhweDtcclxuICAgICAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG4gICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XHJcbiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAxcztcclxuXHJcbiAgICAgICAgICAgICYuaXNIaWRkZW4ge1xyXG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmhpZGVUZXh0IHtcclxuICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC5teS13aW5uaW5ncyB7XHJcbiAgICAgICAgcGFkZGluZzogMTJweCA4cHg7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBoZWlnaHQ6IDY1cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuXHJcbiAgICAgICAgLndpbm5pbmctaWNvbiB7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgd2lkdGg6IDYwcHg7XHJcbiAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5sYWJlbCB7XHJcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuYW1vdW50IHtcclxuICAgICAgICAgICAgY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmRyYXdpbmctaW5mbyB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IHdoaXRlO1xuICBsZXR0ZXItc3BhY2luZzogMXB4O1xufVxuLmRyYXdpbmctaW5mbyAuaGVhZGluZyB7XG4gIHdoaXRlLXNwYWNlOiBwcmUtd3JhcDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcbiAgbGluZS1oZWlnaHQ6IDI4cHg7XG4gIGhlaWdodDogNzBweDtcbiAgZm9udC1zaXplOiAyN3B4O1xuICBtYXJnaW4tYm90dG9tOiAyMnB4O1xufVxuLmRyYXdpbmctaW5mbyAuaGVhZGluZy5zbWFsbCB7XG4gIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gIHBhZGRpbmctdG9wOiA2cHg7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG4uZHJhd2luZy1pbmZvIC5zdWJ0aXRsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIHtcbiAgZm9udC1zaXplOiA1MHB4O1xuICBsaW5lLWhlaWdodDogNDZweDtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxMDAlO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsIHtcbiAgbWFyZ2luLXRvcDogOHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsLmlzSGlkZGVuIHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciAuaGlkZVRleHQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyB7XG4gIHBhZGRpbmc6IDEycHggOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGhlaWdodDogNjVweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC53aW5uaW5nLWljb24ge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiA2MHB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLndpbm5pbmctaWNvbiBpbWcge1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC5hbW91bnQge1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".drawing-info {\n  text-align: center;\n  color: white;\n  letter-spacing: 1px;\n}\n.drawing-info .heading {\n  white-space: pre-wrap;\n  font-weight: 400;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  line-height: 28px;\n  height: 70px;\n  font-size: 27px;\n  margin-bottom: 22px;\n}\n.drawing-info .heading.small {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding-top: 6px;\n  margin-bottom: 0;\n}\n.drawing-info .subtitle {\n  font-size: 18px;\n}\n.drawing-info .value {\n  font-size: 50px;\n  line-height: 46px;\n}\n.drawing-info .value .small {\n  font-weight: 300;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.drawing-info .winnings-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  overflow: hidden;\n  width: 100%;\n}\n.drawing-info .winnings-container .winning-panel {\n  margin-top: 8px;\n  padding: 0 16px;\n  transform: translateX(0);\n  transition: transform 1s;\n}\n.drawing-info .winnings-container .winning-panel.isHidden {\n  transform: translateX(100vw);\n}\n.drawing-info .winnings-container .hideText {\n  visibility: hidden;\n}\n.drawing-info .my-winnings {\n  padding: 12px 8px;\n  background-color: #2a2d32;\n  display: flex;\n  justify-content: space-between;\n  height: 65px;\n  border-radius: 16px;\n}\n.drawing-info .my-winnings .winning-icon {\n  height: 100%;\n  width: 60px;\n}\n.drawing-info .my-winnings .winning-icon img {\n  height: 100%;\n}\n.drawing-info .my-winnings .label {\n  color: white;\n  font-size: 14px;\n}\n.drawing-info .my-winnings .amount {\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZHJhd2luZy1pbmZvXFxkcmF3aW5nLWluZm8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0FDQ0o7QURDSTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDQ1o7QURHSTtFQUNJLGVBQUE7QUNEUjtBRElJO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDRlI7QURJUTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0FDRlo7QURNSTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FDSlI7QURNUTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0Esd0JBQUE7RUFDQSx3QkFBQTtBQ0paO0FETVk7RUFDSSw0QkFBQTtBQ0poQjtBRFFRO0VBQ0Usa0JBQUE7QUNOVjtBRFdJO0VBQ0ksaUJBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQ1RSO0FEV1E7RUFDSSxZQUFBO0VBQ0EsV0FBQTtBQ1RaO0FEVVk7RUFDSSxZQUFBO0FDUmhCO0FEWVE7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ1ZaO0FEWVE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQ1ZaIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vZHJhd2luZy1pbmZvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdpbmctaW5mbyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cclxuICAgIC5oZWFkaW5nIHtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjhweDtcclxuICAgICAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAyN3B4O1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDIycHg7XHJcblxyXG4gICAgICAgICYuc21hbGwge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogNnB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuc3VidGl0bGUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAudmFsdWUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogNTBweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogNDZweDtcclxuXHJcbiAgICAgICAgLnNtYWxsIHtcclxuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDMwMDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tdG9wOiAxNnB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAud2lubmluZ3MtY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICAgICAgICAud2lubmluZy1wYW5lbCB7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDhweDtcclxuICAgICAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG4gICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XHJcbiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAxcztcclxuXHJcbiAgICAgICAgICAgICYuaXNIaWRkZW4ge1xyXG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmhpZGVUZXh0IHtcclxuICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC5teS13aW5uaW5ncyB7XHJcbiAgICAgICAgcGFkZGluZzogMTJweCA4cHg7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBoZWlnaHQ6IDY1cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuXHJcbiAgICAgICAgLndpbm5pbmctaWNvbiB7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgd2lkdGg6IDYwcHg7XHJcbiAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5sYWJlbCB7XHJcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuYW1vdW50IHtcclxuICAgICAgICAgICAgY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmRyYXdpbmctaW5mbyB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IHdoaXRlO1xuICBsZXR0ZXItc3BhY2luZzogMXB4O1xufVxuLmRyYXdpbmctaW5mbyAuaGVhZGluZyB7XG4gIHdoaXRlLXNwYWNlOiBwcmUtd3JhcDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcbiAgbGluZS1oZWlnaHQ6IDI4cHg7XG4gIGhlaWdodDogNzBweDtcbiAgZm9udC1zaXplOiAyN3B4O1xuICBtYXJnaW4tYm90dG9tOiAyMnB4O1xufVxuLmRyYXdpbmctaW5mbyAuaGVhZGluZy5zbWFsbCB7XG4gIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gIHBhZGRpbmctdG9wOiA2cHg7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG4uZHJhd2luZy1pbmZvIC5zdWJ0aXRsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIHtcbiAgZm9udC1zaXplOiA1MHB4O1xuICBsaW5lLWhlaWdodDogNDZweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIC5zbWFsbCB7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWFyZ2luLXRvcDogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxMDAlO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsIHtcbiAgbWFyZ2luLXRvcDogOHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsLmlzSGlkZGVuIHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciAuaGlkZVRleHQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyB7XG4gIHBhZGRpbmc6IDEycHggOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGhlaWdodDogNjVweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC53aW5uaW5nLWljb24ge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiA2MHB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLndpbm5pbmctaWNvbiBpbWcge1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC5hbW91bnQge1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -3246,12 +3263,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/payout.service */ "./src/app/services/payout.service.ts");
+/* harmony import */ var _services_lottery_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/lottery.service */ "./src/app/services/lottery.service.ts");
+
 
 
 
 let PayoutComponent = class PayoutComponent {
-    constructor(payoutService) {
+    constructor(lotteryService, payoutService) {
+        this.lotteryService = lotteryService;
         this.payoutService = payoutService;
+        this.pageNumber = 1;
         this.payoutData = [];
         this.placeMap = {
             first: 0,
@@ -3260,13 +3281,24 @@ let PayoutComponent = class PayoutComponent {
         };
     }
     ngOnInit() {
-        this.payoutService.getPayoutHistory()
-            .subscribe(data => {
-            this.payoutData = data;
-            this.payoutData.forEach(item => {
-                this.setPlaceMap(item.amount);
+        this.initialize();
+    }
+    initialize() {
+        if (this.lotteryService && this.lotteryService.lastGameId) {
+            this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.pageNumber, 100)
+                .subscribe((data) => {
+                this.pageNumber++;
+                this.payoutData = data.msg;
+                this.payoutData.forEach(item => {
+                    this.setPlaceMap(item.prize);
+                });
             });
-        });
+        }
+        else {
+            setTimeout(() => {
+                this.initialize();
+            }, 100);
+        }
     }
     getPlace(amount) {
         switch (amount) {
@@ -3300,8 +3332,23 @@ let PayoutComponent = class PayoutComponent {
             this.placeMap.third = amount;
         }
     }
+    onScroll() {
+        // this.payoutService.getPayoutHistory(
+        //   this.lotteryService.lastGameId, 
+        //   this.pageNumber, 
+        //   25
+        // )
+        //   .subscribe((data: any) => {
+        //     this.pageNumber ++;
+        //     this.payoutData = data.msg;
+        //     this.payoutData.forEach(item => {
+        //       this.setPlaceMap(item.prize);
+        //     })
+        //   });
+    }
 };
 PayoutComponent.ctorParameters = () => [
+    { type: _services_lottery_service__WEBPACK_IMPORTED_MODULE_3__["LotteryService"] },
     { type: _services_payout_service__WEBPACK_IMPORTED_MODULE_2__["PayoutService"] }
 ];
 PayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -3503,8 +3550,7 @@ const routes = [
     },
     {
         path: 'payout-history',
-        component: _payout_payout_component__WEBPACK_IMPORTED_MODULE_11__["PayoutComponent"],
-        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+        component: _payout_payout_component__WEBPACK_IMPORTED_MODULE_11__["PayoutComponent"]
     },
     {
         path: 'my-entries',
@@ -3551,13 +3597,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
 
 
 
 let AccountService = class AccountService {
-    constructor() {
+    constructor(authService, httpClient) {
+        this.authService = authService;
+        this.httpClient = httpClient;
         this.showAccountSettings = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
         this.openOnReturn = false;
+        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
     }
     getShowSettingsObs() {
         return this.showAccountSettings.asObservable();
@@ -3565,7 +3620,21 @@ let AccountService = class AccountService {
     setAccountSettings(show) {
         this.showAccountSettings.next(show);
     }
+    getAccountActivity(page, offset) {
+        let options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        let request = new URLSearchParams();
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/account/activity`, request.toString(), options);
+    }
 };
+AccountService.ctorParameters = () => [
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
 AccountService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
 ], AccountService);
@@ -3888,6 +3957,7 @@ let LotteryService = class LotteryService {
         this.finishPendingProcess = (prizePool) => {
             const currentPrizePool = this.lotteryObj[prizePool];
             currentPrizePool.countDown = 60;
+            this.lastGameId = this.currentLotteryInfo.gameId;
             if (currentPrizePool.countDownInterval) {
                 clearInterval(currentPrizePool.countDownInterval);
             }
@@ -3902,6 +3972,21 @@ let LotteryService = class LotteryService {
         };
         this.startStatusCheckInterval();
     }
+    set lastGameId(value) {
+        if (value) {
+            this._lastGameId = value.toString();
+        }
+    }
+    get lastGameId() {
+        if (this._lastGameId) {
+            return this._lastGameId.toString();
+        }
+        if (this.currentLotteryInfo && this.currentLotteryInfo.gameId) {
+            return (parseInt(this.currentLotteryInfo.gameId, 10) - 1).toString();
+        }
+        return null;
+    }
+    ;
     startStatusCheckInterval() {
         if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -4125,142 +4210,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PayoutService", function() { return PayoutService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
 
 
 
 let PayoutService = class PayoutService {
-    constructor() { }
-    getPayoutHistory() {
-        return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])([
-            {
-                userName: 'SatoshiMotto',
-                amount: 1500,
-                currency: 'POST',
-                date: new Date(),
-                block: '12341238283848123'
-            },
-            {
-                userName: 'Checklosolo',
-                amount: 500,
-                currency: 'POST',
-                date: new Date(),
-                block: '16453483848123'
-            },
-            {
-                userName: 'JoeJohnsi21',
-                amount: 500,
-                currency: 'POST',
-                date: new Date(),
-                block: '369912382838486'
-            },
-            {
-                userName: 'WeirdAl55',
-                amount: 500,
-                currency: 'POST',
-                date: new Date(),
-                block: '23458384814567'
-            },
-            {
-                userName: 'WeirdAl55',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '34568283848534'
-            },
-            {
-                userName: 'WeirdAl55',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '23428384812323756'
-            },
-            {
-                userName: 'JackHughman1211',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '5134123413123'
-            },
-            {
-                userName: 'JackHughma23145',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '897783848123'
-            }, {
-                userName: 'JackHughma78788',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3412382838462344'
-            },
-            {
-                userName: 'JackHughman6151',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '8841238283848654'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            },
-            {
-                userName: 'JackHughman61054',
-                amount: 100,
-                currency: 'POST',
-                date: new Date(),
-                block: '3423828384578'
-            }
-        ]);
+    constructor(authService, httpClient) {
+        this.authService = authService;
+        this.httpClient = httpClient;
+        this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].url;
+    }
+    getPayoutHistory(gameid, page, offset) {
+        let options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+            // .set('token', this.authService.user.token)
+        };
+        let request = new URLSearchParams();
+        request.set('gameid', gameid);
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/game/getTopPrizeList`, request.toString(), options);
     }
 };
+PayoutService.ctorParameters = () => [
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+];
 PayoutService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
 ], PayoutService);
