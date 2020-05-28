@@ -51,7 +51,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'history' | translate\"></app-account-header>\n\n<div class=\"history\">\n    <div class=\"select-type\">\n        <div class=\"select-box\">\n            All Accounts\n        </div>\n    </div>\n    <div class=\"history-table\">\n        <ng-container *ngFor=\"let data of history\">\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\n                <div class=\"itemrow\">\n                    <div class=\"date\">{{data.date | date: 'MM-dd-yyyy H:mm'}}</div>\n                    <div class=\"type\">{{typeMap[data.type] | translate}}</div>\n                    <div class=\"amount\">{{data.amount}}</div>\n                    <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div>\n                </div>\n                <div>\n                   <div class=\"address\">\n                       <div class=\"label\">\n                           {{'from'|translate}}: \n                       </div>\n                       <div class=\"value\">\n                            {{data.fromAddress}}\n                       </div>\n                       <div class=\"copy\">\n                           <i class=\"icon-documentcopy\"></i>\n                       </div>\n                   </div>\n                   <div class=\"address\">\n                        <div class=\"label\">\n                            {{'TXID'|translate}}: \n                        </div>\n                        <div class=\"value\">\n                            {{data.txid}}\n                        </div>\n                        <div class=\"copy\">\n                            <i class=\"icon-documentcopy\"></i>\n                        </div>\n                   </div>\n                </div>\n                <div class=\"closerow\">\n                    <div class=\"icon\">\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\n                    </div>\n                </div>\n            </div>\n        </ng-container>\n    </div>\n\n    <div class=\"no-futher-activity\">\n        <div>\n            {{'no-further-activity' | translate}}\n        </div>\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'history' | translate\"></app-account-header>\n\n<div class=\"history\">\n    <div class=\"select-type\">\n        <div class=\"select-box\">\n            All Accounts\n        </div>\n    </div>\n    <div class=\"history-table\">\n        <ng-container *ngFor=\"let data of history\">\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\n                <div class=\"itemrow\">\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\n                    <div class=\"type\">{{typeMap[data.activity] | translate}}</div>\n                    <div class=\"amount\">\n                        {{data.amount}}\n                    </div>\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\n                </div>\n                <!-- <div>\n                   <div class=\"address\">\n                       <div class=\"label\">\n                           {{'from'|translate}}: \n                       </div>\n                       <div class=\"value\">\n                            {{data.fromAddress}}\n                       </div>\n                       <div class=\"copy\">\n                           <i class=\"icon-documentcopy\"></i>\n                       </div>\n                   </div>\n                   <div class=\"address\">\n                        <div class=\"label\">\n                            {{'TXID'|translate}}: \n                        </div>\n                        <div class=\"value\">\n                            {{data.txid}}\n                        </div>\n                        <div class=\"copy\">\n                            <i class=\"icon-documentcopy\"></i>\n                        </div>\n                   </div>\n                </div> -->\n                <!-- <div class=\"closerow\">\n                    <div class=\"icon\">\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\n                    </div>\n                </div> -->\n            </div>\n        </ng-container>\n    </div>\n\n    <div class=\"no-futher-activity\">\n        <div>\n            {{'no-further-activity' | translate}}\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -1259,47 +1259,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.lotteryService = lotteryService;
         this.accountService = accountService;
         this.typeMap = {
-          '1': 'buy',
-          '2': 'withdraw',
-          '3': 'deposit',
-          '4': 'win'
+          1: 'buy',
+          2: 'withdraw',
+          3: 'deposit',
+          4: 'win'
         };
-        this.history = [{
-          type: '0',
-          amount: 1000000,
-          date: new Date(),
-          fromAddress: 'dfsrfgDsd2SD41234sFd2aASFAFASDFASDaASDsdd3s4fas41df',
-          txid: '344FF23E41sdDAAf23s2DASDFASDFSDFASDFASDs123adsfAFadsf31341',
-          isExpanded: false
-        }, {
-          type: '3',
-          amount: 1000,
-          date: new Date(),
-          fromAddress: 'dfsrfgDsd2SD41234sFd2aASFAFASDFASDaASDsdd3s4fas41df',
-          txid: '3E41sdDAAf23s2DASDFASDFSDFASDFASDs123adsfAFadsf31341',
-          isExpanded: false
-        }, {
-          type: '2',
-          amount: 10,
-          date: new Date(),
-          fromAddress: 'Dsd2SD41234sFd2aASFAFASDFASDaASDsdd3s4fas41df',
-          txid: '344FF23E41sdDAAf23s2DASDFASDFSDFASDFASDs123adsfAFadsf31341',
-          isExpanded: false
-        }, {
-          type: '0',
-          amount: 1000000,
-          date: new Date(),
-          fromAddress: 'dfsrfgDsd2SD41234sFd2aASFAFASDFASDaASDsdd3s4fas41df',
-          txid: '3E41sdDAAf23s2DASDFASDFSDFASDFASDs123adsfAFadsf31341',
-          isExpanded: false
-        }];
+        this.history = [];
       }
 
       _createClass(AccountHistoryComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          var _this = this;
+
           this.accountService.getAccountActivity(1, 20).subscribe(function (data) {
-            console.log(data);
+            if (data.code === 200) {
+              _this.history = data.msg;
+            }
           });
         }
       }]);
@@ -1403,10 +1379,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AccountSettingsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this2 = this;
 
           this.accountService.getShowSettingsObs().subscribe(function (data) {
-            _this.showAccount = data;
+            _this2.showAccount = data;
           });
         }
       }, {
@@ -1643,7 +1619,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".deposit {\n  text-align: center;\n  padding: 0 16px 24px;\n}\n.deposit .qr-container {\n  margin-top: 12px;\n  height: 45vw;\n  max-height: 250px;\n}\n.deposit .qr-container .qr-code {\n  display: inline-block;\n  height: 100%;\n  border-radius: 12px;\n  background-color: white;\n}\n.deposit .qr-container .qr-code img {\n  height: 100%;\n}\n.deposit .btn-container {\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .btn-container button.app-button {\n  font-size: 15px !important;\n  flex-basis: 49%;\n}\n.deposit .message {\n  padding: 0 40px;\n  margin-top: 24px;\n  color: white;\n  font-size: 16px;\n  line-height: 18px;\n}\n.deposit .address {\n  word-break: break-all;\n  color: #ffcc00;\n  background-color: #2a2e31;\n  border: 2px solid #5d6164;\n  font-size: 16px;\n  border-radius: 12px;\n  padding: 12px;\n  margin: 12px 0;\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .icon-documentcopy {\n  margin-left: 12px;\n}\n.deposit .amount {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n  color: #ffcc00;\n}\n.deposit .amount .available {\n  color: white;\n}\n.deposit .link {\n  margin-top: 24px;\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGRlcG9zaXRcXGRlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtBQ0NKO0FEQ0k7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0NSO0FEQVE7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDRVo7QUREWTtFQUNJLFlBQUE7QUNHaEI7QURFSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtBQ0FSO0FERVE7RUFDSSwwQkFBQTtFQUNBLGVBQUE7QUNBWjtBRElJO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQ0ZSO0FES0k7RUFDSSxxQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7QUNIUjtBRE1JO0VBQ0ksaUJBQUE7QUNKUjtBRE9JO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FDTFI7QURNUTtFQUNJLFlBQUE7QUNKWjtBRFFJO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtBQ05SIiwiZmlsZSI6InNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L2RlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZGVwb3NpdCB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nOiAwIDE2cHggMjRweDtcclxuICAgIFxyXG4gICAgLnFyLWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICBoZWlnaHQ6IDQ1dnc7XHJcbiAgICAgICAgbWF4LWhlaWdodDogMjUwcHg7XHJcbiAgICAgICAgLnFyLWNvZGUge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLmJ0bi1jb250YWluZXIge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG5cclxuICAgICAgICBidXR0b24uYXBwLWJ1dHRvbiB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBmbGV4LWJhc2lzOiA0OSU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5tZXNzYWdlIHtcclxuICAgICAgICBwYWRkaW5nOiAwIDQwcHg7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjRweDtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAxOHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5hZGRyZXNzIHtcclxuICAgICAgICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XHJcbiAgICAgICAgY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmUzMTtcclxuICAgICAgICBib3JkZXI6IDJweCBzb2xpZCAjNWQ2MTY0O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMnB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDEycHg7XHJcbiAgICAgICAgbWFyZ2luOiAxMnB4IDA7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcblxyXG4gICAgLmljb24tZG9jdW1lbnRjb3B5IHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTJweDtcclxuICAgIH1cclxuXHJcbiAgICAuYW1vdW50IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIC5hdmFpbGFibGUge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5saW5rIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIH1cclxufSIsIi5kZXBvc2l0IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAwIDE2cHggMjRweDtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBoZWlnaHQ6IDQ1dnc7XG4gIG1heC1oZWlnaHQ6IDI1MHB4O1xufVxuLmRlcG9zaXQgLnFyLWNvbnRhaW5lciAucXItY29kZSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIgLnFyLWNvZGUgaW1nIHtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuLmRlcG9zaXQgLmJ0bi1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uZGVwb3NpdCAuYnRuLWNvbnRhaW5lciBidXR0b24uYXBwLWJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xuICBmbGV4LWJhc2lzOiA0OSU7XG59XG4uZGVwb3NpdCAubWVzc2FnZSB7XG4gIHBhZGRpbmc6IDAgNDBweDtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xufVxuLmRlcG9zaXQgLmFkZHJlc3Mge1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZTMxO1xuICBib3JkZXI6IDJweCBzb2xpZCAjNWQ2MTY0O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gIHBhZGRpbmc6IDEycHg7XG4gIG1hcmdpbjogMTJweCAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uZGVwb3NpdCAuaWNvbi1kb2N1bWVudGNvcHkge1xuICBtYXJnaW4tbGVmdDogMTJweDtcbn1cbi5kZXBvc2l0IC5hbW91bnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIG1hcmdpbi10b3A6IDEycHg7XG4gIGNvbG9yOiAjZmZjYzAwO1xufVxuLmRlcG9zaXQgLmFtb3VudCAuYXZhaWxhYmxlIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmRlcG9zaXQgLmxpbmsge1xuICBtYXJnaW4tdG9wOiAyNHB4O1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */";
+    __webpack_exports__["default"] = ".deposit {\n  text-align: center;\n  padding: 0 16px 24px;\n}\n.deposit .qr-container {\n  margin-top: 12px;\n  height: 45vw;\n  max-height: 250px;\n}\n.deposit .qr-container .qr-code {\n  display: inline-block;\n  height: 100%;\n  border-radius: 12px;\n  background-color: white;\n}\n.deposit .qr-container .qr-code img {\n  height: 100%;\n}\n.deposit .btn-container {\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .btn-container button.app-button {\n  font-size: 15px !important;\n  flex-basis: 49%;\n}\n.deposit .message {\n  padding: 0 40px;\n  margin-top: 24px;\n  color: white;\n  font-size: 16px;\n  line-height: 18px;\n}\n.deposit .address {\n  word-break: break-all;\n  color: #ffcc00;\n  background-color: #2a2e31;\n  border: 2px solid #5d6164;\n  font-size: 16px;\n  border-radius: 12px;\n  padding: 12px;\n  margin: 24px 0 12px;\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .icon-documentcopy {\n  margin-left: 12px;\n}\n.deposit .amount {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n  color: #ffcc00;\n}\n.deposit .amount .available {\n  color: white;\n}\n.deposit .link {\n  margin-top: 32px;\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGRlcG9zaXRcXGRlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtBQ0NKO0FEQ0k7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0NSO0FEQVE7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDRVo7QUREWTtFQUNJLFlBQUE7QUNHaEI7QURFSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtBQ0FSO0FERVE7RUFDSSwwQkFBQTtFQUNBLGVBQUE7QUNBWjtBRElJO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQ0ZSO0FES0k7RUFDSSxxQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLDhCQUFBO0FDSFI7QURNSTtFQUNJLGlCQUFBO0FDSlI7QURPSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQ0xSO0FETVE7RUFDSSxZQUFBO0FDSlo7QURRSTtFQUNJLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7QUNOUiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRlcG9zaXQge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogMCAxNnB4IDI0cHg7XHJcbiAgICBcclxuICAgIC5xci1jb250YWluZXIge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDEycHg7XHJcbiAgICAgICAgaGVpZ2h0OiA0NXZ3O1xyXG4gICAgICAgIG1heC1oZWlnaHQ6IDI1MHB4O1xyXG4gICAgICAgIC5xci1jb2RlIHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBpbWcge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5idG4tY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHJcbiAgICAgICAgYnV0dG9uLmFwcC1idXR0b24ge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgZmxleC1iYXNpczogNDklO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubWVzc2FnZSB7XHJcbiAgICAgICAgcGFkZGluZzogMCA0MHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDI0cHg7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAuYWRkcmVzcyB7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstYWxsO1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJlMzE7XHJcbiAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzVkNjE2NDtcclxuICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4O1xyXG4gICAgICAgIG1hcmdpbjogMjRweCAwIDEycHg7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcblxyXG4gICAgLmljb24tZG9jdW1lbnRjb3B5IHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTJweDtcclxuICAgIH1cclxuXHJcbiAgICAuYW1vdW50IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIC5hdmFpbGFibGUge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5saW5rIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAzMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIH1cclxufSIsIi5kZXBvc2l0IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAwIDE2cHggMjRweDtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBoZWlnaHQ6IDQ1dnc7XG4gIG1heC1oZWlnaHQ6IDI1MHB4O1xufVxuLmRlcG9zaXQgLnFyLWNvbnRhaW5lciAucXItY29kZSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIgLnFyLWNvZGUgaW1nIHtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuLmRlcG9zaXQgLmJ0bi1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uZGVwb3NpdCAuYnRuLWNvbnRhaW5lciBidXR0b24uYXBwLWJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xuICBmbGV4LWJhc2lzOiA0OSU7XG59XG4uZGVwb3NpdCAubWVzc2FnZSB7XG4gIHBhZGRpbmc6IDAgNDBweDtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xufVxuLmRlcG9zaXQgLmFkZHJlc3Mge1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZTMxO1xuICBib3JkZXI6IDJweCBzb2xpZCAjNWQ2MTY0O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gIHBhZGRpbmc6IDEycHg7XG4gIG1hcmdpbjogMjRweCAwIDEycHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbi5kZXBvc2l0IC5pY29uLWRvY3VtZW50Y29weSB7XG4gIG1hcmdpbi1sZWZ0OiAxMnB4O1xufVxuLmRlcG9zaXQgLmFtb3VudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgbWFyZ2luLXRvcDogMTJweDtcbiAgY29sb3I6ICNmZmNjMDA7XG59XG4uZGVwb3NpdCAuYW1vdW50IC5hdmFpbGFibGUge1xuICBjb2xvcjogd2hpdGU7XG59XG4uZGVwb3NpdCAubGluayB7XG4gIG1hcmdpbi10b3A6IDMycHg7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBmb250LXNpemU6IDIwcHg7XG59Il19 */";
     /***/
   },
 
@@ -1814,16 +1790,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login() {
-          var _this2 = this;
+          var _this3 = this;
 
           if (this.infoValid()) {
             this.authService.login(this.loginObj).subscribe(function (data) {
               if (data) {
-                _this2.lotteryService.clearLotteryObj();
+                _this3.lotteryService.clearLotteryObj();
 
-                _this2.lotteryService.startStatusCheckInterval();
+                _this3.lotteryService.startStatusCheckInterval();
 
-                _this2.router.navigate(['/home']);
+                _this3.router.navigate(['/home']);
               }
             });
           }
@@ -2054,12 +2030,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "register",
         value: function register() {
-          var _this3 = this;
+          var _this4 = this;
 
           if (this.infoValid()) {
             this.authService.register(this.registrationObj).subscribe(function (data) {
               if (data) {
-                _this3.router.navigate(['/orientation']);
+                _this4.router.navigate(['/orientation']);
               }
             });
           }
@@ -2149,7 +2125,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var TwoFactorComponent = /*#__PURE__*/function () {
       function TwoFactorComponent(location) {
-        var _this4 = this;
+        var _this5 = this;
 
         _classCallCheck(this, TwoFactorComponent);
 
@@ -2158,10 +2134,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.step = 0;
 
         this.navBack = function () {
-          if (_this4.step === 0) {
-            _this4.location.back();
+          if (_this5.step === 0) {
+            _this5.location.back();
           } else {
-            _this4.step--;
+            _this5.step--;
           }
         };
       }
@@ -2600,7 +2576,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AccountHeaderComponent = /*#__PURE__*/function () {
       function AccountHeaderComponent(location) {
-        var _this5 = this;
+        var _this6 = this;
 
         _classCallCheck(this, AccountHeaderComponent);
 
@@ -2609,7 +2585,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.title = '';
 
         this.navigateBack = function () {
-          _this5.location.back();
+          _this6.location.back();
         };
       }
 
@@ -2827,7 +2803,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "animate",
         value: function animate() {
-          var _this6 = this;
+          var _this7 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -2846,13 +2822,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#coins-animation #coins-parts g').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this6.getRndInteger(-400, 400);
+            var hor = _this7.getRndInteger(-400, 400);
 
-            var vert = _this6.getRndInteger(200, 800);
+            var vert = _this7.getRndInteger(200, 800);
 
-            var timeEl = _this6.randomFloatBetween(2, 3, 2);
+            var timeEl = _this7.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this6.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this7.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -2875,7 +2851,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               ease: 'linear'
             }, 0).to(el, elDur, {
               transformOrigin: '50% 50%',
-              scaleX: _this6.randomFloatBetween(.3, .8, 2),
+              scaleX: _this7.randomFloatBetween(.3, .8, 2),
               repeat: 7,
               yoyo: true,
               ease: 'linear'
@@ -2979,7 +2955,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this7 = this;
+          var _this8 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -2998,13 +2974,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#confetti #confetti-particles rect').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this7.getRndInteger(-400, 400);
+            var hor = _this8.getRndInteger(-400, 400);
 
-            var vert = _this7.getRndInteger(200, 800);
+            var vert = _this8.getRndInteger(200, 800);
 
-            var timeEl = _this7.randomFloatBetween(2, 3, 2);
+            var timeEl = _this8.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this7.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this8.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3201,7 +3177,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this8 = this;
+          var _this9 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3219,13 +3195,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#tickets-animation #tickets path').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this8.getRndInteger(-400, 400);
+            var hor = _this9.getRndInteger(-400, 400);
 
-            var vert = _this8.getRndInteger(200, 800);
+            var vert = _this9.getRndInteger(200, 800);
 
-            var timeEl = _this8.randomFloatBetween(2, 3, 2);
+            var timeEl = _this9.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this8.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this9.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3652,13 +3628,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTickets",
         value: function buyTickets() {
-          var _this9 = this;
+          var _this10 = this;
 
           if (this.amount > 0 && this.amount <= this.authService.user.amountAvailable) {
             this.lotteryService.buyTicket(this.amount).subscribe(function () {});
             this.showAnimation = true;
             setTimeout(function () {
-              _this9.showAnimation = false;
+              _this10.showAnimation = false;
             }, 2000);
           }
         }
@@ -4432,15 +4408,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "monitorWinnings",
         value: function monitorWinnings() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.checkWinningInterval = setTimeout(function () {
-            if (_this10.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
-              _this10.incrementInterval = 500;
-              _this10.myWinningsIncrement = 0;
+            if (_this11.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
+              _this11.incrementInterval = 500;
+              _this11.myWinningsIncrement = 0;
             } else {
-              _this10.incrementInterval = 20;
-              var winners = _this10.lotteryService.currentLotteryInfo.winners;
+              _this11.incrementInterval = 20;
+              var winners = _this11.lotteryService.currentLotteryInfo.winners;
               var myWinnings = winners.minipool.winningAmount;
               winners.main.forEach(function (item) {
                 if (item && item.myWinnings) {
@@ -4448,15 +4424,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }
               });
 
-              if (!myWinnings || _this10.myWinningsIncrement >= myWinnings) {
-                _this10.myWinningsIncrement = _this10.myWinningsIncrement;
-                _this10.incrementInterval = 500;
-              } else if (_this10.myWinningsIncrement < myWinnings) {
-                _this10.myWinningsIncrement += 1;
+              if (!myWinnings || _this11.myWinningsIncrement >= myWinnings) {
+                _this11.myWinningsIncrement = _this11.myWinningsIncrement;
+                _this11.incrementInterval = 500;
+              } else if (_this11.myWinningsIncrement < myWinnings) {
+                _this11.myWinningsIncrement += 1;
               }
             }
 
-            _this10.monitorWinnings();
+            _this11.monitorWinnings();
           }, this.incrementInterval);
         }
       }, {
@@ -4475,13 +4451,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "finalizeWinning",
         value: function finalizeWinning() {
-          var _this11 = this;
+          var _this12 = this;
 
           var winners = this.lotteryService.currentLotteryInfo.winners;
           this.myWinningsIncrement = winners.minipool.winningAmount;
           winners.main.forEach(function (item) {
             if (item && item.myWinnings) {
-              _this11.myWinningsIncrement += item.myWinnings;
+              _this12.myWinningsIncrement += item.myWinnings;
             }
           });
         }
@@ -5236,19 +5212,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "sortedMyEntries",
         value: function sortedMyEntries() {
-          var _this12 = this;
+          var _this13 = this;
 
           return this.lotteryService.currentLotteryInfo.myEntries.sort(function (a, b) {
-            return _this12.sortMyEntries ? a.start - b.start : b.start - a.start;
+            return _this13.sortMyEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }, {
         key: "sortedAllEntries",
         value: function sortedAllEntries() {
-          var _this13 = this;
+          var _this14 = this;
 
           return this.lotteryService.currentLotteryInfo.allEntries.sort(function (a, b) {
-            return _this13.sortAllEntries ? a.start - b.start : b.start - a.start;
+            return _this14.sortAllEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }]);
@@ -5506,20 +5482,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "initialize",
         value: function initialize() {
-          var _this14 = this;
+          var _this15 = this;
 
           if (this.lotteryService && this.lotteryService.lastGameId) {
             this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.pageNumber, 100).subscribe(function (data) {
-              _this14.pageNumber++;
-              _this14.payoutData = data.msg;
+              _this15.pageNumber++;
+              _this15.payoutData = data.msg;
 
-              _this14.payoutData.forEach(function (item) {
-                _this14.setPlaceMap(item.prize);
+              _this15.payoutData.forEach(function (item) {
+                _this15.setPlaceMap(item.prize);
               });
             });
           } else {
             setTimeout(function () {
-              _this14.initialize();
+              _this15.initialize();
             }, 100);
           }
         }
@@ -6129,7 +6105,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthService, [{
         key: "login",
         value: function login(loginObj) {
-          var _this15 = this;
+          var _this16 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6146,24 +6122,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/passport/login"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this15.user.userName = loginObj.userName;
+              _this16.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this15.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
-                _this15.user.token = results.msg.token;
-                _this15.user.memo = results.msg.memo;
-                _this15.user.depositAccount = results.msg.depositaccount;
+                _this16.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                _this16.user.token = results.msg.token;
+                _this16.user.memo = results.msg.memo;
+                _this16.user.depositAccount = results.msg.depositaccount;
               }
 
-              _this15.isLoggedIn = true;
-              return _this15.user;
+              _this16.isLoggedIn = true;
+              return _this16.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this16 = this;
+          var _this17 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6174,7 +6150,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/passport/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this16.login(registrationObj);
+              return _this17.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -6263,7 +6239,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BlockChainService, [{
         key: "startLog",
         value: function startLog() {
-          var _this17 = this;
+          var _this18 = this;
 
           this.isSingleRow = false;
 
@@ -6273,15 +6249,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             this.getLatestBlockSub = this.getLatestBlock().subscribe(function (response) {
-              _this17.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+              _this18.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
 
-              if (_this17.getBlockSub) {
-                _this17.getBlockSub.unsubscribe();
+              if (_this18.getBlockSub) {
+                _this18.getBlockSub.unsubscribe();
               }
 
-              _this17.getBlockSub = _this17.getSpecificBlock(response.result).subscribe(function (response) {
+              _this18.getBlockSub = _this18.getSpecificBlock(response.result).subscribe(function (response) {
                 if (response.result) {
-                  _this17.rollingLog.push(response.result);
+                  _this18.rollingLog.push(response.result);
                 }
               });
             });
@@ -6289,18 +6265,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (!this.rollingInterval) {
             this.rollingInterval = setInterval(function () {
-              if (_this17.getBlockSub) {
-                _this17.getBlockSub.unsubscribe();
+              if (_this18.getBlockSub) {
+                _this18.getBlockSub.unsubscribe();
               }
 
-              _this17.getBlockSub = _this17.getSpecificBlock('0x' + _this17.currentBlock).subscribe(function (response) {
+              _this18.getBlockSub = _this18.getSpecificBlock('0x' + _this18.currentBlock).subscribe(function (response) {
                 if (response.result) {
-                  _this17.currentBlock = (parseInt(_this17.currentBlock, 16) + 1).toString(16);
+                  _this18.currentBlock = (parseInt(_this18.currentBlock, 16) + 1).toString(16);
 
-                  _this17.rollingLog.unshift(response.result);
+                  _this18.rollingLog.unshift(response.result);
 
-                  if (_this17.rollingLog.length > 20) {
-                    _this17.rollingLog.pop();
+                  if (_this18.rollingLog.length > 20) {
+                    _this18.rollingLog.pop();
                   }
                 }
               });
@@ -6317,13 +6293,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
-          var _this18 = this;
+          var _this19 = this;
 
           this.isSingleRow = true;
           this.stopLog();
           this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
             if (response.result) {
-              _this18.rollingLog = [response.result];
+              _this19.rollingLog = [response.result];
             }
           });
         }
@@ -6454,7 +6430,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this19 = this;
+        var _this20 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -6484,7 +6460,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = parseInt(msg.currententry || "0", 10);
           var currentStatus;
-          _this19.availablePrizePool = prizePool;
+          _this20.availablePrizePool = prizePool;
           var myEntries = [];
 
           if (msg.mytickets) {
@@ -6498,15 +6474,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          if (!_this19.lotteryObj[prizePool]) {
-            _this19.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
+          if (!_this20.lotteryObj[prizePool]) {
+            _this20.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
-            currentStatus = _this19.lotteryObj[prizePool].lotteryStatus;
-            _this19.lotteryObj[prizePool].gameId = gameId;
-            _this19.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this19.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
-            _this19.lotteryObj[prizePool].myEntries = myEntries;
-            _this19.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
+            currentStatus = _this20.lotteryObj[prizePool].lotteryStatus;
+            _this20.lotteryObj[prizePool].gameId = gameId;
+            _this20.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this20.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this20.lotteryObj[prizePool].myEntries = myEntries;
+            _this20.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -6518,15 +6494,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case "2":
-                clearInterval(_this19.checkStatusInterval);
+                clearInterval(_this20.checkStatusInterval);
 
-                _this19.setPrizePool(msg);
+                _this20.setPrizePool(msg);
 
-                _this19.setDrawWinners(prizePool);
+                _this20.setDrawWinners(prizePool);
 
-                _this19.blockChainService.setSingleBlock(msg.targetblockheight);
+                _this20.blockChainService.setSingleBlock(msg.targetblockheight);
 
-                _this19.finishPendingProcess(prizePool);
+                _this20.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -6534,19 +6510,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this19.lotteryObj[prizePool];
+          var currentPrizePool = _this20.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== "0") {
             return;
           }
 
-          _this19.setLotteryStatus("1", prizePool);
+          _this20.setLotteryStatus("1", prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this19.lotteryObj[prizePool];
+          var currentPrizePool = _this20.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
-          _this19.lastGameId = _this19.currentLotteryInfo.gameId;
+          _this20.lastGameId = _this20.currentLotteryInfo.gameId;
 
           if (currentPrizePool.countDownInterval) {
             clearInterval(currentPrizePool.countDownInterval);
@@ -6556,12 +6532,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this19.startStatusCheckInterval();
+              _this20.startStatusCheckInterval();
 
-              _this19.blockChainService.startLog();
+              _this20.blockChainService.startLog();
             }
 
-            _this19.lotteryObj[prizePool].countDown--;
+            _this20.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -6571,7 +6547,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this20 = this;
+          var _this21 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -6583,9 +6559,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this20.statusSubscription.unsubscribe();
+            _this21.statusSubscription.unsubscribe();
 
-            _this20.statusSubscription = _this20.checkGameStatus().subscribe(function () {});
+            _this21.statusSubscription = _this21.checkGameStatus().subscribe(function () {});
           }, 3000);
         }
       }, {
@@ -6601,7 +6577,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this21 = this;
+          var _this22 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token || "anonymous")
@@ -6610,7 +6586,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("type", "active");
           return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this21.setAvailablePrizePool(results);
+              _this22.setAvailablePrizePool(results);
 
               return results;
             }
@@ -6628,18 +6604,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(msg) {
-          var _this22 = this;
+          var _this23 = this;
 
           var prizeList = msg.prizelist;
           this.clearWinners();
 
           if (prizeList) {
             prizeList.forEach(function (prize) {
-              if (!_this22.currentLotteryInfo.winners.main[prize.win - 1]) {
-                _this22.currentLotteryInfo.winners.main[prize.win - 1] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+              if (!_this23.currentLotteryInfo.winners.main[prize.win - 1]) {
+                _this23.currentLotteryInfo.winners.main[prize.win - 1] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
               }
 
-              _this22.currentLotteryInfo.winners.main[prize.win - 1].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.prize, prize.user === (_this22.authService.user && _this22.authService.user.userName)));
+              _this23.currentLotteryInfo.winners.main[prize.win - 1].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.prize, prize.user === (_this23.authService.user && _this23.authService.user.userName)));
             });
           }
 
@@ -6681,7 +6657,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTicket",
         value: function buyTicket(amount) {
-          var _this23 = this;
+          var _this24 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token)
@@ -6691,9 +6667,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("gameid", this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this23.authService.user.amountAvailable = results.msg.balance;
+              _this24.authService.user.amountAvailable = results.msg.balance;
 
-              _this23.startStatusCheckInterval();
+              _this24.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -6811,7 +6787,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this24 = this;
+      var _this25 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -6820,7 +6796,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this24.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this25.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 
