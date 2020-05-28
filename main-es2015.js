@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"winner-panel\" [ngClass]=\"['place-'+place]\">\r\n    <div class=\"winner-container\">\r\n        <div class=\"place\">\r\n            {{placeMap[place]}}\r\n        </div>\r\n        <div *ngIf=\"place === 1\" class=\"first-ticket\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">{{'ticket' | translate}} #{{ticket.ticketNumber}}</div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"place !== 1\" class=\"table-container\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\" class=\"ticket\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">{{'ticket' | translate}} #{{ticket.ticketNumber}}&nbsp;<span class=\"you-won\" *ngIf=\"ticket.isMine\">{{'you-won' | translate}}</span></div>\r\n\r\n            </div>\r\n            <div class=\"winnings\" [ngClass]=\"{ticket: place == 2}\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"winner-panel\" [ngClass]=\"['place-'+place]\">\r\n    <div class=\"winner-container\">\r\n        <div class=\"place\">\r\n            {{placeMap[place]}}\r\n        </div>\r\n        <div *ngIf=\"place === 0\" class=\"first-ticket\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">{{'ticket' | translate}} #{{ticket.ticketNumber}}</div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"place !== 0\" class=\"table-container\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\" class=\"ticket\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">\r\n                    {{'ticket' | translate}} #{{ticket.ticketNumber}}&nbsp;\r\n                    <span class=\"you-won\" *ngIf=\"ticket.isMine\">{{'you-won' | translate}}</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"winnings\" [ngClass]=\"{ticket: place == 1}\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -305,7 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'ticket-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\" (dblclick)=\"lotteryService.currentLotteryInfo.countDown=1\">\r\n            <!-- 0:{{lotteryService.currentLotteryInfo.countDown | number:'2.0' }}s -->\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n            \r\n            <div class=\"small\" *ngIf=\"lotteryService.currentLotteryInfo.targetBlockHeight\">\r\n                {{'target-block-height' | translate}}: {{lotteryService.currentLotteryInfo.targetBlockHeight}}\r\n            </div>\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.first.isDrawing}\" >\r\n                <app-winner-panel [place]=\"1\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.first\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.second.isDrawing}\">\r\n                <app-winner-panel [place]=\"2\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.second\"></app-winner-panel>\r\n            </div>\r\n            <div class=\"winning-panel\" [ngClass]=\"{isHidden: lotteryService.currentLotteryInfo.winners.third.isDrawing}\">\r\n                <app-winner-panel [place]=\"3\" [winnerInfo]=\"lotteryService.currentLotteryInfo.winners.third\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'ticket-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subheading\">\r\n            {{'now-drawing-winners' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\" \r\n                class=\"winning-panel\" \r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            350 Winners\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool(350)\">\r\n                            <app-animated-question></app-animated-question>\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div> \r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div> \r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -712,7 +712,9 @@ let AccountHistoryComponent = class AccountHistoryComponent {
         ];
     }
     ngOnInit() {
-        this.accountService.getAccountActivity(1, 20);
+        this.accountService.getAccountActivity(1, 20).subscribe((data) => {
+            console.log(data);
+        });
     }
 };
 AccountHistoryComponent.ctorParameters = () => [
@@ -941,7 +943,6 @@ let DepositComponent = class DepositComponent {
         this.authService = authService;
     }
     ngOnInit() {
-        console.log(this.authService.user);
     }
 };
 DepositComponent.ctorParameters = () => [
@@ -2110,7 +2111,6 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
             this.showAnimation = true;
             setTimeout(() => {
                 this.showAnimation = false;
-                console.log(this.showAnimation);
             }, 2000);
         }
     }
@@ -2356,9 +2356,9 @@ __webpack_require__.r(__webpack_exports__);
 let WinnerPanelComponent = class WinnerPanelComponent {
     constructor() {
         this.placeMap = {
-            1: '1st',
-            2: '2nd',
-            3: '3rd'
+            0: '1st',
+            1: '2nd',
+            2: '3rd'
         };
     }
     ngOnInit() {
@@ -2609,7 +2609,7 @@ const EnglishTranslations = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".drawing-info {\n  text-align: center;\n  color: white;\n  letter-spacing: 1px;\n}\n.drawing-info .heading {\n  white-space: pre-wrap;\n  font-weight: 400;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  line-height: 28px;\n  height: 70px;\n  font-size: 27px;\n  margin-bottom: 22px;\n}\n.drawing-info .heading.small {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding-top: 6px;\n  margin-bottom: 0;\n}\n.drawing-info .subtitle {\n  font-size: 18px;\n}\n.drawing-info .value {\n  font-size: 50px;\n  line-height: 46px;\n}\n.drawing-info .value .small {\n  font-weight: 300;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.drawing-info .winnings-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  overflow: hidden;\n  width: 100%;\n}\n.drawing-info .winnings-container .winning-panel {\n  margin-top: 8px;\n  padding: 0 16px;\n  transform: translateX(0);\n  transition: transform 1s;\n}\n.drawing-info .winnings-container .winning-panel.isHidden {\n  transform: translateX(100vw);\n}\n.drawing-info .winnings-container .hideText {\n  visibility: hidden;\n}\n.drawing-info .my-winnings {\n  padding: 12px 8px;\n  background-color: #2a2d32;\n  display: flex;\n  justify-content: space-between;\n  height: 65px;\n  border-radius: 16px;\n}\n.drawing-info .my-winnings .winning-icon {\n  height: 100%;\n  width: 60px;\n}\n.drawing-info .my-winnings .winning-icon img {\n  height: 100%;\n}\n.drawing-info .my-winnings .label {\n  color: white;\n  font-size: 14px;\n}\n.drawing-info .my-winnings .amount {\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZHJhd2luZy1pbmZvXFxkcmF3aW5nLWluZm8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0FDQ0o7QURDSTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDQ1o7QURHSTtFQUNJLGVBQUE7QUNEUjtBRElJO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDRlI7QURJUTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0FDRlo7QURNSTtFQUNJLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FDSlI7QURNUTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0Esd0JBQUE7RUFDQSx3QkFBQTtBQ0paO0FETVk7RUFDSSw0QkFBQTtBQ0poQjtBRFFRO0VBQ0Usa0JBQUE7QUNOVjtBRFdJO0VBQ0ksaUJBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQ1RSO0FEV1E7RUFDSSxZQUFBO0VBQ0EsV0FBQTtBQ1RaO0FEVVk7RUFDSSxZQUFBO0FDUmhCO0FEWVE7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ1ZaO0FEWVE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQ1ZaIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vZHJhd2luZy1pbmZvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdpbmctaW5mbyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cclxuICAgIC5oZWFkaW5nIHtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjhweDtcclxuICAgICAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAyN3B4O1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDIycHg7XHJcblxyXG4gICAgICAgICYuc21hbGwge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogNnB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuc3VidGl0bGUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAudmFsdWUge1xyXG4gICAgICAgIGZvbnQtc2l6ZTogNTBweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogNDZweDtcclxuXHJcbiAgICAgICAgLnNtYWxsIHtcclxuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDMwMDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tdG9wOiAxNnB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAud2lubmluZ3MtY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBmbGV4LWVuZDtcclxuICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG5cclxuICAgICAgICAud2lubmluZy1wYW5lbCB7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDhweDtcclxuICAgICAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG4gICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMCk7XHJcbiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAxcztcclxuXHJcbiAgICAgICAgICAgICYuaXNIaWRkZW4ge1xyXG4gICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmhpZGVUZXh0IHtcclxuICAgICAgICAgIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC5teS13aW5uaW5ncyB7XHJcbiAgICAgICAgcGFkZGluZzogMTJweCA4cHg7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBoZWlnaHQ6IDY1cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuXHJcbiAgICAgICAgLndpbm5pbmctaWNvbiB7XHJcbiAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgd2lkdGg6IDYwcHg7XHJcbiAgICAgICAgICAgIGltZyB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5sYWJlbCB7XHJcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAuYW1vdW50IHtcclxuICAgICAgICAgICAgY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmRyYXdpbmctaW5mbyB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY29sb3I6IHdoaXRlO1xuICBsZXR0ZXItc3BhY2luZzogMXB4O1xufVxuLmRyYXdpbmctaW5mbyAuaGVhZGluZyB7XG4gIHdoaXRlLXNwYWNlOiBwcmUtd3JhcDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcbiAgbGluZS1oZWlnaHQ6IDI4cHg7XG4gIGhlaWdodDogNzBweDtcbiAgZm9udC1zaXplOiAyN3B4O1xuICBtYXJnaW4tYm90dG9tOiAyMnB4O1xufVxuLmRyYXdpbmctaW5mbyAuaGVhZGluZy5zbWFsbCB7XG4gIGhlaWdodDogZml0LWNvbnRlbnQ7XG4gIHBhZGRpbmctdG9wOiA2cHg7XG4gIG1hcmdpbi1ib3R0b206IDA7XG59XG4uZHJhd2luZy1pbmZvIC5zdWJ0aXRsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIHtcbiAgZm9udC1zaXplOiA1MHB4O1xuICBsaW5lLWhlaWdodDogNDZweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIC5zbWFsbCB7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWFyZ2luLXRvcDogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxMDAlO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsIHtcbiAgbWFyZ2luLXRvcDogOHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsLmlzSGlkZGVuIHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciAuaGlkZVRleHQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyB7XG4gIHBhZGRpbmc6IDEycHggOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGhlaWdodDogNjVweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC53aW5uaW5nLWljb24ge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiA2MHB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLndpbm5pbmctaWNvbiBpbWcge1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC5hbW91bnQge1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".drawing-info {\n  text-align: center;\n  color: white;\n  letter-spacing: 1px;\n}\n.drawing-info .heading {\n  white-space: pre-wrap;\n  font-weight: 400;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  line-height: 28px;\n  height: 70px;\n  font-size: 27px;\n  margin-bottom: 22px;\n}\n.drawing-info .heading.small {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding-top: 6px;\n  margin-bottom: 0;\n}\n.drawing-info .subheading {\n  margin-top: 40px;\n  font-size: 18px;\n}\n.drawing-info .subtitle {\n  font-size: 18px;\n}\n.drawing-info .value {\n  font-size: 50px;\n  line-height: 46px;\n}\n.drawing-info .value .small {\n  font-weight: 300;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.drawing-info .winnings-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  overflow: hidden;\n  width: 100%;\n}\n.drawing-info .winnings-container .winning-panel {\n  margin-top: 8px;\n  padding: 0 16px;\n  transform: translateX(0);\n  transition: transform 1s;\n}\n.drawing-info .winnings-container .winning-panel.isHidden {\n  transform: translateX(100vw);\n}\n.drawing-info .winnings-container .hideText {\n  visibility: hidden;\n}\n.drawing-info .my-winnings {\n  padding: 12px 8px;\n  background-color: #2a2d32;\n  display: flex;\n  justify-content: space-between;\n  height: 65px;\n  border-radius: 16px;\n}\n.drawing-info .my-winnings .winning-icon {\n  height: 100%;\n  width: 60px;\n}\n.drawing-info .my-winnings .winning-icon img {\n  height: 100%;\n}\n.drawing-info .my-winnings .label {\n  color: white;\n  font-size: 14px;\n}\n.drawing-info .my-winnings .amount {\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZHJhd2luZy1pbmZvXFxkcmF3aW5nLWluZm8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0FDQ0o7QURDSTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDQ1o7QURHSTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtBQ0RSO0FESUk7RUFDSSxlQUFBO0FDRlI7QURLSTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtBQ0hSO0FES1E7RUFDSSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQ0haO0FET0k7RUFDSSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtBQ0xSO0FET1E7RUFDSSxlQUFBO0VBQ0EsZUFBQTtFQUNBLHdCQUFBO0VBQ0Esd0JBQUE7QUNMWjtBRE9ZO0VBQ0ksNEJBQUE7QUNMaEI7QURTUTtFQUNFLGtCQUFBO0FDUFY7QURZSTtFQUNJLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUNWUjtBRFlRO0VBQ0ksWUFBQTtFQUNBLFdBQUE7QUNWWjtBRFdZO0VBQ0ksWUFBQTtBQ1RoQjtBRGFRO0VBQ0ksWUFBQTtFQUNBLGVBQUE7QUNYWjtBRGFRO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNYWiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcmF3aW5nLWluZm8ge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDFweDtcclxuXHJcbiAgICAuaGVhZGluZyB7XHJcbiAgICAgICAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDI4cHg7XHJcbiAgICAgICAgaGVpZ2h0OiA3MHB4O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjdweDtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAyMnB4O1xyXG5cclxuICAgICAgICAmLnNtYWxsIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiBmaXQtY29udGVudDtcclxuICAgICAgICAgICAgcGFkZGluZy10b3A6IDZweDtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnN1YmhlYWRpbmcge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDQwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5zdWJ0aXRsZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC52YWx1ZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiA1MHB4O1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiA0NnB4O1xyXG5cclxuICAgICAgICAuc21hbGwge1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogMzAwO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDE2cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC53aW5uaW5ncy1jb250YWluZXIge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgICAgIC53aW5uaW5nLXBhbmVsIHtcclxuICAgICAgICAgICAgbWFyZ2luLXRvcDogOHB4O1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAwIDE2cHg7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcclxuICAgICAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xyXG5cclxuICAgICAgICAgICAgJi5pc0hpZGRlbiB7XHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwdncpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuaGlkZVRleHQge1xyXG4gICAgICAgICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcblxyXG4gICAgLm15LXdpbm5pbmdzIHtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4IDhweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgIGhlaWdodDogNjVweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG5cclxuICAgICAgICAud2lubmluZy1pY29uIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICB3aWR0aDogNjBweDtcclxuICAgICAgICAgICAgaW1nIHtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICBjb2xvcjogI2ZmY2MwMDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iLCIuZHJhd2luZy1pbmZvIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogd2hpdGU7XG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XG59XG4uZHJhd2luZy1pbmZvIC5oZWFkaW5nIHtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xuICBmb250LXdlaWdodDogNDAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xuICBsaW5lLWhlaWdodDogMjhweDtcbiAgaGVpZ2h0OiA3MHB4O1xuICBmb250LXNpemU6IDI3cHg7XG4gIG1hcmdpbi1ib3R0b206IDIycHg7XG59XG4uZHJhd2luZy1pbmZvIC5oZWFkaW5nLnNtYWxsIHtcbiAgaGVpZ2h0OiBmaXQtY29udGVudDtcbiAgcGFkZGluZy10b3A6IDZweDtcbiAgbWFyZ2luLWJvdHRvbTogMDtcbn1cbi5kcmF3aW5nLWluZm8gLnN1YmhlYWRpbmcge1xuICBtYXJnaW4tdG9wOiA0MHB4O1xuICBmb250LXNpemU6IDE4cHg7XG59XG4uZHJhd2luZy1pbmZvIC5zdWJ0aXRsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIHtcbiAgZm9udC1zaXplOiA1MHB4O1xuICBsaW5lLWhlaWdodDogNDZweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIC5zbWFsbCB7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWFyZ2luLXRvcDogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxMDAlO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsIHtcbiAgbWFyZ2luLXRvcDogOHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsLmlzSGlkZGVuIHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciAuaGlkZVRleHQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyB7XG4gIHBhZGRpbmc6IDEycHggOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGhlaWdodDogNjVweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC53aW5uaW5nLWljb24ge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiA2MHB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLndpbm5pbmctaWNvbiBpbWcge1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC5hbW91bnQge1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -2653,8 +2653,12 @@ let DrawingInfoComponent = class DrawingInfoComponent {
             else {
                 this.incrementInterval = 20;
                 const winners = this.lotteryService.currentLotteryInfo.winners;
-                const myWinnings = (winners.first.myWinnings || 0) + (winners.second.myWinnings || 0)
-                    + (winners.third.myWinnings || 0) + (winners.minipool.winningAmount || 0);
+                let myWinnings = winners.minipool.winningAmount;
+                winners.main.forEach(item => {
+                    if (item && item.myWinnings) {
+                        myWinnings += item.myWinnings;
+                    }
+                });
                 if (!myWinnings || this.myWinningsIncrement >= myWinnings) {
                     this.myWinningsIncrement = this.myWinningsIncrement;
                     this.incrementInterval = 500;
@@ -2679,8 +2683,12 @@ let DrawingInfoComponent = class DrawingInfoComponent {
     }
     finalizeWinning() {
         const winners = this.lotteryService.currentLotteryInfo.winners;
-        this.myWinningsIncrement = (winners.first.myWinnings || 0) + (winners.second.myWinnings || 0) +
-            (winners.third.myWinnings || 0) + (winners.minipool.winningAmount || 0);
+        this.myWinningsIncrement = winners.minipool.winningAmount;
+        winners.main.forEach(item => {
+            if (item && item.myWinnings) {
+                this.myWinningsIncrement += item.myWinnings;
+            }
+        });
     }
     ngOnDestroy() {
         if (this.checkWinningInterval) {
@@ -2714,7 +2722,7 @@ DrawingInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".block-info {\n  position: absolute;\n  top: -17px;\n  right: 12px;\n  color: #a3acb5;\n  font-size: 12px;\n  background-color: transparent;\n}\n\n.footer {\n  position: relative;\n}\n\n.footer .panels {\n  display: flex;\n  text-align: center;\n  background-color: #1c2023;\n}\n\n.footer .panels .panel {\n  padding: 8px 4px;\n  flex-basis: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n@media screen and (min-height: 700px) {\n  .footer .panels .panel {\n    padding-bottom: 4vh;\n  }\n}\n\n.footer .panels .left-panel {\n  border-right: 1px solid #2b2f32;\n  font-weight: 500;\n}\n\n.footer .panels .left-panel .title {\n  color: #fccd02;\n  font-size: 18px;\n  margin-bottom: 3px;\n}\n\n.footer .panels .left-panel .text-content {\n  color: white;\n}\n\n.footer .panels .left-panel .bonus-section {\n  height: 50%;\n  padding-top: 3px;\n}\n\n.footer .panels .left-panel .bonus-section .bonus-container {\n  text-align: center;\n}\n\n.footer .panels .left-panel .bonus-section .minipool-winner {\n  display: inline-block;\n  font-weight: bold;\n  background-color: #fccd02;\n  border-radius: 14px;\n  padding: 2px 12px;\n}\n\n.footer .panels .left-panel .bonus-section .amount {\n  font-weight: 500;\n  display: inline-block;\n  background-color: #2a2d32;\n  color: white;\n  font-size: 12px;\n  margin-top: 4px;\n  border-radius: 16px;\n  padding: 2px 6px;\n}\n\n.footer .panels .left-panel .no-bonus {\n  color: #67666b;\n  line-height: 18px;\n  font-size: 16px;\n}\n\n.footer .panels .left-panel .minipool-question {\n  height: 45px;\n  border-radius: 14px;\n  margin-top: 4px;\n  background-color: #109df5;\n  color: white;\n  font-weight: bold;\n  font-size: 34px;\n}\n\n.footer .panels .right-panel {\n  border-left: 1px solid #2b2f32;\n  color: #636267;\n  font-weight: 500;\n}\n\n.footer .panels .right-panel .my-tickets {\n  color: white;\n  font-size: 20px;\n}\n\n.footer .panels .right-panel .total-tickets {\n  color: white;\n  line-height: 34px;\n  font-size: 28px;\n}\n\n.footer .panels .right-panel .total-tickets .icon-img.large {\n  margin-left: 0px;\n}\n\n.footer .panels .right-panel .label {\n  font-size: 14px;\n  line-height: 14px;\n}\n\n.footer .panels .right-panel .label.small {\n  font-size: 12px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img {\n  margin-left: 4px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img.large {\n  height: 22px;\n}\n\n.footer .panels .right-panel .icon-redirect {\n  color: #1499e3;\n  margin-left: 4px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mb290ZXIvRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZm9vdGVyXFxmb290ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLDZCQUFBO0FDQUo7O0FERUE7RUFDSSxrQkFBQTtBQ0NKOztBREFJO0VBQ0ksYUFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7QUNFUjs7QURBUTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FDRVo7O0FEQVk7RUFQSjtJQVFRLG1CQUFBO0VDR2Q7QUFDRjs7QURBUTtFQUNJLCtCQUFBO0VBQ0EsZ0JBQUE7QUNFWjs7QUREWTtFQUNJLGNBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7QUNHaEI7O0FEQVk7RUFDSSxZQUFBO0FDRWhCOztBRENZO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0FDQ2hCOztBRENnQjtFQUNJLGtCQUFBO0FDQ3BCOztBREVnQjtFQUNJLHFCQUFBO0VBQ0EsaUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7QUNBcEI7O0FER2dCO0VBQ0ksZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQ0RwQjs7QURLWTtFQUNJLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUNIaEI7O0FETVk7RUFDSSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0FDSmhCOztBRFNRO0VBQ0ksOEJBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7QUNQWjs7QURTWTtFQUNJLFlBQUE7RUFDQSxlQUFBO0FDUGhCOztBRFNZO0VBQ0ksWUFBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtBQ1BoQjs7QURRZ0I7RUFDRSxnQkFBQTtBQ05sQjs7QURVWTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtBQ1JoQjs7QURTZ0I7RUFDSSxlQUFBO0VBQ0EsWUFBQTtBQ1BwQjs7QURVWTtFQUNJLGdCQUFBO0VBQ0EsWUFBQTtBQ1JoQjs7QURVZ0I7RUFDSSxZQUFBO0FDUnBCOztBRFlZO0VBQ0ksY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQ1ZoQiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4uYmxvY2staW5mbyB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IC0xN3B4O1xyXG4gICAgcmlnaHQ6IDEycHg7XHJcbiAgICBjb2xvcjogI2EzYWNiNTtcclxuICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xyXG59XHJcbi5mb290ZXIge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgLnBhbmVscyB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzFjMjAyMztcclxuXHJcbiAgICAgICAgLnBhbmVsIHtcclxuICAgICAgICAgICAgcGFkZGluZzogOHB4IDRweDtcclxuICAgICAgICAgICAgZmxleC1iYXNpczogNTAlO1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuXHJcbiAgICAgICAgICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4taGVpZ2h0OiA3MDBweCkge1xyXG4gICAgICAgICAgICAgICAgcGFkZGluZy1ib3R0b206IDR2aDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxlZnQtcGFuZWwge1xyXG4gICAgICAgICAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjMmIyZjMyO1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICAgICAgICAudGl0bGUge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICNmY2NkMDI7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAzcHg7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC50ZXh0LWNvbnRlbnQge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAuYm9udXMtc2VjdGlvbiB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDUwJTtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmctdG9wOiAzcHg7XHJcblxyXG4gICAgICAgICAgICAgICAgLmJvbnVzLWNvbnRhaW5lciB7XHJcbiAgICAgICAgICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgICAgIC5taW5pcG9vbC13aW5uZXIge1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmNjZDAyO1xyXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE0cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogMnB4IDEycHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAgICAgLmFtb3VudCB7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi10b3A6IDRweDtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDJweCA2cHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5uby1ib251cyB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogIzY3NjY2YjtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxOHB4O1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAubWluaXBvb2wtcXVlc3Rpb24ge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiA0NXB4O1xyXG4gICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTRweDtcclxuICAgICAgICAgICAgICAgIG1hcmdpbi10b3A6IDRweDtcclxuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxMDlkZjU7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMzRweDtcclxuXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5yaWdodC1wYW5lbCB7XHJcbiAgICAgICAgICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzJiMmYzMjtcclxuICAgICAgICAgICAgY29sb3I6ICM2MzYyNjc7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcblxyXG4gICAgICAgICAgICAubXktdGlja2V0cyB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLnRvdGFsLXRpY2tldHMge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDM0cHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDI4cHg7XHJcbiAgICAgICAgICAgICAgICAuaWNvbi1pbWcubGFyZ2Uge1xyXG4gICAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAubGFiZWwge1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDE0cHg7XHJcbiAgICAgICAgICAgICAgICAmLnNtYWxsIHtcclxuICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxM3B4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC5pY29uLWltZyB7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogNHB4O1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxM3B4O1xyXG5cclxuICAgICAgICAgICAgICAgICYubGFyZ2Uge1xyXG4gICAgICAgICAgICAgICAgICAgIGhlaWdodDogMjJweDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLmljb24tcmVkaXJlY3Qge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICMxNDk5ZTM7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogNHB4O1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcbiIsIi5ibG9jay1pbmZvIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IC0xN3B4O1xuICByaWdodDogMTJweDtcbiAgY29sb3I6ICNhM2FjYjU7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5mb290ZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG4uZm9vdGVyIC5wYW5lbHMge1xuICBkaXNwbGF5OiBmbGV4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxYzIwMjM7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnBhbmVsIHtcbiAgcGFkZGluZzogOHB4IDRweDtcbiAgZmxleC1iYXNpczogNTAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4taGVpZ2h0OiA3MDBweCkge1xuICAuZm9vdGVyIC5wYW5lbHMgLnBhbmVsIHtcbiAgICBwYWRkaW5nLWJvdHRvbTogNHZoO1xuICB9XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwge1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjMmIyZjMyO1xuICBmb250LXdlaWdodDogNTAwO1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC50aXRsZSB7XG4gIGNvbG9yOiAjZmNjZDAyO1xuICBmb250LXNpemU6IDE4cHg7XG4gIG1hcmdpbi1ib3R0b206IDNweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAudGV4dC1jb250ZW50IHtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5ib251cy1zZWN0aW9uIHtcbiAgaGVpZ2h0OiA1MCU7XG4gIHBhZGRpbmctdG9wOiAzcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLmJvbnVzLXNlY3Rpb24gLmJvbnVzLWNvbnRhaW5lciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAuYm9udXMtc2VjdGlvbiAubWluaXBvb2wtd2lubmVyIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZjY2QwMjtcbiAgYm9yZGVyLXJhZGl1czogMTRweDtcbiAgcGFkZGluZzogMnB4IDEycHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLmJvbnVzLXNlY3Rpb24gLmFtb3VudCB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDEycHg7XG4gIG1hcmdpbi10b3A6IDRweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbiAgcGFkZGluZzogMnB4IDZweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAubm8tYm9udXMge1xuICBjb2xvcjogIzY3NjY2YjtcbiAgbGluZS1oZWlnaHQ6IDE4cHg7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAubWluaXBvb2wtcXVlc3Rpb24ge1xuICBoZWlnaHQ6IDQ1cHg7XG4gIGJvcmRlci1yYWRpdXM6IDE0cHg7XG4gIG1hcmdpbi10b3A6IDRweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzEwOWRmNTtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAzNHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCB7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzJiMmYzMjtcbiAgY29sb3I6ICM2MzYyNjc7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5teS10aWNrZXRzIHtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDIwcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC50b3RhbC10aWNrZXRzIHtcbiAgY29sb3I6IHdoaXRlO1xuICBsaW5lLWhlaWdodDogMzRweDtcbiAgZm9udC1zaXplOiAyOHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAudG90YWwtdGlja2V0cyAuaWNvbi1pbWcubGFyZ2Uge1xuICBtYXJnaW4tbGVmdDogMHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAubGFiZWwge1xuICBmb250LXNpemU6IDE0cHg7XG4gIGxpbmUtaGVpZ2h0OiAxNHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAubGFiZWwuc21hbGwge1xuICBmb250LXNpemU6IDEycHg7XG4gIGhlaWdodDogMTNweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLmljb24taW1nIHtcbiAgbWFyZ2luLWxlZnQ6IDRweDtcbiAgaGVpZ2h0OiAxM3B4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAuaWNvbi1pbWcubGFyZ2Uge1xuICBoZWlnaHQ6IDIycHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5pY29uLXJlZGlyZWN0IHtcbiAgY29sb3I6ICMxNDk5ZTM7XG4gIG1hcmdpbi1sZWZ0OiA0cHg7XG4gIGZvbnQtc2l6ZTogMjBweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".block-info {\n  position: absolute;\n  top: -17px;\n  right: 12px;\n  color: #a3acb5;\n  font-size: 12px;\n  background-color: transparent;\n}\n\n.footer {\n  position: relative;\n}\n\n.footer .panels {\n  display: flex;\n  text-align: center;\n  background-color: #1c2023;\n}\n\n.footer .panels .panel {\n  padding: 8px 4px;\n  flex-basis: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n@media screen and (min-height: 700px) {\n  .footer .panels .panel {\n    padding-bottom: 4vh;\n  }\n}\n\n.footer .panels .left-panel {\n  border-right: 1px solid #2b2f32;\n  font-weight: 500;\n}\n\n.footer .panels .left-panel .title {\n  color: #fccd02;\n  font-size: 18px;\n  margin-bottom: 3px;\n}\n\n.footer .panels .left-panel .text-content {\n  color: white;\n}\n\n.footer .panels .left-panel .bonus-section {\n  height: 50%;\n  padding-top: 3px;\n}\n\n.footer .panels .left-panel .bonus-section .bonus-container {\n  text-align: center;\n}\n\n.footer .panels .left-panel .bonus-section .minipool-winner {\n  display: inline-block;\n  font-weight: bold;\n  background-color: #fccd02;\n  border-radius: 14px;\n  padding: 2px 12px;\n}\n\n.footer .panels .left-panel .bonus-section .amount {\n  font-weight: 500;\n  display: inline-block;\n  background-color: #2a2d32;\n  color: white;\n  font-size: 12px;\n  margin-top: 4px;\n  border-radius: 16px;\n  padding: 2px 6px;\n}\n\n.footer .panels .left-panel .no-bonus {\n  color: #67666b;\n  line-height: 18px;\n  font-size: 16px;\n}\n\n.footer .panels .left-panel .minipool-question {\n  height: 60px;\n  border-radius: 14px;\n  margin-top: 4px;\n  background-color: #109df5;\n  color: white;\n  font-weight: bold;\n  font-size: 34px;\n}\n\n.footer .panels .left-panel .minipool-question .chest {\n  height: 54px;\n  margin-top: 3px;\n  display: inline-block;\n  -webkit-animation: rotation 1.5s infinite linear;\n          animation: rotation 1.5s infinite linear;\n}\n\n@-webkit-keyframes rotation {\n  25% {\n    transform: rotate(15deg);\n  }\n  50% {\n    transform: rotate(0deg);\n  }\n  75% {\n    transform: rotate(-15deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n\n@keyframes rotation {\n  25% {\n    transform: rotate(15deg);\n  }\n  50% {\n    transform: rotate(0deg);\n  }\n  75% {\n    transform: rotate(-15deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n\n.footer .panels .right-panel {\n  border-left: 1px solid #2b2f32;\n  color: #636267;\n  font-weight: 500;\n}\n\n.footer .panels .right-panel .my-tickets {\n  color: white;\n  font-size: 20px;\n}\n\n.footer .panels .right-panel .total-tickets {\n  color: white;\n  line-height: 34px;\n  font-size: 28px;\n}\n\n.footer .panels .right-panel .total-tickets .icon-img.large {\n  margin-left: 0px;\n}\n\n.footer .panels .right-panel .label {\n  font-size: 14px;\n  line-height: 14px;\n}\n\n.footer .panels .right-panel .label.small {\n  font-size: 12px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img {\n  margin-left: 4px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img.large {\n  height: 22px;\n}\n\n.footer .panels .right-panel .icon-redirect {\n  color: #1499e3;\n  margin-left: 4px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mb290ZXIvRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZm9vdGVyXFxmb290ZXIuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQTtFQUNJLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLDZCQUFBO0FDQUo7O0FERUE7RUFDSSxrQkFBQTtBQ0NKOztBREFJO0VBQ0ksYUFBQTtFQUNBLGtCQUFBO0VBQ0EseUJBQUE7QUNFUjs7QURBUTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FDRVo7O0FEQVk7RUFQSjtJQVFRLG1CQUFBO0VDR2Q7QUFDRjs7QURBUTtFQUNJLCtCQUFBO0VBQ0EsZ0JBQUE7QUNFWjs7QUREWTtFQUNJLGNBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7QUNHaEI7O0FEQVk7RUFDSSxZQUFBO0FDRWhCOztBRENZO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0FDQ2hCOztBRENnQjtFQUNJLGtCQUFBO0FDQ3BCOztBREVnQjtFQUNJLHFCQUFBO0VBQ0EsaUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7QUNBcEI7O0FER2dCO0VBQ0ksZ0JBQUE7RUFDQSxxQkFBQTtFQUNBLHlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQ0RwQjs7QURLWTtFQUNJLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUNIaEI7O0FETVk7RUFDSSxZQUFBO0VBQ0EsbUJBQUE7RUFDQSxlQUFBO0VBQ0EseUJBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0FDSmhCOztBRE1nQjtFQUNJLFlBQUE7RUFDQSxlQUFBO0VBQ0EscUJBQUE7RUFDQSxnREFBQTtVQUFBLHdDQUFBO0FDSnBCOztBRE9vQjtFQUNJO0lBQ0ksd0JBQUE7RUNMMUI7RURPc0I7SUFDSSx1QkFBQTtFQ0wxQjtFRE9zQjtJQUNJLHlCQUFBO0VDTDFCO0VET3NCO0lBQ0ksdUJBQUE7RUNMMUI7QUFDRjs7QURQb0I7RUFDSTtJQUNJLHdCQUFBO0VDTDFCO0VET3NCO0lBQ0ksdUJBQUE7RUNMMUI7RURPc0I7SUFDSSx5QkFBQTtFQ0wxQjtFRE9zQjtJQUNJLHVCQUFBO0VDTDFCO0FBQ0Y7O0FEWVE7RUFDSSw4QkFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtBQ1ZaOztBRFlZO0VBQ0ksWUFBQTtFQUNBLGVBQUE7QUNWaEI7O0FEWVk7RUFDSSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxlQUFBO0FDVmhCOztBRFdnQjtFQUNFLGdCQUFBO0FDVGxCOztBRGFZO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDWGhCOztBRFlnQjtFQUNJLGVBQUE7RUFDQSxZQUFBO0FDVnBCOztBRGFZO0VBQ0ksZ0JBQUE7RUFDQSxZQUFBO0FDWGhCOztBRGFnQjtFQUNJLFlBQUE7QUNYcEI7O0FEZVk7RUFDSSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0FDYmhCIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbi5ibG9jay1pbmZvIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIHRvcDogLTE3cHg7XHJcbiAgICByaWdodDogMTJweDtcclxuICAgIGNvbG9yOiAjYTNhY2I1O1xyXG4gICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XHJcbn1cclxuLmZvb3RlciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAucGFuZWxzIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWMyMDIzO1xyXG5cclxuICAgICAgICAucGFuZWwge1xyXG4gICAgICAgICAgICBwYWRkaW5nOiA4cHggNHB4O1xyXG4gICAgICAgICAgICBmbGV4LWJhc2lzOiA1MCU7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG5cclxuICAgICAgICAgICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi1oZWlnaHQ6IDcwMHB4KSB7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLWJvdHRvbTogNHZoO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAubGVmdC1wYW5lbCB7XHJcbiAgICAgICAgICAgIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICMyYjJmMzI7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgICAgIC50aXRsZSB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogI2ZjY2QwMjtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMThweDtcclxuICAgICAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDNweDtcclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLnRleHQtY29udGVudCB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5ib251cy1zZWN0aW9uIHtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogNTAlO1xyXG4gICAgICAgICAgICAgICAgcGFkZGluZy10b3A6IDNweDtcclxuXHJcbiAgICAgICAgICAgICAgICAuYm9udXMtY29udGFpbmVyIHtcclxuICAgICAgICAgICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAgICAgLm1pbmlwb29sLXdpbm5lciB7XHJcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmY2NkMDI7XHJcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTRweDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAycHggMTJweDtcclxuICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAuYW1vdW50IHtcclxuICAgICAgICAgICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xyXG4gICAgICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogNHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE2cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogMnB4IDZweDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLm5vLWJvbnVzIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiAjNjc2NjZiO1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDE4cHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5taW5pcG9vbC1xdWVzdGlvbiB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDYwcHg7XHJcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxNHB4O1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogNHB4O1xyXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzEwOWRmNTtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAzNHB4O1xyXG5cclxuICAgICAgICAgICAgICAgIC5jaGVzdCB7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiA1NHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi10b3A6IDNweDtcclxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgICAgICAgICAgYW5pbWF0aW9uOiByb3RhdGlvbiAxLjVzIGluZmluaXRlIGxpbmVhcjtcclxuICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgICAgICBAa2V5ZnJhbWVzIHJvdGF0aW9uIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgMjUlIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDE1ZGVnKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICA1MCUge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgNzUlIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKC0xNWRlZyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgMTAwJSB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5yaWdodC1wYW5lbCB7XHJcbiAgICAgICAgICAgIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzJiMmYzMjtcclxuICAgICAgICAgICAgY29sb3I6ICM2MzYyNjc7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcblxyXG4gICAgICAgICAgICAubXktdGlja2V0cyB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLnRvdGFsLXRpY2tldHMge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDM0cHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDI4cHg7XHJcbiAgICAgICAgICAgICAgICAuaWNvbi1pbWcubGFyZ2Uge1xyXG4gICAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogMHB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAubGFiZWwge1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDE0cHg7XHJcbiAgICAgICAgICAgICAgICAmLnNtYWxsIHtcclxuICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxM3B4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC5pY29uLWltZyB7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogNHB4O1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxM3B4O1xyXG5cclxuICAgICAgICAgICAgICAgICYubGFyZ2Uge1xyXG4gICAgICAgICAgICAgICAgICAgIGhlaWdodDogMjJweDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLmljb24tcmVkaXJlY3Qge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICMxNDk5ZTM7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tbGVmdDogNHB4O1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcbiIsIi5ibG9jay1pbmZvIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IC0xN3B4O1xuICByaWdodDogMTJweDtcbiAgY29sb3I6ICNhM2FjYjU7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5mb290ZXIge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG4uZm9vdGVyIC5wYW5lbHMge1xuICBkaXNwbGF5OiBmbGV4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxYzIwMjM7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnBhbmVsIHtcbiAgcGFkZGluZzogOHB4IDRweDtcbiAgZmxleC1iYXNpczogNTAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4taGVpZ2h0OiA3MDBweCkge1xuICAuZm9vdGVyIC5wYW5lbHMgLnBhbmVsIHtcbiAgICBwYWRkaW5nLWJvdHRvbTogNHZoO1xuICB9XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwge1xuICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjMmIyZjMyO1xuICBmb250LXdlaWdodDogNTAwO1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC50aXRsZSB7XG4gIGNvbG9yOiAjZmNjZDAyO1xuICBmb250LXNpemU6IDE4cHg7XG4gIG1hcmdpbi1ib3R0b206IDNweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAudGV4dC1jb250ZW50IHtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5ib251cy1zZWN0aW9uIHtcbiAgaGVpZ2h0OiA1MCU7XG4gIHBhZGRpbmctdG9wOiAzcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLmJvbnVzLXNlY3Rpb24gLmJvbnVzLWNvbnRhaW5lciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAuYm9udXMtc2VjdGlvbiAubWluaXBvb2wtd2lubmVyIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZjY2QwMjtcbiAgYm9yZGVyLXJhZGl1czogMTRweDtcbiAgcGFkZGluZzogMnB4IDEycHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLmJvbnVzLXNlY3Rpb24gLmFtb3VudCB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDEycHg7XG4gIG1hcmdpbi10b3A6IDRweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbiAgcGFkZGluZzogMnB4IDZweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAubm8tYm9udXMge1xuICBjb2xvcjogIzY3NjY2YjtcbiAgbGluZS1oZWlnaHQ6IDE4cHg7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAubWluaXBvb2wtcXVlc3Rpb24ge1xuICBoZWlnaHQ6IDYwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDE0cHg7XG4gIG1hcmdpbi10b3A6IDRweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzEwOWRmNTtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAzNHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5taW5pcG9vbC1xdWVzdGlvbiAuY2hlc3Qge1xuICBoZWlnaHQ6IDU0cHg7XG4gIG1hcmdpbi10b3A6IDNweDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBhbmltYXRpb246IHJvdGF0aW9uIDEuNXMgaW5maW5pdGUgbGluZWFyO1xufVxuQGtleWZyYW1lcyByb3RhdGlvbiB7XG4gIDI1JSB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMTVkZWcpO1xuICB9XG4gIDUwJSB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG4gIH1cbiAgNzUlIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgtMTVkZWcpO1xuICB9XG4gIDEwMCUge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICB9XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIHtcbiAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjMmIyZjMyO1xuICBjb2xvcjogIzYzNjI2NztcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLm15LXRpY2tldHMge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMjBweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLnRvdGFsLXRpY2tldHMge1xuICBjb2xvcjogd2hpdGU7XG4gIGxpbmUtaGVpZ2h0OiAzNHB4O1xuICBmb250LXNpemU6IDI4cHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC50b3RhbC10aWNrZXRzIC5pY29uLWltZy5sYXJnZSB7XG4gIG1hcmdpbi1sZWZ0OiAwcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5sYWJlbCB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgbGluZS1oZWlnaHQ6IDE0cHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5sYWJlbC5zbWFsbCB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgaGVpZ2h0OiAxM3B4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAuaWNvbi1pbWcge1xuICBtYXJnaW4tbGVmdDogNHB4O1xuICBoZWlnaHQ6IDEzcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5pY29uLWltZy5sYXJnZSB7XG4gIGhlaWdodDogMjJweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLmljb24tcmVkaXJlY3Qge1xuICBjb2xvcjogIzE0OTllMztcbiAgbWFyZ2luLWxlZnQ6IDRweDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -2746,7 +2754,7 @@ let FooterComponent = class FooterComponent {
     ticketCount(ticketArr) {
         let count = 0;
         if (ticketArr && ticketArr.length) {
-            ticketArr.forEach(item => { count += item.count; console.log(item.count); });
+            ticketArr.forEach(item => { count += item.count; });
         }
         return count || 0;
     }
@@ -2960,11 +2968,9 @@ HowToPlayModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrizePool", function() { return PrizePool; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _winner_info__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./winner-info */ "./src/app/models/lottery/winner-info.ts");
-
 
 class PrizePool {
-    constructor(prize, gameId, lotteryStatus = '0', currentEntries = 0, myEntries, targetBlockHeight) {
+    constructor(prize, gameId, lotteryStatus = "0", currentEntries = 0, myEntries, targetBlockHeight) {
         this.openedDate = new Date();
         this.availablePrizePool = prize;
         this.lotteryStatus = lotteryStatus;
@@ -2975,13 +2981,14 @@ class PrizePool {
         this.allEntries = [];
         this.currentEntries = currentEntries;
         this.winners = {
-            first: new _winner_info__WEBPACK_IMPORTED_MODULE_1__["WinnerInfo"](),
-            second: new _winner_info__WEBPACK_IMPORTED_MODULE_1__["WinnerInfo"](),
-            third: new _winner_info__WEBPACK_IMPORTED_MODULE_1__["WinnerInfo"](),
+            main: [],
+            //   first: new WinnerInfo(),
+            //   second: new WinnerInfo(),
+            //   third: new WinnerInfo(),
             minipool: {
-                isDrawing: false,
-                winningAmount: 0
-            }
+                isDrawing: true,
+                winningAmount: 0,
+            },
         };
     }
 }
@@ -3038,10 +3045,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Ticket {
-    constructor(ticket, userName, isMine) {
+    constructor(ticket, userName, amount, isMine) {
         this.ticketNumber = ticket;
         this.userName = userName;
         this.isMine = isMine;
+        this.amount = amount;
     }
 }
 
@@ -3813,7 +3821,6 @@ let BlockChainService = class BlockChainService {
         this.rollingLog = [];
     }
     setSingleBlock(blockNumber) {
-        console.log('block num', blockNumber);
         this.isSingleRow = true;
         this.stopLog();
         this.getSpecificBlock('0x' + blockNumber.toString(16))
@@ -3884,7 +3891,7 @@ let LotteryService = class LotteryService {
         this.authService = authService;
         this.blockChainService = blockChainService;
         this.httpClient = httpClient;
-        this.lotteryObj = new _models_lottery_lottery_obj__WEBPACK_IMPORTED_MODULE_2__["LotteryObj"];
+        this.lotteryObj = new _models_lottery_lottery_obj__WEBPACK_IMPORTED_MODULE_2__["LotteryObj"]();
         this.options = [
             // {
             //   icon: '../../../assets/images/icon-pool-1.png',
@@ -3892,10 +3899,10 @@ let LotteryService = class LotteryService {
             //   background: '#cf1942'
             // },
             {
-                icon: '../../../assets/images/icon-pool-2.png',
-                color: '#5a4a0e',
+                icon: "../../../assets/images/icon-pool-2.png",
+                color: "#5a4a0e",
                 value: 10000,
-                background: '#e5b902'
+                background: "#e5b902",
             },
         ];
         this.selectedOption = this.options[0];
@@ -3903,10 +3910,10 @@ let LotteryService = class LotteryService {
         this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.setAvailablePrizePool = (msg) => {
-            let prizePool = parseInt(msg.entrylimit || '0', 10);
+            let prizePool = parseInt(msg.entrylimit || "0", 10);
             let gameId = msg.gameid;
             let lotteryStatus = msg.status.toString();
-            let currentEntries = parseInt(msg.currententry || '0', 10);
+            let currentEntries = parseInt(msg.currententry || "0", 10);
             let currentStatus;
             this.availablePrizePool = prizePool;
             let myEntries = [];
@@ -3933,13 +3940,13 @@ let LotteryService = class LotteryService {
             }
             if (currentStatus !== lotteryStatus) {
                 switch (lotteryStatus) {
-                    case '0':
+                    case "0":
                         break;
-                    case '1':
+                    case "1":
                         break;
-                    case '2':
+                    case "2":
                         clearInterval(this.checkStatusInterval);
-                        this.setPrizePool(msg.prizelist);
+                        this.setPrizePool(msg);
                         this.setDrawWinners(prizePool);
                         this.blockChainService.setSingleBlock(msg.targetblockheight);
                         this.finishPendingProcess(prizePool);
@@ -3949,10 +3956,10 @@ let LotteryService = class LotteryService {
         };
         this.startPendingProcess = (prizePool) => {
             const currentPrizePool = this.lotteryObj[prizePool];
-            if (currentPrizePool.lotteryStatus !== '0') {
+            if (currentPrizePool.lotteryStatus !== "0") {
                 return;
             }
-            this.setLotteryStatus('1', prizePool);
+            this.setLotteryStatus("1", prizePool);
         };
         this.finishPendingProcess = (prizePool) => {
             const currentPrizePool = this.lotteryObj[prizePool];
@@ -3986,7 +3993,6 @@ let LotteryService = class LotteryService {
         }
         return null;
     }
-    ;
     startStatusCheckInterval() {
         if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -3994,8 +4000,7 @@ let LotteryService = class LotteryService {
         if (this.statusSubscription) {
             this.statusSubscription.unsubscribe();
         }
-        this.statusSubscription = this.checkGameStatus().subscribe(() => {
-        });
+        this.statusSubscription = this.checkGameStatus().subscribe(() => { });
         this.checkStatusInterval = setInterval(() => {
             this.statusSubscription.unsubscribe();
             this.statusSubscription = this.checkGameStatus().subscribe(() => { });
@@ -4005,19 +4010,21 @@ let LotteryService = class LotteryService {
         return this.lotteryObj[this.availablePrizePool];
     }
     clearLotteryObj() {
-        this.lotteryObj = new _models_lottery_lottery_obj__WEBPACK_IMPORTED_MODULE_2__["LotteryObj"];
+        this.lotteryObj = new _models_lottery_lottery_obj__WEBPACK_IMPORTED_MODULE_2__["LotteryObj"]();
     }
     getLotteryInfo(prizePool) {
         return this.lotteryObj[prizePool] || null;
     }
     checkGameStatus() {
         let options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('token', this.authService.user.token || 'anonymous')
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
+                .set("Content-Type", "application/x-www-form-urlencoded")
+                .set("token", this.authService.user.token || "anonymous"),
         };
         let request = new URLSearchParams();
-        request.set('type', 'active');
-        return this.httpClient.post(`${this.url}/game/status`, request.toString(), options)
+        request.set("type", "active");
+        return this.httpClient
+            .post(`${this.url}/game/status`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results) {
                 this.setAvailablePrizePool(results);
@@ -4027,59 +4034,36 @@ let LotteryService = class LotteryService {
         }));
     }
     clearWinners() {
-        this.currentLotteryInfo.winners.first = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
-        this.currentLotteryInfo.winners.second = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
-        this.currentLotteryInfo.winners.third = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+        this.currentLotteryInfo.winners.main = [];
         this.currentLotteryInfo.winners.minipool.isDrawing = false;
         this.currentLotteryInfo.winners.minipool.winningAmount = 0;
     }
-    setPrizePool(prizeList) {
+    setPrizePool(msg) {
+        const prizeList = msg.prizelist;
         this.clearWinners();
         if (prizeList) {
             prizeList.forEach((prize) => {
-                switch (prize.win) {
-                    case 1:
-                        this.currentLotteryInfo.winners.first.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
-                        break;
-                    case 2:
-                        this.currentLotteryInfo.winners.second.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
-                        break;
-                    case 3:
-                        this.currentLotteryInfo.winners.third.tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.user === (this.authService.user && this.authService.user.userName)));
-                        break;
+                if (!this.currentLotteryInfo.winners.main[prize.win - 1]) {
+                    this.currentLotteryInfo.winners.main[prize.win - 1] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
                 }
+                this.currentLotteryInfo.winners.main[prize.win - 1].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.prize, prize.user === (this.authService.user && this.authService.user.userName)));
             });
         }
+        this.currentLotteryInfo.winners.minipool.winningPreDisplay = msg.mybonusprize;
     }
     setDrawWinners(prizePool) {
         const currentPrizePool = this.lotteryObj[prizePool];
-        currentPrizePool.winners.third.isDrawing = true;
-        setTimeout(() => {
-            currentPrizePool.winners.third.isDrawing = false;
-            currentPrizePool.winners.third.tickets.forEach(ticket => {
-                if (ticket.isMine) {
-                    currentPrizePool.winners.third.myWinnings += Math.floor(prizePool * .01);
-                }
-            });
-        }, 500);
-        currentPrizePool.winners.second.isDrawing = true;
-        setTimeout(() => {
-            currentPrizePool.winners.second.isDrawing = false;
-            currentPrizePool.winners.second.tickets.forEach(ticket => {
-                if (ticket.isMine) {
-                    currentPrizePool.winners.second.myWinnings += Math.floor(prizePool * .05);
-                }
-            });
-        }, 2000);
-        currentPrizePool.winners.first.isDrawing = true;
-        setTimeout(() => {
-            currentPrizePool.winners.first.isDrawing = false;
-            currentPrizePool.winners.first.tickets.forEach(ticket => {
-                if (ticket.isMine) {
-                    currentPrizePool.winners.first.myWinnings += Math.floor(prizePool * .15);
-                }
-            });
-        }, 3500);
+        currentPrizePool.winners.main.forEach((item, i) => {
+            item.isDrawing = true;
+            setTimeout(() => {
+                item.isDrawing = false;
+                item.tickets.forEach((ticket) => {
+                    if (ticket.isMine) {
+                        item.myWinnings += ticket.amount;
+                    }
+                });
+            }, 500 * (i + 1));
+        });
         currentPrizePool.winners.minipool.isDrawing = true;
     }
     checkIfEntryMatches(entries, num) {
@@ -4095,13 +4079,15 @@ let LotteryService = class LotteryService {
     }
     buyTicket(amount) {
         let options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('token', this.authService.user.token)
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
+                .set("Content-Type", "application/x-www-form-urlencoded")
+                .set("token", this.authService.user.token),
         };
         let request = new URLSearchParams();
-        request.set('amount', amount.toString());
-        request.set('gameid', this.currentLotteryInfo.gameId);
-        return this.httpClient.post(`${this.url}/bets/buyTickets`, request.toString(), options)
+        request.set("amount", amount.toString());
+        request.set("gameid", this.currentLotteryInfo.gameId);
+        return this.httpClient
+            .post(`${this.url}/bets/buyTickets`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results.code === 200) {
                 this.authService.user.amountAvailable = results.msg.balance;
@@ -4113,12 +4099,14 @@ let LotteryService = class LotteryService {
     }
     setMinipool() {
         let options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('token', this.authService.user.token)
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
+                .set("Content-Type", "application/x-www-form-urlencoded")
+                .set("token", this.authService.user.token),
         };
         let request = new URLSearchParams();
-        request.set('gameid', this.currentLotteryInfo.gameId);
-        return this.httpClient.post(`${this.url}/getBonusPrizeList`, request.toString(), options)
+        request.set("gameid", this.currentLotteryInfo.gameId);
+        return this.httpClient
+            .post(`${this.url}/getBonusPrizeList`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results.code === 200) {
                 return results;
@@ -4126,24 +4114,10 @@ let LotteryService = class LotteryService {
             return null;
         }));
     }
-    drawMinipool(num) {
-        this.setMinipool().subscribe(() => { });
+    drawMinipool() {
         const prizePool = this.lotteryObj[this.availablePrizePool];
-        const usedNum = [];
-        let newNum = Math.ceil(Math.random() * prizePool.availablePrizePool);
-        for (let i = 0; i < num; i++) {
-            while (usedNum.indexOf(newNum) > -1) {
-                newNum = Math.ceil(Math.random() * prizePool.availablePrizePool);
-            }
-            usedNum.push(newNum);
-        }
-        usedNum.forEach(num => {
-            if (!!this.checkIfEntryMatches(prizePool.myEntries, num)) {
-                prizePool.winners.minipool.winningAmount += Math.floor(prizePool.availablePrizePool * .001);
-            }
-        });
-        this.authService.user.amountAvailable += prizePool.winners.minipool.winningAmount;
         prizePool.winners.minipool.isDrawing = false;
+        prizePool.winners.minipool.winningAmount = prizePool.winners.minipool.winningPreDisplay;
     }
 };
 LotteryService.ctorParameters = () => [
