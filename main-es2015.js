@@ -3776,8 +3776,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common/window-ref */ "./src/app/common/window-ref.ts");
-
 
 
 
@@ -3785,10 +3783,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AccountService = class AccountService {
-    constructor(authService, httpClient, windowRef) {
+    constructor(authService, httpClient) {
         this.authService = authService;
         this.httpClient = httpClient;
-        this.windowRef = windowRef;
         this.showAccountSettings = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
         this.openOnReturn = false;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
@@ -3812,8 +3809,7 @@ let AccountService = class AccountService {
 };
 AccountService.ctorParameters = () => [
     { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
-    { type: _common_window_ref__WEBPACK_IMPORTED_MODULE_6__["WindowRef"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
 ];
 AccountService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
@@ -3902,6 +3898,14 @@ let AuthService = class AuthService {
         });
         this.sendAppMessage('Recharge', data);
     }
+    getAccountTotal() {
+        let options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.user.token)
+        };
+        let request = new URLSearchParams();
+        return this.httpClient.post(`${this.url}/account/getAccountInfo`, request.toString(), options);
+    }
     withdraw(amount) {
         alert(`Note - withdraw amount: ${amount}, appKey: ${this.appKey}, token: ${this.user.token}`);
         const options = {
@@ -3943,6 +3947,20 @@ let AuthService = class AuthService {
                 this.isLoggedIn = true;
                 return this.user;
             }
+            if (this.accountUpdateInterval) {
+                clearInterval(this.accountUpdateInterval);
+            }
+            this.accountUpdateInterval = setInterval(() => {
+                if (this.accountUpdateSub) {
+                    this.accountUpdateSub.unsubscribe();
+                }
+                this.accountUpdateSub = this.getAccountTotal()
+                    .subscribe((response) => {
+                    if (response.code === 200) {
+                        this.user.amountAvailable = parseInt(response.msg.balance, 10);
+                    }
+                });
+            }, 3600000);
         }, (err) => {
             alert('error ' + JSON.stringify(err));
         });

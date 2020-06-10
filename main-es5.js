@@ -6260,20 +6260,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/environments/environment */
     "./src/environments/environment.ts");
-    /* harmony import */
-
-
-    var _common_window_ref__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ../common/window-ref */
-    "./src/app/common/window-ref.ts");
 
     var AccountService = /*#__PURE__*/function () {
-      function AccountService(authService, httpClient, windowRef) {
+      function AccountService(authService, httpClient) {
         _classCallCheck(this, AccountService);
 
         this.authService = authService;
         this.httpClient = httpClient;
-        this.windowRef = windowRef;
         this.showAccountSettings = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
         this.openOnReturn = false;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
@@ -6310,8 +6303,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
       }, {
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
-      }, {
-        type: _common_window_ref__WEBPACK_IMPORTED_MODULE_6__["WindowRef"]
       }];
     };
 
@@ -6459,6 +6450,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.sendAppMessage('Recharge', data);
         }
       }, {
+        key: "getAccountTotal",
+        value: function getAccountTotal() {
+          var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.user.token)
+          };
+          var request = new URLSearchParams();
+          return this.httpClient.post("".concat(this.url, "/account/getAccountInfo"), request.toString(), options);
+        }
+      }, {
         key: "withdraw",
         value: function withdraw(amount) {
           alert("Note - withdraw amount: ".concat(amount, ", appKey: ").concat(this.appKey, ", token: ").concat(this.user.token));
@@ -6503,6 +6503,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               _this20.isLoggedIn = true;
               return _this20.user;
             }
+
+            if (_this20.accountUpdateInterval) {
+              clearInterval(_this20.accountUpdateInterval);
+            }
+
+            _this20.accountUpdateInterval = setInterval(function () {
+              if (_this20.accountUpdateSub) {
+                _this20.accountUpdateSub.unsubscribe();
+              }
+
+              _this20.accountUpdateSub = _this20.getAccountTotal().subscribe(function (response) {
+                if (response.code === 200) {
+                  _this20.user.amountAvailable = parseInt(response.msg.balance, 10);
+                }
+              });
+            }, 3600000);
           }, function (err) {
             alert('error ' + JSON.stringify(err));
           });
