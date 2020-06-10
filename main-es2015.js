@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"overlay\"  [ngClass]=\"{show: showAccount}\" (click)=\"close()\"></div>\n<div class=\"account-settings\" [ngClass]=\"{show: showAccount}\">\n    <div class=\"account-container\">\n        <div>\n            <div class=\"header\">\n                <i class=\"icon-close close\" (click)=\"close()\"></i>\n                <app-language-select class=\"language-select\" [darkBackground]=\"true\"></app-language-select>\n            </div>\n            <div class=\"info-container\">\n                <div class=\"background\">\n                    <app-animated-background [width]=\"'100%'\"></app-animated-background>\n                </div>\n                <div class=\"info\">\n                    <div *ngIf=\"authService.isLoggedIn\">\n                        <div class=\"label\">{{'hello'|translate}},</div>\n                        <div class=\"username\">{{authService.user.userName}}</div>\n                    </div>\n                    <div *ngIf=\"!authService.isLoggedIn\" \n                        class=\"label\"\n                        [routerLink]=\"['/login']\" (click)=\"close()\"\n                    >{{'login-register-to-play' | translate}}</div>\n                    <div>\n                        <div class=\"label\">{{'balance'|translate}}</div>\n                        <div class=\"amount\">\n                            {{!authService.isLoggedIn ? '0' : authService.user.amountAvailable}} POST\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <ng-container *ngIf=\"!authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                <button class=\"app-button dark-text\">\n                    {{'login-register-to-play-now' | translate}}!\n                </button>\n            </div>        \n        </ng-container>\n        <ng-container *ngIf=\"authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/deposit']\" (click)=\"close(true)\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/2fa']\" (click)=\"close(true)\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <div class=\"link logout\" (click)=\"authService.isLoggedIn = false; close()\">\n                {{'logout' | translate}}\n            </div>    \n        </ng-container>    \n        <div class=\"link how-to-play\" [routerLink]=\"['/how-to-play']\" (click)=\"close(true)\">\n            {{'how-to-play' | translate}}\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"overlay\"  [ngClass]=\"{show: showAccount}\" (click)=\"close()\"></div>\n<div class=\"account-settings\" [ngClass]=\"{show: showAccount}\">\n    <div class=\"account-container\">\n        <div>\n            <div class=\"header\">\n                <i class=\"icon-close close\" (click)=\"close()\"></i>\n                <app-language-select class=\"language-select\" [darkBackground]=\"true\"></app-language-select>\n            </div>\n            <div class=\"info-container\">\n                <div class=\"background\">\n                    <app-animated-background [width]=\"'100%'\"></app-animated-background>\n                </div>\n                <div class=\"info\">\n                    <div *ngIf=\"authService.isLoggedIn\">\n                        <div class=\"label\">{{'hello'|translate}},</div>\n                        <div class=\"username\">{{authService.user.userName}}</div>\n                    </div>\n                    <div *ngIf=\"!authService.isLoggedIn\" \n                        class=\"label\"\n                        [routerLink]=\"['/login']\" (click)=\"close()\"\n                    >{{'login-register-to-play' | translate}}</div>\n                    <div>\n                        <div class=\"label\">{{'balance'|translate}}</div>\n                        <div class=\"amount\">\n                            {{!authService.isLoggedIn ? '0' : authService.user.amountAvailable}} POST\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <ng-container *ngIf=\"!authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                <button class=\"app-button dark-text\">\n                    {{'login-register-to-play-now' | translate}}!\n                </button>\n            </div>        \n        </ng-container>\n        <ng-container *ngIf=\"authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/deposit']\" (click)=\"close(true)\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/2fa']\" (click)=\"close(true)\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <!-- <div class=\"link logout\" (click)=\"authService.isLoggedIn = false; close()\">\n                {{'logout' | translate}}\n            </div>     -->\n        </ng-container>    \n        <div class=\"link how-to-play\" [routerLink]=\"['/how-to-play']\" (click)=\"close(true)\">\n            {{'how-to-play' | translate}}\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n\r\n    <div class=\"message\">\r\n        <div>\r\n            {{'only-deposit-post-to-this-address' | translate}}.\r\n        </div>\r\n        <div>\r\n            {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n        </div>\r\n    </div>\r\n    <div class=\"address copy-pastable\">\r\n        <div>\r\n            {{authService.user.depositAccount}} \r\n        </div>\r\n        <div>\r\n            {{authService.user.memo}}\r\n        </div>\r\n    </div>\r\n    <div class=\"btn-container\">\r\n        <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n            {{'copy-account' | translate | uppercase}}\r\n            <i class=\"icon-documentcopy\"></i>\r\n        </button>\r\n        <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n            {{'copy-memo' | translate | uppercase}}\r\n            <i class=\"icon-documentcopy\"></i>\r\n        </button>\r\n    </div>\r\n\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" (ngModel)=\"depositAmount\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-container\">\r\n  <div class=\"main-content\">\r\n    <app-account-settings></app-account-settings>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-container\">\r\n  <div class=\"main-content\">\r\n    <div class=\"animated-background\">\r\n        <app-animated-background *ngIf=\"isHome()\"></app-animated-background>\r\n    </div>  \r\n    <app-account-settings></app-account-settings>\r\n      <router-outlet></router-outlet>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{authService.isLoggedIn ? authService.user.amountAvailable : 0}}\r\n            POST</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            [routerLink]=\"['/login']\">\r\n            {{'login-register-to-play' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{authService.isLoggedIn ? authService.user.amountAvailable : 0}}\r\n            POST</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            {{'login-register-to-play' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"winner-panel\" [ngClass]=\"['place-'+place]\">\r\n    <div class=\"winner-container\">\r\n        <div class=\"place\">\r\n            {{placeMap[place]}}\r\n        </div>\r\n        <div *ngIf=\"place === 0\" class=\"first-ticket\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">{{'ticket' | translate}} #{{ticket.ticketNumber}}</div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"place !== 0\" class=\"table-container\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\" class=\"ticket\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">\r\n                    {{'ticket' | translate}} #{{ticket.ticketNumber}}&nbsp;\r\n                    <span class=\"you-won\" *ngIf=\"ticket.isMine\">{{'you-won' | translate}}</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"winnings\" [ngClass]=\"{ticket: place == 1}\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"winner-panel\" [ngClass]=\"['place-'+place]\">\r\n    <div class=\"winner-container\">\r\n        <div class=\"place\">\r\n            {{placeMap[place].name}}\r\n        </div>\r\n        <div *ngIf=\"place === 0\" class=\"first-ticket\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">{{'ticket' | translate}} #{{ticket.ticketNumber}}</div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"place !== 0\" class=\"table-container\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\" class=\"ticket\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">\r\n                    {{'ticket' | translate}} #{{ticket.ticketNumber}}&nbsp;\r\n                    <span class=\"you-won\" *ngIf=\"ticket.isMine\">{{'you-won' | translate}}</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} POST\r\n                </div>\r\n                <div class=\"dots\" *ngIf=\"place > 1\" (click)=\"goToWinnings()\">\r\n                    ...\r\n                </div>\r\n                <div class=\"count\">\r\n                    {{placeMap[place].winnerCount}} {{'winners' | translate}}\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -305,7 +305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'ticket-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subheading\">\r\n            {{'now-drawing-winners' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"heading small\">\r\n            {{'now-drawing-winners' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"winnings-container\">\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\" \r\n                class=\"winning-panel\" \r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'ticket-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\">\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"winnings-container\">\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\" \r\n                class=\"winning-panel\" \r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -318,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" [routerLink]=\"['/login']\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div> \r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" (click)=\"authorize()\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"home\" *ngIf=\"lotteryService.currentLotteryInfo\">\r\n    <app-main-header></app-main-header>\r\n    <div class=\"home-content\">\r\n        <div class=\"animated-background\">\r\n            <app-animated-background></app-animated-background>\r\n        </div>  \r\n        <app-block-chain-info></app-block-chain-info>\r\n        <app-drawing-info></app-drawing-info>\r\n        <div *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\" class=\"buy-ticket-input\">\r\n            <app-buy-ticket-input></app-buy-ticket-input>\r\n        </div>\r\n    </div>\r\n    <div class=\"footer\">\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"home\" *ngIf=\"lotteryService.currentLotteryInfo\">\r\n    <app-main-header></app-main-header>\r\n    <div class=\"home-content\">\r\n        <app-block-chain-info></app-block-chain-info>\r\n        <app-drawing-info></app-drawing-info>\r\n        <div *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\" class=\"buy-ticket-input\">\r\n            <app-buy-ticket-input></app-buy-ticket-input>\r\n        </div>\r\n    </div>\r\n    <div class=\"footer\">\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -383,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'payouts' | translate | uppercase\"></app-account-header>\n<div class=\"payout\"\ninfiniteScroll\n[infiniteScrollDistance]=\"1\"\n[infiniteScrollThrottle]=\"50\"\n(scrolled)=\"onScroll()\"\n[scrollWindow]=\"false\">\n    <app-payout-history-item \n        [payoutItem]=\"item\" \n        [place]=\"getPlace(item.prize)\" \n        *ngFor=\"let item of payoutData\"></app-payout-history-item>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'payouts' | translate | uppercase\"></app-account-header>\n\n<div class=\"action-container\">\n    <button class=\"app-button\" *ngFor=\"let place of placeMap\" (click)=\"selectRank(place.rank)\">{{place.name}}</button>    \n</div>\n<div class=\"payout\"\ninfiniteScroll\n[infiniteScrollDistance]=\"1\"\n[infiniteScrollThrottle]=\"50\"\n(scrolled)=\"onScroll()\"\n[scrollWindow]=\"false\">\n    <app-payout-history-item \n        [payoutItem]=\"item\" \n        [place]=\"getPlace(item.prize)\" \n        *ngFor=\"let item of payoutData[currentLevel].data\"></app-payout-history-item>\n</div>");
 
 /***/ }),
 
@@ -857,7 +857,7 @@ let AuthGuard = class AuthGuard {
     }
     canActivate() {
         if (!(this.authService.user && this.authService.user.token)) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/home']);
             return false;
         }
         // you can save redirect url so after authing we can move them back to the page they requested
@@ -887,7 +887,7 @@ AuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".deposit {\n  text-align: center;\n  padding: 0 16px 24px;\n}\n.deposit .qr-container {\n  margin-top: 12px;\n  height: 45vw;\n  max-height: 250px;\n}\n.deposit .qr-container .qr-code {\n  display: inline-block;\n  height: 100%;\n  border-radius: 12px;\n  background-color: white;\n}\n.deposit .qr-container .qr-code img {\n  height: 100%;\n}\n.deposit .btn-container {\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .btn-container button.app-button {\n  font-size: 15px !important;\n  flex-basis: 49%;\n}\n.deposit .message {\n  padding: 0 40px;\n  margin-top: 24px;\n  color: white;\n  font-size: 16px;\n  line-height: 18px;\n}\n.deposit .address {\n  word-break: break-all;\n  color: #ffcc00;\n  background-color: #2a2e31;\n  border: 2px solid #5d6164;\n  font-size: 16px;\n  border-radius: 12px;\n  padding: 12px;\n  margin: 24px 0 12px;\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .icon-documentcopy {\n  margin-left: 12px;\n}\n.deposit .amount {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n  color: #ffcc00;\n}\n.deposit .amount .available {\n  color: white;\n}\n.deposit .link {\n  margin-top: 32px;\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGRlcG9zaXRcXGRlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtBQ0NKO0FEQ0k7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0NSO0FEQVE7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDRVo7QUREWTtFQUNJLFlBQUE7QUNHaEI7QURFSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtBQ0FSO0FERVE7RUFDSSwwQkFBQTtFQUNBLGVBQUE7QUNBWjtBRElJO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQ0ZSO0FES0k7RUFDSSxxQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLDhCQUFBO0FDSFI7QURNSTtFQUNJLGlCQUFBO0FDSlI7QURPSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQ0xSO0FETVE7RUFDSSxZQUFBO0FDSlo7QURRSTtFQUNJLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7QUNOUiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRlcG9zaXQge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgcGFkZGluZzogMCAxNnB4IDI0cHg7XHJcbiAgICBcclxuICAgIC5xci1jb250YWluZXIge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDEycHg7XHJcbiAgICAgICAgaGVpZ2h0OiA0NXZ3O1xyXG4gICAgICAgIG1heC1oZWlnaHQ6IDI1MHB4O1xyXG4gICAgICAgIC5xci1jb2RlIHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBpbWcge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5idG4tY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHJcbiAgICAgICAgYnV0dG9uLmFwcC1idXR0b24ge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgZmxleC1iYXNpczogNDklO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubWVzc2FnZSB7XHJcbiAgICAgICAgcGFkZGluZzogMCA0MHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDI0cHg7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAuYWRkcmVzcyB7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstYWxsO1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJlMzE7XHJcbiAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzVkNjE2NDtcclxuICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4O1xyXG4gICAgICAgIG1hcmdpbjogMjRweCAwIDEycHg7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcblxyXG4gICAgLmljb24tZG9jdW1lbnRjb3B5IHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTJweDtcclxuICAgIH1cclxuXHJcbiAgICAuYW1vdW50IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIC5hdmFpbGFibGUge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5saW5rIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAzMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIH1cclxufSIsIi5kZXBvc2l0IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBwYWRkaW5nOiAwIDE2cHggMjRweDtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBoZWlnaHQ6IDQ1dnc7XG4gIG1heC1oZWlnaHQ6IDI1MHB4O1xufVxuLmRlcG9zaXQgLnFyLWNvbnRhaW5lciAucXItY29kZSB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgaGVpZ2h0OiAxMDAlO1xuICBib3JkZXItcmFkaXVzOiAxMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbn1cbi5kZXBvc2l0IC5xci1jb250YWluZXIgLnFyLWNvZGUgaW1nIHtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuLmRlcG9zaXQgLmJ0bi1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG4uZGVwb3NpdCAuYnRuLWNvbnRhaW5lciBidXR0b24uYXBwLWJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMTVweCAhaW1wb3J0YW50O1xuICBmbGV4LWJhc2lzOiA0OSU7XG59XG4uZGVwb3NpdCAubWVzc2FnZSB7XG4gIHBhZGRpbmc6IDAgNDBweDtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xufVxuLmRlcG9zaXQgLmFkZHJlc3Mge1xuICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZTMxO1xuICBib3JkZXI6IDJweCBzb2xpZCAjNWQ2MTY0O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gIHBhZGRpbmc6IDEycHg7XG4gIG1hcmdpbjogMjRweCAwIDEycHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbi5kZXBvc2l0IC5pY29uLWRvY3VtZW50Y29weSB7XG4gIG1hcmdpbi1sZWZ0OiAxMnB4O1xufVxuLmRlcG9zaXQgLmFtb3VudCB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgbWFyZ2luLXRvcDogMTJweDtcbiAgY29sb3I6ICNmZmNjMDA7XG59XG4uZGVwb3NpdCAuYW1vdW50IC5hdmFpbGFibGUge1xuICBjb2xvcjogd2hpdGU7XG59XG4uZGVwb3NpdCAubGluayB7XG4gIG1hcmdpbi10b3A6IDMycHg7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBmb250LXNpemU6IDIwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".deposit {\n  text-align: center;\n  padding: 0 16px 24px;\n}\n.deposit .qr-container {\n  margin-top: 12px;\n  height: 45vw;\n  max-height: 250px;\n}\n.deposit .qr-container .qr-code {\n  display: inline-block;\n  height: 100%;\n  border-radius: 12px;\n  background-color: white;\n}\n.deposit .qr-container .qr-code img {\n  height: 100%;\n}\n.deposit .btn-container {\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .btn-container button.app-button {\n  font-size: 15px !important;\n  flex-basis: 49%;\n}\n.deposit .message {\n  padding: 0 40px;\n  margin-top: 24px;\n  color: white;\n  font-size: 16px;\n  line-height: 18px;\n}\n.deposit .address {\n  word-break: break-all;\n  color: #ffcc00;\n  background-color: #2a2e31;\n  border: 2px solid #5d6164;\n  font-size: 16px;\n  border-radius: 12px;\n  padding: 12px;\n  margin: 24px 0 12px;\n  display: flex;\n  justify-content: space-between;\n}\n.deposit .icon-documentcopy {\n  margin-left: 12px;\n}\n.deposit .amount {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 12px;\n  color: #ffcc00;\n}\n.deposit .amount .available {\n  color: white;\n}\n.deposit .link {\n  margin-top: 32px;\n  color: #ffcc00;\n  font-size: 20px;\n}\n.deposit .deposit-form {\n  margin-top: 16px;\n  display: flex;\n}\n.deposit .deposit-form .app-input {\n  margin-right: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9kZXBvc2l0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXGFjY291bnRcXGRlcG9zaXRcXGRlcG9zaXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FjY291bnQvZGVwb3NpdC9kZXBvc2l0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxvQkFBQTtBQ0NKO0FEQ0k7RUFDSSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0NSO0FEQVE7RUFDSSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0FDRVo7QUREWTtFQUNJLFlBQUE7QUNHaEI7QURFSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtBQ0FSO0FERVE7RUFDSSwwQkFBQTtFQUNBLGVBQUE7QUNBWjtBRElJO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQ0ZSO0FES0k7RUFDSSxxQkFBQTtFQUNBLGNBQUE7RUFDQSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsZUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsYUFBQTtFQUNBLDhCQUFBO0FDSFI7QURNSTtFQUNJLGlCQUFBO0FDSlI7QURPSTtFQUNJLGFBQUE7RUFDQSw4QkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQ0xSO0FETVE7RUFDSSxZQUFBO0FDSlo7QURRSTtFQUNJLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7QUNOUjtBRFNJO0VBQ0UsZ0JBQUE7RUFDQSxhQUFBO0FDUE47QURRTTtFQUNFLGtCQUFBO0FDTlIiLCJmaWxlIjoic3JjL2FwcC9hY2NvdW50L2RlcG9zaXQvZGVwb3NpdC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZXBvc2l0IHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBhZGRpbmc6IDAgMTZweCAyNHB4O1xyXG5cclxuICAgIC5xci1jb250YWluZXIge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDEycHg7XHJcbiAgICAgICAgaGVpZ2h0OiA0NXZ3O1xyXG4gICAgICAgIG1heC1oZWlnaHQ6IDI1MHB4O1xyXG4gICAgICAgIC5xci1jb2RlIHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBpbWcge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5idG4tY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuXHJcbiAgICAgICAgYnV0dG9uLmFwcC1idXR0b24ge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgZmxleC1iYXNpczogNDklO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubWVzc2FnZSB7XHJcbiAgICAgICAgcGFkZGluZzogMCA0MHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDI0cHg7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMThweDtcclxuICAgIH1cclxuXHJcbiAgICAuYWRkcmVzcyB7XHJcbiAgICAgICAgd29yZC1icmVhazogYnJlYWstYWxsO1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJlMzE7XHJcbiAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzVkNjE2NDtcclxuICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4O1xyXG4gICAgICAgIG1hcmdpbjogMjRweCAwIDEycHg7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICB9XHJcblxyXG4gICAgLmljb24tZG9jdW1lbnRjb3B5IHtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTJweDtcclxuICAgIH1cclxuXHJcbiAgICAuYW1vdW50IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIC5hdmFpbGFibGUge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5saW5rIHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAzMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgIH1cclxuXHJcbiAgICAuZGVwb3NpdC1mb3JtIHtcclxuICAgICAgbWFyZ2luLXRvcDogMTZweDtcclxuICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgLmFwcC1pbnB1dCB7XHJcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAxMnB4O1xyXG4gICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmRlcG9zaXQge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHBhZGRpbmc6IDAgMTZweCAyNHB4O1xufVxuLmRlcG9zaXQgLnFyLWNvbnRhaW5lciB7XG4gIG1hcmdpbi10b3A6IDEycHg7XG4gIGhlaWdodDogNDV2dztcbiAgbWF4LWhlaWdodDogMjUwcHg7XG59XG4uZGVwb3NpdCAucXItY29udGFpbmVyIC5xci1jb2RlIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDEycHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xufVxuLmRlcG9zaXQgLnFyLWNvbnRhaW5lciAucXItY29kZSBpbWcge1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uZGVwb3NpdCAuYnRuLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cbi5kZXBvc2l0IC5idG4tY29udGFpbmVyIGJ1dHRvbi5hcHAtYnV0dG9uIHtcbiAgZm9udC1zaXplOiAxNXB4ICFpbXBvcnRhbnQ7XG4gIGZsZXgtYmFzaXM6IDQ5JTtcbn1cbi5kZXBvc2l0IC5tZXNzYWdlIHtcbiAgcGFkZGluZzogMCA0MHB4O1xuICBtYXJnaW4tdG9wOiAyNHB4O1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDE4cHg7XG59XG4uZGVwb3NpdCAuYWRkcmVzcyB7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcbiAgY29sb3I6ICNmZmNjMDA7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyYTJlMzE7XG4gIGJvcmRlcjogMnB4IHNvbGlkICM1ZDYxNjQ7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgYm9yZGVyLXJhZGl1czogMTJweDtcbiAgcGFkZGluZzogMTJweDtcbiAgbWFyZ2luOiAyNHB4IDAgMTJweDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuLmRlcG9zaXQgLmljb24tZG9jdW1lbnRjb3B5IHtcbiAgbWFyZ2luLWxlZnQ6IDEycHg7XG59XG4uZGVwb3NpdCAuYW1vdW50IHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBjb2xvcjogI2ZmY2MwMDtcbn1cbi5kZXBvc2l0IC5hbW91bnQgLmF2YWlsYWJsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5kZXBvc2l0IC5saW5rIHtcbiAgbWFyZ2luLXRvcDogMzJweDtcbiAgY29sb3I6ICNmZmNjMDA7XG4gIGZvbnQtc2l6ZTogMjBweDtcbn1cbi5kZXBvc2l0IC5kZXBvc2l0LWZvcm0ge1xuICBtYXJnaW4tdG9wOiAxNnB4O1xuICBkaXNwbGF5OiBmbGV4O1xufVxuLmRlcG9zaXQgLmRlcG9zaXQtZm9ybSAuYXBwLWlucHV0IHtcbiAgbWFyZ2luLXJpZ2h0OiAxMnB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -910,6 +910,10 @@ __webpack_require__.r(__webpack_exports__);
 let DepositComponent = class DepositComponent {
     constructor(authService) {
         this.authService = authService;
+        this.depositAmount = 0;
+    }
+    deposit() {
+        this.authService.depositAmount(this.depositAmount);
     }
     ngOnInit() {
     }
@@ -1280,7 +1284,7 @@ WithdrawComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".main-container {\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  width: 100vw;\n}\n.main-container .main-content {\n  width: 100%;\n  height: 100%;\n  flex-basis: 100%;\n  max-width: 650px;\n  overflow: hidden;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ0NKO0FEQ0k7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FDQ1IiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWFpbi1jb250YWluZXIge1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgd2lkdGg6IDEwMHZ3O1xyXG5cclxuICAgIC5tYWluLWNvbnRlbnQge1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICBmbGV4LWJhc2lzOiAxMDAlO1xyXG4gICAgICAgIG1heC13aWR0aDogNjUwcHg7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB9XHJcbn0iLCIubWFpbi1jb250YWluZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwdnc7XG59XG4ubWFpbi1jb250YWluZXIgLm1haW4tY29udGVudCB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIGZsZXgtYmFzaXM6IDEwMCU7XG4gIG1heC13aWR0aDogNjUwcHg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".main-container {\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  width: 100vw;\n}\n.main-container .main-content {\n  width: 100%;\n  height: 100%;\n  flex-basis: 100%;\n  max-width: 650px;\n  overflow: hidden;\n  position: relative;\n}\n.main-container .animated-background {\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 100px;\n  z-index: -1;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtBQ0NKO0FEQ0k7RUFDSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FDQ1I7QURFSTtFQUNJLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxhQUFBO0VBQ0EsV0FBQTtBQ0FSIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW4tY29udGFpbmVyIHtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAxMDB2dztcclxuXHJcbiAgICAubWFpbi1jb250ZW50IHtcclxuICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICAgICAgZmxleC1iYXNpczogMTAwJTtcclxuICAgICAgICBtYXgtd2lkdGg6IDY1MHB4O1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgfVxyXG5cclxuICAgIC5hbmltYXRlZC1iYWNrZ3JvdW5kIHtcclxuICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICB0b3A6IDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICByaWdodDogMDtcclxuICAgICAgICBib3R0b206IDEwMHB4O1xyXG4gICAgICAgIHotaW5kZXg6IC0xO1xyXG4gICAgfVxyXG59IiwiLm1haW4tY29udGFpbmVyIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDEwMHZ3O1xufVxuLm1haW4tY29udGFpbmVyIC5tYWluLWNvbnRlbnQge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBmbGV4LWJhc2lzOiAxMDAlO1xuICBtYXgtd2lkdGg6IDY1MHB4O1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG4ubWFpbi1jb250YWluZXIgLmFuaW1hdGVkLWJhY2tncm91bmQge1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJvdHRvbTogMTAwcHg7XG4gIHotaW5kZXg6IC0xO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -1296,10 +1300,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let AppComponent = class AppComponent {
+    constructor(router) {
+        this.router = router;
+    }
+    isHome() {
+        return this.router.url.indexOf('home') !== -1;
+    }
 };
+AppComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
@@ -1344,6 +1359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./services/navigation.service */ "./src/app/services/navigation.service.ts");
 /* harmony import */ var _services_translate_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/translate.service */ "./src/app/services/translate.service.ts");
 /* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/payout.service */ "./src/app/services/payout.service.ts");
+/* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./common/window-ref */ "./src/app/common/window-ref.ts");
 
 
 
@@ -1362,6 +1378,7 @@ __webpack_require__.r(__webpack_exports__);
 // Components
 
 // Services
+
 
 
 
@@ -1397,7 +1414,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__["NavigationService"],
             _services_payout_service__WEBPACK_IMPORTED_MODULE_21__["PayoutService"],
             _services_translate_service__WEBPACK_IMPORTED_MODULE_20__["TranslateService"],
-            { provide: _angular_common__WEBPACK_IMPORTED_MODULE_13__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_13__["HashLocationStrategy"] }
+            _common_window_ref__WEBPACK_IMPORTED_MODULE_22__["WindowRef"],
+            {
+                provide: _angular_common__WEBPACK_IMPORTED_MODULE_13__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_13__["HashLocationStrategy"]
+            }
         ],
         bootstrap: [
             _app_component__WEBPACK_IMPORTED_MODULE_14__["AppComponent"]
@@ -2105,6 +2125,9 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
         }
         return (numerator / 4) <= percent;
     }
+    authorize() {
+        this.authService.authorize();
+    }
 };
 BuyTicketInputComponent.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
@@ -2295,6 +2318,37 @@ PoolSelectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/common/window-ref.ts":
+/*!**************************************!*\
+  !*** ./src/app/common/window-ref.ts ***!
+  \**************************************/
+/*! exports provided: WindowRef */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WindowRef", function() { return WindowRef; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+function _window() {
+    // return the global native browser window object
+    return window;
+}
+let WindowRef = class WindowRef {
+    get nativeWindow() {
+        return _window();
+    }
+};
+WindowRef = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], WindowRef);
+
+
+
+/***/ }),
+
 /***/ "./src/app/common/winner-panel/winner-panel.component.scss":
 /*!*****************************************************************!*\
   !*** ./src/app/common/winner-panel/winner-panel.component.scss ***!
@@ -2304,7 +2358,7 @@ PoolSelectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".winner-panel {\n  border-radius: 16px;\n  letter-spacing: 0;\n}\n.winner-panel.place-1 {\n  background-color: #fbd102;\n  color: black;\n  min-height: 45px;\n}\n.winner-panel.place-2 {\n  color: black;\n  background-color: #08f69a;\n  min-height: 83px;\n}\n.winner-panel.place-3 {\n  color: white;\n  background-color: #7d0ef0;\n  min-height: 158px;\n}\n.winner-panel .winner-container {\n  display: flex;\n}\n.winner-panel .place {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  padding: 0 16px;\n}\n.winner-panel .first-ticket {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 6px;\n  text-align: center;\n  flex-basis: 100%;\n}\n.winner-panel .first-ticket .winnings {\n  flex-basis: 40%;\n  padding-right: 12px;\n}\n.winner-panel .first-ticket .username {\n  font-size: 15px;\n}\n.winner-panel .first-ticket .number {\n  font-size: 12px;\n}\n.winner-panel .table-container {\n  flex-grow: 1;\n  display: flex;\n  flex-wrap: wrap;\n}\n.winner-panel .table-container .ticket {\n  padding: 2px;\n  text-align: center;\n  flex-basis: 49%;\n}\n.winner-panel .table-container .ticket .username {\n  font-size: 12px;\n  line-height: 12px;\n}\n.winner-panel .table-container .ticket .number {\n  font-size: 10px;\n  line-height: 11px;\n}\n.winner-panel .table-container .ticket .you-won {\n  color: black;\n  background-color: #FFCC00;\n  border-radius: 10px;\n  font-size: 9px;\n  padding: 1px 2px;\n}\n.winner-panel .winnings {\n  flex-basis: 100%;\n  padding-right: 16px;\n  text-align: right;\n}\n.winner-panel .winnings .amount {\n  display: inline-block;\n  font-size: 11px;\n  color: white;\n  padding: 3px 12px;\n  background-color: #2b3036;\n  border-radius: 10px;\n  margin-bottom: 4px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3dpbm5lci1wYW5lbC9FOlxcVXNlcnNcXFN5bHZlc3RlclxcRGVza3RvcFxcYmxvY2tjaGFpbi1sb3R0ZXJ5L3NyY1xcYXBwXFxjb21tb25cXHdpbm5lci1wYW5lbFxcd2lubmVyLXBhbmVsLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vd2lubmVyLXBhbmVsL3dpbm5lci1wYW5lbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0EsaUJBQUE7QUNDSjtBREFJO0VBQ0kseUJBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUNFUjtBRENJO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNDUjtBREVJO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsaUJBQUE7QUNBUjtBREdJO0VBQ0ksYUFBQTtBQ0RSO0FESUk7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtBQ0ZSO0FES0k7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FDSFI7QURJUTtFQUNJLGVBQUE7RUFDQSxtQkFBQTtBQ0ZaO0FES1E7RUFDSSxlQUFBO0FDSFo7QURLUTtFQUNJLGVBQUE7QUNIWjtBRFFJO0VBQ0ksWUFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0FDTlI7QURPUTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUNMWjtBRE1ZO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDSmhCO0FETVk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNKaEI7QURNWTtFQUNJLFlBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0FDSmhCO0FEU0k7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EsaUJBQUE7QUNQUjtBRFFRO0VBQ0kscUJBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDTloiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vd2lubmVyLXBhbmVsL3dpbm5lci1wYW5lbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53aW5uZXItcGFuZWwge1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwO1xyXG4gICAgJi5wbGFjZS0xIHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmJkMTAyO1xyXG4gICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICBtaW4taGVpZ2h0OiA0NXB4O1xyXG4gICAgfVxyXG5cclxuICAgICYucGxhY2UtMiB7XHJcbiAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwOGY2OWE7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuXHJcbiAgICAmLnBsYWNlLTMge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjN2QwZWYwO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDE1OHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC53aW5uZXItY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgfVxyXG5cclxuICAgIC5wbGFjZSB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5maXJzdC10aWNrZXQge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICAgICAgcGFkZGluZzogNnB4O1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBmbGV4LWJhc2lzOiAxMDAlO1xyXG4gICAgICAgIC53aW5uaW5ncyB7XHJcbiAgICAgICAgICAgIGZsZXgtYmFzaXM6IDQwJTtcclxuICAgICAgICAgICAgcGFkZGluZy1yaWdodDogMTJweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC51c2VybmFtZSB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgICAgICB9XHJcbiAgICAgICAgLm51bWJlciB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC50YWJsZS1jb250YWluZXIge1xyXG4gICAgICAgIGZsZXgtZ3JvdzogMTtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgICAgICAudGlja2V0IHtcclxuICAgICAgICAgICAgcGFkZGluZzogMnB4O1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgICAgIGZsZXgtYmFzaXM6IDQ5JTtcclxuICAgICAgICAgICAgLnVzZXJuYW1lIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxMnB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC5udW1iZXIge1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDExcHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLnlvdS13b24ge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI0ZGQ0MwMDtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDlweDtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDFweCAycHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLndpbm5pbmdzIHtcclxuICAgICAgICBmbGV4LWJhc2lzOiAxMDAlO1xyXG4gICAgICAgIHBhZGRpbmctcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICAgICAgLmFtb3VudCB7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxMXB4O1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDNweCAxMnB4O1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmIzMDM2O1xyXG4gICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiA0cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcbiIsIi53aW5uZXItcGFuZWwge1xuICBib3JkZXItcmFkaXVzOiAxNnB4O1xuICBsZXR0ZXItc3BhY2luZzogMDtcbn1cbi53aW5uZXItcGFuZWwucGxhY2UtMSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYmQxMDI7XG4gIGNvbG9yOiBibGFjaztcbiAgbWluLWhlaWdodDogNDVweDtcbn1cbi53aW5uZXItcGFuZWwucGxhY2UtMiB7XG4gIGNvbG9yOiBibGFjaztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzA4ZjY5YTtcbiAgbWluLWhlaWdodDogODNweDtcbn1cbi53aW5uZXItcGFuZWwucGxhY2UtMyB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzdkMGVmMDtcbiAgbWluLWhlaWdodDogMTU4cHg7XG59XG4ud2lubmVyLXBhbmVsIC53aW5uZXItY29udGFpbmVyIHtcbiAgZGlzcGxheTogZmxleDtcbn1cbi53aW5uZXItcGFuZWwgLnBsYWNlIHtcbiAgY29sb3I6IHdoaXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZm9udC1zaXplOiAyNHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG59XG4ud2lubmVyLXBhbmVsIC5maXJzdC10aWNrZXQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHBhZGRpbmc6IDZweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmbGV4LWJhc2lzOiAxMDAlO1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtdGlja2V0IC53aW5uaW5ncyB7XG4gIGZsZXgtYmFzaXM6IDQwJTtcbiAgcGFkZGluZy1yaWdodDogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLmZpcnN0LXRpY2tldCAudXNlcm5hbWUge1xuICBmb250LXNpemU6IDE1cHg7XG59XG4ud2lubmVyLXBhbmVsIC5maXJzdC10aWNrZXQgLm51bWJlciB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciB7XG4gIGZsZXgtZ3JvdzogMTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiB3cmFwO1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC50aWNrZXQge1xuICBwYWRkaW5nOiAycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZmxleC1iYXNpczogNDklO1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC50aWNrZXQgLnVzZXJuYW1lIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBsaW5lLWhlaWdodDogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciAudGlja2V0IC5udW1iZXIge1xuICBmb250LXNpemU6IDEwcHg7XG4gIGxpbmUtaGVpZ2h0OiAxMXB4O1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC50aWNrZXQgLnlvdS13b24ge1xuICBjb2xvcjogYmxhY2s7XG4gIGJhY2tncm91bmQtY29sb3I6ICNGRkNDMDA7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIGZvbnQtc2l6ZTogOXB4O1xuICBwYWRkaW5nOiAxcHggMnB4O1xufVxuLndpbm5lci1wYW5lbCAud2lubmluZ3Mge1xuICBmbGV4LWJhc2lzOiAxMDAlO1xuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cbi53aW5uZXItcGFuZWwgLndpbm5pbmdzIC5hbW91bnQge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTFweDtcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiAzcHggMTJweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJiMzAzNjtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogNHB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".winner-panel {\n  border-radius: 16px;\n  letter-spacing: 0;\n}\n.winner-panel.place-0 {\n  background-color: #ffcc00;\n  color: black;\n  min-height: 45px;\n}\n.winner-panel.place-1 {\n  color: black;\n  background-color: #07f79a;\n  min-height: 83px;\n}\n.winner-panel.place-2 {\n  color: white;\n  background-color: #7b16e3;\n  min-height: 83px;\n}\n.winner-panel.place-3 {\n  background-color: #2977d7;\n  color: white;\n  min-height: 83px;\n}\n.winner-panel.place-4 {\n  color: white;\n  background-color: #762846;\n  min-height: 83px;\n}\n.winner-panel.place-5 {\n  color: white;\n  background-color: #d36d12;\n  min-height: 83px;\n}\n.winner-panel .winner-container {\n  display: flex;\n}\n.winner-panel .place {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  padding: 0 16px;\n}\n.winner-panel .first-ticket {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 6px;\n  text-align: center;\n  flex-basis: 100%;\n}\n.winner-panel .first-ticket .winnings {\n  flex-basis: 40%;\n  padding-right: 12px;\n}\n.winner-panel .first-ticket .username {\n  font-size: 15px;\n}\n.winner-panel .first-ticket .number {\n  font-size: 12px;\n}\n.winner-panel .table-container {\n  flex-grow: 1;\n  display: flex;\n  flex-wrap: wrap;\n}\n.winner-panel .table-container .ticket {\n  padding: 2px;\n  text-align: center;\n  flex-basis: 49%;\n}\n.winner-panel .table-container .ticket .username {\n  font-size: 12px;\n  line-height: 12px;\n}\n.winner-panel .table-container .ticket .number {\n  font-size: 10px;\n  line-height: 11px;\n}\n.winner-panel .table-container .ticket .you-won {\n  color: black;\n  background-color: #FFCC00;\n  border-radius: 10px;\n  font-size: 9px;\n  padding: 1px 2px;\n}\n.winner-panel .winnings {\n  flex-basis: 100% !important;\n  padding-right: 16px;\n  text-align: left;\n  justify-content: space-between;\n  display: flex;\n}\n.winner-panel .winnings .amount {\n  display: inline-block;\n  font-size: 11px;\n  color: white;\n  padding: 3px 12px;\n  background-color: #2b3036;\n  border-radius: 10px;\n  margin-bottom: 4px;\n}\n.winner-panel .winnings .dots {\n  color: white;\n  font-size: 44px;\n  line-height: 0;\n}\n.winner-panel .winnings .count {\n  font-size: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3dpbm5lci1wYW5lbC9FOlxcVXNlcnNcXFN5bHZlc3RlclxcRGVza3RvcFxcYmxvY2tjaGFpbi1sb3R0ZXJ5L3NyY1xcYXBwXFxjb21tb25cXHdpbm5lci1wYW5lbFxcd2lubmVyLXBhbmVsLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9jb21tb24vd2lubmVyLXBhbmVsL3dpbm5lci1wYW5lbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0VBQ0EsaUJBQUE7QUNDSjtBREFJO0VBQ0kseUJBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUNFUjtBRENJO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNDUjtBREVJO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNBUjtBREVJO0VBQ0kseUJBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUNBUjtBREdJO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNEUjtBRElJO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNGUjtBREtJO0VBQ0ksYUFBQTtBQ0hSO0FETUk7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtBQ0pSO0FET0k7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FDTFI7QURNUTtFQUNJLGVBQUE7RUFDQSxtQkFBQTtBQ0paO0FET1E7RUFDSSxlQUFBO0FDTFo7QURPUTtFQUNJLGVBQUE7QUNMWjtBRFVJO0VBQ0ksWUFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0FDUlI7QURTUTtFQUNJLFlBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUNQWjtBRFFZO0VBQ0ksZUFBQTtFQUNBLGlCQUFBO0FDTmhCO0FEUVk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNOaEI7QURRWTtFQUNJLFlBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0FDTmhCO0FEV0k7RUFDSSwyQkFBQTtFQUNBLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSw4QkFBQTtFQUNBLGFBQUE7QUNUUjtBRFVRO0VBQ0kscUJBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDUlo7QURXUTtFQUNJLFlBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtBQ1RaO0FEWVE7RUFDSSxlQUFBO0FDVloiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vd2lubmVyLXBhbmVsL3dpbm5lci1wYW5lbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi53aW5uZXItcGFuZWwge1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuICAgIGxldHRlci1zcGFjaW5nOiAwO1xyXG4gICAgJi5wbGFjZS0wIHtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZjYzAwO1xyXG4gICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICBtaW4taGVpZ2h0OiA0NXB4O1xyXG4gICAgfVxyXG5cclxuICAgICYucGxhY2UtMSB7XHJcbiAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwN2Y3OWE7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuXHJcbiAgICAmLnBsYWNlLTIge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjN2IxNmUzO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDgzcHg7XHJcbiAgICB9XHJcbiAgICAmLnBsYWNlLTMge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyOTc3ZDc7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDgzcHg7XHJcbiAgICB9XHJcblxyXG4gICAgJi5wbGFjZS00IHtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzc2Mjg0NjtcclxuICAgICAgICBtaW4taGVpZ2h0OiA4M3B4O1xyXG4gICAgfVxyXG5cclxuICAgICYucGxhY2UtNSB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNkMzZkMTI7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuXHJcbiAgICAud2lubmVyLWNvbnRhaW5lciB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgIH1cclxuXHJcbiAgICAucGxhY2Uge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgZm9udC1zaXplOiAyNHB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDAgMTZweDtcclxuICAgIH1cclxuXHJcbiAgICAuZmlyc3QtdGlja2V0IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgIHBhZGRpbmc6IDZweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgZmxleC1iYXNpczogMTAwJTtcclxuICAgICAgICAud2lubmluZ3Mge1xyXG4gICAgICAgICAgICBmbGV4LWJhc2lzOiA0MCU7XHJcbiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDEycHg7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAudXNlcm5hbWUge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5udW1iZXIge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuXHJcbiAgICAudGFibGUtY29udGFpbmVyIHtcclxuICAgICAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICAgICAgLnRpY2tldCB7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDJweDtcclxuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgICAgICBmbGV4LWJhc2lzOiA0OSU7XHJcbiAgICAgICAgICAgIC51c2VybmFtZSB7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMTJweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAubnVtYmVyIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxMXB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC55b3Utd29uIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkNDMDA7XHJcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiA5cHg7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxcHggMnB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC53aW5uaW5ncyB7XHJcbiAgICAgICAgZmxleC1iYXNpczogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgICAgIHBhZGRpbmctcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAuYW1vdW50IHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgcGFkZGluZzogM3B4IDEycHg7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYjMwMzY7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDRweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5kb3RzIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDQ0cHg7XHJcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAwIDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5jb3VudCB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLndpbm5lci1wYW5lbCB7XG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XG4gIGxldHRlci1zcGFjaW5nOiAwO1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0wIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmY2MwMDtcbiAgY29sb3I6IGJsYWNrO1xuICBtaW4taGVpZ2h0OiA0NXB4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0xIHtcbiAgY29sb3I6IGJsYWNrO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDdmNzlhO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0yIHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjN2IxNmUzO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0zIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzI5NzdkNztcbiAgY29sb3I6IHdoaXRlO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS00IHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNzYyODQ2O1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS01IHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZDM2ZDEyO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbCAud2lubmVyLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG4ud2lubmVyLXBhbmVsIC5wbGFjZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgcGFkZGluZzogMCAxNnB4O1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtdGlja2V0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBwYWRkaW5nOiA2cHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZmxleC1iYXNpczogMTAwJTtcbn1cbi53aW5uZXItcGFuZWwgLmZpcnN0LXRpY2tldCAud2lubmluZ3Mge1xuICBmbGV4LWJhc2lzOiA0MCU7XG4gIHBhZGRpbmctcmlnaHQ6IDEycHg7XG59XG4ud2lubmVyLXBhbmVsIC5maXJzdC10aWNrZXQgLnVzZXJuYW1lIHtcbiAgZm9udC1zaXplOiAxNXB4O1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtdGlja2V0IC5udW1iZXIge1xuICBmb250LXNpemU6IDEycHg7XG59XG4ud2lubmVyLXBhbmVsIC50YWJsZS1jb250YWluZXIge1xuICBmbGV4LWdyb3c6IDE7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtd3JhcDogd3JhcDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciAudGlja2V0IHtcbiAgcGFkZGluZzogMnB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGZsZXgtYmFzaXM6IDQ5JTtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciAudGlja2V0IC51c2VybmFtZSB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgbGluZS1oZWlnaHQ6IDEycHg7XG59XG4ud2lubmVyLXBhbmVsIC50YWJsZS1jb250YWluZXIgLnRpY2tldCAubnVtYmVyIHtcbiAgZm9udC1zaXplOiAxMHB4O1xuICBsaW5lLWhlaWdodDogMTFweDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciAudGlja2V0IC55b3Utd29uIHtcbiAgY29sb3I6IGJsYWNrO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZDQzAwO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBmb250LXNpemU6IDlweDtcbiAgcGFkZGluZzogMXB4IDJweDtcbn1cbi53aW5uZXItcGFuZWwgLndpbm5pbmdzIHtcbiAgZmxleC1iYXNpczogMTAwJSAhaW1wb3J0YW50O1xuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xuICB0ZXh0LWFsaWduOiBsZWZ0O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGRpc3BsYXk6IGZsZXg7XG59XG4ud2lubmVyLXBhbmVsIC53aW5uaW5ncyAuYW1vdW50IHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDExcHg7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogM3B4IDEycHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyYjMwMzY7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIG1hcmdpbi1ib3R0b206IDRweDtcbn1cbi53aW5uZXItcGFuZWwgLndpbm5pbmdzIC5kb3RzIHtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDQ0cHg7XG4gIGxpbmUtaGVpZ2h0OiAwO1xufVxuLndpbm5lci1wYW5lbCAud2lubmluZ3MgLmNvdW50IHtcbiAgZm9udC1zaXplOiAxMHB4O1xufSJdfQ== */");
 
 /***/ }),
 
@@ -2320,19 +2374,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WinnerPanelComponent", function() { return WinnerPanelComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_constants_placeMap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/constants/placeMap */ "./src/app/constants/placeMap.ts");
+
+
 
 
 let WinnerPanelComponent = class WinnerPanelComponent {
-    constructor() {
-        this.placeMap = {
-            0: '1st',
-            1: '2nd',
-            2: '3rd'
-        };
+    constructor(router) {
+        this.router = router;
+        this.placeMap = src_app_constants_placeMap__WEBPACK_IMPORTED_MODULE_3__["PlaceMap"];
     }
     ngOnInit() {
     }
+    goToWinnings() {
+        this.router.navigate(['/payout-history'], {
+            queryParams: {
+                level: this.place + 1
+            }
+        });
+    }
 };
+WinnerPanelComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
 ], WinnerPanelComponent.prototype, "winnerInfo", void 0);
@@ -2445,6 +2510,7 @@ const ChineseTranslations = {
     'try-again-next-time': '再试一次',
     'username': '用户名',
     'win': '赢得',
+    'winners': '优胜者',
     'winning': '中奖',
     'winning-etc': '当您中奖时，您的奖金将自动添加到您的可用余额中。',
     'withdraw': '提款',
@@ -2457,6 +2523,87 @@ const ChineseTranslations = {
     'you-won': '你赢了！',
     'your-account-is-now-bound': '您的帐户现已绑定。'
 };
+
+
+/***/ }),
+
+/***/ "./src/app/constants/placeMap.ts":
+/*!***************************************!*\
+  !*** ./src/app/constants/placeMap.ts ***!
+  \***************************************/
+/*! exports provided: PlaceMap, PlaceMapArr */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaceMap", function() { return PlaceMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaceMapArr", function() { return PlaceMapArr; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+const PlaceMap = {
+    0: {
+        name: '1st',
+        winnerCount: 1,
+        rank: 1
+    },
+    1: {
+        name: '2nd',
+        winnerCount: 4,
+        rank: 2
+    },
+    2: {
+        name: '3rd',
+        winnerCount: 20,
+        rank: 3
+    },
+    3: {
+        name: '4th',
+        winnerCount: 100,
+        rank: 4
+    },
+    4: {
+        name: '5th',
+        winnerCount: 200,
+        rank: 5
+    },
+    5: {
+        name: '6th',
+        winnerCount: 10000,
+        rank: 6
+    }
+};
+const PlaceMapArr = [
+    {
+        name: '1st',
+        winnerCount: 1,
+        rank: 1
+    },
+    {
+        name: '2nd',
+        winnerCount: 4,
+        rank: 2
+    },
+    {
+        name: '3rd',
+        winnerCount: 20,
+        rank: 3
+    },
+    {
+        name: '4th',
+        winnerCount: 100,
+        rank: 4
+    },
+    {
+        name: '5th',
+        winnerCount: 200,
+        rank: 5
+    },
+    {
+        name: '6th',
+        winnerCount: 10000,
+        rank: 6
+    }
+];
 
 
 /***/ }),
@@ -2553,6 +2700,7 @@ const EnglishTranslations = {
     'try-again-next-time': 'Try again next time',
     'username': 'Username',
     'win': 'Win',
+    'winners': 'Winners',
     'winning': 'Winning',
     'winning-etc': 'When you win, your winnings will be automatically added to your available balance',
     'withdraw': 'Withdraw',
@@ -2578,7 +2726,7 @@ const EnglishTranslations = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".drawing-info {\n  text-align: center;\n  color: white;\n  letter-spacing: 1px;\n}\n.drawing-info .heading {\n  white-space: pre-wrap;\n  font-weight: 400;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  line-height: 28px;\n  height: 70px;\n  font-size: 27px;\n  margin-bottom: 22px;\n}\n.drawing-info .heading.small {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding-top: 6px;\n  margin-bottom: 0;\n}\n.drawing-info .subheading {\n  margin-top: 40px;\n  font-size: 18px;\n}\n.drawing-info .subtitle {\n  font-size: 18px;\n}\n.drawing-info .value {\n  font-size: 50px;\n  line-height: 46px;\n}\n.drawing-info .value .small {\n  font-weight: 300;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.drawing-info .winnings-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  overflow: hidden;\n  width: 100%;\n}\n.drawing-info .winnings-container .winning-panel {\n  margin-top: 8px;\n  padding: 0 16px;\n  transform: translateX(0);\n  transition: transform 1s;\n}\n.drawing-info .winnings-container .winning-panel.isHidden {\n  transform: translateX(100vw);\n}\n.drawing-info .winnings-container .hideText {\n  visibility: hidden;\n}\n.drawing-info .my-winnings {\n  padding: 12px 8px;\n  background-color: #2a2d32;\n  display: flex;\n  justify-content: space-between;\n  height: 65px;\n  border-radius: 16px;\n}\n.drawing-info .my-winnings .winning-icon {\n  height: 100%;\n  width: 60px;\n}\n.drawing-info .my-winnings .winning-icon img {\n  height: 100%;\n}\n.drawing-info .my-winnings .label {\n  color: white;\n  font-size: 14px;\n}\n.drawing-info .my-winnings .amount {\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZHJhd2luZy1pbmZvXFxkcmF3aW5nLWluZm8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0FDQ0o7QURDSTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDQ1o7QURHSTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtBQ0RSO0FESUk7RUFDSSxlQUFBO0FDRlI7QURLSTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtBQ0hSO0FES1E7RUFDSSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQ0haO0FET0k7RUFDSSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtBQ0xSO0FET1E7RUFDSSxlQUFBO0VBQ0EsZUFBQTtFQUNBLHdCQUFBO0VBQ0Esd0JBQUE7QUNMWjtBRE9ZO0VBQ0ksNEJBQUE7QUNMaEI7QURTUTtFQUNFLGtCQUFBO0FDUFY7QURZSTtFQUNJLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUNWUjtBRFlRO0VBQ0ksWUFBQTtFQUNBLFdBQUE7QUNWWjtBRFdZO0VBQ0ksWUFBQTtBQ1RoQjtBRGFRO0VBQ0ksWUFBQTtFQUNBLGVBQUE7QUNYWjtBRGFRO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUNYWiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kcmF3aW5nLWluZm8ge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDFweDtcclxuXHJcbiAgICAuaGVhZGluZyB7XHJcbiAgICAgICAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBhbGlnbi1pdGVtczogZmxleC1lbmQ7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDI4cHg7XHJcbiAgICAgICAgaGVpZ2h0OiA3MHB4O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjdweDtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAyMnB4O1xyXG5cclxuICAgICAgICAmLnNtYWxsIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiBmaXQtY29udGVudDtcclxuICAgICAgICAgICAgcGFkZGluZy10b3A6IDZweDtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnN1YmhlYWRpbmcge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDQwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5zdWJ0aXRsZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgfVxyXG5cclxuICAgIC52YWx1ZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiA1MHB4O1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiA0NnB4O1xyXG5cclxuICAgICAgICAuc21hbGwge1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogMzAwO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE2cHg7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDE2cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC53aW5uaW5ncy1jb250YWluZXIge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgICAgIC53aW5uaW5nLXBhbmVsIHtcclxuICAgICAgICAgICAgbWFyZ2luLXRvcDogOHB4O1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAwIDE2cHg7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcclxuICAgICAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xyXG5cclxuICAgICAgICAgICAgJi5pc0hpZGRlbiB7XHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwdncpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuaGlkZVRleHQge1xyXG4gICAgICAgICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcblxyXG4gICAgLm15LXdpbm5pbmdzIHtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4IDhweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgIGhlaWdodDogNjVweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG5cclxuICAgICAgICAud2lubmluZy1pY29uIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICB3aWR0aDogNjBweDtcclxuICAgICAgICAgICAgaW1nIHtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICBjb2xvcjogI2ZmY2MwMDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iLCIuZHJhd2luZy1pbmZvIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogd2hpdGU7XG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XG59XG4uZHJhd2luZy1pbmZvIC5oZWFkaW5nIHtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xuICBmb250LXdlaWdodDogNDAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xuICBsaW5lLWhlaWdodDogMjhweDtcbiAgaGVpZ2h0OiA3MHB4O1xuICBmb250LXNpemU6IDI3cHg7XG4gIG1hcmdpbi1ib3R0b206IDIycHg7XG59XG4uZHJhd2luZy1pbmZvIC5oZWFkaW5nLnNtYWxsIHtcbiAgaGVpZ2h0OiBmaXQtY29udGVudDtcbiAgcGFkZGluZy10b3A6IDZweDtcbiAgbWFyZ2luLWJvdHRvbTogMDtcbn1cbi5kcmF3aW5nLWluZm8gLnN1YmhlYWRpbmcge1xuICBtYXJnaW4tdG9wOiA0MHB4O1xuICBmb250LXNpemU6IDE4cHg7XG59XG4uZHJhd2luZy1pbmZvIC5zdWJ0aXRsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIHtcbiAgZm9udC1zaXplOiA1MHB4O1xuICBsaW5lLWhlaWdodDogNDZweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIC5zbWFsbCB7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWFyZ2luLXRvcDogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHdpZHRoOiAxMDAlO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsIHtcbiAgbWFyZ2luLXRvcDogOHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcbiAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC53aW5uaW5nLXBhbmVsLmlzSGlkZGVuIHtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDEwMHZ3KTtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciAuaGlkZVRleHQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyB7XG4gIHBhZGRpbmc6IDEycHggOHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGhlaWdodDogNjVweDtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC53aW5uaW5nLWljb24ge1xuICBoZWlnaHQ6IDEwMCU7XG4gIHdpZHRoOiA2MHB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLndpbm5pbmctaWNvbiBpbWcge1xuICBoZWlnaHQ6IDEwMCU7XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC5hbW91bnQge1xuICBjb2xvcjogI2ZmY2MwMDtcbiAgZm9udC1zaXplOiAyMHB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".drawing-info {\n  text-align: center;\n  color: white;\n  letter-spacing: 1px;\n}\n.drawing-info .heading {\n  white-space: pre-wrap;\n  font-weight: 400;\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  line-height: 28px;\n  height: 70px;\n  font-size: 27px;\n  margin-bottom: 22px;\n}\n.drawing-info .heading.small {\n  height: -webkit-fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  padding-top: 6px;\n  margin-bottom: 0;\n}\n.drawing-info .subheading {\n  margin-top: 40px;\n  font-size: 18px;\n}\n.drawing-info .subtitle {\n  font-size: 18px;\n}\n.drawing-info .value {\n  font-size: 50px;\n  line-height: 46px;\n}\n.drawing-info .value .small {\n  font-weight: 300;\n  font-size: 16px;\n  margin-top: 16px;\n}\n.drawing-info .winnings-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  overflow-y: auto;\n  overflow-x: hidden;\n  width: 100%;\n}\n.drawing-info .winnings-container .winning-panel {\n  margin-top: 8px;\n  padding: 0 16px;\n  transform: translateX(0);\n  transition: transform 1s;\n}\n.drawing-info .winnings-container .winning-panel.isHidden {\n  transform: translateX(100vw);\n}\n.drawing-info .winnings-container .hideText {\n  visibility: hidden;\n}\n.drawing-info .my-winnings {\n  padding: 12px 8px;\n  background-color: #2a2d32;\n  display: flex;\n  justify-content: space-between;\n  height: 65px;\n  border-radius: 16px;\n}\n.drawing-info .my-winnings .winning-icon {\n  height: 100%;\n  width: 60px;\n}\n.drawing-info .my-winnings .winning-icon img {\n  height: 100%;\n}\n.drawing-info .my-winnings .label {\n  color: white;\n  font-size: 14px;\n}\n.drawing-info .my-winnings .amount {\n  color: #ffcc00;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vRTpcXFVzZXJzXFxTeWx2ZXN0ZXJcXERlc2t0b3BcXGJsb2NrY2hhaW4tbG90dGVyeS9zcmNcXGFwcFxcaG9tZVxcZHJhd2luZy1pbmZvXFxkcmF3aW5nLWluZm8uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvZHJhd2luZy1pbmZvL2RyYXdpbmctaW5mby5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLG1CQUFBO0FDQ0o7QURDSTtFQUNJLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSwyQkFBQTtFQUFBLHdCQUFBO0VBQUEsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FDQ1o7QURHSTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtBQ0RSO0FESUk7RUFDSSxlQUFBO0FDRlI7QURLSTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtBQ0hSO0FES1E7RUFDSSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtBQ0haO0FET0k7RUFDSSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0FDTFI7QURPUTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0Esd0JBQUE7RUFDQSx3QkFBQTtBQ0xaO0FET1k7RUFDSSw0QkFBQTtBQ0xoQjtBRFNRO0VBQ0Usa0JBQUE7QUNQVjtBRFlJO0VBQ0ksaUJBQUE7RUFDQSx5QkFBQTtFQUNBLGFBQUE7RUFDQSw4QkFBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQ1ZSO0FEWVE7RUFDSSxZQUFBO0VBQ0EsV0FBQTtBQ1ZaO0FEV1k7RUFDSSxZQUFBO0FDVGhCO0FEYVE7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ1haO0FEYVE7RUFDSSxjQUFBO0VBQ0EsZUFBQTtBQ1haIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9kcmF3aW5nLWluZm8vZHJhd2luZy1pbmZvLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRyYXdpbmctaW5mbyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBsZXR0ZXItc3BhY2luZzogMXB4O1xyXG5cclxuICAgIC5oZWFkaW5nIHtcclxuICAgICAgICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBmbGV4LWVuZDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjhweDtcclxuICAgICAgICBoZWlnaHQ6IDcwcHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAyN3B4O1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDIycHg7XHJcblxyXG4gICAgICAgICYuc21hbGwge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogNnB4O1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuc3ViaGVhZGluZyB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogNDBweDtcclxuICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICB9XHJcblxyXG4gICAgLnN1YnRpdGxlIHtcclxuICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICB9XHJcblxyXG4gICAgLnZhbHVlIHtcclxuICAgICAgICBmb250LXNpemU6IDUwcHg7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDQ2cHg7XHJcblxyXG4gICAgICAgIC5zbWFsbCB7XHJcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiAzMDA7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICAgICAgbWFyZ2luLXRvcDogMTZweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLndpbm5pbmdzLWNvbnRhaW5lciB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgICAgICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgICAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbiAgICAgICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgICAgIC53aW5uaW5nLXBhbmVsIHtcclxuICAgICAgICAgICAgbWFyZ2luLXRvcDogOHB4O1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAwIDE2cHg7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwKTtcclxuICAgICAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDFzO1xyXG5cclxuICAgICAgICAgICAgJi5pc0hpZGRlbiB7XHJcbiAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwdncpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAuaGlkZVRleHQge1xyXG4gICAgICAgICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcblxyXG4gICAgLm15LXdpbm5pbmdzIHtcclxuICAgICAgICBwYWRkaW5nOiAxMnB4IDhweDtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xyXG4gICAgICAgIGhlaWdodDogNjVweDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG5cclxuICAgICAgICAud2lubmluZy1pY29uIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICB3aWR0aDogNjBweDtcclxuICAgICAgICAgICAgaW1nIHtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICBjb2xvcjogI2ZmY2MwMDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iLCIuZHJhd2luZy1pbmZvIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBjb2xvcjogd2hpdGU7XG4gIGxldHRlci1zcGFjaW5nOiAxcHg7XG59XG4uZHJhd2luZy1pbmZvIC5oZWFkaW5nIHtcbiAgd2hpdGUtc3BhY2U6IHByZS13cmFwO1xuICBmb250LXdlaWdodDogNDAwO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGZsZXgtZW5kO1xuICBsaW5lLWhlaWdodDogMjhweDtcbiAgaGVpZ2h0OiA3MHB4O1xuICBmb250LXNpemU6IDI3cHg7XG4gIG1hcmdpbi1ib3R0b206IDIycHg7XG59XG4uZHJhd2luZy1pbmZvIC5oZWFkaW5nLnNtYWxsIHtcbiAgaGVpZ2h0OiBmaXQtY29udGVudDtcbiAgcGFkZGluZy10b3A6IDZweDtcbiAgbWFyZ2luLWJvdHRvbTogMDtcbn1cbi5kcmF3aW5nLWluZm8gLnN1YmhlYWRpbmcge1xuICBtYXJnaW4tdG9wOiA0MHB4O1xuICBmb250LXNpemU6IDE4cHg7XG59XG4uZHJhd2luZy1pbmZvIC5zdWJ0aXRsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIHtcbiAgZm9udC1zaXplOiA1MHB4O1xuICBsaW5lLWhlaWdodDogNDZweDtcbn1cbi5kcmF3aW5nLWluZm8gLnZhbHVlIC5zbWFsbCB7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbWFyZ2luLXRvcDogMTZweDtcbn1cbi5kcmF3aW5nLWluZm8gLndpbm5pbmdzLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG4gIG92ZXJmbG93LXk6IGF1dG87XG4gIG92ZXJmbG93LXg6IGhpZGRlbjtcbiAgd2lkdGg6IDEwMCU7XG59XG4uZHJhd2luZy1pbmZvIC53aW5uaW5ncy1jb250YWluZXIgLndpbm5pbmctcGFuZWwge1xuICBtYXJnaW4tdG9wOiA4cHg7XG4gIHBhZGRpbmc6IDAgMTZweDtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKDApO1xuICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMXM7XG59XG4uZHJhd2luZy1pbmZvIC53aW5uaW5ncy1jb250YWluZXIgLndpbm5pbmctcGFuZWwuaXNIaWRkZW4ge1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMTAwdncpO1xufVxuLmRyYXdpbmctaW5mbyAud2lubmluZ3MtY29udGFpbmVyIC5oaWRlVGV4dCB7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIHtcbiAgcGFkZGluZzogMTJweCA4cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyYTJkMzI7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgaGVpZ2h0OiA2NXB4O1xuICBib3JkZXItcmFkaXVzOiAxNnB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLndpbm5pbmctaWNvbiB7XG4gIGhlaWdodDogMTAwJTtcbiAgd2lkdGg6IDYwcHg7XG59XG4uZHJhd2luZy1pbmZvIC5teS13aW5uaW5ncyAud2lubmluZy1pY29uIGltZyB7XG4gIGhlaWdodDogMTAwJTtcbn1cbi5kcmF3aW5nLWluZm8gLm15LXdpbm5pbmdzIC5sYWJlbCB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuLmRyYXdpbmctaW5mbyAubXktd2lubmluZ3MgLmFtb3VudCB7XG4gIGNvbG9yOiAjZmZjYzAwO1xuICBmb250LXNpemU6IDIwcHg7XG59Il19 */");
 
 /***/ }),
 
@@ -2641,7 +2789,7 @@ let DrawingInfoComponent = class DrawingInfoComponent {
     }
     getRemainingBlocks() {
         if (this.blockchainService.rollingLog && this.blockchainService.rollingLog.length && this.lotteryService.currentLotteryInfo.targetBlockHeight) {
-            const count = parseInt(this.lotteryService.currentLotteryInfo.targetBlockHeight, 10) - parseInt(this.blockchainService.rollingLog[0].number, 16);
+            const count = this.lotteryService.currentLotteryInfo.targetBlockHeight - parseInt(this.blockchainService.rollingLog[0].number, 16);
             if (count < 0) {
                 return 0;
             }
@@ -2727,6 +2875,9 @@ let FooterComponent = class FooterComponent {
         }
         return count || 0;
     }
+    authorize() {
+        this.authService.authorize();
+    }
 };
 FooterComponent.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
@@ -2753,7 +2904,7 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".home {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.home .home-content {\n  font-weight: 500;\n  flex-grow: 1;\n  flex-shrink: 1;\n  min-height: 0;\n  padding-bottom: 16px;\n  position: relative;\n  overflow-y: auto;\n}\n.home .home-content .animated-background {\n  overflow: hidden;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.home .buy-ticket-input {\n  margin-top: 20px;\n  padding: 0 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9FOlxcVXNlcnNcXFN5bHZlc3RlclxcRGVza3RvcFxcYmxvY2tjaGFpbi1sb3R0ZXJ5L3NyY1xcYXBwXFxob21lXFxob21lLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0FDQ0o7QURDSTtFQUNJLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FDQ1I7QURDUTtFQUNJLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsV0FBQTtBQ0NaO0FER0k7RUFDSSxnQkFBQTtFQUNBLGVBQUE7QUNEUiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ob21lIHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG5cclxuICAgIC5ob21lLWNvbnRlbnR7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgICAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICAgICAgZmxleC1zaHJpbms6IDE7XHJcbiAgICAgICAgbWluLWhlaWdodDogMDtcclxuICAgICAgICBwYWRkaW5nLWJvdHRvbTogMTZweDtcclxuICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICAgICAgb3ZlcmZsb3cteTogYXV0bztcclxuXHJcbiAgICAgICAgLmFuaW1hdGVkLWJhY2tncm91bmQge1xyXG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgICAgIHRvcDogMDtcclxuICAgICAgICAgICAgbGVmdDogMDtcclxuICAgICAgICAgICAgcmlnaHQ6IDA7XHJcbiAgICAgICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICAgICAgei1pbmRleDogLTE7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgXHJcbiAgICAuYnV5LXRpY2tldC1pbnB1dCB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgICAgICBwYWRkaW5nOiAwIDIwcHg7XHJcbiAgICB9XHJcbn0iLCIuaG9tZSB7XG4gIGhlaWdodDogMTAwJTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cbi5ob21lIC5ob21lLWNvbnRlbnQge1xuICBmb250LXdlaWdodDogNTAwO1xuICBmbGV4LWdyb3c6IDE7XG4gIGZsZXgtc2hyaW5rOiAxO1xuICBtaW4taGVpZ2h0OiAwO1xuICBwYWRkaW5nLWJvdHRvbTogMTZweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBvdmVyZmxvdy15OiBhdXRvO1xufVxuLmhvbWUgLmhvbWUtY29udGVudCAuYW5pbWF0ZWQtYmFja2dyb3VuZCB7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgYm90dG9tOiAwO1xuICB6LWluZGV4OiAtMTtcbn1cbi5ob21lIC5idXktdGlja2V0LWlucHV0IHtcbiAgbWFyZ2luLXRvcDogMjBweDtcbiAgcGFkZGluZzogMCAyMHB4O1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".home {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.home .home-content {\n  font-weight: 500;\n  flex-grow: 1;\n  flex-shrink: 1;\n  min-height: 0;\n  padding-bottom: 16px;\n  position: relative;\n  overflow-y: auto;\n}\n.home .buy-ticket-input {\n  margin-top: 20px;\n  padding: 0 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9FOlxcVXNlcnNcXFN5bHZlc3RlclxcRGVza3RvcFxcYmxvY2tjaGFpbi1sb3R0ZXJ5L3NyY1xcYXBwXFxob21lXFxob21lLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0FDQ0o7QURDSTtFQUNJLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FDQ1I7QURFSTtFQUNJLGdCQUFBO0VBQ0EsZUFBQTtBQ0FSIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhvbWUge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcblxyXG4gICAgLmhvbWUtY29udGVudHtcclxuICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICAgIGZsZXgtZ3JvdzogMTtcclxuICAgICAgICBmbGV4LXNocmluazogMTtcclxuICAgICAgICBtaW4taGVpZ2h0OiAwO1xyXG4gICAgICAgIHBhZGRpbmctYm90dG9tOiAxNnB4O1xyXG4gICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgICAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICAuYnV5LXRpY2tldC1pbnB1dCB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgICAgICBwYWRkaW5nOiAwIDIwcHg7XHJcbiAgICB9XHJcbn0iLCIuaG9tZSB7XG4gIGhlaWdodDogMTAwJTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbn1cbi5ob21lIC5ob21lLWNvbnRlbnQge1xuICBmb250LXdlaWdodDogNTAwO1xuICBmbGV4LWdyb3c6IDE7XG4gIGZsZXgtc2hyaW5rOiAxO1xuICBtaW4taGVpZ2h0OiAwO1xuICBwYWRkaW5nLWJvdHRvbTogMTZweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBvdmVyZmxvdy15OiBhdXRvO1xufVxuLmhvbWUgLmJ1eS10aWNrZXQtaW5wdXQge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBwYWRkaW5nOiAwIDIwcHg7XG59Il19 */");
 
 /***/ }),
 
@@ -3038,8 +3189,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class WinnerInfo {
-    constructor() {
+    constructor(preDisplayWinnings = 0) {
         this.tickets = [];
+        this.preDisplayWinnings = preDisplayWinnings;
         this.myWinnings = 0;
         this.isDrawing = true;
     }
@@ -3223,7 +3375,7 @@ PayoutHistoryItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".payout {\n  padding: 0 24px;\n  height: calc(100% - 51px);\n  overflow-y: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF5b3V0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXHBheW91dFxccGF5b3V0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9wYXlvdXQvcGF5b3V0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL3BheW91dC9wYXlvdXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGF5b3V0IHtcclxuICAgIHBhZGRpbmc6IDAgMjRweDtcclxuICAgIGhlaWdodDogY2FsYygxMDAlIC0gNTFweCk7XHJcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG59IiwiLnBheW91dCB7XG4gIHBhZGRpbmc6IDAgMjRweDtcbiAgaGVpZ2h0OiBjYWxjKDEwMCUgLSA1MXB4KTtcbiAgb3ZlcmZsb3cteTogYXV0bztcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".payout {\n  padding: 0 24px;\n  height: calc(100% - 51px);\n  overflow-y: auto;\n}\n\n.action-container {\n  margin: 16px 8px 8px;\n  display: flex;\n  justify-content: space-evenly;\n}\n\n.action-container button.app-button {\n  line-height: 12px;\n  min-height: auto;\n  min-width: auto;\n  height: auto;\n  width: auto;\n  font-size: 12px;\n  width: 15%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF5b3V0L0U6XFxVc2Vyc1xcU3lsdmVzdGVyXFxEZXNrdG9wXFxibG9ja2NoYWluLWxvdHRlcnkvc3JjXFxhcHBcXHBheW91dFxccGF5b3V0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9wYXlvdXQvcGF5b3V0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURFQTtFQUNJLG9CQUFBO0VBQ0EsYUFBQTtFQUNBLDZCQUFBO0FDQ0o7O0FEQ0k7RUFDSSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtFQUNBLFVBQUE7QUNDUiIsImZpbGUiOiJzcmMvYXBwL3BheW91dC9wYXlvdXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGF5b3V0IHtcclxuICAgIHBhZGRpbmc6IDAgMjRweDtcclxuICAgIGhlaWdodDogY2FsYygxMDAlIC0gNTFweCk7XHJcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xyXG59XHJcblxyXG4uYWN0aW9uLWNvbnRhaW5lciB7XHJcbiAgICBtYXJnaW46IDE2cHggOHB4IDhweDsgXHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XHJcblxyXG4gICAgYnV0dG9uLmFwcC1idXR0b24ge1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAxMnB4O1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IGF1dG87XHJcbiAgICAgICAgbWluLXdpZHRoOiBhdXRvO1xyXG4gICAgICAgIGhlaWdodDogYXV0bztcclxuICAgICAgICB3aWR0aDogYXV0bztcclxuICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgd2lkdGg6IDE1JTtcclxuICAgIH1cclxufSIsIi5wYXlvdXQge1xuICBwYWRkaW5nOiAwIDI0cHg7XG4gIGhlaWdodDogY2FsYygxMDAlIC0gNTFweCk7XG4gIG92ZXJmbG93LXk6IGF1dG87XG59XG5cbi5hY3Rpb24tY29udGFpbmVyIHtcbiAgbWFyZ2luOiAxNnB4IDhweCA4cHg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xufVxuLmFjdGlvbi1jb250YWluZXIgYnV0dG9uLmFwcC1idXR0b24ge1xuICBsaW5lLWhlaWdodDogMTJweDtcbiAgbWluLWhlaWdodDogYXV0bztcbiAgbWluLXdpZHRoOiBhdXRvO1xuICBoZWlnaHQ6IGF1dG87XG4gIHdpZHRoOiBhdXRvO1xuICBmb250LXNpemU6IDEycHg7XG4gIHdpZHRoOiAxNSU7XG59Il19 */");
 
 /***/ }),
 
@@ -3241,90 +3393,120 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/payout.service */ "./src/app/services/payout.service.ts");
 /* harmony import */ var _services_lottery_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/lottery.service */ "./src/app/services/lottery.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _constants_placeMap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../constants/placeMap */ "./src/app/constants/placeMap.ts");
+
+
 
 
 
 
 let PayoutComponent = class PayoutComponent {
-    constructor(lotteryService, payoutService) {
+    constructor(route, lotteryService, payoutService) {
+        this.route = route;
         this.lotteryService = lotteryService;
         this.payoutService = payoutService;
-        this.pageNumber = 1;
-        this.payoutData = [];
-        this.placeMap = {
+        this.currentGameId = this.lotteryService.lastGameId;
+        this.payoutData = {};
+        this.placeMap = _constants_placeMap__WEBPACK_IMPORTED_MODULE_5__["PlaceMapArr"];
+        this.rankingMap = {
             first: 0,
             second: 0,
             third: 0
         };
     }
     ngOnInit() {
-        this.initialize();
+        this.route.queryParams.subscribe((params) => {
+            this.currentLevel = params.level || '1';
+            this.getData(this.currentLevel);
+        });
     }
-    initialize() {
+    selectRank(rank) {
+        this.currentLevel = rank;
+        if (!this.payoutData[rank]) {
+            this.getData(rank);
+        }
+    }
+    getData(level) {
+        if (this.currentGameId != this.lotteryService.lastGameId) {
+            this.payoutData = {};
+            this.currentGameId = this.lotteryService.lastGameId;
+        }
+        if (!this.payoutData[level]) {
+            this.payoutData[level] = {
+                data: [],
+                page: 1,
+                isEnded: false
+            };
+        }
         if (this.lotteryService && this.lotteryService.lastGameId) {
-            this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.pageNumber, 100)
+            this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, level, this.payoutData[level].page, 100)
                 .subscribe((data) => {
-                this.pageNumber++;
-                this.payoutData = data.msg;
-                this.payoutData.forEach(item => {
+                console.log(3, data);
+                this.payoutData[level].page++;
+                this.payoutData[level].data = data.msg;
+                this.payoutData[level].data.forEach(item => {
                     this.setPlaceMap(item.prize);
                 });
             });
         }
         else {
             setTimeout(() => {
-                this.initialize();
+                this.getData(level);
             }, 100);
         }
     }
     getPlace(amount) {
         switch (amount) {
-            case this.placeMap.first:
+            case this.rankingMap.first:
                 return 'first';
-            case this.placeMap.second:
+            case this.rankingMap.second:
                 return 'second';
-            case this.placeMap.third:
+            case this.rankingMap.third:
                 return 'third';
             default:
                 return '';
         }
     }
     setPlaceMap(amount) {
-        if (amount === this.placeMap.first ||
-            amount === this.placeMap.second ||
-            amount === this.placeMap.third ||
-            amount < this.placeMap.third) {
+        if (amount === this.rankingMap.first ||
+            amount === this.rankingMap.second ||
+            amount === this.rankingMap.third ||
+            amount < this.rankingMap.third) {
             return;
         }
-        if (amount > this.placeMap.first) {
-            this.placeMap.third = this.placeMap.second;
-            this.placeMap.second = this.placeMap.first;
-            this.placeMap.first = amount;
+        if (amount > this.rankingMap.first) {
+            this.rankingMap.third = this.rankingMap.second;
+            this.rankingMap.second = this.rankingMap.first;
+            this.rankingMap.first = amount;
         }
-        else if (amount > this.placeMap.second) {
-            this.placeMap.third = this.placeMap.second;
-            this.placeMap.second = amount;
+        else if (amount > this.rankingMap.second) {
+            this.rankingMap.third = this.rankingMap.second;
+            this.rankingMap.second = amount;
         }
         else {
-            this.placeMap.third = amount;
+            this.rankingMap.third = amount;
         }
     }
     onScroll() {
-        // this.payoutService.getPayoutHistory(
-        //   this.lotteryService.lastGameId, 
-        //   this.pageNumber, 
-        //   25
-        // )
-        //   .subscribe((data: any) => {
-        //     this.pageNumber ++;
-        //     this.payoutData = data.msg;
-        //     this.payoutData.forEach(item => {
-        //       this.setPlaceMap(item.prize);
-        //     })
-        //   });
+        this.payoutData[this.currentLevel].page++;
+        this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.currentLevel, this.payoutData[this.currentLevel].page, 100)
+            .subscribe((data) => {
+            const arr = data.msg;
+            arr.forEach(item => {
+                if (!this.payoutData[this.currentLevel].data.find(dup => {
+                    return dup.user === item.user &&
+                        dup.ticket === item.ticket &&
+                        dup.time === item.time;
+                })) {
+                    this.payoutData[this.currentLevel].data.push(item);
+                }
+            });
+        });
     }
 };
 PayoutComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
     { type: _services_lottery_service__WEBPACK_IMPORTED_MODULE_3__["LotteryService"] },
     { type: _services_payout_service__WEBPACK_IMPORTED_MODULE_2__["PayoutService"] }
 ];
@@ -3508,7 +3690,6 @@ const routes = [
     {
         path: 'deposit',
         component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"],
-        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'withdraw',
@@ -3577,6 +3758,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common/window-ref */ "./src/app/common/window-ref.ts");
+
 
 
 
@@ -3584,9 +3767,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AccountService = class AccountService {
-    constructor(authService, httpClient) {
+    constructor(authService, httpClient, windowRef) {
         this.authService = authService;
         this.httpClient = httpClient;
+        this.windowRef = windowRef;
         this.showAccountSettings = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
         this.openOnReturn = false;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
@@ -3610,7 +3794,8 @@ let AccountService = class AccountService {
 };
 AccountService.ctorParameters = () => [
     { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
+    { type: _common_window_ref__WEBPACK_IMPORTED_MODULE_6__["WindowRef"] }
 ];
 AccountService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
@@ -3638,6 +3823,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/window-ref */ "./src/app/common/window-ref.ts");
+
 
 
 
@@ -3646,25 +3833,98 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AuthService = class AuthService {
-    constructor(httpClient) {
+    constructor(httpClient, windowRef) {
         this.httpClient = httpClient;
+        this.windowRef = windowRef;
         this.isLoggedIn = false;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
         this.user = {
             userName: null,
             amountAvailable: null,
+            appToken: null,
             token: null,
             blockHeight: null,
             depositAccount: null,
             memo: null
         };
+        this.appKey = 'btopen8yg2dfaau4x';
+        this.authorize();
+        if (this.windowRef.nativeWindow) {
+            this.windowRef.nativeWindow.SyncCallback = (method, data) => {
+                const dataObj = JSON.parse(data);
+                switch (method) {
+                    case 'Authorizedlogin':
+                        if (dataObj.status !== 'ok' || !dataObj.callback) {
+                            return;
+                        }
+                        this.user.appToken = dataObj.callback.token;
+                        this.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
+                        break;
+                    case 'Recharge':
+                        alert('Recharge response: ' + data);
+                        break;
+                }
+            };
+        }
+    }
+    authorize() {
+        const data = JSON.stringify({
+            appkey: this.appKey
+        });
+        this.sendAppMessage('Authorizedlogin', data);
+    }
+    depositAmount(amount) {
+        alert(`amount: ${amount}, appKey: ${this.appKey}, token: ${this.user.token}`);
+        const data = JSON.stringify({
+            appkey: this.appKey,
+            token: this.user.token,
+            orderNo: Math.random() * 1000 + '' + Date.now(),
+            amount: amount.toString(),
+            currencyTag: 'BTOK'
+        });
+        this.sendAppMessage('Recharge', data);
+    }
+    sendAppMessage(action, data) {
+        if (this.windowRef.nativeWindow.isIOS) {
+            this.windowRef.nativeWindow.webkit.messageHandlers.SyncSendMsg.postMessage([action, data]);
+        }
+        else {
+            if (this.windowRef.nativeWindow.android) {
+                this.windowRef.nativeWindow.android.SyncSendMsg(action, data);
+            }
+            else {
+                // alert('Open this app in Bittok!');
+            }
+        }
+    }
+    loginWithToken(userMail, token) {
+        this.isLoggedIn = false;
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+        };
+        const request = new URLSearchParams();
+        request.set('email', userMail);
+        request.set('token', token);
+        this.httpClient.post(`${this.url}/passport/getToken`, request.toString(), options)
+            .subscribe((results) => {
+            if (results.code === 200) {
+                if (results && results.msg) {
+                    this.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                    this.user.token = results.msg.token;
+                }
+                this.isLoggedIn = true;
+                return this.user;
+            }
+        }, (err) => {
+            alert('error ' + JSON.stringify(err));
+        });
     }
     login(loginObj) {
         this.isLoggedIn = false;
-        let options = {
+        const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
-        let request = new URLSearchParams();
+        const request = new URLSearchParams();
         request.set('username', loginObj.userName);
         if (loginObj.userName.toLowerCase() === 'sylvester') {
             request.set('password', loginObj.password);
@@ -3705,7 +3965,8 @@ let AuthService = class AuthService {
     }
 };
 AuthService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: _common_window_ref__WEBPACK_IMPORTED_MODULE_7__["WindowRef"] }
 ];
 AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
@@ -3867,11 +4128,16 @@ let LotteryService = class LotteryService {
             //   value: 1000,
             //   background: '#cf1942'
             // },
+            // {
+            //   icon: "../../../assets/images/icon-pool-2.png",
+            //   color: "#5a4a0e",
+            //   value: 10000,
+            //   background: "#e5b902",
+            // },
             {
-                icon: "../../../assets/images/icon-pool-2.png",
-                color: "#5a4a0e",
-                value: 10000,
-                background: "#e5b902",
+                icon: '../../../assets/images/icon-pool-3.png',
+                value: 100000,
+                background: '#6a13c2'
             },
         ];
         this.selectedOption = this.options[0];
@@ -3879,10 +4145,10 @@ let LotteryService = class LotteryService {
         this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.setAvailablePrizePool = (msg) => {
-            let prizePool = parseInt(msg.entrylimit || "0", 10);
+            let prizePool = msg.entrylimit;
             let gameId = msg.gameid;
             let lotteryStatus = msg.status.toString();
-            let currentEntries = parseInt(msg.currententry || "0", 10);
+            let currentEntries = msg.currententry;
             let currentStatus;
             this.availablePrizePool = prizePool;
             let myEntries = [];
@@ -4011,26 +4277,24 @@ let LotteryService = class LotteryService {
         const prizeList = msg.prizelist;
         this.clearWinners();
         if (prizeList) {
-            prizeList.forEach((prize) => {
-                if (!this.currentLotteryInfo.winners.main[prize.win - 1]) {
-                    this.currentLotteryInfo.winners.main[prize.win - 1] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"]();
+            prizeList.forEach((prize, i) => {
+                if (!this.currentLotteryInfo.winners.main[i]) {
+                    this.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseInt(msg.myprizelist.find(item => item.win === i + 1).amount, 10));
                 }
-                this.currentLotteryInfo.winners.main[prize.win - 1].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](prize.ticket, prize.user, prize.prize, prize.user === (this.authService.user && this.authService.user.userName)));
+                prize.forEach((item) => {
+                    this.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (this.authService.user && this.authService.user.userName)));
+                });
             });
         }
-        this.currentLotteryInfo.winners.minipool.winningPreDisplay = msg.mybonusprize;
+        this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseInt(msg.myprizelist.find(item => item.win === 7).amount, 10);
     }
     setDrawWinners(prizePool) {
         const currentPrizePool = this.lotteryObj[prizePool];
         currentPrizePool.winners.main.forEach((item, i) => {
             item.isDrawing = true;
             setTimeout(() => {
+                item.myWinnings = item.preDisplayWinnings;
                 item.isDrawing = false;
-                item.tickets.forEach((ticket) => {
-                    if (ticket.isMine) {
-                        item.myWinnings += ticket.amount;
-                    }
-                });
             }, 500 * (i + 1));
         });
         currentPrizePool.winners.minipool.isDrawing = true;
@@ -4087,6 +4351,9 @@ let LotteryService = class LotteryService {
         const prizePool = this.lotteryObj[this.availablePrizePool];
         prizePool.winners.minipool.isDrawing = false;
         prizePool.winners.minipool.winningAmount = prizePool.winners.minipool.winningPreDisplay;
+    }
+    ngOnDestroy() {
+        clearInterval(this.checkStatusInterval);
     }
 };
 LotteryService.ctorParameters = () => [
@@ -4167,7 +4434,7 @@ let PayoutService = class PayoutService {
         this.httpClient = httpClient;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].url;
     }
-    getPayoutHistory(gameid, page, offset) {
+    getPayoutHistory(gameid, level, page, offset) {
         let options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
             // .set('token', this.authService.user.token)
@@ -4176,7 +4443,8 @@ let PayoutService = class PayoutService {
         request.set('gameid', gameid);
         request.set('page', page.toString());
         request.set('offset', offset.toString());
-        return this.httpClient.post(`${this.url}/game/getTopPrizeList`, request.toString(), options);
+        request.set('level', level.toString());
+        return this.httpClient.post(`${this.url}/game/getPrizeList`, request.toString(), options);
     }
 };
 PayoutService.ctorParameters = () => [
