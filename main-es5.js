@@ -71,7 +71,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"overlay\"  [ngClass]=\"{show: showAccount}\" (click)=\"close()\"></div>\n<div class=\"account-settings\" [ngClass]=\"{show: showAccount}\">\n    <div class=\"account-container\">\n        <div>\n            <div class=\"header\">\n                <i class=\"icon-close close\" (click)=\"close()\"></i>\n                <app-language-select class=\"language-select\" [darkBackground]=\"true\"></app-language-select>\n            </div>\n            <div class=\"info-container\">\n                <div class=\"background\">\n                    <app-animated-background [width]=\"'100%'\"></app-animated-background>\n                </div>\n                <div class=\"info\">\n                    <div *ngIf=\"authService.isLoggedIn\">\n                        <div class=\"label\">{{'hello'|translate}},</div>\n                        <div class=\"username\">{{authService.user.userName}}</div>\n                    </div>\n                    <div *ngIf=\"!authService.isLoggedIn\" \n                        class=\"label\"\n                        [routerLink]=\"['/login']\" (click)=\"close()\"\n                    >{{'login-register-to-play' | translate}}</div>\n                    <div>\n                        <div class=\"label\">{{'balance'|translate}}</div>\n                        <div class=\"amount\">\n                            {{!authService.isLoggedIn ? '0' : authService.user.amountAvailable}} POST\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <ng-container *ngIf=\"!authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                <button class=\"app-button dark-text\">\n                    {{'login-register-to-play-now' | translate}}!\n                </button>\n            </div>        \n        </ng-container>\n        <ng-container *ngIf=\"authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/deposit']\" (click)=\"close(true)\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/2fa']\" (click)=\"close(true)\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <!-- <div class=\"link logout\" (click)=\"authService.isLoggedIn = false; close()\">\n                {{'logout' | translate}}\n            </div>     -->\n        </ng-container>    \n        <div class=\"link how-to-play\" [routerLink]=\"['/how-to-play']\" (click)=\"close(true)\">\n            {{'how-to-play' | translate}}\n        </div>\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"overlay\"  [ngClass]=\"{show: showAccount}\" (click)=\"close()\"></div>\n<div class=\"account-settings\" [ngClass]=\"{show: showAccount}\">\n    <div class=\"account-container\">\n        <div>\n            <div class=\"header\">\n                <i class=\"icon-close close\" (click)=\"close()\"></i>\n                <app-language-select class=\"language-select\" [darkBackground]=\"true\"></app-language-select>\n            </div>\n            <div class=\"info-container\">\n                <div class=\"background\">\n                    <app-animated-background [width]=\"'100%'\"></app-animated-background>\n                </div>\n                <div class=\"info\">\n                    <div *ngIf=\"authService.isLoggedIn\">\n                        <div class=\"label\">{{'hello'|translate}},</div>\n                        <div class=\"username\">{{authService.user.userName}}</div>\n                    </div>\n                    <div *ngIf=\"!authService.isLoggedIn\" \n                        class=\"label\"\n                        [routerLink]=\"['/login']\" (click)=\"close()\"\n                    >\n                        <!-- {{'login-register-to-play' | translate}} -->\n                        {{'please-login-through-the-app' | translate}}\n                    </div>\n                    <div>\n                        <div class=\"label\">{{'balance'|translate}}</div>\n                        <div class=\"amount\">\n                            {{!authService.isLoggedIn ? '0' : authService.user.amountAvailable}} POST\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <ng-container *ngIf=\"!authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/login']\" (click)=\"close()\">\n                <button class=\"app-button dark-text\">\n                    {{'please-login-through-the-app' | translate}}!\n                    <!-- {{'login-register-to-play-now' | translate}}! -->\n                </button>\n            </div>        \n        </ng-container>\n        <ng-container *ngIf=\"authService.isLoggedIn\">\n            <div class=\"link\" [routerLink]=\"['/deposit']\" (click)=\"close(true)\">\n                {{'deposit' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/2fa']\" (click)=\"close(true)\">\n                {{'bind-2fa' | translate}}\n            </div>\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\n                {{'payout-history' | translate}}\n            </div>\n            <!-- <div class=\"link logout\" (click)=\"authService.isLoggedIn = false; close()\">\n                {{'logout' | translate}}\n            </div>     -->\n        </ng-container>    \n        <div class=\"link how-to-play\" [routerLink]=\"['/how-to-play']\" (click)=\"close(true)\">\n            {{'how-to-play' | translate}}\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -91,7 +91,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" (ngModel)=\"depositAmount\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" [(ngModel)]=\"depositAmount\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -191,7 +191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"text\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"text\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''; amount=0;\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\" (click)=\"withdraw()\">\r\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>";
     /***/
   },
 
@@ -371,7 +371,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{authService.isLoggedIn ? authService.user.amountAvailable : 0}}\r\n            POST</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            {{'login-register-to-play' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{authService.isLoggedIn ? authService.user.amountAvailable : 0}}\r\n            POST</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            <!-- {{'login-register-to-play' | translate | uppercase}} -->\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -491,7 +491,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <button class=\"app-button dark-text small-text\" (click)=\"authorize()\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button>\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <!-- <button class=\"app-button dark-text small-text\" (click)=\"authorize()\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button> -->\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} POST\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -2255,11 +2255,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.authService = authService;
         this.showIcon = false;
         this.address = "";
+        this.amount = 0;
+        this.message = '';
       }
 
       _createClass(WithdrawComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "withdraw",
+        value: function withdraw() {
+          var _this6 = this;
+
+          this.authService.withdraw(this.amount).subscribe(function (data) {
+            if (data.code === 200) {
+              _this6.message = 'success';
+              _this6.authService.user.amountAvailable = parseInt(data.msg.balance, 10);
+            } else {
+              _this6.message = 'an-error-has-occurred';
+            }
+
+            alert('Withdraw response: ' + JSON.stringify(data));
+          });
+        }
       }]);
 
       return WithdrawComponent;
@@ -2613,7 +2631,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AccountHeaderComponent = /*#__PURE__*/function () {
       function AccountHeaderComponent(location) {
-        var _this6 = this;
+        var _this7 = this;
 
         _classCallCheck(this, AccountHeaderComponent);
 
@@ -2622,7 +2640,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.title = '';
 
         this.navigateBack = function () {
-          _this6.location.back();
+          _this7.location.back();
         };
       }
 
@@ -2840,7 +2858,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "animate",
         value: function animate() {
-          var _this7 = this;
+          var _this8 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -2859,13 +2877,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#coins-animation #coins-parts g').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this7.getRndInteger(-400, 400);
+            var hor = _this8.getRndInteger(-400, 400);
 
-            var vert = _this7.getRndInteger(200, 800);
+            var vert = _this8.getRndInteger(200, 800);
 
-            var timeEl = _this7.randomFloatBetween(2, 3, 2);
+            var timeEl = _this8.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this7.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this8.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -2888,7 +2906,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               ease: 'linear'
             }, 0).to(el, elDur, {
               transformOrigin: '50% 50%',
-              scaleX: _this7.randomFloatBetween(.3, .8, 2),
+              scaleX: _this8.randomFloatBetween(.3, .8, 2),
               repeat: 7,
               yoyo: true,
               ease: 'linear'
@@ -2992,7 +3010,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this8 = this;
+          var _this9 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3011,13 +3029,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#confetti #confetti-particles rect').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this8.getRndInteger(-400, 400);
+            var hor = _this9.getRndInteger(-400, 400);
 
-            var vert = _this8.getRndInteger(200, 800);
+            var vert = _this9.getRndInteger(200, 800);
 
-            var timeEl = _this8.randomFloatBetween(2, 3, 2);
+            var timeEl = _this9.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this8.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this9.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3214,7 +3232,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this9 = this;
+          var _this10 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3232,13 +3250,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#tickets-animation #tickets path').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this9.getRndInteger(-400, 400);
+            var hor = _this10.getRndInteger(-400, 400);
 
-            var vert = _this9.getRndInteger(200, 800);
+            var vert = _this10.getRndInteger(200, 800);
 
-            var timeEl = _this9.randomFloatBetween(2, 3, 2);
+            var timeEl = _this10.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this9.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this10.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3665,13 +3683,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTickets",
         value: function buyTickets() {
-          var _this10 = this;
+          var _this11 = this;
 
           if (this.amount > 0 && this.amount <= this.authService.user.amountAvailable) {
             this.lotteryService.buyTicket(this.amount).subscribe(function () {});
             this.showAnimation = true;
             setTimeout(function () {
-              _this10.showAnimation = false;
+              _this11.showAnimation = false;
             }, 2000);
           }
         }
@@ -4227,6 +4245,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       '2fa-verification': '2FA验证',
       '6-digit-code': '6位数代码',
       'all-tickets': '入票总数',
+      'an-error-has-occurred': '发生了错误。',
       'available': '可用余额',
       'balance': '余额',
       'bind-2fa': '绑定2FA',
@@ -4289,6 +4308,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'play-now': '即刻开玩',
       'please-backup-this-code-somewhere': '请将此代码备份到某处。',
       'please-confirm-your-withdrawal-address': '请确认您的提款地址',
+      'please-login-through-the-app': '请通过应用程序登录',
       'pool-opened': '奖池开了',
       'prize-pool': '奖池',
       'register-new-account': '注册新帐号',
@@ -4443,6 +4463,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       '2fa-verification': '2FA Verification',
       '6-digit-code': '6-Digit Code',
       'all-tickets': 'All Tickets',
+      'an-error-has-occurred': 'An error has occurred.',
       'available': 'Available',
       'balance': 'Balance',
       'bind-2fa': 'Bind 2FA',
@@ -4504,6 +4525,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'play-now': 'Play Now',
       'please-backup-this-code-somewhere': 'Please backup this code somewhere',
       'please-confirm-your-withdrawal-address': 'Please confirm your withdrawal address',
+      'please-login-through-the-app': 'Please Login Through the App',
       'prize-pool': 'Prize Pool',
       'register-new-account': 'Register New Account',
       'remember-your-profile-is-anonymous-etc': 'Remember: your profile is anonymous, which means we can\'t recover your account if you forget your password. Enable 2FA for extra security',
@@ -4624,15 +4646,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "monitorWinnings",
         value: function monitorWinnings() {
-          var _this11 = this;
+          var _this12 = this;
 
           this.checkWinningInterval = setTimeout(function () {
-            if (_this11.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
-              _this11.incrementInterval = 500;
-              _this11.myWinningsIncrement = 0;
+            if (_this12.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
+              _this12.incrementInterval = 500;
+              _this12.myWinningsIncrement = 0;
             } else {
-              _this11.incrementInterval = 20;
-              var winners = _this11.lotteryService.currentLotteryInfo.winners;
+              _this12.incrementInterval = 20;
+              var winners = _this12.lotteryService.currentLotteryInfo.winners;
               var myWinnings = winners.minipool.winningAmount;
               winners.main.forEach(function (item) {
                 if (item && item.myWinnings) {
@@ -4640,15 +4662,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }
               });
 
-              if (!myWinnings || _this11.myWinningsIncrement >= myWinnings) {
-                _this11.myWinningsIncrement = _this11.myWinningsIncrement;
-                _this11.incrementInterval = 500;
-              } else if (_this11.myWinningsIncrement < myWinnings) {
-                _this11.myWinningsIncrement += 1;
+              if (!myWinnings || _this12.myWinningsIncrement >= myWinnings) {
+                _this12.myWinningsIncrement = _this12.myWinningsIncrement;
+                _this12.incrementInterval = 500;
+              } else if (_this12.myWinningsIncrement < myWinnings) {
+                _this12.myWinningsIncrement += 1;
               }
             }
 
-            _this11.monitorWinnings();
+            _this12.monitorWinnings();
           }, this.incrementInterval);
         }
       }, {
@@ -4667,13 +4689,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "finalizeWinning",
         value: function finalizeWinning() {
-          var _this12 = this;
+          var _this13 = this;
 
           var winners = this.lotteryService.currentLotteryInfo.winners;
           this.myWinningsIncrement = winners.minipool.winningAmount;
           winners.main.forEach(function (item) {
             if (item && item.myWinnings) {
-              _this12.myWinningsIncrement += item.myWinnings;
+              _this13.myWinningsIncrement += item.myWinnings;
             }
           });
         }
@@ -5436,19 +5458,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "sortedMyEntries",
         value: function sortedMyEntries() {
-          var _this13 = this;
+          var _this14 = this;
 
           return this.lotteryService.currentLotteryInfo.myEntries.sort(function (a, b) {
-            return _this13.sortMyEntries ? a.start - b.start : b.start - a.start;
+            return _this14.sortMyEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }, {
         key: "sortedAllEntries",
         value: function sortedAllEntries() {
-          var _this14 = this;
+          var _this15 = this;
 
           return this.lotteryService.currentLotteryInfo.allEntries.sort(function (a, b) {
-            return _this14.sortAllEntries ? a.start - b.start : b.start - a.start;
+            return _this15.sortAllEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }]);
@@ -5715,12 +5737,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this15 = this;
+          var _this16 = this;
 
           this.route.queryParams.subscribe(function (params) {
-            _this15.currentLevel = params.level || '1';
+            _this16.currentLevel = params.level || '1';
 
-            _this15.getData(_this15.currentLevel);
+            _this16.getData(_this16.currentLevel);
           });
         }
       }, {
@@ -5735,7 +5757,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getData",
         value: function getData(level) {
-          var _this16 = this;
+          var _this17 = this;
 
           if (this.currentGameId != this.lotteryService.lastGameId) {
             this.payoutData = {};
@@ -5753,16 +5775,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.lotteryService && this.lotteryService.lastGameId) {
             this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, level, this.payoutData[level].page, 100).subscribe(function (data) {
               console.log(3, data);
-              _this16.payoutData[level].page++;
-              _this16.payoutData[level].data = data.msg;
+              _this17.payoutData[level].page++;
+              _this17.payoutData[level].data = data.msg;
 
-              _this16.payoutData[level].data.forEach(function (item) {
-                _this16.setPlaceMap(item.prize);
+              _this17.payoutData[level].data.forEach(function (item) {
+                _this17.setPlaceMap(item.prize);
               });
             });
           } else {
             setTimeout(function () {
-              _this16.getData(level);
+              _this17.getData(level);
             }, 100);
           }
         }
@@ -5804,16 +5826,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onScroll",
         value: function onScroll() {
-          var _this17 = this;
+          var _this18 = this;
 
           this.payoutData[this.currentLevel].page++;
           this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.currentLevel, this.payoutData[this.currentLevel].page, 100).subscribe(function (data) {
             var arr = data.msg;
             arr.forEach(function (item) {
-              if (!_this17.payoutData[_this17.currentLevel].data.find(function (dup) {
+              if (!_this18.payoutData[_this18.currentLevel].data.find(function (dup) {
                 return dup.user === item.user && dup.ticket === item.ticket && dup.time === item.time;
               })) {
-                _this17.payoutData[_this17.currentLevel].data.push(item);
+                _this18.payoutData[_this18.currentLevel].data.push(item);
               }
             });
           });
@@ -6145,8 +6167,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"]
     }, {
       path: 'withdraw',
-      component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"],
-      canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+      component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"]
     }, {
       path: 'account-history',
       component: _account_account_history_account_history_component__WEBPACK_IMPORTED_MODULE_10__["AccountHistoryComponent"],
@@ -6372,7 +6393,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AuthService = /*#__PURE__*/function () {
       function AuthService(httpClient, windowRef) {
-        var _this18 = this;
+        var _this19 = this;
 
         _classCallCheck(this, AuthService);
 
@@ -6402,9 +6423,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   return;
                 }
 
-                _this18.user.appToken = dataObj.callback.token;
+                _this19.user.appToken = dataObj.callback.token;
 
-                _this18.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
+                _this19.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
 
                 break;
 
@@ -6427,15 +6448,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "depositAmount",
         value: function depositAmount(amount) {
-          alert("amount: ".concat(amount, ", appKey: ").concat(this.appKey, ", token: ").concat(this.user.token));
+          alert("Note - Deposit amount: ".concat(amount, ", appKey: ").concat(this.appKey, ", token: ").concat(this.user.token));
           var data = JSON.stringify({
             appkey: this.appKey,
-            token: this.user.token,
+            token: this.user.appToken,
             orderNo: Math.random() * 1000 + '' + Date.now(),
             amount: amount.toString(),
             currencyTag: 'BTOK'
           });
           this.sendAppMessage('Recharge', data);
+        }
+      }, {
+        key: "withdraw",
+        value: function withdraw(amount) {
+          alert("Note - withdraw amount: ".concat(amount, ", appKey: ").concat(this.appKey, ", token: ").concat(this.user.token));
+          var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set("token", this.user.token)
+          };
+          var request = new URLSearchParams();
+          request.set('amount', amount.toString());
+          return this.httpClient.post("".concat(this.url, "/account/withdraw"), request.toString(), options);
         }
       }, {
         key: "sendAppMessage",
@@ -6452,7 +6484,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "loginWithToken",
         value: function loginWithToken(userMail, token) {
-          var _this19 = this;
+          var _this20 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6464,12 +6496,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
-                _this19.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
-                _this19.user.token = results.msg.token;
+                _this20.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                _this20.user.token = results.msg.token;
               }
 
-              _this19.isLoggedIn = true;
-              return _this19.user;
+              _this20.isLoggedIn = true;
+              return _this20.user;
             }
           }, function (err) {
             alert('error ' + JSON.stringify(err));
@@ -6478,7 +6510,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login(loginObj) {
-          var _this20 = this;
+          var _this21 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6495,24 +6527,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/passport/login"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this20.user.userName = loginObj.userName;
+              _this21.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this20.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
-                _this20.user.token = results.msg.token;
-                _this20.user.memo = results.msg.memo;
-                _this20.user.depositAccount = results.msg.depositaccount;
+                _this21.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                _this21.user.token = results.msg.token;
+                _this21.user.memo = results.msg.memo;
+                _this21.user.depositAccount = results.msg.depositaccount;
               }
 
-              _this20.isLoggedIn = true;
-              return _this20.user;
+              _this21.isLoggedIn = true;
+              return _this21.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this21 = this;
+          var _this22 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6523,7 +6555,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/passport/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this21.login(registrationObj);
+              return _this22.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -6614,7 +6646,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BlockChainService, [{
         key: "startLog",
         value: function startLog() {
-          var _this22 = this;
+          var _this23 = this;
 
           this.isSingleRow = false;
 
@@ -6624,15 +6656,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             this.getLatestBlockSub = this.getLatestBlock().subscribe(function (response) {
-              _this22.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+              _this23.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
 
-              if (_this22.getBlockSub) {
-                _this22.getBlockSub.unsubscribe();
+              if (_this23.getBlockSub) {
+                _this23.getBlockSub.unsubscribe();
               }
 
-              _this22.getBlockSub = _this22.getSpecificBlock(response.result).subscribe(function (response) {
+              _this23.getBlockSub = _this23.getSpecificBlock(response.result).subscribe(function (response) {
                 if (response.result) {
-                  _this22.rollingLog.push(response.result);
+                  _this23.rollingLog.push(response.result);
                 }
               });
             });
@@ -6640,18 +6672,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (!this.rollingInterval) {
             this.rollingInterval = setInterval(function () {
-              if (_this22.getBlockSub) {
-                _this22.getBlockSub.unsubscribe();
+              if (_this23.getBlockSub) {
+                _this23.getBlockSub.unsubscribe();
               }
 
-              _this22.getBlockSub = _this22.getSpecificBlock('0x' + _this22.currentBlock).subscribe(function (response) {
+              _this23.getBlockSub = _this23.getSpecificBlock('0x' + _this23.currentBlock).subscribe(function (response) {
                 if (response.result) {
-                  _this22.currentBlock = (parseInt(_this22.currentBlock, 16) + 1).toString(16);
+                  _this23.currentBlock = (parseInt(_this23.currentBlock, 16) + 1).toString(16);
 
-                  _this22.rollingLog.unshift(response.result);
+                  _this23.rollingLog.unshift(response.result);
 
-                  if (_this22.rollingLog.length > 20) {
-                    _this22.rollingLog.pop();
+                  if (_this23.rollingLog.length > 20) {
+                    _this23.rollingLog.pop();
                   }
                 }
               });
@@ -6668,13 +6700,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
-          var _this23 = this;
+          var _this24 = this;
 
           this.isSingleRow = true;
           this.stopLog();
           this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
             if (response.result) {
-              _this23.rollingLog = [response.result];
+              _this24.rollingLog = [response.result];
             }
           });
         }
@@ -6805,7 +6837,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this24 = this;
+        var _this25 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -6840,7 +6872,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = msg.currententry;
           var currentStatus;
-          _this24.availablePrizePool = prizePool;
+          _this25.availablePrizePool = prizePool;
           var myEntries = [];
 
           if (msg.mytickets) {
@@ -6854,15 +6886,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          if (!_this24.lotteryObj[prizePool]) {
-            _this24.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
+          if (!_this25.lotteryObj[prizePool]) {
+            _this25.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
-            currentStatus = _this24.lotteryObj[prizePool].lotteryStatus;
-            _this24.lotteryObj[prizePool].gameId = gameId;
-            _this24.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this24.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
-            _this24.lotteryObj[prizePool].myEntries = myEntries;
-            _this24.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
+            currentStatus = _this25.lotteryObj[prizePool].lotteryStatus;
+            _this25.lotteryObj[prizePool].gameId = gameId;
+            _this25.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this25.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this25.lotteryObj[prizePool].myEntries = myEntries;
+            _this25.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -6874,15 +6906,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case "2":
-                clearInterval(_this24.checkStatusInterval);
+                clearInterval(_this25.checkStatusInterval);
 
-                _this24.setPrizePool(msg);
+                _this25.setPrizePool(msg);
 
-                _this24.setDrawWinners(prizePool);
+                _this25.setDrawWinners(prizePool);
 
-                _this24.blockChainService.setSingleBlock(msg.targetblockheight);
+                _this25.blockChainService.setSingleBlock(msg.targetblockheight);
 
-                _this24.finishPendingProcess(prizePool);
+                _this25.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -6890,19 +6922,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this24.lotteryObj[prizePool];
+          var currentPrizePool = _this25.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== "0") {
             return;
           }
 
-          _this24.setLotteryStatus("1", prizePool);
+          _this25.setLotteryStatus("1", prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this24.lotteryObj[prizePool];
+          var currentPrizePool = _this25.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
-          _this24.lastGameId = _this24.currentLotteryInfo.gameId;
+          _this25.lastGameId = _this25.currentLotteryInfo.gameId;
 
           if (currentPrizePool.countDownInterval) {
             clearInterval(currentPrizePool.countDownInterval);
@@ -6912,12 +6944,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this24.startStatusCheckInterval();
+              _this25.startStatusCheckInterval();
 
-              _this24.blockChainService.startLog();
+              _this25.blockChainService.startLog();
             }
 
-            _this24.lotteryObj[prizePool].countDown--;
+            _this25.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -6927,7 +6959,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this25 = this;
+          var _this26 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -6939,9 +6971,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this25.statusSubscription.unsubscribe();
+            _this26.statusSubscription.unsubscribe();
 
-            _this25.statusSubscription = _this25.checkGameStatus().subscribe(function () {});
+            _this26.statusSubscription = _this26.checkGameStatus().subscribe(function () {});
           }, 3000);
         }
       }, {
@@ -6957,7 +6989,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this26 = this;
+          var _this27 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token || "anonymous")
@@ -6966,7 +6998,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("type", "active");
           return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this26.setAvailablePrizePool(results);
+              _this27.setAvailablePrizePool(results);
 
               return results;
             }
@@ -6984,21 +7016,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(msg) {
-          var _this27 = this;
+          var _this28 = this;
 
           var prizeList = msg.prizelist;
           this.clearWinners();
 
           if (prizeList) {
             prizeList.forEach(function (prize, i) {
-              if (!_this27.currentLotteryInfo.winners.main[i]) {
-                _this27.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseInt(msg.myprizelist.find(function (item) {
+              if (!_this28.currentLotteryInfo.winners.main[i]) {
+                _this28.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseInt(msg.myprizelist.find(function (item) {
                   return item.win === i + 1;
                 }).amount, 10));
               }
 
               prize.forEach(function (item) {
-                _this27.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (_this27.authService.user && _this27.authService.user.userName)));
+                _this28.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (_this28.authService.user && _this28.authService.user.userName)));
               });
             });
           }
@@ -7039,7 +7071,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTicket",
         value: function buyTicket(amount) {
-          var _this28 = this;
+          var _this29 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token)
@@ -7049,9 +7081,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("gameid", this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this28.authService.user.amountAvailable = results.msg.balance;
+              _this29.authService.user.amountAvailable = parseInt(results.msg.balance, 10);
 
-              _this28.startStatusCheckInterval();
+              _this29.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -7174,7 +7206,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this29 = this;
+      var _this30 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -7183,7 +7215,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this29.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this30.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 
