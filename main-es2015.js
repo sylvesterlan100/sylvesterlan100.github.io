@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"text\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''; amount=0;\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\" (click)=\"withdraw()\">\r\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"text\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\" (click)=\"withdraw()\">\r\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>");
 
 /***/ }),
 
@@ -914,6 +914,7 @@ let DepositComponent = class DepositComponent {
     }
     deposit() {
         this.authService.depositAmount(this.depositAmount);
+        this.depositAmount = 0;
     }
     ngOnInit() {
     }
@@ -1265,13 +1266,13 @@ let WithdrawComponent = class WithdrawComponent {
         this.authService.withdraw(this.amount)
             .subscribe((data) => {
             if (data.code === 200) {
+                this.amount = 0;
                 this.message = 'success';
-                this.authService.user.amountAvailable = parseInt(data.msg.balance, 10);
+                this.authService.user.amountAvailable = parseFloat(data.msg.balance);
             }
             else {
                 this.message = 'an-error-has-occurred';
             }
-            alert('Withdraw response: ' + JSON.stringify(data));
         });
     }
 };
@@ -3875,7 +3876,7 @@ let AuthService = class AuthService {
                         this.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
                         break;
                     case 'Recharge':
-                        alert('Recharge response: ' + data);
+                        alert(dataObj.message);
                         break;
                 }
             };
@@ -3888,7 +3889,6 @@ let AuthService = class AuthService {
         this.sendAppMessage('Authorizedlogin', data);
     }
     depositAmount(amount) {
-        alert(`Note - Deposit amount: ${amount}, appKey: ${this.appKey}, token: ${this.user.token}`);
         const data = JSON.stringify({
             appkey: this.appKey,
             token: this.user.appToken,
@@ -3907,7 +3907,6 @@ let AuthService = class AuthService {
         return this.httpClient.post(`${this.url}/account/getAccountInfo`, request.toString(), options);
     }
     withdraw(amount) {
-        alert(`Note - withdraw amount: ${amount}, appKey: ${this.appKey}, token: ${this.user.token}`);
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
                 .set("token", this.user.token)
@@ -3941,7 +3940,7 @@ let AuthService = class AuthService {
             .subscribe((results) => {
             if (results.code === 200) {
                 if (results && results.msg) {
-                    this.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                    this.user.amountAvailable = parseFloat(results.msg.balance) || 0;
                     this.user.token = results.msg.token;
                 }
                 this.isLoggedIn = true;
@@ -3957,7 +3956,7 @@ let AuthService = class AuthService {
                 this.accountUpdateSub = this.getAccountTotal()
                     .subscribe((response) => {
                     if (response.code === 200) {
-                        this.user.amountAvailable = parseInt(response.msg.balance, 10);
+                        this.user.amountAvailable = parseFloat(response.msg.balance);
                     }
                 });
             }, 30000);
@@ -3983,7 +3982,7 @@ let AuthService = class AuthService {
             if (results.code === 200) {
                 this.user.userName = loginObj.userName;
                 if (results && results.msg) {
-                    this.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                    this.user.amountAvailable = parseFloat(results.msg.balance) || 0;
                     this.user.token = results.msg.token;
                     this.user.memo = results.msg.memo;
                     this.user.depositAccount = results.msg.depositaccount;
@@ -4229,7 +4228,8 @@ let LotteryService = class LotteryService {
                         clearInterval(this.checkStatusInterval);
                         this.setPrizePool(msg);
                         this.setDrawWinners(prizePool);
-                        this.blockChainService.setSingleBlock(msg.targetblockheight);
+                        // this.blockChainService.setSingleBlock(msg.targetblockheight);
+                        this.blockChainService.stopLog();
                         this.finishPendingProcess(prizePool);
                         break;
                 }
@@ -4325,14 +4325,14 @@ let LotteryService = class LotteryService {
         if (prizeList) {
             prizeList.forEach((prize, i) => {
                 if (!this.currentLotteryInfo.winners.main[i]) {
-                    this.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseInt(msg.myprizelist.find(item => item.win === i + 1).amount, 10));
+                    this.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(item => item.win === i + 1).amount));
                 }
                 prize.forEach((item) => {
                     this.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (this.authService.user && this.authService.user.userName)));
                 });
             });
         }
-        this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseInt(msg.myprizelist.find(item => item.win === 7).amount, 10);
+        this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(item => item.win === 7).amount);
     }
     setDrawWinners(prizePool) {
         const currentPrizePool = this.lotteryObj[prizePool];
@@ -4369,7 +4369,7 @@ let LotteryService = class LotteryService {
             .post(`${this.url}/bets/buyTickets`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
             if (results.code === 200) {
-                this.authService.user.amountAvailable = parseInt(results.msg.balance, 10);
+                this.authService.user.amountAvailable = parseFloat(results.msg.balance);
                 this.startStatusCheckInterval();
                 return results.msg;
             }

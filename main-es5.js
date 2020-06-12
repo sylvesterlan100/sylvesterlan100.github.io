@@ -191,7 +191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"text\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''; amount=0;\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\" (click)=\"withdraw()\">\r\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable}} POST</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"text\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\" (click)=\"withdraw()\">\r\n        <button class=\"app-button\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>";
     /***/
   },
 
@@ -1673,6 +1673,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "deposit",
         value: function deposit() {
           this.authService.depositAmount(this.depositAmount);
+          this.depositAmount = 0;
         }
       }, {
         key: "ngOnInit",
@@ -2269,13 +2270,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.authService.withdraw(this.amount).subscribe(function (data) {
             if (data.code === 200) {
+              _this6.amount = 0;
               _this6.message = 'success';
-              _this6.authService.user.amountAvailable = parseInt(data.msg.balance, 10);
+              _this6.authService.user.amountAvailable = parseFloat(data.msg.balance);
             } else {
               _this6.message = 'an-error-has-occurred';
             }
-
-            alert('Withdraw response: ' + JSON.stringify(data));
           });
         }
       }]);
@@ -6421,7 +6421,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case 'Recharge':
-                alert('Recharge response: ' + data);
+                alert(dataObj.message);
                 break;
             }
           };
@@ -6439,7 +6439,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "depositAmount",
         value: function depositAmount(amount) {
-          alert("Note - Deposit amount: ".concat(amount, ", appKey: ").concat(this.appKey, ", token: ").concat(this.user.token));
           var data = JSON.stringify({
             appkey: this.appKey,
             token: this.user.appToken,
@@ -6461,7 +6460,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "withdraw",
         value: function withdraw(amount) {
-          alert("Note - withdraw amount: ".concat(amount, ", appKey: ").concat(this.appKey, ", token: ").concat(this.user.token));
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set("token", this.user.token)
           };
@@ -6496,7 +6494,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
-                _this20.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                _this20.user.amountAvailable = parseFloat(results.msg.balance) || 0;
                 _this20.user.token = results.msg.token;
               }
 
@@ -6515,7 +6513,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
               _this20.accountUpdateSub = _this20.getAccountTotal().subscribe(function (response) {
                 if (response.code === 200) {
-                  _this20.user.amountAvailable = parseInt(response.msg.balance, 10);
+                  _this20.user.amountAvailable = parseFloat(response.msg.balance);
                 }
               });
             }, 30000);
@@ -6546,7 +6544,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               _this21.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this21.user.amountAvailable = parseInt(results.msg.balance, 10) || 0;
+                _this21.user.amountAvailable = parseFloat(results.msg.balance) || 0;
                 _this21.user.token = results.msg.token;
                 _this21.user.memo = results.msg.memo;
                 _this21.user.depositAccount = results.msg.depositaccount;
@@ -6926,9 +6924,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
                 _this25.setPrizePool(msg);
 
-                _this25.setDrawWinners(prizePool);
+                _this25.setDrawWinners(prizePool); // this.blockChainService.setSingleBlock(msg.targetblockheight);
 
-                _this25.blockChainService.setSingleBlock(msg.targetblockheight);
+
+                _this25.blockChainService.stopLog();
 
                 _this25.finishPendingProcess(prizePool);
 
@@ -7040,9 +7039,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (prizeList) {
             prizeList.forEach(function (prize, i) {
               if (!_this28.currentLotteryInfo.winners.main[i]) {
-                _this28.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseInt(msg.myprizelist.find(function (item) {
+                _this28.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
                   return item.win === i + 1;
-                }).amount, 10));
+                }).amount));
               }
 
               prize.forEach(function (item) {
@@ -7051,9 +7050,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseInt(msg.myprizelist.find(function (item) {
+          this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(function (item) {
             return item.win === 7;
-          }).amount, 10);
+          }).amount);
         }
       }, {
         key: "setDrawWinners",
@@ -7097,7 +7096,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("gameid", this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this29.authService.user.amountAvailable = parseInt(results.msg.balance, 10);
+              _this29.authService.user.amountAvailable = parseFloat(results.msg.balance);
 
               _this29.startStatusCheckInterval();
 
