@@ -3960,7 +3960,7 @@ let AuthService = class AuthService {
                         this.user.amountAvailable = parseInt(response.msg.balance, 10);
                     }
                 });
-            }, 3600000);
+            }, 30000);
         }, (err) => {
             alert('error ' + JSON.stringify(err));
         });

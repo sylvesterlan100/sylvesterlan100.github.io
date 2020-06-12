@@ -6518,7 +6518,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   _this20.user.amountAvailable = parseInt(response.msg.balance, 10);
                 }
               });
-            }, 3600000);
+            }, 30000);
           }, function (err) {
             alert('error ' + JSON.stringify(err));
           });
