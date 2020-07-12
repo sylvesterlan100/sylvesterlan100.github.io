@@ -3916,11 +3916,23 @@ let AuthService = class AuthService {
         return this.httpClient.post(`${this.url}/account/withdraw`, request.toString(), options);
     }
     sendAppMessage(action, data) {
-        if (this.windowRef.nativeWindow.isIOS) {
-            this.windowRef.nativeWindow.webkit.messageHandlers.SyncSendMsg.postMessage([action, data]);
+        if (window.isIOS) {
+            window.webkit.messageHandlers.SyncSendMsg.postMessage([action, data]);
+            alert('Logging In Using Protocol 1');
+        }
+        else if (this.windowRef.nativeWindow.isIOS) {
+            if (this.windowRef && this.windowRef.nativeWindow) {
+                alert('Logging In Using Protocol 2');
+                this.windowRef.nativeWindow.webkit.messageHandlers.SyncSendMsg.postMessage([action, data]);
+            }
+            else {
+                alert('Logging In Using Protocol 3');
+                window.webkit.messageHandlers.SyncSendMsg.postMessage([action, data]);
+            }
         }
         else {
             if (this.windowRef.nativeWindow.android) {
+                alert('Logging In Using Protocol 0');
                 this.windowRef.nativeWindow.android.SyncSendMsg(action, data);
             }
             else {
