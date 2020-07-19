@@ -91,7 +91,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" step=\".0001\" type=\"number\" [(ngModel)]=\"depositAmount\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" step=\".0001\" type=\"number\" [(ngModel)]=\"depositAmount\" (ngModelChange)=\"updateAmount()\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -191,7 +191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"number\" step=\".0001\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\">\r\n        <button [disabled]=\"isLoading\" class=\"app-button\" (click)=\"withdraw()\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"number\" step=\".0001\" [(ngModel)]=\"amount\" (ngModelChange)=\"updateAmount()\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\">\r\n        <button [disabled]=\"isLoading\" class=\"app-button\" (click)=\"withdraw()\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>";
     /***/
   },
 
@@ -371,7 +371,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            <!-- {{'login-register-to-play' | translate | uppercase}} -->\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" step=\".0001\" (ngModelChange)=\"updateAmount()\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            <!-- {{'login-register-to-play' | translate | uppercase}} -->\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n";
     /***/
   },
 
@@ -1676,6 +1676,31 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.depositAmount = 0;
         }
       }, {
+        key: "updateAmount",
+        value: function updateAmount() {
+          var _this3 = this;
+
+          setTimeout(function () {
+            if (_this3.depositAmount) {
+              var amountStr = _this3.depositAmount.toString();
+
+              if (amountStr.indexOf('.') === 0) {
+                if (amountStr.length > 5) {
+                  _this3.depositAmount = parseFloat(amountStr.substr(0, 5));
+                }
+              } else {
+                var arr = amountStr.split('.');
+
+                if (arr[1] && arr[1].length > 4) {
+                  arr[1] = arr[1].substr(0, 4);
+                }
+
+                _this3.depositAmount = parseFloat(arr.join('.'));
+              }
+            }
+          }, 0);
+        }
+      }, {
         key: "ngOnInit",
         value: function ngOnInit() {}
       }]);
@@ -1797,16 +1822,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login() {
-          var _this3 = this;
+          var _this4 = this;
 
           if (this.infoValid()) {
             this.authService.login(this.loginObj).subscribe(function (data) {
               if (data) {
-                _this3.lotteryService.clearLotteryObj();
+                _this4.lotteryService.clearLotteryObj();
 
-                _this3.lotteryService.startStatusCheckInterval();
+                _this4.lotteryService.startStatusCheckInterval();
 
-                _this3.router.navigate(['/home']);
+                _this4.router.navigate(['/home']);
               }
             });
           }
@@ -2037,12 +2062,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "register",
         value: function register() {
-          var _this4 = this;
+          var _this5 = this;
 
           if (this.infoValid()) {
             this.authService.register(this.registrationObj).subscribe(function (data) {
               if (data) {
-                _this4.router.navigate(['/orientation']);
+                _this5.router.navigate(['/orientation']);
               }
             });
           }
@@ -2132,7 +2157,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var TwoFactorComponent = /*#__PURE__*/function () {
       function TwoFactorComponent(location) {
-        var _this5 = this;
+        var _this6 = this;
 
         _classCallCheck(this, TwoFactorComponent);
 
@@ -2141,10 +2166,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.step = 0;
 
         this.navBack = function () {
-          if (_this5.step === 0) {
-            _this5.location.back();
+          if (_this6.step === 0) {
+            _this6.location.back();
           } else {
-            _this5.step--;
+            _this6.step--;
           }
         };
       }
@@ -2267,7 +2292,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "withdraw",
         value: function withdraw() {
-          var _this6 = this;
+          var _this7 = this;
 
           if (this.isLoading) {
             return;
@@ -2275,16 +2300,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.isLoading = true;
           this.authService.withdraw(this.amount).subscribe(function (data) {
-            _this6.isLoading = false;
+            _this7.isLoading = false;
 
             if (data.code === 200) {
-              _this6.amount = 0;
-              _this6.message = 'success';
-              _this6.authService.user.amountAvailable = parseFloat(data.msg.balance);
+              _this7.amount = 0;
+              _this7.message = 'success';
+              _this7.authService.user.amountAvailable = parseFloat(data.msg.balance);
             } else {
-              _this6.message = 'an-error-has-occurred';
+              _this7.message = 'an-error-has-occurred';
             }
           });
+        }
+      }, {
+        key: "updateAmount",
+        value: function updateAmount() {
+          var _this8 = this;
+
+          this.message = '';
+          setTimeout(function () {
+            if (_this8.amount) {
+              var amountStr = _this8.amount.toString();
+
+              if (amountStr.indexOf('.') === 0) {
+                if (amountStr.length > 5) {
+                  _this8.amount = parseFloat(amountStr.substr(0, 5));
+                }
+              } else {
+                var arr = amountStr.split('.');
+
+                if (arr[1] && arr[1].length > 4) {
+                  arr[1] = arr[1].substr(0, 4);
+                }
+
+                _this8.amount = parseFloat(arr.join('.'));
+              }
+            }
+          }, 0);
         }
       }]);
 
@@ -2639,7 +2690,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AccountHeaderComponent = /*#__PURE__*/function () {
       function AccountHeaderComponent(location) {
-        var _this7 = this;
+        var _this9 = this;
 
         _classCallCheck(this, AccountHeaderComponent);
 
@@ -2648,7 +2699,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.title = '';
 
         this.navigateBack = function () {
-          _this7.location.back();
+          _this9.location.back();
         };
       }
 
@@ -2866,7 +2917,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "animate",
         value: function animate() {
-          var _this8 = this;
+          var _this10 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -2885,13 +2936,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#coins-animation #coins-parts g').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this8.getRndInteger(-400, 400);
+            var hor = _this10.getRndInteger(-400, 400);
 
-            var vert = _this8.getRndInteger(200, 800);
+            var vert = _this10.getRndInteger(200, 800);
 
-            var timeEl = _this8.randomFloatBetween(2, 3, 2);
+            var timeEl = _this10.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this8.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this10.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -2914,7 +2965,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               ease: 'linear'
             }, 0).to(el, elDur, {
               transformOrigin: '50% 50%',
-              scaleX: _this8.randomFloatBetween(.3, .8, 2),
+              scaleX: _this10.randomFloatBetween(.3, .8, 2),
               repeat: 7,
               yoyo: true,
               ease: 'linear'
@@ -3018,7 +3069,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this9 = this;
+          var _this11 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3037,13 +3088,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#confetti #confetti-particles rect').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this9.getRndInteger(-400, 400);
+            var hor = _this11.getRndInteger(-400, 400);
 
-            var vert = _this9.getRndInteger(200, 800);
+            var vert = _this11.getRndInteger(200, 800);
 
-            var timeEl = _this9.randomFloatBetween(2, 3, 2);
+            var timeEl = _this11.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this9.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this11.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3240,7 +3291,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this10 = this;
+          var _this12 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3258,13 +3309,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#tickets-animation #tickets path').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this10.getRndInteger(-400, 400);
+            var hor = _this12.getRndInteger(-400, 400);
 
-            var vert = _this10.getRndInteger(200, 800);
+            var vert = _this12.getRndInteger(200, 800);
 
-            var timeEl = _this10.randomFloatBetween(2, 3, 2);
+            var timeEl = _this12.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this10.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this12.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3697,15 +3748,40 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTickets",
         value: function buyTickets() {
-          var _this11 = this;
+          var _this13 = this;
 
           if (this.amount > 0 && this.amount <= this.authService.user.amountAvailable) {
             this.lotteryService.buyTicket(this.amount).subscribe(function () {});
             this.showAnimation = true;
             setTimeout(function () {
-              _this11.showAnimation = false;
+              _this13.showAnimation = false;
             }, 2000);
           }
+        }
+      }, {
+        key: "updateAmount",
+        value: function updateAmount() {
+          var _this14 = this;
+
+          setTimeout(function () {
+            if (_this14.amount) {
+              var amountStr = _this14.amount.toString();
+
+              if (amountStr.indexOf('.') === 0) {
+                if (amountStr.length > 5) {
+                  _this14.amount = parseFloat(amountStr.substr(0, 5));
+                }
+              } else {
+                var arr = amountStr.split('.');
+
+                if (arr[1] && arr[1].length > 4) {
+                  arr[1] = arr[1].substr(0, 4);
+                }
+
+                _this14.amount = parseFloat(arr.join('.'));
+              }
+            }
+          }, 0);
         }
       }, {
         key: "checkValue",
@@ -4660,15 +4736,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "monitorWinnings",
         value: function monitorWinnings() {
-          var _this12 = this;
+          var _this15 = this;
 
           this.checkWinningInterval = setTimeout(function () {
-            if (_this12.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
-              _this12.incrementInterval = 500;
-              _this12.myWinningsIncrement = 0;
+            if (_this15.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
+              _this15.incrementInterval = 500;
+              _this15.myWinningsIncrement = 0;
             } else {
-              _this12.incrementInterval = 20;
-              var winners = _this12.lotteryService.currentLotteryInfo.winners;
+              _this15.incrementInterval = 20;
+              var winners = _this15.lotteryService.currentLotteryInfo.winners;
               var myWinnings = winners.minipool.winningAmount;
               winners.main.forEach(function (item) {
                 if (item && item.myWinnings) {
@@ -4676,15 +4752,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }
               });
 
-              if (!myWinnings || _this12.myWinningsIncrement >= myWinnings) {
-                _this12.myWinningsIncrement = _this12.myWinningsIncrement;
-                _this12.incrementInterval = 500;
-              } else if (_this12.myWinningsIncrement < myWinnings) {
-                _this12.myWinningsIncrement += 1;
+              if (!myWinnings || _this15.myWinningsIncrement >= myWinnings) {
+                _this15.myWinningsIncrement = _this15.myWinningsIncrement;
+                _this15.incrementInterval = 500;
+              } else if (_this15.myWinningsIncrement < myWinnings) {
+                _this15.myWinningsIncrement += 1;
               }
             }
 
-            _this12.monitorWinnings();
+            _this15.monitorWinnings();
           }, this.incrementInterval);
         }
       }, {
@@ -4703,13 +4779,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "finalizeWinning",
         value: function finalizeWinning() {
-          var _this13 = this;
+          var _this16 = this;
 
           var winners = this.lotteryService.currentLotteryInfo.winners;
           this.myWinningsIncrement = winners.minipool.winningAmount;
           winners.main.forEach(function (item) {
             if (item && item.myWinnings) {
-              _this13.myWinningsIncrement += item.myWinnings;
+              _this16.myWinningsIncrement += item.myWinnings;
             }
           });
         }
@@ -5472,19 +5548,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "sortedMyEntries",
         value: function sortedMyEntries() {
-          var _this14 = this;
+          var _this17 = this;
 
           return this.lotteryService.currentLotteryInfo.myEntries.sort(function (a, b) {
-            return _this14.sortMyEntries ? a.start - b.start : b.start - a.start;
+            return _this17.sortMyEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }, {
         key: "sortedAllEntries",
         value: function sortedAllEntries() {
-          var _this15 = this;
+          var _this18 = this;
 
           return this.lotteryService.currentLotteryInfo.allEntries.sort(function (a, b) {
-            return _this15.sortAllEntries ? a.start - b.start : b.start - a.start;
+            return _this18.sortAllEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }]);
@@ -5751,12 +5827,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this16 = this;
+          var _this19 = this;
 
           this.route.queryParams.subscribe(function (params) {
-            _this16.currentLevel = params.level || '1';
+            _this19.currentLevel = params.level || '1';
 
-            _this16.getData(_this16.currentLevel);
+            _this19.getData(_this19.currentLevel);
           });
         }
       }, {
@@ -5771,7 +5847,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getData",
         value: function getData(level) {
-          var _this17 = this;
+          var _this20 = this;
 
           if (this.currentGameId != this.lotteryService.lastGameId) {
             this.payoutData = {};
@@ -5789,16 +5865,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.lotteryService && this.lotteryService.lastGameId) {
             this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, level, this.payoutData[level].page, 100).subscribe(function (data) {
               console.log(3, data);
-              _this17.payoutData[level].page++;
-              _this17.payoutData[level].data = data.msg;
+              _this20.payoutData[level].page++;
+              _this20.payoutData[level].data = data.msg;
 
-              _this17.payoutData[level].data.forEach(function (item) {
-                _this17.setPlaceMap(item.prize);
+              _this20.payoutData[level].data.forEach(function (item) {
+                _this20.setPlaceMap(item.prize);
               });
             });
           } else {
             setTimeout(function () {
-              _this17.getData(level);
+              _this20.getData(level);
             }, 100);
           }
         }
@@ -5840,16 +5916,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onScroll",
         value: function onScroll() {
-          var _this18 = this;
+          var _this21 = this;
 
           this.payoutData[this.currentLevel].page++;
           this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.currentLevel, this.payoutData[this.currentLevel].page, 100).subscribe(function (data) {
             var arr = data.msg;
             arr.forEach(function (item) {
-              if (!_this18.payoutData[_this18.currentLevel].data.find(function (dup) {
+              if (!_this21.payoutData[_this21.currentLevel].data.find(function (dup) {
                 return dup.user === item.user && dup.ticket === item.ticket && dup.time === item.time;
               })) {
-                _this18.payoutData[_this18.currentLevel].data.push(item);
+                _this21.payoutData[_this21.currentLevel].data.push(item);
               }
             });
           });
@@ -6455,7 +6531,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AuthService = /*#__PURE__*/function () {
       function AuthService(httpClient, windowRef) {
-        var _this19 = this;
+        var _this22 = this;
 
         _classCallCheck(this, AuthService);
 
@@ -6485,9 +6561,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   return;
                 }
 
-                _this19.user.appToken = dataObj.callback.token;
+                _this22.user.appToken = dataObj.callback.token;
 
-                _this19.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
+                _this22.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
 
                 break;
 
@@ -6553,7 +6629,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "loginWithToken",
         value: function loginWithToken(userMail, token) {
-          var _this20 = this;
+          var _this23 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6565,26 +6641,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
-                _this20.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this20.user.token = results.msg.token;
+                _this23.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this23.user.token = results.msg.token;
               }
 
-              _this20.isLoggedIn = true;
-              return _this20.user;
+              _this23.isLoggedIn = true;
+              return _this23.user;
             }
 
-            if (_this20.accountUpdateInterval) {
-              clearInterval(_this20.accountUpdateInterval);
+            if (_this23.accountUpdateInterval) {
+              clearInterval(_this23.accountUpdateInterval);
             }
 
-            _this20.accountUpdateInterval = setInterval(function () {
-              if (_this20.accountUpdateSub) {
-                _this20.accountUpdateSub.unsubscribe();
+            _this23.accountUpdateInterval = setInterval(function () {
+              if (_this23.accountUpdateSub) {
+                _this23.accountUpdateSub.unsubscribe();
               }
 
-              _this20.accountUpdateSub = _this20.getAccountTotal().subscribe(function (response) {
+              _this23.accountUpdateSub = _this23.getAccountTotal().subscribe(function (response) {
                 if (response.code === 200) {
-                  _this20.user.amountAvailable = parseFloat(response.msg.balance);
+                  _this23.user.amountAvailable = parseFloat(response.msg.balance);
                 }
               });
             }, 30000);
@@ -6595,7 +6671,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login(loginObj) {
-          var _this21 = this;
+          var _this24 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6612,24 +6688,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/passport/login"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this21.user.userName = loginObj.userName;
+              _this24.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this21.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this21.user.token = results.msg.token;
-                _this21.user.memo = results.msg.memo;
-                _this21.user.depositAccount = results.msg.depositaccount;
+                _this24.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this24.user.token = results.msg.token;
+                _this24.user.memo = results.msg.memo;
+                _this24.user.depositAccount = results.msg.depositaccount;
               }
 
-              _this21.isLoggedIn = true;
-              return _this21.user;
+              _this24.isLoggedIn = true;
+              return _this24.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this22 = this;
+          var _this25 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6640,7 +6716,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/passport/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this22.login(registrationObj);
+              return _this25.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -6731,7 +6807,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BlockChainService, [{
         key: "startLog",
         value: function startLog() {
-          var _this23 = this;
+          var _this26 = this;
 
           this.isSingleRow = false;
 
@@ -6741,15 +6817,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             this.getLatestBlockSub = this.getLatestBlock().subscribe(function (response) {
-              _this23.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+              _this26.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
 
-              if (_this23.getBlockSub) {
-                _this23.getBlockSub.unsubscribe();
+              if (_this26.getBlockSub) {
+                _this26.getBlockSub.unsubscribe();
               }
 
-              _this23.getBlockSub = _this23.getSpecificBlock(response.result).subscribe(function (response) {
+              _this26.getBlockSub = _this26.getSpecificBlock(response.result).subscribe(function (response) {
                 if (response.result) {
-                  _this23.rollingLog.push(response.result);
+                  _this26.rollingLog.push(response.result);
                 }
               });
             });
@@ -6757,18 +6833,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (!this.rollingInterval) {
             this.rollingInterval = setInterval(function () {
-              if (_this23.getBlockSub) {
-                _this23.getBlockSub.unsubscribe();
+              if (_this26.getBlockSub) {
+                _this26.getBlockSub.unsubscribe();
               }
 
-              _this23.getBlockSub = _this23.getSpecificBlock('0x' + _this23.currentBlock).subscribe(function (response) {
+              _this26.getBlockSub = _this26.getSpecificBlock('0x' + _this26.currentBlock).subscribe(function (response) {
                 if (response.result) {
-                  _this23.currentBlock = (parseInt(_this23.currentBlock, 16) + 1).toString(16);
+                  _this26.currentBlock = (parseInt(_this26.currentBlock, 16) + 1).toString(16);
 
-                  _this23.rollingLog.unshift(response.result);
+                  _this26.rollingLog.unshift(response.result);
 
-                  if (_this23.rollingLog.length > 20) {
-                    _this23.rollingLog.pop();
+                  if (_this26.rollingLog.length > 20) {
+                    _this26.rollingLog.pop();
                   }
                 }
               });
@@ -6785,13 +6861,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
-          var _this24 = this;
+          var _this27 = this;
 
           this.isSingleRow = true;
           this.stopLog();
           this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
             if (response.result) {
-              _this24.rollingLog = [response.result];
+              _this27.rollingLog = [response.result];
             }
           });
         }
@@ -6922,7 +6998,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this25 = this;
+        var _this28 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -6957,7 +7033,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = msg.currententry;
           var currentStatus;
-          _this25.availablePrizePool = prizePool;
+          _this28.availablePrizePool = prizePool;
           var myEntries = [];
 
           if (msg.mytickets) {
@@ -6971,15 +7047,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          if (!_this25.lotteryObj[prizePool]) {
-            _this25.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
+          if (!_this28.lotteryObj[prizePool]) {
+            _this28.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
-            currentStatus = _this25.lotteryObj[prizePool].lotteryStatus;
-            _this25.lotteryObj[prizePool].gameId = gameId;
-            _this25.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this25.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
-            _this25.lotteryObj[prizePool].myEntries = myEntries;
-            _this25.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
+            currentStatus = _this28.lotteryObj[prizePool].lotteryStatus;
+            _this28.lotteryObj[prizePool].gameId = gameId;
+            _this28.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this28.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this28.lotteryObj[prizePool].myEntries = myEntries;
+            _this28.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -6991,16 +7067,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case "2":
-                clearInterval(_this25.checkStatusInterval);
+                clearInterval(_this28.checkStatusInterval);
 
-                _this25.setPrizePool(msg);
+                _this28.setPrizePool(msg);
 
-                _this25.setDrawWinners(prizePool); // this.blockChainService.setSingleBlock(msg.targetblockheight);
+                _this28.setDrawWinners(prizePool); // this.blockChainService.setSingleBlock(msg.targetblockheight);
 
 
-                _this25.blockChainService.stopLog();
+                _this28.blockChainService.stopLog();
 
-                _this25.finishPendingProcess(prizePool);
+                _this28.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -7008,19 +7084,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this25.lotteryObj[prizePool];
+          var currentPrizePool = _this28.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== "0") {
             return;
           }
 
-          _this25.setLotteryStatus("1", prizePool);
+          _this28.setLotteryStatus("1", prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this25.lotteryObj[prizePool];
+          var currentPrizePool = _this28.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
-          _this25.lastGameId = _this25.currentLotteryInfo.gameId;
+          _this28.lastGameId = _this28.currentLotteryInfo.gameId;
 
           if (currentPrizePool.countDownInterval) {
             clearInterval(currentPrizePool.countDownInterval);
@@ -7030,12 +7106,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this25.startStatusCheckInterval();
+              _this28.startStatusCheckInterval();
 
-              _this25.blockChainService.startLog();
+              _this28.blockChainService.startLog();
             }
 
-            _this25.lotteryObj[prizePool].countDown--;
+            _this28.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -7045,7 +7121,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this26 = this;
+          var _this29 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -7057,9 +7133,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this26.statusSubscription.unsubscribe();
+            _this29.statusSubscription.unsubscribe();
 
-            _this26.statusSubscription = _this26.checkGameStatus().subscribe(function () {});
+            _this29.statusSubscription = _this29.checkGameStatus().subscribe(function () {});
           }, 3000);
         }
       }, {
@@ -7075,7 +7151,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this27 = this;
+          var _this30 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token || "anonymous")
@@ -7084,7 +7160,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("type", "active");
           return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this27.setAvailablePrizePool(results);
+              _this30.setAvailablePrizePool(results);
 
               return results;
             }
@@ -7102,21 +7178,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(msg) {
-          var _this28 = this;
+          var _this31 = this;
 
           var prizeList = msg.prizelist;
           this.clearWinners();
 
           if (prizeList) {
             prizeList.forEach(function (prize, i) {
-              if (!_this28.currentLotteryInfo.winners.main[i]) {
-                _this28.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
+              if (!_this31.currentLotteryInfo.winners.main[i]) {
+                _this31.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
                   return item.win === i + 1;
                 }).amount));
               }
 
               prize.forEach(function (item) {
-                _this28.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (_this28.authService.user && _this28.authService.user.userName)));
+                _this31.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (_this31.authService.user && _this31.authService.user.userName)));
               });
             });
           }
@@ -7157,7 +7233,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTicket",
         value: function buyTicket(amount) {
-          var _this29 = this;
+          var _this32 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token)
@@ -7167,9 +7243,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("gameid", this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this29.authService.user.amountAvailable = parseFloat(results.msg.balance);
+              _this32.authService.user.amountAvailable = parseFloat(results.msg.balance);
 
-              _this29.startStatusCheckInterval();
+              _this32.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -7292,7 +7368,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this30 = this;
+      var _this33 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -7301,7 +7377,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this30.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this33.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 

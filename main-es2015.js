@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" step=\".0001\" type=\"number\" [(ngModel)]=\"depositAmount\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'deposit-funds' | translate\"></app-account-header>\r\n<div class=\"deposit\">\r\n    <!-- <div class=\"qr-container\">\r\n        <div class=\"qr-code\">\r\n            <img src=\"../../../assets/images/sample/qrcode.png\" alt=\"\">\r\n        </div>\r\n    </div> -->\r\n    <ng-container *ngIf=\"authService.user.depositAccount\">\r\n      <div class=\"message\">\r\n          <div>\r\n              {{'only-deposit-post-to-this-address' | translate}}.\r\n          </div>\r\n          <div>\r\n              {{'depositing-any-other-asset-here-may-result-in-permanent-loss' | translate}}.\r\n          </div>\r\n      </div>\r\n      <div class=\"address copy-pastable\">\r\n          <div>\r\n              {{authService.user.depositAccount}}\r\n          </div>\r\n          <div>\r\n              {{authService.user.memo}}\r\n          </div>\r\n      </div>\r\n      <div class=\"btn-container\">\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.depositAccount\">\r\n              {{'copy-account' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n          <button class=\"app-button\" ngxClipboard [cbContent]=\"authService.user.memo\">\r\n              {{'copy-memo' | translate | uppercase}}\r\n              <i class=\"icon-documentcopy\"></i>\r\n          </button>\r\n      </div>\r\n    </ng-container>\r\n    <div class=\"deposit-form\">\r\n      <input class=\"app-input\" step=\".0001\" type=\"number\" [(ngModel)]=\"depositAmount\" (ngModelChange)=\"updateAmount()\">\r\n      <button class=\"app-button\" (click)=\"deposit()\">\r\n        {{'deposit' | translate | uppercase}}\r\n      </button>\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/account-history']\">\r\n        {{'history' | translate}}\r\n    </div>\r\n    <div class=\"link\" [routerLink]=\"['/withdraw']\">\r\n        {{'withdraw' | translate}}\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"number\" step=\".0001\" [(ngModel)]=\"amount\" (ngModelChange)=\"message=''\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\">\r\n        <button [disabled]=\"isLoading\" class=\"app-button\" (click)=\"withdraw()\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"number\" step=\".0001\" [(ngModel)]=\"amount\" (ngModelChange)=\"updateAmount()\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\">\r\n        <button [disabled]=\"isLoading\" class=\"app-button\" (click)=\"withdraw()\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>");
 
 /***/ }),
 
@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            <!-- {{'login-register-to-play' | translate | uppercase}} -->\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\" type=\"number\" step=\".0001\" (ngModelChange)=\"updateAmount()\" (focus)=\"amount = null\" [(ngModel)]=\"amount\" (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n\r\n    <!-- <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"message\">\r\n            {{'now-drawing-winners' | translate | uppercase}}\r\n        </div>\r\n    </ng-container> -->\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            <!-- {{'login-register-to-play' | translate | uppercase}} -->\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -916,6 +916,25 @@ let DepositComponent = class DepositComponent {
         this.authService.depositAmount(this.depositAmount);
         this.depositAmount = 0;
     }
+    updateAmount() {
+        setTimeout(() => {
+            if (this.depositAmount) {
+                const amountStr = this.depositAmount.toString();
+                if (amountStr.indexOf('.') === 0) {
+                    if (amountStr.length > 5) {
+                        this.depositAmount = parseFloat(amountStr.substr(0, 5));
+                    }
+                }
+                else {
+                    const arr = amountStr.split('.');
+                    if (arr[1] && arr[1].length > 4) {
+                        arr[1] = arr[1].substr(0, 4);
+                    }
+                    this.depositAmount = parseFloat(arr.join('.'));
+                }
+            }
+        }, 0);
+    }
     ngOnInit() {
     }
 };
@@ -1280,6 +1299,26 @@ let WithdrawComponent = class WithdrawComponent {
                 this.message = 'an-error-has-occurred';
             }
         });
+    }
+    updateAmount() {
+        this.message = '';
+        setTimeout(() => {
+            if (this.amount) {
+                const amountStr = this.amount.toString();
+                if (amountStr.indexOf('.') === 0) {
+                    if (amountStr.length > 5) {
+                        this.amount = parseFloat(amountStr.substr(0, 5));
+                    }
+                }
+                else {
+                    const arr = amountStr.split('.');
+                    if (arr[1] && arr[1].length > 4) {
+                        arr[1] = arr[1].substr(0, 4);
+                    }
+                    this.amount = parseFloat(arr.join('.'));
+                }
+            }
+        }, 0);
     }
 };
 WithdrawComponent.ctorParameters = () => [
@@ -2128,6 +2167,25 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
                 this.showAnimation = false;
             }, 2000);
         }
+    }
+    updateAmount() {
+        setTimeout(() => {
+            if (this.amount) {
+                const amountStr = this.amount.toString();
+                if (amountStr.indexOf('.') === 0) {
+                    if (amountStr.length > 5) {
+                        this.amount = parseFloat(amountStr.substr(0, 5));
+                    }
+                }
+                else {
+                    const arr = amountStr.split('.');
+                    if (arr[1] && arr[1].length > 4) {
+                        arr[1] = arr[1].substr(0, 4);
+                    }
+                    this.amount = parseFloat(arr.join('.'));
+                }
+            }
+        }, 0);
     }
     checkValue() {
         if (this.amount > this.authService.user.amountAvailable) {
