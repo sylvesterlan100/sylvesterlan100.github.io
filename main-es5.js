@@ -1680,6 +1680,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function updateAmount() {
           var _this3 = this;
 
+          console.log('h343');
           setTimeout(function () {
             if (_this3.depositAmount) {
               var amountStr = _this3.depositAmount.toString();
@@ -6311,10 +6312,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, // Account
     {
       path: 'deposit',
-      component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"]
+      component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"],
+      canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     }, {
       path: 'withdraw',
-      component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"]
+      component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"],
+      canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     }, {
       path: 'account-history',
       component: _account_account_history_account_history_component__WEBPACK_IMPORTED_MODULE_10__["AccountHistoryComponent"],

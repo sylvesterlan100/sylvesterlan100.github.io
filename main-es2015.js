@@ -917,6 +917,7 @@ let DepositComponent = class DepositComponent {
         this.depositAmount = 0;
     }
     updateAmount() {
+        console.log('h343');
         setTimeout(() => {
             if (this.depositAmount) {
                 const amountStr = this.depositAmount.toString();
@@ -3810,10 +3811,12 @@ const routes = [
     {
         path: 'deposit',
         component: _account_deposit_deposit_component__WEBPACK_IMPORTED_MODULE_7__["DepositComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'withdraw',
         component: _account_withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_9__["WithdrawComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
         path: 'account-history',
