@@ -1680,8 +1680,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function updateAmount() {
           var _this3 = this;
 
-          console.log('h343');
           setTimeout(function () {
+            if (_this3.depositAmount < .0001) {
+              _this3.depositAmount = 0;
+              return;
+            }
+
             if (_this3.depositAmount) {
               var amountStr = _this3.depositAmount.toString();
 
@@ -2319,6 +2323,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.message = '';
           setTimeout(function () {
+            if (_this8.amount < .0001) {
+              _this8.amount = 0;
+              return;
+            }
+
             if (_this8.amount) {
               var amountStr = _this8.amount.toString();
 
@@ -3765,6 +3774,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this14 = this;
 
           setTimeout(function () {
+            if (_this14.amount < .0001) {
+              _this14.amount = 0;
+              return;
+            }
+
             if (_this14.amount) {
               var amountStr = _this14.amount.toString();
 

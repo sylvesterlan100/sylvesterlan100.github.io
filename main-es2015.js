@@ -917,8 +917,11 @@ let DepositComponent = class DepositComponent {
         this.depositAmount = 0;
     }
     updateAmount() {
-        console.log('h343');
         setTimeout(() => {
+            if (this.depositAmount < .0001) {
+                this.depositAmount = 0;
+                return;
+            }
             if (this.depositAmount) {
                 const amountStr = this.depositAmount.toString();
                 if (amountStr.indexOf('.') === 0) {
@@ -1304,6 +1307,10 @@ let WithdrawComponent = class WithdrawComponent {
     updateAmount() {
         this.message = '';
         setTimeout(() => {
+            if (this.amount < .0001) {
+                this.amount = 0;
+                return;
+            }
             if (this.amount) {
                 const amountStr = this.amount.toString();
                 if (amountStr.indexOf('.') === 0) {
@@ -2171,6 +2178,10 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
     }
     updateAmount() {
         setTimeout(() => {
+            if (this.amount < .0001) {
+                this.amount = 0;
+                return;
+            }
             if (this.amount) {
                 const amountStr = this.amount.toString();
                 if (amountStr.indexOf('.') === 0) {
