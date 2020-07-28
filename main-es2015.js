@@ -918,6 +918,9 @@ let DepositComponent = class DepositComponent {
     }
     updateAmount() {
         setTimeout(() => {
+            if (this.depositAmount === null) {
+                return null;
+            }
             if (this.depositAmount < .0001) {
                 this.depositAmount = 0;
                 return;
@@ -2178,6 +2181,9 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
     }
     updateAmount(callback) {
         setTimeout(() => {
+            if (this.amount === null) {
+                return null;
+            }
             if (this.amount < .0001) {
                 this.amount = 0;
                 return;
@@ -2210,7 +2216,8 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
     setRatio(numerator) {
         const diff = this.lotteryService.currentLotteryInfo.availablePrizePool - this.lotteryService.currentLotteryInfo.currentEntries;
         this.ratio = numerator;
-        this.amount = Math.ceil(numerator / 4 * (this.authService.user.amountAvailable > diff ? diff : this.authService.user.amountAvailable));
+        this.amount = Math.ceil(numerator / 4 *
+            ((this.authService.user.amountAvailable / .01) > diff ? diff : (this.authService.user.amountAvailable / .01)));
     }
     isWithinRatio(numerator) {
         const diff = this.lotteryService.currentLotteryInfo.availablePrizePool - this.lotteryService.currentLotteryInfo.currentEntries;

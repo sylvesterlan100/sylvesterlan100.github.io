@@ -1681,6 +1681,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this3 = this;
 
           setTimeout(function () {
+            if (_this3.depositAmount === null) {
+              return null;
+            }
+
             if (_this3.depositAmount < .0001) {
               _this3.depositAmount = 0;
               return;
@@ -3774,6 +3778,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this14 = this;
 
           setTimeout(function () {
+            if (_this14.amount === null) {
+              return null;
+            }
+
             if (_this14.amount < .0001) {
               _this14.amount = 0;
               return;
@@ -3816,7 +3824,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function setRatio(numerator) {
           var diff = this.lotteryService.currentLotteryInfo.availablePrizePool - this.lotteryService.currentLotteryInfo.currentEntries;
           this.ratio = numerator;
-          this.amount = Math.ceil(numerator / 4 * (this.authService.user.amountAvailable > diff ? diff : this.authService.user.amountAvailable));
+          this.amount = Math.ceil(numerator / 4 * (this.authService.user.amountAvailable / .01 > diff ? diff : this.authService.user.amountAvailable / .01));
         }
       }, {
         key: "isWithinRatio",
