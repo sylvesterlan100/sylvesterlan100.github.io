@@ -3825,6 +3825,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var diff = this.lotteryService.currentLotteryInfo.availablePrizePool - this.lotteryService.currentLotteryInfo.currentEntries;
           this.ratio = numerator;
           this.amount = Math.ceil(numerator / 4 * (this.authService.user.amountAvailable / .01 > diff ? diff : this.authService.user.amountAvailable / .01));
+
+          if (this.amount < 0) {
+            this.amount = 0;
+          }
         }
       }, {
         key: "isWithinRatio",
