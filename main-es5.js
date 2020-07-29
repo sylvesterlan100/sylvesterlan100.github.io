@@ -391,7 +391,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    {{date | date: 'hh:m a'}} Info:\n  </div>\n  <div>\n    {{data | json}}\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    {{date | date: 'hh:m a'}} Info:\n  </div>\n  <div ngxClipboard [cbContent]=\"data\">\n    {{data}}\n  </div>\n  <button mat-button  ngxClipboard [cbContent]=\"data\">Copy</button>\n</div>\n";
     /***/
   },
 
@@ -4027,7 +4027,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this18 = this;
 
           setTimeout(function () {
-            _this18.data = _this18.authService.dataObj;
+            _this18.data = JSON.stringify(_this18.authService.dataObj);
           }, 2000);
         }
       }]);

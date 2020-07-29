@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    {{date | date: 'hh:m a'}} Info:\n  </div>\n  <div>\n    {{data | json}}\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    {{date | date: 'hh:m a'}} Info:\n  </div>\n  <div ngxClipboard [cbContent]=\"data\">\n    {{data}}\n  </div>\n  <button mat-button  ngxClipboard [cbContent]=\"data\">Copy</button>\n</div>\n");
 
 /***/ }),
 
@@ -2355,7 +2355,7 @@ let InfoComponentComponent = class InfoComponentComponent {
     }
     ngOnInit() {
         setTimeout(() => {
-            this.data = this.authService.dataObj;
+            this.data = JSON.stringify(this.authService.dataObj);
         }, 2000);
     }
 };
