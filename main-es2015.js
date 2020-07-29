@@ -4154,14 +4154,14 @@ let AuthService = class AuthService {
         this.authorize();
         if (this.windowRef.nativeWindow) {
             this.windowRef.nativeWindow.SyncCallback = (method, data) => {
-                this.dataObj = JSON.parse(data);
-                alert(this.dataObj);
+                const response = JSON.parse(data);
                 switch (method) {
                     case 'Authorizedlogin':
-                        if (this.dataObj.status !== 'ok' || !this.dataObj.callback) {
+                        if (response.status !== 'ok' || !response.callback) {
                             return;
                         }
-                        this.user.appToken = this.dataObj.callback.token;
+                        this.user.appToken = response.callback.token;
+                        this.dataObj = response.callback;
                         this.loginWithToken();
                         break;
                     case 'Recharge':
@@ -4222,8 +4222,8 @@ let AuthService = class AuthService {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
         const request = new URLSearchParams();
-        request.set('email', this.dataObj.callback.userMail);
-        request.set('token', this.dataObj.callback.token);
+        request.set('email', this.dataObj.userMail);
+        request.set('token', this.dataObj.token);
         this.httpClient.post(`${this.url}/passport/getToken`, request.toString(), options)
             .subscribe((results) => {
             if (results.code === 200) {

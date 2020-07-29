@@ -6809,16 +6809,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         if (this.windowRef.nativeWindow) {
           this.windowRef.nativeWindow.SyncCallback = function (method, data) {
-            _this25.dataObj = JSON.parse(data);
-            alert(_this25.dataObj);
+            var response = JSON.parse(data);
 
             switch (method) {
               case 'Authorizedlogin':
-                if (_this25.dataObj.status !== 'ok' || !_this25.dataObj.callback) {
+                if (response.status !== 'ok' || !response.callback) {
                   return;
                 }
 
-                _this25.user.appToken = _this25.dataObj.callback.token;
+                _this25.user.appToken = response.callback.token;
+                _this25.dataObj = response.callback;
 
                 _this25.loginWithToken();
 
@@ -6893,8 +6893,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
           };
           var request = new URLSearchParams();
-          request.set('email', this.dataObj.callback.userMail);
-          request.set('token', this.dataObj.callback.token);
+          request.set('email', this.dataObj.userMail);
+          request.set('token', this.dataObj.token);
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
