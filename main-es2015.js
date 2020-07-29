@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    Info:\n  </div>\n  <div>\n    {{authService.dataObj | json}}\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    {{date | date: 'hh:m a'}} Info:\n  </div>\n  <div>\n    {{data | json}}\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -2351,8 +2351,12 @@ __webpack_require__.r(__webpack_exports__);
 let InfoComponentComponent = class InfoComponentComponent {
     constructor(authService) {
         this.authService = authService;
+        this.date = new Date();
     }
     ngOnInit() {
+        setTimeout(() => {
+            this.data = this.authService.dataObj;
+        }, 2000);
     }
 };
 InfoComponentComponent.ctorParameters = () => [
@@ -4161,6 +4165,7 @@ let AuthService = class AuthService {
                         }
                         this.user.appToken = response.callback.token;
                         this.dataObj = response.callback;
+                        alert(JSON.stringify(this.dataObj));
                         this.loginWithToken();
                         break;
                     case 'Recharge':

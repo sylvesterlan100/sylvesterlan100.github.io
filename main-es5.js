@@ -391,7 +391,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    Info:\n  </div>\n  <div>\n    {{authService.dataObj | json}}\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    {{date | date: 'hh:m a'}} Info:\n  </div>\n  <div>\n    {{data | json}}\n  </div>\n</div>\n";
     /***/
   },
 
@@ -4018,11 +4018,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _classCallCheck(this, InfoComponentComponent);
 
         this.authService = authService;
+        this.date = new Date();
       }
 
       _createClass(InfoComponentComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          var _this18 = this;
+
+          setTimeout(function () {
+            _this18.data = _this18.authService.dataObj;
+          }, 2000);
+        }
       }]);
 
       return InfoComponentComponent;
@@ -4938,15 +4945,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "monitorWinnings",
         value: function monitorWinnings() {
-          var _this18 = this;
+          var _this19 = this;
 
           this.checkWinningInterval = setTimeout(function () {
-            if (_this18.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
-              _this18.incrementInterval = 500;
-              _this18.myWinningsIncrement = 0;
+            if (_this19.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
+              _this19.incrementInterval = 500;
+              _this19.myWinningsIncrement = 0;
             } else {
-              _this18.incrementInterval = 20;
-              var winners = _this18.lotteryService.currentLotteryInfo.winners;
+              _this19.incrementInterval = 20;
+              var winners = _this19.lotteryService.currentLotteryInfo.winners;
               var myWinnings = winners.minipool.winningAmount;
               winners.main.forEach(function (item) {
                 if (item && item.myWinnings) {
@@ -4954,15 +4961,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }
               });
 
-              if (!myWinnings || _this18.myWinningsIncrement >= myWinnings) {
-                _this18.myWinningsIncrement = _this18.myWinningsIncrement;
-                _this18.incrementInterval = 500;
-              } else if (_this18.myWinningsIncrement < myWinnings) {
-                _this18.myWinningsIncrement += 1;
+              if (!myWinnings || _this19.myWinningsIncrement >= myWinnings) {
+                _this19.myWinningsIncrement = _this19.myWinningsIncrement;
+                _this19.incrementInterval = 500;
+              } else if (_this19.myWinningsIncrement < myWinnings) {
+                _this19.myWinningsIncrement += 1;
               }
             }
 
-            _this18.monitorWinnings();
+            _this19.monitorWinnings();
           }, this.incrementInterval);
         }
       }, {
@@ -4981,13 +4988,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "finalizeWinning",
         value: function finalizeWinning() {
-          var _this19 = this;
+          var _this20 = this;
 
           var winners = this.lotteryService.currentLotteryInfo.winners;
           this.myWinningsIncrement = winners.minipool.winningAmount;
           winners.main.forEach(function (item) {
             if (item && item.myWinnings) {
-              _this19.myWinningsIncrement += item.myWinnings;
+              _this20.myWinningsIncrement += item.myWinnings;
             }
           });
         }
@@ -5750,19 +5757,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "sortedMyEntries",
         value: function sortedMyEntries() {
-          var _this20 = this;
+          var _this21 = this;
 
           return this.lotteryService.currentLotteryInfo.myEntries.sort(function (a, b) {
-            return _this20.sortMyEntries ? a.start - b.start : b.start - a.start;
+            return _this21.sortMyEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }, {
         key: "sortedAllEntries",
         value: function sortedAllEntries() {
-          var _this21 = this;
+          var _this22 = this;
 
           return this.lotteryService.currentLotteryInfo.allEntries.sort(function (a, b) {
-            return _this21.sortAllEntries ? a.start - b.start : b.start - a.start;
+            return _this22.sortAllEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }]);
@@ -6029,12 +6036,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this22 = this;
+          var _this23 = this;
 
           this.route.queryParams.subscribe(function (params) {
-            _this22.currentLevel = params.level || '1';
+            _this23.currentLevel = params.level || '1';
 
-            _this22.getData(_this22.currentLevel);
+            _this23.getData(_this23.currentLevel);
           });
         }
       }, {
@@ -6049,7 +6056,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getData",
         value: function getData(level) {
-          var _this23 = this;
+          var _this24 = this;
 
           if (this.currentGameId !== this.lotteryService.lastGameId) {
             this.payoutData = {};
@@ -6066,16 +6073,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (this.lotteryService && this.lotteryService.lastGameId) {
             this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, level, this.payoutData[level].page, 100).subscribe(function (data) {
-              _this23.payoutData[level].page++;
-              _this23.payoutData[level].data = data.msg;
+              _this24.payoutData[level].page++;
+              _this24.payoutData[level].data = data.msg;
 
-              _this23.payoutData[level].data.forEach(function (item) {
-                _this23.setPlaceMap(item.prize);
+              _this24.payoutData[level].data.forEach(function (item) {
+                _this24.setPlaceMap(item.prize);
               });
             });
           } else {
             setTimeout(function () {
-              _this23.getData(level);
+              _this24.getData(level);
             }, 100);
           }
         }
@@ -6117,16 +6124,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onScroll",
         value: function onScroll() {
-          var _this24 = this;
+          var _this25 = this;
 
           this.payoutData[this.currentLevel].page++;
           this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.currentLevel, this.payoutData[this.currentLevel].page, 100).subscribe(function (data) {
             var arr = data.msg;
             arr.forEach(function (item) {
-              if (!_this24.payoutData[_this24.currentLevel].data.find(function (dup) {
+              if (!_this25.payoutData[_this25.currentLevel].data.find(function (dup) {
                 return dup.user === item.user && dup.ticket === item.ticket && dup.time === item.time;
               })) {
-                _this24.payoutData[_this24.currentLevel].data.push(item);
+                _this25.payoutData[_this25.currentLevel].data.push(item);
               }
             });
           });
@@ -6787,7 +6794,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AuthService = /*#__PURE__*/function () {
       function AuthService(httpClient, windowRef) {
-        var _this25 = this;
+        var _this26 = this;
 
         _classCallCheck(this, AuthService);
 
@@ -6816,10 +6823,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   return;
                 }
 
-                _this25.user.appToken = response.callback.token;
-                _this25.dataObj = response.callback;
+                _this26.user.appToken = response.callback.token;
+                _this26.dataObj = response.callback;
+                alert(JSON.stringify(_this26.dataObj));
 
-                _this25.loginWithToken();
+                _this26.loginWithToken();
 
                 break;
 
@@ -6887,7 +6895,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "loginWithToken",
         value: function loginWithToken() {
-          var _this26 = this;
+          var _this27 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6899,26 +6907,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
-                _this26.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this26.user.token = results.msg.token;
+                _this27.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this27.user.token = results.msg.token;
               }
 
-              _this26.isLoggedIn = true;
-              return _this26.user;
+              _this27.isLoggedIn = true;
+              return _this27.user;
             }
 
-            if (_this26.accountUpdateInterval) {
-              clearInterval(_this26.accountUpdateInterval);
+            if (_this27.accountUpdateInterval) {
+              clearInterval(_this27.accountUpdateInterval);
             }
 
-            _this26.accountUpdateInterval = setInterval(function () {
-              if (_this26.accountUpdateSub) {
-                _this26.accountUpdateSub.unsubscribe();
+            _this27.accountUpdateInterval = setInterval(function () {
+              if (_this27.accountUpdateSub) {
+                _this27.accountUpdateSub.unsubscribe();
               }
 
-              _this26.accountUpdateSub = _this26.getAccountTotal().subscribe(function (response) {
+              _this27.accountUpdateSub = _this27.getAccountTotal().subscribe(function (response) {
                 if (response.code === 200) {
-                  _this26.user.amountAvailable = parseFloat(response.msg.balance);
+                  _this27.user.amountAvailable = parseFloat(response.msg.balance);
                 }
               });
             }, 30000);
@@ -6929,7 +6937,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login(loginObj) {
-          var _this27 = this;
+          var _this28 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6946,24 +6954,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/passport/login"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this27.user.userName = loginObj.userName;
+              _this28.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this27.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this27.user.token = results.msg.token;
-                _this27.user.memo = results.msg.memo;
-                _this27.user.depositAccount = results.msg.depositaccount;
+                _this28.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this28.user.token = results.msg.token;
+                _this28.user.memo = results.msg.memo;
+                _this28.user.depositAccount = results.msg.depositaccount;
               }
 
-              _this27.isLoggedIn = true;
-              return _this27.user;
+              _this28.isLoggedIn = true;
+              return _this28.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this28 = this;
+          var _this29 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -6974,7 +6982,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/passport/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this28.login(registrationObj);
+              return _this29.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -7065,7 +7073,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BlockChainService, [{
         key: "startLog",
         value: function startLog() {
-          var _this29 = this;
+          var _this30 = this;
 
           this.isSingleRow = false;
 
@@ -7075,15 +7083,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             this.getLatestBlockSub = this.getLatestBlock().subscribe(function (response) {
-              _this29.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+              _this30.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
 
-              if (_this29.getBlockSub) {
-                _this29.getBlockSub.unsubscribe();
+              if (_this30.getBlockSub) {
+                _this30.getBlockSub.unsubscribe();
               }
 
-              _this29.getBlockSub = _this29.getSpecificBlock(response.result).subscribe(function (response) {
+              _this30.getBlockSub = _this30.getSpecificBlock(response.result).subscribe(function (response) {
                 if (response.result) {
-                  _this29.rollingLog.push(response.result);
+                  _this30.rollingLog.push(response.result);
                 }
               });
             });
@@ -7091,18 +7099,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (!this.rollingInterval) {
             this.rollingInterval = setInterval(function () {
-              if (_this29.getBlockSub) {
-                _this29.getBlockSub.unsubscribe();
+              if (_this30.getBlockSub) {
+                _this30.getBlockSub.unsubscribe();
               }
 
-              _this29.getBlockSub = _this29.getSpecificBlock('0x' + _this29.currentBlock).subscribe(function (response) {
+              _this30.getBlockSub = _this30.getSpecificBlock('0x' + _this30.currentBlock).subscribe(function (response) {
                 if (response.result) {
-                  _this29.currentBlock = (parseInt(_this29.currentBlock, 16) + 1).toString(16);
+                  _this30.currentBlock = (parseInt(_this30.currentBlock, 16) + 1).toString(16);
 
-                  _this29.rollingLog.unshift(response.result);
+                  _this30.rollingLog.unshift(response.result);
 
-                  if (_this29.rollingLog.length > 20) {
-                    _this29.rollingLog.pop();
+                  if (_this30.rollingLog.length > 20) {
+                    _this30.rollingLog.pop();
                   }
                 }
               });
@@ -7119,13 +7127,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
-          var _this30 = this;
+          var _this31 = this;
 
           this.isSingleRow = true;
           this.stopLog();
           this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
             if (response.result) {
-              _this30.rollingLog = [response.result];
+              _this31.rollingLog = [response.result];
             }
           });
         }
@@ -7256,7 +7264,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this31 = this;
+        var _this32 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -7291,7 +7299,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = msg.currententry;
           var currentStatus;
-          _this31.availablePrizePool = prizePool;
+          _this32.availablePrizePool = prizePool;
           var myEntries = [];
 
           if (msg.mytickets) {
@@ -7305,15 +7313,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          if (!_this31.lotteryObj[prizePool]) {
-            _this31.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
+          if (!_this32.lotteryObj[prizePool]) {
+            _this32.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
-            currentStatus = _this31.lotteryObj[prizePool].lotteryStatus;
-            _this31.lotteryObj[prizePool].gameId = gameId;
-            _this31.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this31.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
-            _this31.lotteryObj[prizePool].myEntries = myEntries;
-            _this31.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
+            currentStatus = _this32.lotteryObj[prizePool].lotteryStatus;
+            _this32.lotteryObj[prizePool].gameId = gameId;
+            _this32.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this32.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this32.lotteryObj[prizePool].myEntries = myEntries;
+            _this32.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -7325,16 +7333,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case '2':
-                clearInterval(_this31.checkStatusInterval);
+                clearInterval(_this32.checkStatusInterval);
 
-                _this31.setPrizePool(msg);
+                _this32.setPrizePool(msg);
 
-                _this31.setDrawWinners(prizePool); // this.blockChainService.setSingleBlock(msg.targetblockheight);
+                _this32.setDrawWinners(prizePool); // this.blockChainService.setSingleBlock(msg.targetblockheight);
 
 
-                _this31.blockChainService.stopLog();
+                _this32.blockChainService.stopLog();
 
-                _this31.finishPendingProcess(prizePool);
+                _this32.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -7342,19 +7350,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this31.lotteryObj[prizePool];
+          var currentPrizePool = _this32.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== '0') {
             return;
           }
 
-          _this31.setLotteryStatus('1', prizePool);
+          _this32.setLotteryStatus('1', prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this31.lotteryObj[prizePool];
+          var currentPrizePool = _this32.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
-          _this31.lastGameId = _this31.currentLotteryInfo.gameId;
+          _this32.lastGameId = _this32.currentLotteryInfo.gameId;
 
           if (currentPrizePool.countDownInterval) {
             clearInterval(currentPrizePool.countDownInterval);
@@ -7364,14 +7372,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this31.startStatusCheckInterval();
+              _this32.startStatusCheckInterval();
 
-              _this31.authService.loginWithToken();
+              _this32.authService.loginWithToken();
 
-              _this31.blockChainService.startLog();
+              _this32.blockChainService.startLog();
             }
 
-            _this31.lotteryObj[prizePool].countDown--;
+            _this32.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -7381,7 +7389,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this32 = this;
+          var _this33 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -7393,9 +7401,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this32.statusSubscription.unsubscribe();
+            _this33.statusSubscription.unsubscribe();
 
-            _this32.statusSubscription = _this32.checkGameStatus().subscribe(function () {});
+            _this33.statusSubscription = _this33.checkGameStatus().subscribe(function () {});
           }, 3000);
         }
       }, {
@@ -7411,7 +7419,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this33 = this;
+          var _this34 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token || "anonymous")
@@ -7420,7 +7428,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("type", "active");
           return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this33.setAvailablePrizePool(results);
+              _this34.setAvailablePrizePool(results);
 
               return results;
             }
@@ -7438,21 +7446,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(msg) {
-          var _this34 = this;
+          var _this35 = this;
 
           var prizeList = msg.prizelist;
           this.clearWinners();
 
           if (prizeList) {
             prizeList.forEach(function (prize, i) {
-              if (!_this34.currentLotteryInfo.winners.main[i]) {
-                _this34.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
+              if (!_this35.currentLotteryInfo.winners.main[i]) {
+                _this35.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
                   return item.win === i + 1;
                 }).amount));
               }
 
               prize.forEach(function (item) {
-                _this34.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (_this34.authService.user && _this34.authService.user.userName)));
+                _this35.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (_this35.authService.user && _this35.authService.user.userName)));
               });
             });
           }
@@ -7493,7 +7501,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyTicket",
         value: function buyTicket(amount) {
-          var _this35 = this;
+          var _this36 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set("Content-Type", "application/x-www-form-urlencoded").set("token", this.authService.user.token)
@@ -7503,9 +7511,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set("gameid", this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this35.authService.user.amountAvailable = parseFloat(results.msg.balance);
+              _this36.authService.user.amountAvailable = parseFloat(results.msg.balance);
 
-              _this35.startStatusCheckInterval();
+              _this36.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -7636,7 +7644,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this36 = this;
+      var _this37 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -7645,7 +7653,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this36.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this37.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 
