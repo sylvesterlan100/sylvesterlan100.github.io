@@ -391,7 +391,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"copy-pastable\">\n{{authService.dataObj | json}}\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"copy-pastable\">\n  <div>\n    Info:\n  </div>\n{{authService.dataObj | json}}\n</div>\n";
     /***/
   },
 

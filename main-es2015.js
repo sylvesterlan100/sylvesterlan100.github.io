@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"copy-pastable\">\n{{authService.dataObj | json}}\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"copy-pastable\">\n  <div>\n    Info:\n  </div>\n{{authService.dataObj | json}}\n</div>\n");
 
 /***/ }),
 
