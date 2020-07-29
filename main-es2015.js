@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\n  <div>\n    Info:\n  </div>\n{{authService.dataObj | json}}\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\n  <div style=\"margin-top: 12px;\">\n    Info:\n  </div>\n  <div>\n    {{authService.dataObj | json}}\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -2328,7 +2328,7 @@ BuyTicketInputComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".info {\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuIiwiLmluZm8ge1xuICBjb2xvcjogd2hpdGU7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".info {\n  margin-top: 24px;\n  color: white !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsdUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gIGNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG59XHJcbiIsIi5pbmZvIHtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG59Il19 */");
 
 /***/ }),
 
@@ -4154,16 +4154,13 @@ let AuthService = class AuthService {
         if (this.windowRef.nativeWindow) {
             this.windowRef.nativeWindow.SyncCallback = (method, data) => {
                 const response = JSON.parse(data);
-                alert(0);
                 switch (method) {
                     case 'Authorizedlogin':
-                        alert(1);
                         if (response.status !== 'ok' || !response.callback) {
                             return;
                         }
                         this.user.appToken = response.callback.token;
                         this.dataObj = response.callback;
-                        alert(2 + ': ' + JSON.stringify(response.callback));
                         this.loginWithToken();
                         break;
                     case 'Recharge':
