@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"copy-pastable\">\n{{data | json}}\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"copy-pastable\">\n{{authService.dataObj | json}}\n</div>\n");
 
 /***/ }),
 
@@ -2353,9 +2353,6 @@ let InfoComponentComponent = class InfoComponentComponent {
         this.authService = authService;
     }
     ngOnInit() {
-        if (window.location.hostname.includes('sylvesterlan')) {
-            this.data = this.authService.dataObj;
-        }
     }
 };
 InfoComponentComponent.ctorParameters = () => [

@@ -391,7 +391,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"copy-pastable\">\n{{data | json}}\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"copy-pastable\">\n{{authService.dataObj | json}}\n</div>\n";
     /***/
   },
 
@@ -4022,11 +4022,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
       _createClass(InfoComponentComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
-          if (window.location.hostname.includes('sylvesterlan')) {
-            this.data = this.authService.dataObj;
-          }
-        }
+        value: function ngOnInit() {}
       }]);
 
       return InfoComponentComponent;
