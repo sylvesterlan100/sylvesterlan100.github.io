@@ -391,7 +391,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"copy-pastable\">\n  <div>\n    Info:\n  </div>\n{{authService.dataObj | json}}\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\n  <div>\n    Info:\n  </div>\n{{authService.dataObj | json}}\n</div>\n";
     /***/
   },
 
@@ -3971,7 +3971,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJ9 */";
+    __webpack_exports__["default"] = ".info {\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBjb2xvcjogd2hpdGU7XHJcbn1cclxuIiwiLmluZm8ge1xuICBjb2xvcjogd2hpdGU7XG59Il19 */";
     /***/
   },
 
@@ -6810,6 +6810,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         if (this.windowRef.nativeWindow) {
           this.windowRef.nativeWindow.SyncCallback = function (method, data) {
             _this25.dataObj = JSON.parse(data);
+            alert(_this25.dataObj);
 
             switch (method) {
               case 'Authorizedlogin':
