@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'history' | translate\"></app-account-header>\r\n\r\n<div class=\"history\">\r\n    <div class=\"select-type\">\r\n        <div class=\"select-box\">\r\n            All Accounts\r\n        </div>\r\n    </div>\r\n    <div class=\"history-table\">\r\n        <ng-container *ngFor=\"let data of history\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"type\">{{typeMap[data.activity] | translate}}</div>\r\n                    <div class=\"amount\">\r\n                        {{data.amount | toNumber | number: '0.0-4'}}\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}: \r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}: \r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n\r\n    <div class=\"no-futher-activity\">\r\n        <div>\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'history' | translate\"></app-account-header>\r\n\r\n<div class=\"history\">\r\n  <mat-tab-group animationDuration=\"0ms\">\r\n    <mat-tab [label]=\"'deposit' | translate\">\r\n      <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onDepositScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of depositHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"type\">{{typeMap[data.activity] | translate}}</div>\r\n                    <div class=\"amount\">\r\n                        {{data.amount | toNumber | number: '0.0-4'}}\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    </mat-tab>\r\n    <mat-tab [label]=\"'withdraw' | translate\">\r\n      <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onWithdrawScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of withdrawHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"type\">{{typeMap[data.activity] | translate}}</div>\r\n                    <div class=\"amount\">\r\n                        {{data.amount | toNumber | number: '0.0-4'}}\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    </mat-tab>\r\n  </mat-tab-group>\r\n    <div class=\"no-futher-activity\">\r\n        <div>\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -241,6 +241,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\"\r\n                type=\"number\"\r\n                step=\".0001\"\r\n                (ngModelChange)=\"updateAmount()\"\r\n                (focus)=\"amount = null\"\r\n                [(ngModel)]=\"amount\"\r\n                (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/info-component/info-component.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/info-component/info-component.component.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"copy-pastable\">\n{{data | json}}\n</div>\n");
 
 /***/ }),
 
@@ -644,7 +657,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".history {\n  color: white;\n}\n.history .select-type {\n  display: flex;\n  justify-content: center;\n  margin: 24px 0 24px;\n}\n.history .select-type .select-box {\n  border: 2px solid #636363;\n  background-color: #2a2d32;\n  border-radius: 18px;\n  padding: 12px 32px;\n}\n.history .history-table {\n  font-size: 14px;\n  padding: 0 16px;\n}\n.history .history-table .tablerow {\n  height: 40px;\n  width: 100%;\n  overflow: hidden;\n  transition: height 0.3s;\n  border-top: 1px solid #2c3033;\n}\n.history .history-table .tablerow:last-child {\n  border-bottom: 1px solid #2c3033;\n}\n.history .history-table .tablerow .itemrow {\n  display: flex;\n  padding: 12px 0;\n}\n.history .history-table .tablerow.isExpanded {\n  height: 170px;\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n}\n.history .history-table .tablerow .icon {\n  width: 25px;\n  flex-basis: 25px;\n  font-size: 14px;\n}\n.history .history-table .tablerow .date {\n  flex-basis: 35%;\n  color: #5c5b60;\n}\n.history .history-table .tablerow .type {\n  padding-left: 12px;\n  flex-basis: 15%;\n}\n.history .history-table .tablerow .amount {\n  text-align: right;\n  padding-right: 16px;\n  flex-grow: 1;\n}\n.history .history-table .tablerow .address {\n  display: flex;\n  margin-bottom: 12px;\n}\n.history .history-table .tablerow .address:first-child {\n  margin-top: 12px;\n  margin-bottom: 16px;\n}\n.history .history-table .tablerow .address .label {\n  color: #5c5b60;\n}\n.history .history-table .tablerow .address .value {\n  font-size: 13px;\n  color: #ffcc01;\n  word-break: break-all;\n  padding: 0 12px;\n}\n.history .history-table .tablerow .address .copy {\n  align-self: center;\n  font-size: 20px;\n  color: #5c5b60;\n}\n.history .history-table .closerow {\n  padding: 6px 0;\n  display: flex;\n  justify-content: flex-end;\n}\n.history .no-futher-activity {\n  height: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LWhpc3RvcnkvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxhY2NvdW50XFxhY2NvdW50LWhpc3RvcnlcXGFjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LWhpc3RvcnkvYWNjb3VudC1oaXN0b3J5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtBQ0NKO0FEQUk7RUFDSSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQ0VSO0FEQVE7RUFDSSx5QkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0VaO0FERUk7RUFDSSxlQUFBO0VBQ0EsZUFBQTtBQ0FSO0FERVE7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSw2QkFBQTtBQ0FaO0FEQ1k7RUFDSSxnQ0FBQTtBQ0NoQjtBREVZO0VBQ0ksYUFBQTtFQUNBLGVBQUE7QUNBaEI7QURHWTtFQUNJLGFBQUE7RUFDQSwrQkFBQTtFQUFBLDRCQUFBO0VBQUEsdUJBQUE7QUNEaEI7QURJWTtFQUNJLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNGaEI7QURJWTtFQUNJLGVBQUE7RUFDQSxjQUFBO0FDRmhCO0FESVk7RUFDSSxrQkFBQTtFQUNBLGVBQUE7QUNGaEI7QURJWTtFQUNJLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0FDRmhCO0FES1k7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7QUNIaEI7QURJZ0I7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0FDRnBCO0FESWdCO0VBQ0ksY0FBQTtBQ0ZwQjtBRElnQjtFQUNJLGVBQUE7RUFDQSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0FDRnBCO0FESWdCO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtBQ0ZwQjtBRE9RO0VBQ0ksY0FBQTtFQUNBLGFBQUE7RUFDQSx5QkFBQTtBQ0xaO0FEVUk7RUFDSSxhQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUNSUiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1oaXN0b3J5L2FjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oaXN0b3J5IHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIC5zZWxlY3QtdHlwZSB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBtYXJnaW46IDI0cHggMCAyNHB4O1xyXG5cclxuICAgICAgICAuc2VsZWN0LWJveCB7XHJcbiAgICAgICAgICAgIGJvcmRlcjogMnB4IHNvbGlkICM2MzYzNjM7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJkMzI7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE4cHg7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDEycHggMzJweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLmhpc3RvcnktdGFibGUgeyAgICBcclxuICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG5cclxuICAgICAgICAudGFibGVyb3cge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDQwcHg7XHJcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgICAgICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gICAgICAgICAgICB0cmFuc2l0aW9uOiBoZWlnaHQgLjNzO1xyXG4gICAgICAgICAgICBib3JkZXItdG9wOiAxcHggc29saWQgIzJjMzAzMztcclxuICAgICAgICAgICAgJjpsYXN0LWNoaWxkIHtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMmMzMDMzO1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAuaXRlbXJvdyB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgcGFkZGluZzogMTJweCAwO1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAmLmlzRXhwYW5kZWQge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiAxNzBweDtcclxuICAgICAgICAgICAgICAgIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAuaWNvbiB7XHJcbiAgICAgICAgICAgICAgICB3aWR0aDogMjVweDtcclxuICAgICAgICAgICAgICAgIGZsZXgtYmFzaXM6IDI1cHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLmRhdGUge1xyXG4gICAgICAgICAgICAgICAgZmxleC1iYXNpczogMzUlO1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICM1YzViNjA7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLnR5cGUge1xyXG4gICAgICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgZmxleC1iYXNpczogMTUlO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG4gICAgICAgICAgICAgICAgZmxleC1ncm93OiAxO1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAuYWRkcmVzcyB7XHJcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTJweDtcclxuICAgICAgICAgICAgICAgICY6Zmlyc3QtY2hpbGQge1xyXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbi10b3A6IDEycHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTZweDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIC5sYWJlbCB7XHJcbiAgICAgICAgICAgICAgICAgICAgY29sb3I6ICM1YzViNjA7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAudmFsdWUge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTNweDtcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogI2ZmY2MwMTtcclxuICAgICAgICAgICAgICAgICAgICB3b3JkLWJyZWFrOiBicmVhay1hbGw7XHJcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgLmNvcHkge1xyXG4gICAgICAgICAgICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICAgICAgICAgICAgICAgICAgY29sb3I6ICM1YzViNjA7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5jbG9zZXJvdyB7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAwO1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtZW5kO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICB9ICAgXHJcblxyXG4gICAgLm5vLWZ1dGhlci1hY3Rpdml0eSB7XHJcbiAgICAgICAgaGVpZ2h0OiA1MDBweDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbiAgICB9XHJcbn0iLCIuaGlzdG9yeSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5oaXN0b3J5IC5zZWxlY3QtdHlwZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBtYXJnaW46IDI0cHggMCAyNHB4O1xufVxuLmhpc3RvcnkgLnNlbGVjdC10eXBlIC5zZWxlY3QtYm94IHtcbiAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2MztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcbiAgYm9yZGVyLXJhZGl1czogMThweDtcbiAgcGFkZGluZzogMTJweCAzMnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUge1xuICBmb250LXNpemU6IDE0cHg7XG4gIHBhZGRpbmc6IDAgMTZweDtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyB7XG4gIGhlaWdodDogNDBweDtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHRyYW5zaXRpb246IGhlaWdodCAwLjNzO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgIzJjMzAzMztcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdzpsYXN0LWNoaWxkIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYzMwMzM7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLml0ZW1yb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBwYWRkaW5nOiAxMnB4IDA7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cuaXNFeHBhbmRlZCB7XG4gIGhlaWdodDogMTcwcHg7XG4gIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5pY29uIHtcbiAgd2lkdGg6IDI1cHg7XG4gIGZsZXgtYmFzaXM6IDI1cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuZGF0ZSB7XG4gIGZsZXgtYmFzaXM6IDM1JTtcbiAgY29sb3I6ICM1YzViNjA7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLnR5cGUge1xuICBwYWRkaW5nLWxlZnQ6IDEycHg7XG4gIGZsZXgtYmFzaXM6IDE1JTtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuYW1vdW50IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuYWRkcmVzcyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbi1ib3R0b206IDEycHg7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLmFkZHJlc3M6Zmlyc3QtY2hpbGQge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC5sYWJlbCB7XG4gIGNvbG9yOiAjNWM1YjYwO1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC52YWx1ZSB7XG4gIGZvbnQtc2l6ZTogMTNweDtcbiAgY29sb3I6ICNmZmNjMDE7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcbiAgcGFkZGluZzogMCAxMnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC5jb3B5IHtcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xuICBmb250LXNpemU6IDIwcHg7XG4gIGNvbG9yOiAjNWM1YjYwO1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLmNsb3Nlcm93IHtcbiAgcGFkZGluZzogNnB4IDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG59XG4uaGlzdG9yeSAubm8tZnV0aGVyLWFjdGl2aXR5IHtcbiAgaGVpZ2h0OiA1MDBweDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".history {\n  color: white;\n}\n.history ::ng-deep .mat-tab-label {\n  color: white;\n}\n.history .select-type {\n  display: flex;\n  justify-content: center;\n  margin: 24px 0 24px;\n}\n.history .select-type .select-box {\n  border: 2px solid #636363;\n  background-color: #2a2d32;\n  border-radius: 18px;\n  padding: 12px 32px;\n}\n.history .history-table {\n  font-size: 14px;\n  padding: 0 16px;\n  max-height: calc(100vh - 100px);\n  overflow-y: auto;\n}\n.history .history-table .tablerow {\n  height: 40px;\n  width: 100%;\n  overflow: hidden;\n  transition: height 0.3s;\n  border-top: 1px solid #2c3033;\n}\n.history .history-table .tablerow:last-child {\n  border-bottom: 1px solid #2c3033;\n}\n.history .history-table .tablerow .itemrow {\n  display: flex;\n  padding: 12px 0;\n}\n.history .history-table .tablerow.isExpanded {\n  height: 170px;\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n}\n.history .history-table .tablerow .icon {\n  width: 25px;\n  flex-basis: 25px;\n  font-size: 14px;\n}\n.history .history-table .tablerow .date {\n  flex-basis: 35%;\n  color: #5c5b60;\n}\n.history .history-table .tablerow .type {\n  padding-left: 12px;\n  flex-basis: 15%;\n}\n.history .history-table .tablerow .amount {\n  text-align: right;\n  padding-right: 16px;\n  flex-grow: 1;\n}\n.history .history-table .tablerow .address {\n  display: flex;\n  margin-bottom: 12px;\n}\n.history .history-table .tablerow .address:first-child {\n  margin-top: 12px;\n  margin-bottom: 16px;\n}\n.history .history-table .tablerow .address .label {\n  color: #5c5b60;\n}\n.history .history-table .tablerow .address .value {\n  font-size: 13px;\n  color: #ffcc01;\n  word-break: break-all;\n  padding: 0 12px;\n}\n.history .history-table .tablerow .address .copy {\n  align-self: center;\n  font-size: 20px;\n  color: #5c5b60;\n}\n.history .history-table .closerow {\n  padding: 6px 0;\n  display: flex;\n  justify-content: flex-end;\n}\n.history .no-futher-activity {\n  height: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LWhpc3RvcnkvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxhY2NvdW50XFxhY2NvdW50LWhpc3RvcnlcXGFjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LWhpc3RvcnkvYWNjb3VudC1oaXN0b3J5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtBQ0NKO0FERU07RUFDRSxZQUFBO0FDQVI7QURJSTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FDRlI7QURJUTtFQUNJLHlCQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDRlo7QURNSTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0EsK0JBQUE7RUFDQSxnQkFBQTtBQ0pSO0FETVE7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSw2QkFBQTtBQ0paO0FES1k7RUFDSSxnQ0FBQTtBQ0hoQjtBRE1ZO0VBQ0ksYUFBQTtFQUNBLGVBQUE7QUNKaEI7QURPWTtFQUNJLGFBQUE7RUFDQSwrQkFBQTtFQUFBLDRCQUFBO0VBQUEsdUJBQUE7QUNMaEI7QURRWTtFQUNJLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNOaEI7QURRWTtFQUNJLGVBQUE7RUFDQSxjQUFBO0FDTmhCO0FEUVk7RUFDSSxrQkFBQTtFQUNBLGVBQUE7QUNOaEI7QURRWTtFQUNJLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0FDTmhCO0FEU1k7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7QUNQaEI7QURRZ0I7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0FDTnBCO0FEUWdCO0VBQ0ksY0FBQTtBQ05wQjtBRFFnQjtFQUNJLGVBQUE7RUFDQSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0FDTnBCO0FEUWdCO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtBQ05wQjtBRFdRO0VBQ0ksY0FBQTtFQUNBLGFBQUE7RUFDQSx5QkFBQTtBQ1RaO0FEY0k7RUFDSSxhQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUNaUiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1oaXN0b3J5L2FjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oaXN0b3J5IHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuXHJcbiAgICA6Om5nLWRlZXAge1xyXG4gICAgICAubWF0LXRhYi1sYWJlbCB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnNlbGVjdC10eXBlIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIG1hcmdpbjogMjRweCAwIDI0cHg7XHJcblxyXG4gICAgICAgIC5zZWxlY3QtYm94IHtcclxuICAgICAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2MztcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICAgICAgICAgICAgcGFkZGluZzogMTJweCAzMnB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuaGlzdG9yeS10YWJsZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDAgMTZweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTAwcHgpO1xyXG4gICAgICAgIG92ZXJmbG93LXk6IGF1dG87XHJcblxyXG4gICAgICAgIC50YWJsZXJvdyB7XHJcbiAgICAgICAgICAgIGhlaWdodDogNDBweDtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgICAgIHRyYW5zaXRpb246IGhlaWdodCAuM3M7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjMmMzMDMzO1xyXG4gICAgICAgICAgICAmOmxhc3QtY2hpbGQge1xyXG4gICAgICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYzMwMzM7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5pdGVtcm93IHtcclxuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxMnB4IDA7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICYuaXNFeHBhbmRlZCB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDE3MHB4O1xyXG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogZml0LWNvbnRlbnQ7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5pY29uIHtcclxuICAgICAgICAgICAgICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgICAgICAgICAgICAgZmxleC1iYXNpczogMjVweDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAuZGF0ZSB7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWJhc2lzOiAzNSU7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogIzVjNWI2MDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAudHlwZSB7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDEycHg7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWJhc2lzOiAxNSU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLmFtb3VudCB7XHJcbiAgICAgICAgICAgICAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5hZGRyZXNzIHtcclxuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgJjpmaXJzdC1jaGlsZCB7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxNnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogIzVjNWI2MDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIC52YWx1ZSB7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgICAgICAgICAgICAgICAgIGNvbG9yOiAjZmZjYzAxO1xyXG4gICAgICAgICAgICAgICAgICAgIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAuY29weSB7XHJcbiAgICAgICAgICAgICAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogIzVjNWI2MDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmNsb3Nlcm93IHtcclxuICAgICAgICAgICAgcGFkZGluZzogNnB4IDA7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgICAgICAgfVxyXG5cclxuICAgIH1cclxuXHJcbiAgICAubm8tZnV0aGVyLWFjdGl2aXR5IHtcclxuICAgICAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIH1cclxufVxyXG4iLCIuaGlzdG9yeSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5oaXN0b3J5IDo6bmctZGVlcCAubWF0LXRhYi1sYWJlbCB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5oaXN0b3J5IC5zZWxlY3QtdHlwZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBtYXJnaW46IDI0cHggMCAyNHB4O1xufVxuLmhpc3RvcnkgLnNlbGVjdC10eXBlIC5zZWxlY3QtYm94IHtcbiAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2MztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcbiAgYm9yZGVyLXJhZGl1czogMThweDtcbiAgcGFkZGluZzogMTJweCAzMnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUge1xuICBmb250LXNpemU6IDE0cHg7XG4gIHBhZGRpbmc6IDAgMTZweDtcbiAgbWF4LWhlaWdodDogY2FsYygxMDB2aCAtIDEwMHB4KTtcbiAgb3ZlcmZsb3cteTogYXV0bztcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyB7XG4gIGhlaWdodDogNDBweDtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHRyYW5zaXRpb246IGhlaWdodCAwLjNzO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgIzJjMzAzMztcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdzpsYXN0LWNoaWxkIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYzMwMzM7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLml0ZW1yb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBwYWRkaW5nOiAxMnB4IDA7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cuaXNFeHBhbmRlZCB7XG4gIGhlaWdodDogMTcwcHg7XG4gIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5pY29uIHtcbiAgd2lkdGg6IDI1cHg7XG4gIGZsZXgtYmFzaXM6IDI1cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuZGF0ZSB7XG4gIGZsZXgtYmFzaXM6IDM1JTtcbiAgY29sb3I6ICM1YzViNjA7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLnR5cGUge1xuICBwYWRkaW5nLWxlZnQ6IDEycHg7XG4gIGZsZXgtYmFzaXM6IDE1JTtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuYW1vdW50IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuYWRkcmVzcyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbi1ib3R0b206IDEycHg7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLmFkZHJlc3M6Zmlyc3QtY2hpbGQge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC5sYWJlbCB7XG4gIGNvbG9yOiAjNWM1YjYwO1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC52YWx1ZSB7XG4gIGZvbnQtc2l6ZTogMTNweDtcbiAgY29sb3I6ICNmZmNjMDE7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcbiAgcGFkZGluZzogMCAxMnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC5jb3B5IHtcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xuICBmb250LXNpemU6IDIwcHg7XG4gIGNvbG9yOiAjNWM1YjYwO1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLmNsb3Nlcm93IHtcbiAgcGFkZGluZzogNnB4IDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG59XG4uaGlzdG9yeSAubm8tZnV0aGVyLWFjdGl2aXR5IHtcbiAgaGVpZ2h0OiA1MDBweDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */");
 
 /***/ }),
 
@@ -676,13 +689,53 @@ let AccountHistoryComponent = class AccountHistoryComponent {
             3: 'deposit',
             4: 'win'
         };
-        this.history = [];
+        this.depositHistory = [];
+        this.withdrawHistory = [];
+        this.depositPageNum = 0;
+        this.withdrawPageNum = 0;
+        this.isLoadingDeposit = false;
+        this.isLoadingWithdrawal = false;
     }
     ngOnInit() {
-        this.accountService.getAccountActivity(1, 20).subscribe((data) => {
+        this.accountService.getDepositHistory(1, 20).subscribe((data) => {
             if (data.code === 200) {
-                this.history = data.msg;
+                this.depositHistory = data.msg;
             }
+        });
+        this.accountService.getWithdrawalHistory(1, 20).subscribe((data) => {
+            if (data.code === 200) {
+                this.withdrawHistory = data.msg;
+            }
+        });
+    }
+    onDepositScroll() {
+        this.depositPageNum++;
+        this.accountService.getDepositHistory(this.depositPageNum, 100)
+            .subscribe((data) => {
+            const arr = data.msg;
+            arr.forEach((item) => {
+                if (!this.depositHistory.find(dup => {
+                    return dup.id === item.id &&
+                        dup.uid === item.uid;
+                })) {
+                    this.depositHistory.push(item);
+                }
+            });
+        });
+    }
+    onWithdrawScroll() {
+        this.withdrawPageNum++;
+        this.accountService.getWithdrawalHistory(this.withdrawPageNum, 100)
+            .subscribe((data) => {
+            const arr = data.msg;
+            arr.forEach((item) => {
+                if (!this.withdrawHistory.find(dup => {
+                    return dup.id === item.id &&
+                        dup.uid === item.uid;
+                })) {
+                    this.withdrawHistory.push(item);
+                }
+            });
         });
     }
 };
@@ -856,10 +909,10 @@ let AuthGuard = class AuthGuard {
         this.router = router;
     }
     canActivate() {
-        if (!(this.authService.user && this.authService.user.token)) {
-            this.router.navigate(['/home']);
-            return false;
-        }
+        // if (!(this.authService.user && this.authService.user.token)) {
+        //   this.router.navigate(['/home']);
+        //   return false;
+        // }
         // you can save redirect url so after authing we can move them back to the page they requested
         return true;
     }
@@ -1283,7 +1336,7 @@ let WithdrawComponent = class WithdrawComponent {
         this.authService = authService;
         this.isLoading = false;
         this.showIcon = false;
-        this.address = "";
+        this.address = '';
         this.amount = 0;
         this.message = '';
     }
@@ -1308,8 +1361,10 @@ let WithdrawComponent = class WithdrawComponent {
         });
     }
     updateAmount() {
-        this.message = '';
         setTimeout(() => {
+            if (this.amount === null) {
+                return null;
+            }
             if (this.amount < .0001) {
                 this.amount = 0;
                 return;
@@ -1940,23 +1995,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm2015/select.js");
 /* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
-/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
-/* harmony import */ var ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-infinite-scroll */ "./node_modules/ngx-infinite-scroll/modules/ngx-infinite-scroll.js");
-/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
-/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
-/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
-/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
-/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
-/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
-/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
-/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
-/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
-/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
-/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
-/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
-/* harmony import */ var _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../pipes/to-number.pipe */ "./src/app/pipes/to-number.pipe.ts");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
+/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
+/* harmony import */ var ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-infinite-scroll */ "./node_modules/ngx-infinite-scroll/modules/ngx-infinite-scroll.js");
+/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
+/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
+/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
+/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
+/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
+/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
+/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
+/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
+/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
+/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
+/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
+/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
+/* harmony import */ var _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../pipes/to-number.pipe */ "./src/app/pipes/to-number.pipe.ts");
+/* harmony import */ var _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./info-component/info-component.component */ "./src/app/common/info-component/info-component.component.ts");
+
 
 
 
@@ -1982,54 +2040,61 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AppCommonModule = class AppCommonModule {
 };
 AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_8__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_9__["AnimatedBackgroundComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedTicketsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedConfettiComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedCoinsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_21__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_13__["BuyTicketInputComponent"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_15__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_10__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_12__["PoolSelectComponent"],
-            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_22__["ToNumberPipe"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_11__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_16__["WinnerPanelComponent"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_9__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_10__["AnimatedBackgroundComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedQuestionComponent"],
+            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedTicketsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedConfettiComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedCoinsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_22__["BlockChainInfoComponent"],
+            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_14__["BuyTicketInputComponent"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_16__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_11__["MainHeaderComponent"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_13__["PoolSelectComponent"],
+            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_23__["ToNumberPipe"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_12__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_17__["WinnerPanelComponent"],
+            _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_24__["InfoComponentComponent"],
         ],
         imports: [
-            ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__["ClipboardModule"],
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_7__["ClipboardModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_7__["InfiniteScrollModule"],
+            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_8__["InfiniteScrollModule"],
             _angular_material_select__WEBPACK_IMPORTED_MODULE_4__["MatSelectModule"],
             _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__["MatSliderModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_14__["RouterModule"]
+            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_15__["RouterModule"]
         ],
         exports: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_8__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_9__["AnimatedBackgroundComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedCoinsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedConfettiComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_17__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedTicketsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_21__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_13__["BuyTicketInputComponent"],
-            ngx_clipboard__WEBPACK_IMPORTED_MODULE_6__["ClipboardModule"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_9__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_10__["AnimatedBackgroundComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedCoinsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedConfettiComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedQuestionComponent"],
+            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedTicketsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_22__["BlockChainInfoComponent"],
+            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_14__["BuyTicketInputComponent"],
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_7__["ClipboardModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_7__["InfiniteScrollModule"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_15__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_10__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_12__["PoolSelectComponent"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_14__["RouterModule"],
-            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_22__["ToNumberPipe"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_11__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_16__["WinnerPanelComponent"]
+            _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_24__["InfoComponentComponent"],
+            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_8__["InfiniteScrollModule"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_16__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_11__["MainHeaderComponent"],
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_4__["MatSelectModule"],
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_5__["MatSliderModule"],
+            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_6__["MatTabsModule"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_13__["PoolSelectComponent"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_15__["RouterModule"],
+            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_23__["ToNumberPipe"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_12__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_17__["WinnerPanelComponent"]
         ]
     })
 ], AppCommonModule);
@@ -2249,6 +2314,60 @@ BuyTicketInputComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./buy-ticket-input.component.scss */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.scss")).default]
     })
 ], BuyTicketInputComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/info-component/info-component.component.scss":
+/*!*********************************************************************!*\
+  !*** ./src/app/common/info-component/info-component.component.scss ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/common/info-component/info-component.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/common/info-component/info-component.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: InfoComponentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InfoComponentComponent", function() { return InfoComponentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+let InfoComponentComponent = class InfoComponentComponent {
+    constructor(authService) {
+        this.authService = authService;
+    }
+    ngOnInit() {
+        if (window.location.hostname.includes('sylvesterlan')) {
+            this.data = this.authService.dataObj;
+        }
+    }
+};
+InfoComponentComponent.ctorParameters = () => [
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] }
+];
+InfoComponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-info-component',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./info-component.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/info-component/info-component.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./info-component.component.scss */ "./src/app/common/info-component/info-component.component.scss")).default]
+    })
+], InfoComponentComponent);
 
 
 
@@ -2542,8 +2661,8 @@ const ChineseTranslations = {
     '6-digit-code': '6位数代码',
     'all-tickets': '幸运票总数',
     'an-error-has-occurred': '发生了错误。',
-    'available': '可用余额',
-    'balance': '余额',
+    'available': '可用余数',
+    'balance': '余数',
     'bind-2fa': '绑定2FA',
     'block': '封锁',
     'blocks': '封锁',
@@ -2560,11 +2679,11 @@ const ChineseTranslations = {
     'create-new-account': '建立新帐户',
     'current-tickets': '当前幸运票数',
     'current-users-entered': '当前加入的玩家',
-    'deposit': '存款',
+    'deposit': '存入',
     'depositing-any-other-asset-here-may-result-in-permanent-loss': '在此处存放任何其他资产可能会导致永久损失。',
-    'deposit-funds': '存款余额',
+    'deposit-funds': '存入余数',
     'depositing-funds': '存入资金',
-    'depositing-funds-etc': '您必须按照“存款”页面上的说明将资金存入您的钱包。',
+    'depositing-funds-etc': '您必须按照“存入”页面上的说明将资金存入您的钱包。',
     'drawing-begins-after-tickets': '累计 {0} 票后开始抽奖',
     'drawing-begins-after-users-enter': ' {0} 名用户加入后开始抽奖',
     'drawing-begins-in': '开奖倒计时',
@@ -2575,7 +2694,7 @@ const ChineseTranslations = {
     'from': '来源',
     'hello': '你好',
     'hi-your-new-account-is-ready': '嗨 {0},\n 您的新帐户已准备就绪！',
-    'history': '幸运历史记录',
+    'history': '存提历史记录',
     'how-to-play': '游戏规则',
     'link': '连接',
     'login': '登录',
@@ -2598,12 +2717,12 @@ const ChineseTranslations = {
     'only-deposit-post-to-this-address': '请仅将BTOK存入此地址。如在此处存放任何其他资产可能会永久损失。',
     'optional': '可选',
     'password': '密码',
-    'payout-history': '幸运奖金历史',
+    'payout-history': '幸运奖励历史',
     'payouts': '幸运奖金支出',
-    'payouts-etc': '一等奖 = 80币(1名) \n 二等奖 = 20币(4名) \n 三等奖 = 5币(20名) \n 4等奖 = 0.2币(100名) 5等奖 = 0.1币(200名) 6等奖 = 0.02币(10,000名) 安慰奖 = 0.01币(30,000名)',
+    'payouts-etc': '一等奖 = 80币(1名) \n 二等奖 = 20币(4名) \n 三等奖 = 5币(20名) \n 4等奖 = 0.2币(100名) \n 5等奖 = 0.1币(200名) \n 6等奖 = 0.02币(10,000名) \n 安慰奖 = 0.01币(30,000名)',
     'play-now': '即刻开玩',
     'please-backup-this-code-somewhere': '请将此代码备份到某处。',
-    'please-confirm-your-withdrawal-address': '请确认您的提款地址',
+    'please-confirm-your-withdrawal-address': '请确认您的提出地址',
     'please-login-through-the-app': '请通过应用程序登录',
     'pool-opened': '幸运池开启',
     'prize-pool': '幸运池',
@@ -2612,7 +2731,7 @@ const ChineseTranslations = {
     'scan-this-code-with-your-2fa-app': '使用2FA应用程序扫描此代码。请将此代码备份到某处。绑定帐户后，您将无法再次查看此代码。',
     'see-all-ticket-entries': '查看所有幸运票数',
     'sign-up-for-an-anonymous-acount-and-start-playing-today': '立即注册一个匿名帐户并开始获得好运!',
-    'submit-withdrawal': '申请提款',
+    'submit-withdrawal': '申请提出',
     'success': '成功',
     'target-block-height': '区块数量',
     'ticket': '幸运票号',
@@ -2623,13 +2742,13 @@ const ChineseTranslations = {
     'win': '赢得',
     'winners': '幸运优胜者',
     'winning': '中奖',
-    'winning-etc': '当您中奖时，您的奖金将自动添加到您的可用余额中。',
-    'withdraw': '提款',
+    'winning-etc': '当您中奖时，您的奖金将自动添加到您的可用余数中。',
+    'withdraw': '提出',
     'withdrawing-funds': '提取资金',
-    'withdrawing-funds-etc': '您可以通过“提款”页面提款。请按照说明进行操作，并确保验证您的提款地址。',
-    'withdraw-process-usually-takes-about-1-hour-or-less': '提款过程通常需要大约1小时或更短。',
-    'withdrawal-address': '提款地址',
-    'withdrawal-amount': '提款金额',
+    'withdrawing-funds-etc': '您可以通过“提出”页面提出。请按照说明进行操作，并确保验证您的提出地址。',
+    'withdraw-process-usually-takes-about-1-hour-or-less': '提出过程通常需要大约1小时或更短。',
+    'withdrawal-address': '提出地址',
+    'withdrawal-amount': '提出金额',
     'work-in-progress': '工作正在进行中',
     'you-won': '您中奖了！',
     'your-account-is-now-bound': '您的帐户现已绑定。'
@@ -3541,7 +3660,7 @@ let PayoutComponent = class PayoutComponent {
         }
     }
     getData(level) {
-        if (this.currentGameId != this.lotteryService.lastGameId) {
+        if (this.currentGameId !== this.lotteryService.lastGameId) {
             this.payoutData = {};
             this.currentGameId = this.lotteryService.lastGameId;
         }
@@ -3555,7 +3674,6 @@ let PayoutComponent = class PayoutComponent {
         if (this.lotteryService && this.lotteryService.lastGameId) {
             this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, level, this.payoutData[level].page, 100)
                 .subscribe((data) => {
-                console.log(3, data);
                 this.payoutData[level].page++;
                 this.payoutData[level].data = data.msg;
                 this.payoutData[level].data.forEach(item => {
@@ -3798,6 +3916,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _how_to_play_how_to_play_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../how-to-play/how-to-play.component */ "./src/app/how-to-play/how-to-play.component.ts");
 /* harmony import */ var _my_entries_my_entries_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../my-entries/my-entries.component */ "./src/app/my-entries/my-entries.component.ts");
 /* harmony import */ var _account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../account/authguard.guard */ "./src/app/account/authguard.guard.ts");
+/* harmony import */ var _common_info_component_info_component_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../common/info-component/info-component.component */ "./src/app/common/info-component/info-component.component.ts");
+
 
 
 
@@ -3866,6 +3986,10 @@ const routes = [
         component: _how_to_play_how_to_play_component__WEBPACK_IMPORTED_MODULE_12__["HowToPlayComponent"]
     },
     {
+        path: 'info',
+        component: _common_info_component_info_component_component__WEBPACK_IMPORTED_MODULE_15__["InfoComponentComponent"]
+    },
+    {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
@@ -3925,14 +4049,54 @@ let AccountService = class AccountService {
         this.showAccountSettings.next(show);
     }
     getAccountActivity(page, offset) {
-        let options = {
+        const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
                 .set('token', this.authService.user.token)
         };
-        let request = new URLSearchParams();
+        const request = new URLSearchParams();
         request.set('page', page.toString());
         request.set('offset', offset.toString());
         return this.httpClient.post(`${this.url}/account/activity`, request.toString(), options);
+    }
+    getDepositHistory(page, offset) {
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        const request = new URLSearchParams();
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/account/getDepositHistory`, request.toString(), options);
+    }
+    getWithdrawalHistory(page, offset) {
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        const request = new URLSearchParams();
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/account/getWithdrawalHistory`, request.toString(), options);
+    }
+    getBetsHistory(page, offset) {
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        const request = new URLSearchParams();
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/account/getBetsHistory`, request.toString(), options);
+    }
+    getRewardHistory(page, offset) {
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        const request = new URLSearchParams();
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/account/getRewardHistory`, request.toString(), options);
     }
 };
 AccountService.ctorParameters = () => [
@@ -3993,14 +4157,14 @@ let AuthService = class AuthService {
         this.authorize();
         if (this.windowRef.nativeWindow) {
             this.windowRef.nativeWindow.SyncCallback = (method, data) => {
-                const dataObj = JSON.parse(data);
+                this.dataObj = JSON.parse(data);
                 switch (method) {
                     case 'Authorizedlogin':
-                        if (dataObj.status !== 'ok' || !dataObj.callback) {
+                        if (this.dataObj.status !== 'ok' || !this.dataObj.callback) {
                             return;
                         }
-                        this.user.appToken = dataObj.callback.token;
-                        this.loginWithToken(dataObj.callback.userMail, dataObj.callback.token);
+                        this.user.appToken = this.dataObj.callback.token;
+                        this.loginWithToken();
                         break;
                     case 'Recharge':
                         break;
@@ -4054,14 +4218,14 @@ let AuthService = class AuthService {
             }
         }
     }
-    loginWithToken(userMail, token) {
+    loginWithToken() {
         this.isLoggedIn = false;
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
         };
         const request = new URLSearchParams();
-        request.set('email', userMail);
-        request.set('token', token);
+        request.set('email', this.dataObj.callback.userMail);
+        request.set('token', this.dataObj.callback.token);
         this.httpClient.post(`${this.url}/passport/getToken`, request.toString(), options)
             .subscribe((results) => {
             if (results.code === 200) {
@@ -4316,10 +4480,10 @@ let LotteryService = class LotteryService {
         this.statusSubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.entrySubscription = new rxjs__WEBPACK_IMPORTED_MODULE_6__["Subscription"]();
         this.setAvailablePrizePool = (msg) => {
-            let prizePool = msg.entrylimit;
-            let gameId = msg.gameid;
-            let lotteryStatus = msg.status.toString();
-            let currentEntries = msg.currententry;
+            const prizePool = msg.entrylimit;
+            const gameId = msg.gameid;
+            const lotteryStatus = msg.status.toString();
+            const currentEntries = msg.currententry;
             let currentStatus;
             this.availablePrizePool = prizePool;
             let myEntries = [];
@@ -4346,11 +4510,11 @@ let LotteryService = class LotteryService {
             }
             if (currentStatus !== lotteryStatus) {
                 switch (lotteryStatus) {
-                    case "0":
+                    case '0':
                         break;
-                    case "1":
+                    case '1':
                         break;
-                    case "2":
+                    case '2':
                         clearInterval(this.checkStatusInterval);
                         this.setPrizePool(msg);
                         this.setDrawWinners(prizePool);
@@ -4363,10 +4527,10 @@ let LotteryService = class LotteryService {
         };
         this.startPendingProcess = (prizePool) => {
             const currentPrizePool = this.lotteryObj[prizePool];
-            if (currentPrizePool.lotteryStatus !== "0") {
+            if (currentPrizePool.lotteryStatus !== '0') {
                 return;
             }
-            this.setLotteryStatus("1", prizePool);
+            this.setLotteryStatus('1', prizePool);
         };
         this.finishPendingProcess = (prizePool) => {
             const currentPrizePool = this.lotteryObj[prizePool];
@@ -4379,6 +4543,7 @@ let LotteryService = class LotteryService {
                 if (currentPrizePool.countDown <= 1) {
                     clearInterval(currentPrizePool.countDownInterval);
                     this.startStatusCheckInterval();
+                    this.authService.loginWithToken();
                     this.blockChainService.startLog();
                 }
                 this.lotteryObj[prizePool].countDown--;
@@ -4423,12 +4588,12 @@ let LotteryService = class LotteryService {
         return this.lotteryObj[prizePool] || null;
     }
     checkGameStatus() {
-        let options = {
+        const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
                 .set("Content-Type", "application/x-www-form-urlencoded")
                 .set("token", this.authService.user.token || "anonymous"),
         };
-        let request = new URLSearchParams();
+        const request = new URLSearchParams();
         request.set("type", "active");
         return this.httpClient
             .post(`${this.url}/game/status`, request.toString(), options)
@@ -4483,12 +4648,12 @@ let LotteryService = class LotteryService {
         this.lotteryObj[prizePool].lotteryStatus = status;
     }
     buyTicket(amount) {
-        let options = {
+        const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
                 .set("Content-Type", "application/x-www-form-urlencoded")
                 .set("token", this.authService.user.token),
         };
-        let request = new URLSearchParams();
+        const request = new URLSearchParams();
         request.set("amount", amount.toString());
         request.set("gameid", this.currentLotteryInfo.gameId);
         return this.httpClient
@@ -4503,12 +4668,12 @@ let LotteryService = class LotteryService {
         }));
     }
     setMinipool() {
-        let options = {
+        const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
                 .set("Content-Type", "application/x-www-form-urlencoded")
                 .set("token", this.authService.user.token),
         };
-        let request = new URLSearchParams();
+        const request = new URLSearchParams();
         request.set("gameid", this.currentLotteryInfo.gameId);
         return this.httpClient
             .post(`${this.url}/getBonusPrizeList`, request.toString(), options)
@@ -4518,6 +4683,13 @@ let LotteryService = class LotteryService {
             }
             return null;
         }));
+    }
+    getLastTenGames() {
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        return this.httpClient.post(`${this.url}/account/getBetsHistory`, null, options);
     }
     drawMinipool() {
         const prizePool = this.lotteryObj[this.availablePrizePool];
