@@ -6805,20 +6805,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
-        this.authorize();
 
         if (this.windowRef.nativeWindow) {
           this.windowRef.nativeWindow.SyncCallback = function (method, data) {
             var response = JSON.parse(data);
+            alert(0);
 
             switch (method) {
               case 'Authorizedlogin':
+                alert(1);
+
                 if (response.status !== 'ok' || !response.callback) {
                   return;
                 }
 
                 _this25.user.appToken = response.callback.token;
                 _this25.dataObj = response.callback;
+                alert(2 + ': ' + JSON.stringify(response.callback));
 
                 _this25.loginWithToken();
 
@@ -6829,6 +6832,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
           };
         }
+
+        this.authorize();
       }
 
       _createClass(AuthService, [{

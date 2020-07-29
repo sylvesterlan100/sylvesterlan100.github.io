@@ -4151,17 +4151,19 @@ let AuthService = class AuthService {
             memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
-        this.authorize();
         if (this.windowRef.nativeWindow) {
             this.windowRef.nativeWindow.SyncCallback = (method, data) => {
                 const response = JSON.parse(data);
+                alert(0);
                 switch (method) {
                     case 'Authorizedlogin':
+                        alert(1);
                         if (response.status !== 'ok' || !response.callback) {
                             return;
                         }
                         this.user.appToken = response.callback.token;
                         this.dataObj = response.callback;
+                        alert(2 + ': ' + JSON.stringify(response.callback));
                         this.loginWithToken();
                         break;
                     case 'Recharge':
@@ -4169,6 +4171,7 @@ let AuthService = class AuthService {
                 }
             };
         }
+        this.authorize();
     }
     authorize() {
         const data = JSON.stringify({
