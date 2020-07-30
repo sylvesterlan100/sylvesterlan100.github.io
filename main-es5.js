@@ -2403,12 +2403,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.accountService.getRewardHistory(this.pageNum, 100).subscribe(function (data) {
             var arr = data.msg;
             arr.forEach(function (item) {
-              // if (!this.history.find(dup => {
-              //   return dup.gameid === item.gameid &&
-              //   dup.win === item.win;
-              // })) {
-              _this10.history.push(item); // }
-
+              if (!_this10.history.find(function (dup) {
+                return dup.ticket === item.ticket && dup.gameid === item.gameid;
+              })) {
+                _this10.history.push(item);
+              }
             });
           });
         }

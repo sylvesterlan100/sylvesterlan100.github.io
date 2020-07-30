@@ -1363,12 +1363,12 @@ let WinningHistoryComponent = class WinningHistoryComponent {
             .subscribe((data) => {
             const arr = data.msg;
             arr.forEach((item) => {
-                // if (!this.history.find(dup => {
-                //   return dup.gameid === item.gameid &&
-                //   dup.win === item.win;
-                // })) {
-                this.history.push(item);
-                // }
+                if (!this.history.find(dup => {
+                    return dup.ticket === item.ticket &&
+                        dup.gameid === item.gameid;
+                })) {
+                    this.history.push(item);
+                }
             });
         });
     }
