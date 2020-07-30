@@ -3114,15 +3114,18 @@ let DrawingInfoComponent = class DrawingInfoComponent {
         }, this.incrementInterval);
     }
     getRemainingBlocks() {
-        if (this.blockchainService.rollingLog && this.blockchainService.rollingLog.length && this.lotteryService.currentLotteryInfo.targetBlockHeight) {
+        if (this.blockchainService.rollingLog &&
+            this.blockchainService.rollingLog.length &&
+            this.lotteryService.currentLotteryInfo.targetBlockHeight) {
             const count = this.lotteryService.currentLotteryInfo.targetBlockHeight - parseInt(this.blockchainService.rollingLog[0].number, 16);
             if (count < 0) {
                 return 0;
             }
             return count;
         }
-        else
+        else {
             return '....';
+        }
     }
     finalizeWinning() {
         const winners = this.lotteryService.currentLotteryInfo.winners;
@@ -4503,6 +4506,21 @@ let BlockChainService = class BlockChainService {
         this.isSingleRow = false;
         this.startLog();
     }
+    getNextBlock() {
+        if (this.getBlockSub) {
+            this.getBlockSub.unsubscribe();
+        }
+        this.getBlockSub = this.getSpecificBlock('0x' + this.currentBlock)
+            .subscribe((response) => {
+            if (response.result) {
+                this.currentBlock = (parseInt(this.currentBlock, 16) + 1).toString(16);
+                this.rollingLog.unshift(response.result);
+                if (this.rollingLog.length > 20) {
+                    this.rollingLog.pop();
+                }
+            }
+        });
+    }
     startLog() {
         this.isSingleRow = false;
         if (!(this.rollingLog && this.rollingLog.length)) {
@@ -4524,19 +4542,17 @@ let BlockChainService = class BlockChainService {
         }
         if (!this.rollingInterval) {
             this.rollingInterval = setInterval(() => {
-                if (this.getBlockSub) {
-                    this.getBlockSub.unsubscribe();
-                }
-                this.getBlockSub = this.getSpecificBlock('0x' + this.currentBlock)
-                    .subscribe((response) => {
-                    if (response.result) {
-                        this.currentBlock = (parseInt(this.currentBlock, 16) + 1).toString(16);
-                        this.rollingLog.unshift(response.result);
-                        if (this.rollingLog.length > 20) {
-                            this.rollingLog.pop();
-                        }
+                if (this.targetBlock && (this.targetBlock - parseInt(this.rollingLog[0].number, 16) > 40)) {
+                    if (this.getLatestBlockSub) {
+                        this.getLatestBlockSub.unsubscribe();
                     }
-                });
+                    this.getLatestBlockSub = this.getLatestBlock().subscribe((response) => {
+                        this.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+                    });
+                }
+                else {
+                    this.getNextBlock();
+                }
             }, 2000);
         }
     }
@@ -4647,6 +4663,7 @@ let LotteryService = class LotteryService {
             let currentStatus;
             this.availablePrizePool = prizePool;
             let myEntries = [];
+            this.blockChainService.targetBlock = msg.targetblockheight;
             if (msg.mytickets) {
                 myEntries = msg.mytickets.map((candy) => {
                     let entry = new _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__["MyEntries"]();
@@ -4749,11 +4766,11 @@ let LotteryService = class LotteryService {
     checkGameStatus() {
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
-                .set("Content-Type", "application/x-www-form-urlencoded")
-                .set("token", this.authService.user.token || "anonymous"),
+                .set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token || 'anonymous'),
         };
         const request = new URLSearchParams();
-        request.set("type", "active");
+        request.set('type', 'active');
         return this.httpClient
             .post(`${this.url}/game/status`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
