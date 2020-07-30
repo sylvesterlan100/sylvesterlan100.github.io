@@ -4645,8 +4645,8 @@ let LotteryService = class LotteryService {
             let currentStatus;
             this.availablePrizePool = prizePool;
             let myEntries = [];
-            if (msg.mycandies) {
-                myEntries = msg.mycandies.map((candy) => {
+            if (msg.mytickets) {
+                myEntries = msg.mytickets.map((candy) => {
                     let entry = new _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__["MyEntries"]();
                     entry.userName = candy.user;
                     entry.start = parseInt(candy.start, 10);
