@@ -331,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-candies' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-candies' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'candy-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\">\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"winnings-container\">\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\"\r\n                class=\"winning-panel\"\r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-candies' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-candies' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'candy-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\">\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"winnings-container\">\r\n          <div *ngIf=\"!(lotteryService.currentLotteryInfo.winners.main && lotteryService.currentLotteryInfo.winners.main.length)\">\r\n            {{'generating-winners' | translate}}\r\n          </div>\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\"\r\n                class=\"winning-panel\"\r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -357,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"home\" *ngIf=\"lotteryService.currentLotteryInfo\">\r\n    <app-main-header></app-main-header>\r\n    <div class=\"home-content\">\r\n        <app-block-chain-info></app-block-chain-info>\r\n        <app-drawing-info></app-drawing-info>\r\n        <div *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\" class=\"buy-candy-input\">\r\n            <app-buy-candy-input></app-buy-candy-input>\r\n        </div>\r\n    </div>\r\n    <div class=\"footer\">\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"home\" *ngIf=\"lotteryService.currentLotteryInfo\">\r\n    <app-main-header></app-main-header>\r\n    <div class=\"home-content\">\r\n        <app-block-chain-info *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\"></app-block-chain-info>\r\n        <app-drawing-info></app-drawing-info>\r\n        <div *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\" class=\"buy-candy-input\">\r\n            <app-buy-candy-input></app-buy-candy-input>\r\n        </div>\r\n    </div>\r\n    <div class=\"footer\">\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -2781,6 +2781,7 @@ const ChineseTranslations = {
     'fair-chance-guarantee-etc': '该游戏的结果是通过区块链智能合约技术自动生成的，无法更改。所有结果均为最终结果，概不退还。每个区块都可以通过区块链浏览器进行验证。',
     'finished': '完成',
     'from': '来源',
+    'generating-winners': '采摘幸运糖果',
     'hello': '你好',
     'hi-your-new-account-is-ready': '嗨 {0},\n 您的新帐户已准备就绪！',
     'history': '存提历史记录',
@@ -2975,6 +2976,7 @@ const EnglishTranslations = {
     'fair-chance-guarantee-etc': 'The results of this game are generated automatically through blockchain smart-contract technology and cannot be changed. All results are final and nonrefundable. Each block can be verified through the blockchain explorer.',
     'finished': 'Finished',
     'from': 'From',
+    'generating-winners': 'Generating Winners',
     'hello': 'Hello',
     'hi-your-new-account-is-ready': 'Hi {0},\nYour new account is ready',
     'history': 'History',
@@ -4676,7 +4678,6 @@ let LotteryService = class LotteryService {
                         clearInterval(this.checkStatusInterval);
                         this.setPrizePool(msg);
                         this.setDrawWinners(prizePool);
-                        // this.blockChainService.setSingleBlock(msg.targetblockheight);
                         this.blockChainService.stopLog();
                         this.finishPendingProcess(prizePool);
                         break;
@@ -4808,12 +4809,12 @@ let LotteryService = class LotteryService {
     buyCandy(amount) {
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
-                .set("Content-Type", "application/x-www-form-urlencoded")
-                .set("token", this.authService.user.token),
+                .set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token),
         };
         const request = new URLSearchParams();
-        request.set("amount", amount.toString());
-        request.set("gameid", this.currentLotteryInfo.gameId);
+        request.set('amount', amount.toString());
+        request.set('gameid', this.currentLotteryInfo.gameId);
         return this.httpClient
             .post(`${this.url}/bets/buyTickets`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
@@ -4828,11 +4829,11 @@ let LotteryService = class LotteryService {
     setMinipool() {
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
-                .set("Content-Type", "application/x-www-form-urlencoded")
-                .set("token", this.authService.user.token),
+                .set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token),
         };
         const request = new URLSearchParams();
-        request.set("gameid", this.currentLotteryInfo.gameId);
+        request.set('gameid', this.currentLotteryInfo.gameId);
         return this.httpClient
             .post(`${this.url}/getBonusPrizeList`, request.toString(), options)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((results) => {
