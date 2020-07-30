@@ -191,7 +191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of history\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                  <div>\r\n                  </div>\r\n                    <div class=\"ticket\">#{{data.ticket}}</div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    <div class=\"no-futher-activity\">\r\n      <div *ngIf=\"!isLoading\">\r\n          {{'no-further-activity' | translate}}\r\n      </div>\r\n      <mat-spinner diameter=\"42\" *ngIf=\"isLoading\"></mat-spinner>\r\n    </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <mat-tab [label]=\"'winnings-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onRewardScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of rewardHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                  <div>\r\n                  </div>\r\n                    <div class=\"ticket\">#{{data.ticket}}</div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingReward\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingReward\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n  <mat-tab [label]=\"'betting-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onBetScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of betHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"ticket\">#{{data.start}} <ng-container *ngIf=\"data.end && data.end !== data.start\">- {{data.end}}</ng-container></div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        - {{data.cost | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                  </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingBets\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingBets\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n</div>\r\n";
     /***/
   },
 
@@ -331,7 +331,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<svg id=\"confetti\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\">\r\n  <g id=\"confetti-particles\" style=\"opacity: 0;\">\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n  </g>\r\n</svg>\r\n";
+    __webpack_exports__["default"] = "<svg id=\"candies-animation\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\">\r\n  <g id=\"candies-group\">\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n  </g>\r\n</svg>\r\n";
     /***/
   },
 
@@ -1670,11 +1670,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthGuard, [{
         key: "canActivate",
         value: function canActivate() {
-          // if (!(this.authService.user && this.authService.user.token)) {
-          //   this.router.navigate(['/home']);
-          //   return false;
-          // }
-          // you can save redirect url so after authing we can move them back to the page they requested
+          if (!(this.authService.user && this.authService.user.token)) {
+            this.router.navigate(['/home']);
+            return false;
+          } // you can save redirect url so after authing we can move them back to the page they requested
+
+
           return true;
         }
       }]);
@@ -2388,9 +2389,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.lotteryService = lotteryService;
         this.accountService = accountService;
-        this.history = [];
-        this.pageNum = 0;
-        this.isLoading = false;
+        this.rewardHistory = [];
+        this.betHistory = [];
+        this.rewardPageNum = 0;
+        this.betPageNum = 0;
+        this.isLoadingReward = false;
+        this.isLoadingBets = false;
       }
 
       _createClass(WinningHistoryComponent, [{
@@ -2398,30 +2402,56 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           var _this9 = this;
 
-          this.isLoading = true;
-          this.accountService.getRewardHistory(1, 20).subscribe(function (data) {
-            _this9.isLoading = false;
+          this.isLoadingReward = true;
+          this.accountService.getRewardHistory(1, 100).subscribe(function (data) {
+            _this9.isLoadingReward = false;
 
             if (data.code === 200) {
-              _this9.history = data.msg;
+              _this9.rewardHistory = data.msg;
+            }
+          });
+          this.accountService.getBetsHistory(1, 100).subscribe(function (data) {
+            _this9.isLoadingBets = false;
+
+            if (data.code === 200) {
+              _this9.betHistory = data.msg;
             }
           });
         }
       }, {
-        key: "onScroll",
-        value: function onScroll() {
+        key: "onRewardScroll",
+        value: function onRewardScroll() {
           var _this10 = this;
 
-          this.pageNum++;
-          this.isLoading = true;
-          this.accountService.getRewardHistory(this.pageNum, 100).subscribe(function (data) {
-            _this10.isLoading = false;
+          this.rewardPageNum++;
+          this.isLoadingReward = true;
+          this.accountService.getRewardHistory(this.rewardPageNum, 100).subscribe(function (data) {
+            _this10.isLoadingReward = false;
             var arr = data.msg;
             arr.forEach(function (item) {
-              if (!_this10.history.find(function (dup) {
+              if (!_this10.rewardHistory.find(function (dup) {
                 return dup.ticket === item.ticket && dup.gameid === item.gameid;
               })) {
-                _this10.history.push(item);
+                _this10.rewardHistory.push(item);
+              }
+            });
+          });
+        }
+      }, {
+        key: "onBetScroll",
+        value: function onBetScroll() {
+          var _this11 = this;
+
+          this.betPageNum++;
+          this.isLoadingBets = true;
+          this.accountService.getBetsHistory(this.betPageNum, 100).subscribe(function (data) {
+            _this11.isLoadingBets = false;
+            var arr = data.msg;
+            arr.forEach(function (item) {
+              if (!_this11.betHistory.find(function (dup) {
+                return dup.gameid === item.gameid && dup.start === item.start && dup.end === dup.end;
+              })) {
+                _this11.betHistory.push(item);
               }
             });
           });
@@ -2527,7 +2557,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "withdraw",
         value: function withdraw() {
-          var _this11 = this;
+          var _this12 = this;
 
           if (this.isLoading) {
             return;
@@ -2535,38 +2565,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.isLoading = true;
           this.authService.withdraw(this.amount).subscribe(function (data) {
-            _this11.isLoading = false;
+            _this12.isLoading = false;
 
             if (data.code === 200) {
-              _this11.amount = 0;
-              _this11.message = 'success';
-              _this11.authService.user.amountAvailable = parseFloat(data.msg.balance);
+              _this12.amount = 0;
+              _this12.message = 'success';
+              _this12.authService.user.amountAvailable = parseFloat(data.msg.balance);
             } else {
-              _this11.message = 'an-error-has-occurred';
+              _this12.message = 'an-error-has-occurred';
             }
           });
         }
       }, {
         key: "updateAmount",
         value: function updateAmount() {
-          var _this12 = this;
+          var _this13 = this;
 
           setTimeout(function () {
-            if (_this12.amount === null) {
+            if (_this13.amount === null) {
               return null;
             }
 
-            if (_this12.amount < .0001) {
-              _this12.amount = 0;
+            if (_this13.amount < .0001) {
+              _this13.amount = 0;
               return;
             }
 
-            if (_this12.amount) {
-              var amountStr = _this12.amount.toString();
+            if (_this13.amount) {
+              var amountStr = _this13.amount.toString();
 
               if (amountStr.indexOf('.') === 0) {
                 if (amountStr.length > 5) {
-                  _this12.amount = parseFloat(amountStr.substr(0, 5));
+                  _this13.amount = parseFloat(amountStr.substr(0, 5));
                 }
               } else {
                 var arr = amountStr.split('.');
@@ -2575,7 +2605,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   arr[1] = arr[1].substr(0, 4);
                 }
 
-                _this12.amount = parseFloat(arr.join('.'));
+                _this13.amount = parseFloat(arr.join('.'));
               }
             }
           }, 0);
@@ -2933,7 +2963,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AccountHeaderComponent = /*#__PURE__*/function () {
       function AccountHeaderComponent(location) {
-        var _this13 = this;
+        var _this14 = this;
 
         _classCallCheck(this, AccountHeaderComponent);
 
@@ -2942,7 +2972,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.title = '';
 
         this.navigateBack = function () {
-          _this13.location.back();
+          _this14.location.back();
         };
       }
 
@@ -3160,7 +3190,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this14 = this;
+          var _this15 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3178,13 +3208,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#candies-animation #candies path').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this14.getRndInteger(-400, 400);
+            var hor = _this15.getRndInteger(-400, 400);
 
-            var vert = _this14.getRndInteger(200, 800);
+            var vert = _this15.getRndInteger(200, 800);
 
-            var timeEl = _this14.randomFloatBetween(2, 3, 2);
+            var timeEl = _this15.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this14.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this15.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3304,7 +3334,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "animate",
         value: function animate() {
-          var _this15 = this;
+          var _this16 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3323,13 +3353,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#coins-animation #coins-parts g').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this15.getRndInteger(-400, 400);
+            var hor = _this16.getRndInteger(-400, 400);
 
-            var vert = _this15.getRndInteger(200, 800);
+            var vert = _this16.getRndInteger(200, 800);
 
-            var timeEl = _this15.randomFloatBetween(2, 3, 2);
+            var timeEl = _this16.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this15.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this16.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3352,7 +3382,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               ease: 'linear'
             }, 0).to(el, elDur, {
               transformOrigin: '50% 50%',
-              scaleX: _this15.randomFloatBetween(.3, .8, 2),
+              scaleX: _this16.randomFloatBetween(.3, .8, 2),
               repeat: 7,
               yoyo: true,
               ease: 'linear'
@@ -3447,7 +3477,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "randomFloatBetween",
         value: function randomFloatBetween(minValue, maxValue, precision) {
-          if (typeof precision == 'undefined') {
+          if (typeof precision === 'undefined') {
             precision = 2;
           }
 
@@ -3456,8 +3486,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this16 = this;
-
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
           });
@@ -3469,38 +3497,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             repeat: 0,
             repeatDelay: 1.5
           });
-          confetti.to('#confetti #confetti-particles', .5, {
+          confetti.to('#candies-animation #candies-group', .5, {
             opacity: 1
           });
-          document.querySelectorAll('#confetti #confetti-particles rect').forEach(function (el, index) {
-            var ntl = new TimelineMax({});
-
-            var hor = _this16.getRndInteger(-400, 400);
-
-            var vert = _this16.getRndInteger(200, 800);
-
-            var timeEl = _this16.randomFloatBetween(2, 3, 2);
-
-            var elDur = _this16.randomFloatBetween(0.8, 1.5, 2);
-
+          document.querySelectorAll('#candies-animation #candies-group path').forEach(function (el, index) {
+            ntl = new TimelineMax({});
+            var hor = this.getRndInteger(-400, 400);
+            var vert = this.getRndInteger(200, 800);
+            var timeEl = this.randomFloatBetween(2, 3);
+            var elDur = this.randomFloatBetween(0.8, 1.5);
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
               x: hor
-            }, 0).fromTo(el, timeEl / 3, {
+            }, 0).fromTo(el, timeEl / 2, {
               y: 100
             }, {
               y: -vert,
-              ease: 'power3.out'
+              ease: 'sine.out'
             }, 0).to(el, timeEl / 2, {
               y: 100,
               ease: 'power1.in'
-            }, timeEl / 3).to(el, .5, {
+            }, timeEl / 2).to(el, .5, {
               opacity: 0
             }, offsetTimeEl).to(el, elDur, {
               transformOrigin: '50% 50%',
               rotation: Math.random() > .5 ? -360 : 360,
               repeat: 1.5,
-              ease: 'linear'
+              ease: Power0.easeNone
             }, 0);
             confetti.add(ntl, 0);
           });
@@ -4717,6 +4740,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'an-error-has-occurred': '发生了错误。',
       'available': '可用余数',
       'balance': '余数',
+      'betting-history': '投票记录',
       'bind-2fa': '绑定2FA',
       'block': '封锁',
       'blocks': '封锁',
@@ -4938,6 +4962,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'an-error-has-occurred': 'An error has occurred.',
       'available': 'Available',
       'balance': 'Balance',
+      'betting-history': 'Betting History',
       'bind-2fa': 'Bind 2FA',
       'block': 'Block',
       'blocks': 'Blocks',
@@ -6948,6 +6973,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('offset', offset.toString());
           return this.httpClient.post("".concat(this.url, "/account/getRewardHistory"), request.toString(), options);
         }
+      }, {
+        key: "getBetsHistory",
+        value: function getBetsHistory(page, offset) {
+          var options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
+          };
+          var request = new URLSearchParams();
+          request.set('page', page.toString());
+          request.set('offset', offset.toString());
+          return this.httpClient.post("".concat(this.url, "/account/getBetsHistory"), request.toString(), options);
+        }
       }]);
 
       return AccountService;
@@ -7811,17 +7847,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var prizePool = this.lotteryObj[this.availablePrizePool];
           prizePool.winners.minipool.isDrawing = false;
           prizePool.winners.minipool.winningAmount = prizePool.winners.minipool.winningPreDisplay;
-        }
-      }, {
-        key: "getBetsHistory",
-        value: function getBetsHistory(page, offset) {
-          var options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
-          };
-          var request = new URLSearchParams();
-          request.set('page', page.toString());
-          request.set('offset', offset.toString());
-          return this.httpClient.post("".concat(this.url, "/account/getBetsHistory"), request.toString(), options);
         }
       }, {
         key: "ngOnDestroy",

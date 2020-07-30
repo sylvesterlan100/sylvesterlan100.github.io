@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of history\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                  <div>\r\n                  </div>\r\n                    <div class=\"ticket\">#{{data.ticket}}</div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    <div class=\"no-futher-activity\">\r\n      <div *ngIf=\"!isLoading\">\r\n          {{'no-further-activity' | translate}}\r\n      </div>\r\n      <mat-spinner diameter=\"42\" *ngIf=\"isLoading\"></mat-spinner>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <mat-tab [label]=\"'winnings-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onRewardScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of rewardHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                  <div>\r\n                  </div>\r\n                    <div class=\"ticket\">#{{data.ticket}}</div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingReward\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingReward\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n  <mat-tab [label]=\"'betting-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onBetScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of betHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"ticket\">#{{data.start}} <ng-container *ngIf=\"data.end && data.end !== data.start\">- {{data.end}}</ng-container></div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        - {{data.cost | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                  </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingBets\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingBets\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -214,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<svg id=\"confetti\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\">\r\n  <g id=\"confetti-particles\" style=\"opacity: 0;\">\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#ed1d63\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#42bcec\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#fcb316\"/>\r\n    <rect x=\"384.53\" y=\"786.41\" width=\"30.94\" height=\"13.59\" fill=\"#7452a2\"/>\r\n  </g>\r\n</svg>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<svg id=\"candies-animation\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\">\r\n  <g id=\"candies-group\">\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M435.33,780.47a6.4,6.4,0,0,1-1.54,4.18,6.37,6.37,0,0,1,1.54,4.17,6.45,6.45,0,0,1-6.44,6.44,6.38,6.38,0,0,1-2.79-.64,81,81,0,0,1-9.05-4.63,19.53,19.53,0,0,1-34.1,0,81,81,0,0,1-9.05,4.63,6.38,6.38,0,0,1-2.79.64,6.45,6.45,0,0,1-6.44-6.44,6.37,6.37,0,0,1,1.54-4.17,6.43,6.43,0,0,1,0-8.35,6.37,6.37,0,0,1-1.54-4.17,6.45,6.45,0,0,1,6.44-6.44,6.24,6.24,0,0,1,2.79.64A81.93,81.93,0,0,1,383,771a19.53,19.53,0,0,1,34.1,0,81.93,81.93,0,0,1,9.05-4.63,6.24,6.24,0,0,1,2.79-.64,6.45,6.45,0,0,1,6.44,6.44,6.37,6.37,0,0,1-1.54,4.17A6.39,6.39,0,0,1,435.33,780.47Z\" fill=\"#ffcd05\"/>\r\n  </g>\r\n</svg>\r\n");
 
 /***/ }),
 
@@ -926,10 +926,10 @@ let AuthGuard = class AuthGuard {
         this.router = router;
     }
     canActivate() {
-        // if (!(this.authService.user && this.authService.user.token)) {
-        //   this.router.navigate(['/home']);
-        //   return false;
-        // }
+        if (!(this.authService.user && this.authService.user.token)) {
+            this.router.navigate(['/home']);
+            return false;
+        }
         // you can save redirect url so after authing we can move them back to the page they requested
         return true;
     }
@@ -1354,32 +1354,61 @@ let WinningHistoryComponent = class WinningHistoryComponent {
     constructor(lotteryService, accountService) {
         this.lotteryService = lotteryService;
         this.accountService = accountService;
-        this.history = [];
-        this.pageNum = 0;
-        this.isLoading = false;
+        this.rewardHistory = [];
+        this.betHistory = [];
+        this.rewardPageNum = 0;
+        this.betPageNum = 0;
+        this.isLoadingReward = false;
+        this.isLoadingBets = false;
     }
     ngOnInit() {
-        this.isLoading = true;
-        this.accountService.getRewardHistory(1, 20).subscribe((data) => {
-            this.isLoading = false;
+        this.isLoadingReward = true;
+        this.accountService.getRewardHistory(1, 100)
+            .subscribe((data) => {
+            this.isLoadingReward = false;
             if (data.code === 200) {
-                this.history = data.msg;
+                this.rewardHistory = data.msg;
+            }
+        });
+        this.accountService.getBetsHistory(1, 100)
+            .subscribe((data) => {
+            this.isLoadingBets = false;
+            if (data.code === 200) {
+                this.betHistory = data.msg;
             }
         });
     }
-    onScroll() {
-        this.pageNum++;
-        this.isLoading = true;
-        this.accountService.getRewardHistory(this.pageNum, 100)
+    onRewardScroll() {
+        this.rewardPageNum++;
+        this.isLoadingReward = true;
+        this.accountService.getRewardHistory(this.rewardPageNum, 100)
             .subscribe((data) => {
-            this.isLoading = false;
+            this.isLoadingReward = false;
             const arr = data.msg;
             arr.forEach((item) => {
-                if (!this.history.find(dup => {
+                if (!this.rewardHistory.find(dup => {
                     return dup.ticket === item.ticket &&
                         dup.gameid === item.gameid;
                 })) {
-                    this.history.push(item);
+                    this.rewardHistory.push(item);
+                }
+            });
+        });
+    }
+    onBetScroll() {
+        this.betPageNum++;
+        this.isLoadingBets = true;
+        this.accountService.getBetsHistory(this.betPageNum, 100)
+            .subscribe((data) => {
+            this.isLoadingBets = false;
+            const arr = data.msg;
+            arr.forEach((item) => {
+                if (!this.betHistory.find(dup => {
+                    return dup.gameid === item.gameid &&
+                        dup.start === item.start &&
+                        dup.end === dup.end;
+                })) {
+                    this.betHistory.push(item);
                 }
             });
         });
@@ -1986,7 +2015,7 @@ let AnimatedConfettiComponent = class AnimatedConfettiComponent {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     randomFloatBetween(minValue, maxValue, precision) {
-        if (typeof (precision) == 'undefined') {
+        if (typeof (precision) === 'undefined') {
             precision = 2;
         }
         return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)), maxValue).toFixed(precision));
@@ -2003,21 +2032,19 @@ let AnimatedConfettiComponent = class AnimatedConfettiComponent {
             repeat: 0,
             repeatDelay: 1.5
         });
-        confetti
-            .to('#confetti #confetti-particles', .5, { opacity: 1 });
-        document.querySelectorAll('#confetti #confetti-particles rect').forEach((el, index) => {
-            let ntl = new TimelineMax({});
+        confetti.to('#candies-animation #candies-group', .5, { opacity: 1 });
+        document.querySelectorAll('#candies-animation #candies-group path').forEach(function (el, index) {
+            ntl = new TimelineMax({});
             const hor = this.getRndInteger(-400, 400);
             const vert = this.getRndInteger(200, 800);
-            const timeEl = this.randomFloatBetween(2, 3, 2);
-            const elDur = this.randomFloatBetween(0.8, 1.5, 2);
+            const timeEl = this.randomFloatBetween(2, 3);
+            const elDur = this.randomFloatBetween(0.8, 1.5);
             const offsetTimeEl = '-=' + timeEl / 3;
-            ntl
-                .to(el, timeEl, { x: hor }, 0)
-                .fromTo(el, timeEl / 3, { y: 100 }, { y: -vert, ease: 'power3.out' }, 0)
-                .to(el, timeEl / 2, { y: 100, ease: 'power1.in' }, timeEl / 3)
+            ntl.to(el, timeEl, { x: hor }, 0)
+                .fromTo(el, timeEl / 2, { y: 100 }, { y: -vert, ease: 'sine.out' }, 0)
+                .to(el, timeEl / 2, { y: 100, ease: 'power1.in' }, timeEl / 2)
                 .to(el, .5, { opacity: 0 }, offsetTimeEl)
-                .to(el, elDur, { transformOrigin: '50% 50%', rotation: Math.random() > .5 ? -360 : 360, repeat: 1.5, ease: 'linear' }, 0);
+                .to(el, elDur, { transformOrigin: '50% 50%', rotation: Math.random() > .5 ? -360 : 360, repeat: 1.5, ease: Power0.easeNone }, 0);
             confetti.add(ntl, 0);
         });
     }
@@ -2768,6 +2795,7 @@ const ChineseTranslations = {
     'an-error-has-occurred': '发生了错误。',
     'available': '可用余数',
     'balance': '余数',
+    'betting-history': '投票记录',
     'bind-2fa': '绑定2FA',
     'block': '封锁',
     'blocks': '封锁',
@@ -2965,6 +2993,7 @@ const EnglishTranslations = {
     'an-error-has-occurred': 'An error has occurred.',
     'available': 'Available',
     'balance': 'Balance',
+    'betting-history': 'Betting History',
     'bind-2fa': 'Bind 2FA',
     'block': 'Block',
     'blocks': 'Blocks',
@@ -4266,6 +4295,16 @@ let AccountService = class AccountService {
         request.set('offset', offset.toString());
         return this.httpClient.post(`${this.url}/account/getRewardHistory`, request.toString(), options);
     }
+    getBetsHistory(page, offset) {
+        const options = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
+                .set('token', this.authService.user.token)
+        };
+        const request = new URLSearchParams();
+        request.set('page', page.toString());
+        request.set('offset', offset.toString());
+        return this.httpClient.post(`${this.url}/account/getBetsHistory`, request.toString(), options);
+    }
 };
 AccountService.ctorParameters = () => [
     { type: _auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
@@ -4876,16 +4915,6 @@ let LotteryService = class LotteryService {
         const prizePool = this.lotteryObj[this.availablePrizePool];
         prizePool.winners.minipool.isDrawing = false;
         prizePool.winners.minipool.winningAmount = prizePool.winners.minipool.winningPreDisplay;
-    }
-    getBetsHistory(page, offset) {
-        const options = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('token', this.authService.user.token)
-        };
-        const request = new URLSearchParams();
-        request.set('page', page.toString());
-        request.set('offset', offset.toString());
-        return this.httpClient.post(`${this.url}/account/getBetsHistory`, request.toString(), options);
     }
     ngOnDestroy() {
         clearInterval(this.checkStatusInterval);
