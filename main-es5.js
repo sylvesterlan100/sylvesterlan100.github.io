@@ -7703,7 +7703,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var prizeList = msg.prizelist;
           this.clearWinners();
 
-          if (prizeList) {
+          if (prizeList && msg.myprizelist) {
             prizeList.forEach(function (prize, i) {
               if (!_this39.currentLotteryInfo.winners.main[i]) {
                 _this39.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
@@ -7715,11 +7715,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 _this39.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (_this39.authService.user && _this39.authService.user.userName)));
               });
             });
+            this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(function (item) {
+              return item.win === 7;
+            }).amount);
           }
-
-          this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(function (item) {
-            return item.win === 7;
-          }).amount);
         }
       }, {
         key: "setDrawWinners",

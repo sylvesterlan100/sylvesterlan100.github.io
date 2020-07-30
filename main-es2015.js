@@ -4789,7 +4789,7 @@ let LotteryService = class LotteryService {
     setPrizePool(msg) {
         const prizeList = msg.prizelist;
         this.clearWinners();
-        if (prizeList) {
+        if (prizeList && msg.myprizelist) {
             prizeList.forEach((prize, i) => {
                 if (!this.currentLotteryInfo.winners.main[i]) {
                     this.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(item => item.win === i + 1).amount));
@@ -4798,8 +4798,8 @@ let LotteryService = class LotteryService {
                     this.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (this.authService.user && this.authService.user.userName)));
                 });
             });
+            this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(item => item.win === 7).amount);
         }
-        this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(item => item.win === 7).amount);
     }
     setDrawWinners(prizePool) {
         const currentPrizePool = this.lotteryObj[prizePool];
