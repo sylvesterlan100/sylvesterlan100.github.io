@@ -926,10 +926,10 @@ let AuthGuard = class AuthGuard {
         this.router = router;
     }
     canActivate() {
-        // if (!(this.authService.user && this.authService.user.token)) {
-        //   this.router.navigate(['/home']);
-        //   return false;
-        // }
+        if (!(this.authService.user && this.authService.user.token)) {
+            this.router.navigate(['/home']);
+            return false;
+        }
         // you can save redirect url so after authing we can move them back to the page they requested
         return true;
     }
@@ -4361,27 +4361,24 @@ let AuthService = class AuthService {
             memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
-        this.dataObj = { "userMail": "shan26@bccto.me", "token": "eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYxNTE2MjUsImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.5nhq18obrkhtctop4pr8bncrctr9h4eke77rjfdgsg0qmg4ugaq" };
-        this.user.appToken = this.dataObj.token;
-        this.loginWithToken();
-        // if (this.windowRef.nativeWindow) {
-        //   this.windowRef.nativeWindow.SyncCallback = (method: string, data: any) => {
-        //     const response = JSON.parse(data);
-        //     switch (method) {
-        //       case 'Authorizedlogin':
-        //         if (response.status !== 'ok' || !response.callback) {
-        //           return;
-        //         }
-        //         this.user.appToken = response.callback.token;
-        //         this.dataObj = response.callback;
-        //         this.loginWithToken();
-        //         break;
-        //       case 'Recharge':
-        //         break;
-        //     }
-        //   };
-        // }
-        // this.authorize();
+        if (this.windowRef.nativeWindow) {
+            this.windowRef.nativeWindow.SyncCallback = (method, data) => {
+                const response = JSON.parse(data);
+                switch (method) {
+                    case 'Authorizedlogin':
+                        if (response.status !== 'ok' || !response.callback) {
+                            return;
+                        }
+                        this.user.appToken = response.callback.token;
+                        this.dataObj = response.callback;
+                        this.loginWithToken();
+                        break;
+                    case 'Recharge':
+                        break;
+                }
+            };
+        }
+        this.authorize();
     }
     authorize() {
         const data = JSON.stringify({
