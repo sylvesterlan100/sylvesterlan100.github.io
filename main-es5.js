@@ -191,7 +191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <mat-tab [label]=\"'winnings-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onRewardScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of rewardHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                  <div>\r\n                  </div>\r\n                    <div class=\"ticket\">#{{data.ticket}}</div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingReward\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingReward\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n  <mat-tab [label]=\"'betting-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onBetScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of betHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"ticket\">#{{data.start}} <ng-container *ngIf=\"data.end && data.end !== data.start\">- {{data.end}}</ng-container></div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        - {{data.cost | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                  </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingBets\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingBets\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <mat-tab-group animationDuration=\"0ms\">\r\n    <mat-tab [label]=\"'winnings-history' | translate\">\r\n      <div class=\"history-table\"\r\n        infiniteScroll\r\n        [infiniteScrollDistance]=\"1\"\r\n        [infiniteScrollThrottle]=\"50\"\r\n        (scrolled)=\"onRewardScroll()\"\r\n        [scrollWindow]=\"false\">\r\n          <ng-container *ngFor=\"let data of rewardHistory\">\r\n              <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                  <div class=\"itemrow\">\r\n                    <div>\r\n                    </div>\r\n                      <div class=\"ticket\">#{{data.ticket}}</div>\r\n                      <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                      <div class=\"amount\">\r\n                          + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                      </div>\r\n                      <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                  </div>\r\n                  <!-- <div>\r\n                    <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'from'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                              {{data.fromAddress}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"address\">\r\n                          <div class=\"label\">\r\n                              {{'TXID'|translate}}:\r\n                          </div>\r\n                          <div class=\"value\">\r\n                              {{data.txid}}\r\n                          </div>\r\n                          <div class=\"copy\">\r\n                              <i class=\"icon-documentcopy\"></i>\r\n                          </div>\r\n                    </div>\r\n                  </div> -->\r\n                  <!-- <div class=\"closerow\">\r\n                      <div class=\"icon\">\r\n                          <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                      </div>\r\n                  </div> -->\r\n            </div>\r\n        </ng-container>\r\n\r\n        <div class=\"no-futher-activity\">\r\n          <div *ngIf=\"!isLoadingReward\">\r\n              {{'no-further-activity' | translate}}\r\n          </div>\r\n          <mat-spinner diameter=\"42\" *ngIf=\"isLoadingReward\"></mat-spinner>\r\n        </div>\r\n      </div>\r\n    </mat-tab>\r\n    <mat-tab [label]=\"'betting-history' | translate\">\r\n      <div class=\"history-table\"\r\n        infiniteScroll\r\n        [infiniteScrollDistance]=\"1\"\r\n        [infiniteScrollThrottle]=\"50\"\r\n        (scrolled)=\"onBetScroll()\"\r\n        [scrollWindow]=\"false\">\r\n          <ng-container *ngFor=\"let data of betHistory\">\r\n              <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                  <div class=\"itemrow\">\r\n                      <div class=\"ticket\">#{{data.start}} <ng-container *ngIf=\"data.end && data.end !== data.start\">- {{data.end}}</ng-container></div>\r\n                      <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                      <div class=\"amount\">\r\n                          - {{data.cost | toNumber | number: '0.0-4'}} BTOK\r\n                      </div>\r\n                      <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                    </div>\r\n                  <!-- <div>\r\n                    <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'from'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                              {{data.fromAddress}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"address\">\r\n                          <div class=\"label\">\r\n                              {{'TXID'|translate}}:\r\n                          </div>\r\n                          <div class=\"value\">\r\n                              {{data.txid}}\r\n                          </div>\r\n                          <div class=\"copy\">\r\n                              <i class=\"icon-documentcopy\"></i>\r\n                          </div>\r\n                    </div>\r\n                  </div> -->\r\n                  <!-- <div class=\"closerow\">\r\n                      <div class=\"icon\">\r\n                          <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                      </div>\r\n                  </div> -->\r\n            </div>\r\n        </ng-container>\r\n\r\n        <div class=\"no-futher-activity\">\r\n          <div *ngIf=\"!isLoadingBets\">\r\n              {{'no-further-activity' | translate}}\r\n          </div>\r\n          <mat-spinner diameter=\"42\" *ngIf=\"isLoadingBets\"></mat-spinner>\r\n        </div>\r\n      </div>\r\n    </mat-tab>\r\n  </mat-tab-group>\r\n</div>\r\n";
     /***/
   },
 
@@ -411,7 +411,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\r\n  <div style=\"margin-top: 12px;\">\r\n    {{date | date: 'hh:m a'}} Info:\r\n  </div>\r\n  <div ngxClipboard [cbContent]=\"data\">\r\n    {{data}}\r\n  </div>\r\n  <button mat-button  ngxClipboard [cbContent]=\"data\">Copy</button>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"info copy-pastable\">\r\n  <div style=\"margin-top: 12px;\">\r\n    {{date | date: 'hh:m a'}} Info:\r\n  </div>\r\n  <div ngxClipboard [cbContent]=\"data\">\r\n    {{data}}\r\n  </div>\r\n  <button mat-button ngxClipboard [cbContent]=\"data\">Debug</button>\r\n</div>\r\n";
     /***/
   },
 
@@ -1670,12 +1670,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthGuard, [{
         key: "canActivate",
         value: function canActivate() {
-          if (!(this.authService.user && this.authService.user.token)) {
-            this.router.navigate(['/home']);
-            return false;
-          } // you can save redirect url so after authing we can move them back to the page they requested
-
-
+          // if (!(this.authService.user && this.authService.user.token)) {
+          //   this.router.navigate(['/home']);
+          //   return false;
+          // }
+          // you can save redirect url so after authing we can move them back to the page they requested
           return true;
         }
       }]);
@@ -4163,7 +4162,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".info {\n  margin-top: 24px;\n  color: white !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsdUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gIGNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG59XHJcbiIsIi5pbmZvIHtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG59Il19 */";
+    __webpack_exports__["default"] = ".info {\n  margin-top: 24px;\n  color: transparent !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsNkJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gIGNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcbiIsIi5pbmZvIHtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG59Il19 */";
     /***/
   },
 
@@ -7075,8 +7074,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AuthService = /*#__PURE__*/function () {
       function AuthService(httpClient, windowRef) {
-        var _this29 = this;
-
         _classCallCheck(this, AuthService);
 
         this.httpClient = httpClient;
@@ -7093,31 +7090,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
-
-        if (this.windowRef.nativeWindow) {
-          this.windowRef.nativeWindow.SyncCallback = function (method, data) {
-            var response = JSON.parse(data);
-
-            switch (method) {
-              case 'Authorizedlogin':
-                if (response.status !== 'ok' || !response.callback) {
-                  return;
-                }
-
-                _this29.user.appToken = response.callback.token;
-                _this29.dataObj = response.callback;
-
-                _this29.loginWithToken();
-
-                break;
-
-              case 'Recharge':
-                break;
-            }
-          };
-        }
-
-        this.authorize();
+        this.dataObj = {
+          "userMail": "shan26@bccto.me",
+          "token": "eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYxNTE2MjUsImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.5nhq18obrkhtctop4pr8bncrctr9h4eke77rjfdgsg0qmg4ugaq"
+        };
+        this.user.appToken = this.dataObj.token;
+        this.loginWithToken(); // if (this.windowRef.nativeWindow) {
+        //   this.windowRef.nativeWindow.SyncCallback = (method: string, data: any) => {
+        //     const response = JSON.parse(data);
+        //     switch (method) {
+        //       case 'Authorizedlogin':
+        //         if (response.status !== 'ok' || !response.callback) {
+        //           return;
+        //         }
+        //         this.user.appToken = response.callback.token;
+        //         this.dataObj = response.callback;
+        //         this.loginWithToken();
+        //         break;
+        //       case 'Recharge':
+        //         break;
+        //     }
+        //   };
+        // }
+        // this.authorize();
       }
 
       _createClass(AuthService, [{
@@ -7175,7 +7170,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "loginWithToken",
         value: function loginWithToken() {
-          var _this30 = this;
+          var _this29 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -7187,26 +7182,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
-                _this30.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this30.user.token = results.msg.token;
+                _this29.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this29.user.token = results.msg.token;
               }
 
-              _this30.isLoggedIn = true;
-              return _this30.user;
+              _this29.isLoggedIn = true;
+              return _this29.user;
             }
 
-            if (_this30.accountUpdateInterval) {
-              clearInterval(_this30.accountUpdateInterval);
+            if (_this29.accountUpdateInterval) {
+              clearInterval(_this29.accountUpdateInterval);
             }
 
-            _this30.accountUpdateInterval = setInterval(function () {
-              if (_this30.accountUpdateSub) {
-                _this30.accountUpdateSub.unsubscribe();
+            _this29.accountUpdateInterval = setInterval(function () {
+              if (_this29.accountUpdateSub) {
+                _this29.accountUpdateSub.unsubscribe();
               }
 
-              _this30.accountUpdateSub = _this30.getAccountTotal().subscribe(function (response) {
+              _this29.accountUpdateSub = _this29.getAccountTotal().subscribe(function (response) {
                 if (response.code === 200) {
-                  _this30.user.amountAvailable = parseFloat(response.msg.balance);
+                  _this29.user.amountAvailable = parseFloat(response.msg.balance);
                 }
               });
             }, 30000);
@@ -7217,7 +7212,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login(loginObj) {
-          var _this31 = this;
+          var _this30 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -7234,24 +7229,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/passport/login"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this31.user.userName = loginObj.userName;
+              _this30.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this31.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this31.user.token = results.msg.token;
-                _this31.user.memo = results.msg.memo;
-                _this31.user.depositAccount = results.msg.depositaccount;
+                _this30.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this30.user.token = results.msg.token;
+                _this30.user.memo = results.msg.memo;
+                _this30.user.depositAccount = results.msg.depositaccount;
               }
 
-              _this31.isLoggedIn = true;
-              return _this31.user;
+              _this30.isLoggedIn = true;
+              return _this30.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this32 = this;
+          var _this31 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -7262,7 +7257,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/passport/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this32.login(registrationObj);
+              return _this31.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -7353,7 +7348,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BlockChainService, [{
         key: "getNextBlock",
         value: function getNextBlock() {
-          var _this33 = this;
+          var _this32 = this;
 
           if (this.getBlockSub) {
             this.getBlockSub.unsubscribe();
@@ -7361,12 +7356,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.getBlockSub = this.getSpecificBlock('0x' + this.currentBlock).subscribe(function (response) {
             if (response.result) {
-              _this33.currentBlock = (parseInt(_this33.currentBlock, 16) + 1).toString(16);
+              _this32.currentBlock = (parseInt(_this32.currentBlock, 16) + 1).toString(16);
 
-              _this33.rollingLog.unshift(response.result);
+              _this32.rollingLog.unshift(response.result);
 
-              if (_this33.rollingLog.length > 20) {
-                _this33.rollingLog.pop();
+              if (_this32.rollingLog.length > 20) {
+                _this32.rollingLog.pop();
               }
             }
           });
@@ -7374,7 +7369,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startLog",
         value: function startLog() {
-          var _this34 = this;
+          var _this33 = this;
 
           this.isSingleRow = false;
 
@@ -7384,15 +7379,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             this.getLatestBlockSub = this.getLatestBlock().subscribe(function (response) {
-              _this34.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+              _this33.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
 
-              if (_this34.getBlockSub) {
-                _this34.getBlockSub.unsubscribe();
+              if (_this33.getBlockSub) {
+                _this33.getBlockSub.unsubscribe();
               }
 
-              _this34.getBlockSub = _this34.getSpecificBlock(response.result).subscribe(function (response) {
+              _this33.getBlockSub = _this33.getSpecificBlock(response.result).subscribe(function (response) {
                 if (response.result) {
-                  _this34.rollingLog.push(response.result);
+                  _this33.rollingLog.push(response.result);
                 }
               });
             });
@@ -7400,16 +7395,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (!this.rollingInterval) {
             this.rollingInterval = setInterval(function () {
-              if (_this34.targetBlock && _this34.targetBlock - parseInt(_this34.rollingLog[0].number, 16) > 50) {
-                if (_this34.getLatestBlockSub) {
-                  _this34.getLatestBlockSub.unsubscribe();
+              if (_this33.targetBlock && _this33.targetBlock - parseInt(_this33.rollingLog[0].number, 16) > 50) {
+                if (_this33.getLatestBlockSub) {
+                  _this33.getLatestBlockSub.unsubscribe();
                 }
 
-                _this34.getLatestBlockSub = _this34.getLatestBlock().subscribe(function (response) {
-                  _this34.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+                _this33.getLatestBlockSub = _this33.getLatestBlock().subscribe(function (response) {
+                  _this33.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
                 });
               } else {
-                _this34.getNextBlock();
+                _this33.getNextBlock();
               }
             }, 2000);
           }
@@ -7424,13 +7419,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
-          var _this35 = this;
+          var _this34 = this;
 
           this.isSingleRow = true;
           this.stopLog();
           this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
             if (response.result) {
-              _this35.rollingLog = [response.result];
+              _this34.rollingLog = [response.result];
             }
           });
         }
@@ -7561,7 +7556,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this36 = this;
+        var _this35 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -7596,9 +7591,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = msg.currententry;
           var currentStatus;
-          _this36.availablePrizePool = prizePool;
+          _this35.availablePrizePool = prizePool;
           var myEntries = [];
-          _this36.blockChainService.targetBlock = msg.targetblockheight;
+          _this35.blockChainService.targetBlock = msg.targetblockheight;
 
           if (msg.mytickets) {
             myEntries = msg.mytickets.map(function (candy) {
@@ -7611,15 +7606,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          if (!_this36.lotteryObj[prizePool]) {
-            _this36.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
+          if (!_this35.lotteryObj[prizePool]) {
+            _this35.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
-            currentStatus = _this36.lotteryObj[prizePool].lotteryStatus;
-            _this36.lotteryObj[prizePool].gameId = gameId;
-            _this36.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this36.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
-            _this36.lotteryObj[prizePool].myEntries = myEntries;
-            _this36.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
+            currentStatus = _this35.lotteryObj[prizePool].lotteryStatus;
+            _this35.lotteryObj[prizePool].gameId = gameId;
+            _this35.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this35.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this35.lotteryObj[prizePool].myEntries = myEntries;
+            _this35.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -7631,15 +7626,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case '2':
-                clearInterval(_this36.checkStatusInterval);
+                clearInterval(_this35.checkStatusInterval);
 
-                _this36.setPrizePool(msg);
+                _this35.setPrizePool(msg);
 
-                _this36.setDrawWinners(prizePool);
+                _this35.setDrawWinners(prizePool);
 
-                _this36.blockChainService.stopLog();
+                _this35.blockChainService.stopLog();
 
-                _this36.finishPendingProcess(prizePool);
+                _this35.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -7647,19 +7642,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this36.lotteryObj[prizePool];
+          var currentPrizePool = _this35.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== '0') {
             return;
           }
 
-          _this36.setLotteryStatus('1', prizePool);
+          _this35.setLotteryStatus('1', prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this36.lotteryObj[prizePool];
+          var currentPrizePool = _this35.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
-          _this36.lastGameId = _this36.currentLotteryInfo.gameId;
+          _this35.lastGameId = _this35.currentLotteryInfo.gameId;
 
           if (currentPrizePool.countDownInterval) {
             clearInterval(currentPrizePool.countDownInterval);
@@ -7669,14 +7664,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this36.startStatusCheckInterval();
+              _this35.startStatusCheckInterval();
 
-              _this36.authService.loginWithToken();
+              _this35.authService.loginWithToken();
 
-              _this36.blockChainService.startLog();
+              _this35.blockChainService.startLog();
             }
 
-            _this36.lotteryObj[prizePool].countDown--;
+            _this35.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -7686,7 +7681,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this37 = this;
+          var _this36 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -7698,9 +7693,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this37.statusSubscription.unsubscribe();
+            _this36.statusSubscription.unsubscribe();
 
-            _this37.statusSubscription = _this37.checkGameStatus().subscribe(function () {});
+            _this36.statusSubscription = _this36.checkGameStatus().subscribe(function () {});
           }, 3000);
         }
       }, {
@@ -7716,7 +7711,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this38 = this;
+          var _this37 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token || 'anonymous')
@@ -7725,7 +7720,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('type', 'active');
           return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this38.setAvailablePrizePool(results);
+              _this37.setAvailablePrizePool(results);
 
               return results;
             }
@@ -7743,21 +7738,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(msg) {
-          var _this39 = this;
+          var _this38 = this;
 
           var prizeList = msg.prizelist;
           this.clearWinners();
 
           if (prizeList && msg.myprizelist) {
             prizeList.forEach(function (prize, i) {
-              if (!_this39.currentLotteryInfo.winners.main[i]) {
-                _this39.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
+              if (!_this38.currentLotteryInfo.winners.main[i]) {
+                _this38.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
                   return item.win === i + 1;
                 }).amount));
               }
 
               prize.forEach(function (item) {
-                _this39.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (_this39.authService.user && _this39.authService.user.userName)));
+                _this38.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (_this38.authService.user && _this38.authService.user.userName)));
               });
             });
             this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(function (item) {
@@ -7797,7 +7792,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyCandy",
         value: function buyCandy(amount) {
-          var _this40 = this;
+          var _this39 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
@@ -7807,9 +7802,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('gameid', this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this40.authService.user.amountAvailable = parseFloat(results.msg.balance);
+              _this39.authService.user.amountAvailable = parseFloat(results.msg.balance);
 
-              _this40.startStatusCheckInterval();
+              _this39.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -7940,7 +7935,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this41 = this;
+      var _this40 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -7949,7 +7944,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this41.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this40.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 

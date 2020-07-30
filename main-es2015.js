@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <mat-tab [label]=\"'winnings-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onRewardScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of rewardHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                  <div>\r\n                  </div>\r\n                    <div class=\"ticket\">#{{data.ticket}}</div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingReward\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingReward\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n  <mat-tab [label]=\"'betting-history' | translate\">\r\n    <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onBetScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of betHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"ticket\">#{{data.start}} <ng-container *ngIf=\"data.end && data.end !== data.start\">- {{data.end}}</ng-container></div>\r\n                    <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        - {{data.cost | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                  </div>\r\n                <!-- <div>\r\n                  <div class=\"address\">\r\n                      <div class=\"label\">\r\n                          {{'from'|translate}}:\r\n                      </div>\r\n                      <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                      </div>\r\n                      <div class=\"copy\">\r\n                          <i class=\"icon-documentcopy\"></i>\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                  </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n          </div>\r\n      </ng-container>\r\n\r\n      <div class=\"no-futher-activity\">\r\n        <div *ngIf=\"!isLoadingBets\">\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n        <mat-spinner diameter=\"42\" *ngIf=\"isLoadingBets\"></mat-spinner>\r\n      </div>\r\n    </div>\r\n  </mat-tab>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\r\n<div class=\"winning-history history\">\r\n  <mat-tab-group animationDuration=\"0ms\">\r\n    <mat-tab [label]=\"'winnings-history' | translate\">\r\n      <div class=\"history-table\"\r\n        infiniteScroll\r\n        [infiniteScrollDistance]=\"1\"\r\n        [infiniteScrollThrottle]=\"50\"\r\n        (scrolled)=\"onRewardScroll()\"\r\n        [scrollWindow]=\"false\">\r\n          <ng-container *ngFor=\"let data of rewardHistory\">\r\n              <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                  <div class=\"itemrow\">\r\n                    <div>\r\n                    </div>\r\n                      <div class=\"ticket\">#{{data.ticket}}</div>\r\n                      <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                      <div class=\"amount\">\r\n                          + {{data.prize | toNumber | number: '0.0-4'}} BTOK\r\n                      </div>\r\n                      <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                  </div>\r\n                  <!-- <div>\r\n                    <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'from'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                              {{data.fromAddress}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"address\">\r\n                          <div class=\"label\">\r\n                              {{'TXID'|translate}}:\r\n                          </div>\r\n                          <div class=\"value\">\r\n                              {{data.txid}}\r\n                          </div>\r\n                          <div class=\"copy\">\r\n                              <i class=\"icon-documentcopy\"></i>\r\n                          </div>\r\n                    </div>\r\n                  </div> -->\r\n                  <!-- <div class=\"closerow\">\r\n                      <div class=\"icon\">\r\n                          <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                      </div>\r\n                  </div> -->\r\n            </div>\r\n        </ng-container>\r\n\r\n        <div class=\"no-futher-activity\">\r\n          <div *ngIf=\"!isLoadingReward\">\r\n              {{'no-further-activity' | translate}}\r\n          </div>\r\n          <mat-spinner diameter=\"42\" *ngIf=\"isLoadingReward\"></mat-spinner>\r\n        </div>\r\n      </div>\r\n    </mat-tab>\r\n    <mat-tab [label]=\"'betting-history' | translate\">\r\n      <div class=\"history-table\"\r\n        infiniteScroll\r\n        [infiniteScrollDistance]=\"1\"\r\n        [infiniteScrollThrottle]=\"50\"\r\n        (scrolled)=\"onBetScroll()\"\r\n        [scrollWindow]=\"false\">\r\n          <ng-container *ngFor=\"let data of betHistory\">\r\n              <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                  <div class=\"itemrow\">\r\n                      <div class=\"ticket\">#{{data.start}} <ng-container *ngIf=\"data.end && data.end !== data.start\">- {{data.end}}</ng-container></div>\r\n                      <div class=\"date\">{{(data.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                      <div class=\"amount\">\r\n                          - {{data.cost | toNumber | number: '0.0-4'}} BTOK\r\n                      </div>\r\n                      <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                    </div>\r\n                  <!-- <div>\r\n                    <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'from'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                              {{data.fromAddress}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"address\">\r\n                          <div class=\"label\">\r\n                              {{'TXID'|translate}}:\r\n                          </div>\r\n                          <div class=\"value\">\r\n                              {{data.txid}}\r\n                          </div>\r\n                          <div class=\"copy\">\r\n                              <i class=\"icon-documentcopy\"></i>\r\n                          </div>\r\n                    </div>\r\n                  </div> -->\r\n                  <!-- <div class=\"closerow\">\r\n                      <div class=\"icon\">\r\n                          <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                      </div>\r\n                  </div> -->\r\n            </div>\r\n        </ng-container>\r\n\r\n        <div class=\"no-futher-activity\">\r\n          <div *ngIf=\"!isLoadingBets\">\r\n              {{'no-further-activity' | translate}}\r\n          </div>\r\n          <mat-spinner diameter=\"42\" *ngIf=\"isLoadingBets\"></mat-spinner>\r\n        </div>\r\n      </div>\r\n    </mat-tab>\r\n  </mat-tab-group>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\r\n  <div style=\"margin-top: 12px;\">\r\n    {{date | date: 'hh:m a'}} Info:\r\n  </div>\r\n  <div ngxClipboard [cbContent]=\"data\">\r\n    {{data}}\r\n  </div>\r\n  <button mat-button  ngxClipboard [cbContent]=\"data\">Copy</button>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"info copy-pastable\">\r\n  <div style=\"margin-top: 12px;\">\r\n    {{date | date: 'hh:m a'}} Info:\r\n  </div>\r\n  <div ngxClipboard [cbContent]=\"data\">\r\n    {{data}}\r\n  </div>\r\n  <button mat-button ngxClipboard [cbContent]=\"data\">Debug</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -926,10 +926,10 @@ let AuthGuard = class AuthGuard {
         this.router = router;
     }
     canActivate() {
-        if (!(this.authService.user && this.authService.user.token)) {
-            this.router.navigate(['/home']);
-            return false;
-        }
+        // if (!(this.authService.user && this.authService.user.token)) {
+        //   this.router.navigate(['/home']);
+        //   return false;
+        // }
         // you can save redirect url so after authing we can move them back to the page they requested
         return true;
     }
@@ -2458,7 +2458,7 @@ BuyCandyInputComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".info {\n  margin-top: 24px;\n  color: white !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsdUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gIGNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xyXG59XHJcbiIsIi5pbmZvIHtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHdoaXRlICFpbXBvcnRhbnQ7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".info {\n  margin-top: 24px;\n  color: transparent !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2luZm8tY29tcG9uZW50L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxpbmZvLWNvbXBvbmVudFxcaW5mby1jb21wb25lbnQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsNkJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9pbmZvLWNvbXBvbmVudC9pbmZvLWNvbXBvbmVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbmZvIHtcclxuICBtYXJnaW4tdG9wOiAyNHB4O1xyXG4gIGNvbG9yOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xyXG59XHJcbiIsIi5pbmZvIHtcbiAgbWFyZ2luLXRvcDogMjRweDtcbiAgY29sb3I6IHRyYW5zcGFyZW50ICFpbXBvcnRhbnQ7XG59Il19 */");
 
 /***/ }),
 
@@ -4361,24 +4361,27 @@ let AuthService = class AuthService {
             memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
-        if (this.windowRef.nativeWindow) {
-            this.windowRef.nativeWindow.SyncCallback = (method, data) => {
-                const response = JSON.parse(data);
-                switch (method) {
-                    case 'Authorizedlogin':
-                        if (response.status !== 'ok' || !response.callback) {
-                            return;
-                        }
-                        this.user.appToken = response.callback.token;
-                        this.dataObj = response.callback;
-                        this.loginWithToken();
-                        break;
-                    case 'Recharge':
-                        break;
-                }
-            };
-        }
-        this.authorize();
+        this.dataObj = { "userMail": "shan26@bccto.me", "token": "eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYxNTE2MjUsImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.5nhq18obrkhtctop4pr8bncrctr9h4eke77rjfdgsg0qmg4ugaq" };
+        this.user.appToken = this.dataObj.token;
+        this.loginWithToken();
+        // if (this.windowRef.nativeWindow) {
+        //   this.windowRef.nativeWindow.SyncCallback = (method: string, data: any) => {
+        //     const response = JSON.parse(data);
+        //     switch (method) {
+        //       case 'Authorizedlogin':
+        //         if (response.status !== 'ok' || !response.callback) {
+        //           return;
+        //         }
+        //         this.user.appToken = response.callback.token;
+        //         this.dataObj = response.callback;
+        //         this.loginWithToken();
+        //         break;
+        //       case 'Recharge':
+        //         break;
+        //     }
+        //   };
+        // }
+        // this.authorize();
     }
     authorize() {
         const data = JSON.stringify({
