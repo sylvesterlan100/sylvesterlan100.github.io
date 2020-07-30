@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'history' | translate\"></app-account-header>\r\n\r\n<div class=\"history\">\r\n  <mat-tab-group animationDuration=\"0ms\">\r\n    <mat-tab [label]=\"'deposit' | translate\">\r\n      <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onDepositScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of depositHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"type\">{{typeMap[data.activity] | translate}}</div>\r\n                    <div class=\"amount\">\r\n                        {{data.amount | toNumber | number: '0.0-4'}}\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    </mat-tab>\r\n    <mat-tab [label]=\"'withdraw' | translate\">\r\n      <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onWithdrawScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of withdrawHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"type\">{{typeMap[data.activity] | translate}}</div>\r\n                    <div class=\"amount\">\r\n                        {{data.amount | toNumber | number: '0.0-4'}}\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    </mat-tab>\r\n  </mat-tab-group>\r\n    <div class=\"no-futher-activity\">\r\n        <div>\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'account-history' | translate\"></app-account-header>\r\n\r\n<div class=\"history\">\r\n  <mat-tab-group animationDuration=\"0ms\">\r\n    <mat-tab [label]=\"'deposit' | translate\">\r\n      <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onDepositScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of depositHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        + {{data.amount | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    </mat-tab>\r\n    <mat-tab [label]=\"'withdraw' | translate\">\r\n      <div class=\"history-table\"\r\n      infiniteScroll\r\n      [infiniteScrollDistance]=\"1\"\r\n      [infiniteScrollThrottle]=\"50\"\r\n      (scrolled)=\"onWithdrawScroll()\"\r\n      [scrollWindow]=\"false\">\r\n        <ng-container *ngFor=\"let data of withdrawHistory\">\r\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\r\n                <div class=\"itemrow\">\r\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n                    <div class=\"amount\">\r\n                        - {{data.amount | toNumber | number: '0.0-4'}} BTOK\r\n                    </div>\r\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\r\n                </div>\r\n                <!-- <div>\r\n                   <div class=\"address\">\r\n                       <div class=\"label\">\r\n                           {{'from'|translate}}:\r\n                       </div>\r\n                       <div class=\"value\">\r\n                            {{data.fromAddress}}\r\n                       </div>\r\n                       <div class=\"copy\">\r\n                           <i class=\"icon-documentcopy\"></i>\r\n                       </div>\r\n                   </div>\r\n                   <div class=\"address\">\r\n                        <div class=\"label\">\r\n                            {{'TXID'|translate}}:\r\n                        </div>\r\n                        <div class=\"value\">\r\n                            {{data.txid}}\r\n                        </div>\r\n                        <div class=\"copy\">\r\n                            <i class=\"icon-documentcopy\"></i>\r\n                        </div>\r\n                   </div>\r\n                </div> -->\r\n                <!-- <div class=\"closerow\">\r\n                    <div class=\"icon\">\r\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\r\n                    </div>\r\n                </div> -->\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n    </mat-tab>\r\n  </mat-tab-group>\r\n    <div class=\"no-futher-activity\">\r\n        <div>\r\n            {{'no-further-activity' | translate}}\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"overlay\"  [ngClass]=\"{show: showAccount}\" (click)=\"close()\"></div>\r\n<div class=\"account-settings\" [ngClass]=\"{show: showAccount}\">\r\n    <div class=\"account-container\">\r\n        <div>\r\n            <div class=\"header\">\r\n                <i class=\"icon-close close\" (click)=\"close()\"></i>\r\n                <app-language-select class=\"language-select\" [darkBackground]=\"true\"></app-language-select>\r\n            </div>\r\n            <div class=\"info-container\">\r\n                <div class=\"background\">\r\n                    <app-animated-background [width]=\"'100%'\"></app-animated-background>\r\n                </div>\r\n                <div class=\"info\">\r\n                    <div *ngIf=\"authService.isLoggedIn\">\r\n                        <div class=\"label\">{{'hello'|translate}},</div>\r\n                        <div class=\"username\">{{authService.user.userName}}</div>\r\n                    </div>\r\n                    <div *ngIf=\"!authService.isLoggedIn\"\r\n                        class=\"label\"\r\n                        (click)=\"close()\"\r\n                    >\r\n                        <!-- {{'login-register-to-play' | translate}} -->\r\n                        {{'please-login-through-the-app' | translate}}\r\n                    </div>\r\n                    <div>\r\n                        <div class=\"label\">{{'balance'|translate}}</div>\r\n                        <div class=\"amount\">\r\n                            {{(!authService.isLoggedIn ? '0' : authService.user.amountAvailable) | toNumber | number : '0.0-4'}} BTOK\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n            <div class=\"link\" (click)=\"close()\">\r\n                {{'deposit' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\r\n                {{'payout-history' | translate}}\r\n            </div>\r\n            <div class=\"link\" (click)=\"close()\">\r\n                <button class=\"app-button dark-text\">\r\n                    {{'please-login-through-the-app' | translate}}!\r\n                    <!-- {{'login-register-to-play-now' | translate}}! -->\r\n                </button>\r\n            </div>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"authService.isLoggedIn\">\r\n            <div class=\"link\" [routerLink]=\"['/deposit']\" (click)=\"close(true)\">\r\n                {{'deposit' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\r\n                {{'payout-history' | translate}}\r\n            </div>\r\n            <!-- <div class=\"link logout\" (click)=\"authService.isLoggedIn = false; close()\">\r\n                {{'logout' | translate}}\r\n            </div>     -->\r\n        </ng-container>\r\n        <div class=\"link how-to-play\" [routerLink]=\"['/how-to-play']\" (click)=\"close(true)\">\r\n            {{'how-to-play' | translate}}\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"overlay\"  [ngClass]=\"{show: showAccount}\" (click)=\"close()\"></div>\r\n<div class=\"account-settings\" [ngClass]=\"{show: showAccount}\">\r\n    <div class=\"account-container\">\r\n        <div>\r\n            <div class=\"header\">\r\n                <i class=\"icon-close close\" (click)=\"close()\"></i>\r\n                <app-language-select class=\"language-select\" [darkBackground]=\"true\"></app-language-select>\r\n            </div>\r\n            <div class=\"info-container\">\r\n                <div class=\"background\">\r\n                    <app-animated-background [width]=\"'100%'\"></app-animated-background>\r\n                </div>\r\n                <div class=\"info\">\r\n                    <div *ngIf=\"authService.isLoggedIn\">\r\n                        <div class=\"label\">{{'hello'|translate}},</div>\r\n                        <div class=\"username\">{{authService.user.userName}}</div>\r\n                    </div>\r\n                    <div *ngIf=\"!authService.isLoggedIn\"\r\n                        class=\"label\"\r\n                        (click)=\"close()\"\r\n                    >\r\n                        {{'please-login-through-the-app' | translate}}\r\n                    </div>\r\n                    <div>\r\n                        <div class=\"label\">{{'balance'|translate}}</div>\r\n                        <div class=\"amount\">\r\n                            {{(!authService.isLoggedIn ? '0' : authService.user.amountAvailable) | toNumber | number : '0.0-4'}} BTOK\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n            <div class=\"link\" (click)=\"close()\">\r\n                {{'deposit' | translate}}\r\n            </div>\r\n            <div class=\"link\" (click)=\"close()\">\r\n                {{'account-history' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/winning-history']\" (click)=\"close(true)\">\r\n                {{'winnings-history' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\r\n                {{'payout-history' | translate}}\r\n            </div>\r\n            <div class=\"link\" (click)=\"close()\">\r\n                <button class=\"app-button dark-text\">\r\n                    {{'please-login-through-the-app' | translate}}!\r\n                </button>\r\n            </div>\r\n        </ng-container>\r\n        <ng-container *ngIf=\"authService.isLoggedIn\">\r\n            <div class=\"link\" [routerLink]=\"['/account-history']\" (click)=\"close(true)\">\r\n                {{'account-history' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/winning-history']\" (click)=\"close(true)\">\r\n                {{'winnings-history' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/deposit']\" (click)=\"close(true)\">\r\n                {{'deposit' | translate}}\r\n            </div>\r\n            <div class=\"link\" [routerLink]=\"['/payout-history']\" (click)=\"close(true)\">\r\n                {{'payout-history' | translate}}\r\n            </div>\r\n        </ng-container>\r\n        <div class=\"link how-to-play\" [routerLink]=\"['/how-to-play']\" (click)=\"close(true)\">\r\n            {{'how-to-play' | translate}}\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -114,6 +114,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/account/winning-history/winning-history.component.html":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/account/winning-history/winning-history.component.html ***!
+  \**************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'winnings-history' | translate\"></app-account-header>\n<div class=\"history\">\n  <div class=\"history-table\"\n      infiniteScroll\n      [infiniteScrollDistance]=\"1\"\n      [infiniteScrollThrottle]=\"50\"\n      (scrolled)=\"onScroll()\"\n      [scrollWindow]=\"false\">\n        <ng-container *ngFor=\"let data of history\">\n            <div class=\"tablerow\" [ngClass]=\"{isExpanded : data.isExpanded}\">\n                <div class=\"itemrow\">\n                  <div>\n                  </div>\n                    <div class=\"date\">{{data.time | date: 'MM-dd-yyyy H:mm'}}</div>\n                    <div class=\"amount\">\n                        + {{data.prize | toNumber | number: '0.0-4'}} BTOK\n                    </div>\n                    <!-- <div class=\"icon\"><i *ngIf=\"!data.isExpanded\" class=\"icon-chevronright chevron-down\" (click)=\"data.isExpanded = true\"></i></div> -->\n                </div>\n                <!-- <div>\n                   <div class=\"address\">\n                       <div class=\"label\">\n                           {{'from'|translate}}:\n                       </div>\n                       <div class=\"value\">\n                            {{data.fromAddress}}\n                       </div>\n                       <div class=\"copy\">\n                           <i class=\"icon-documentcopy\"></i>\n                       </div>\n                   </div>\n                   <div class=\"address\">\n                        <div class=\"label\">\n                            {{'TXID'|translate}}:\n                        </div>\n                        <div class=\"value\">\n                            {{data.txid}}\n                        </div>\n                        <div class=\"copy\">\n                            <i class=\"icon-documentcopy\"></i>\n                        </div>\n                   </div>\n                </div> -->\n                <!-- <div class=\"closerow\">\n                    <div class=\"icon\">\n                        <i class=\"icon-chevronright chevron-up\" *ngIf=\"data.isExpanded\" (click)=\"data.isExpanded = false\"></i>\n                    </div>\n                </div> -->\n            </div>\n        </ng-container>\n        <div class=\"no-futher-activity\">\n          <div>\n              {{'no-further-activity' | translate}}\n          </div>\n      </div>\n    </div>\n\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/account/withdraw/withdraw.component.html":
 /*!************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/account/withdraw/withdraw.component.html ***!
@@ -166,6 +179,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-candies/animated-candies.component.html":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-candies/animated-candies.component.html ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<svg id=\"candies-animation\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\">\r\n  <g id=\"candies\" style=\"opacity: 0\">\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n  </g>\r\n</svg>\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-coins/animated-coins.component.html":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-coins/animated-coins.component.html ***!
@@ -205,19 +231,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-tickets/animated-tickets.component.html":
-/*!***************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-tickets/animated-tickets.component.html ***!
-  \***************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<svg id=\"tickets-animation\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 800 800\">\r\n  <g id=\"tickets\" style=\"opacity: 0\">\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n    <path d=\"M423.84,781.14c-3.71,4.26-4.29,9.82-1.3,12.43l0,0L417,800l-58.78-51.26,5.57-6.39c3,2.61,8.41,1.27,12.12-3s4.3-9.81,1.31-12.42l5.74-6.58,58.78,51.26L436,778.21l0-.05C433,775.55,427.55,776.89,423.84,781.14Z\" fill=\"#ffcd05\"/>\r\n  </g>\r\n</svg>\r\n");
-
-/***/ }),
-
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/block-chain-info/block-chain-info.component.html":
 /*!***************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/block-chain-info/block-chain-info.component.html ***!
@@ -231,16 +244,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/buy-ticket-input/buy-ticket-input.component.html":
-/*!***************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/buy-ticket-input/buy-ticket-input.component.html ***!
-  \***************************************************************************************************************/
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/buy-candy-input/buy-candy-input.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/buy-candy-input/buy-candy-input.component.html ***!
+  \*************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-ticket-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\"\r\n                type=\"number\"\r\n                step=\".0001\"\r\n                (ngModelChange)=\"updateAmount()\"\r\n                (focus)=\"amount = null\"\r\n                [(ngModel)]=\"amount\"\r\n                (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-tickets *ngIf=\"showAnimation\"></app-animated-tickets>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyTickets()\">\r\n                {{'buy-tickets' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"buy-candy-input\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"counter\">\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(0)\" (dragover)=\"setRatio(0)\">\r\n                <div class=\"node active\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(1)\" (dragover)=\"setRatio(1)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(1)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(2)\" (dragover)=\"setRatio(2)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(2)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(3)\" (dragover)=\"setRatio(3)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(3)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper line-wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"line\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n            <div class=\"wrapper\" (mouseup)=\"setRatio(4)\" (dragover)=\"setRatio(4)\">\r\n                <div class=\"node\" [ngClass]=\"{active: isWithinRatio(4)}\"></div>\r\n            </div>\r\n        </div>\r\n        <div class=\"app-input-group\">\r\n            <input class=\"app-input\"\r\n                type=\"number\"\r\n                step=\".0001\"\r\n                (ngModelChange)=\"updateAmount()\"\r\n                (focus)=\"amount = null\"\r\n                [(ngModel)]=\"amount\"\r\n                (blur)=\"checkValue()\">\r\n            <div class=\"append\" (click)=\"setRatio(4)\">\r\n                {{'max-buy' | translate | uppercase}}\r\n            </div>\r\n        </div>\r\n        <div class=\"available-currency\">\r\n            <div class=\"label\">{{'available' | translate}}</div>\r\n            <div class=\"coin\">\r\n                {{(authService.isLoggedIn ? authService.user.amountAvailable : 0)  | toNumber | number : '0.0-4'}}\r\n            BTOK</div>\r\n        </div>\r\n        <div *ngIf=\"authService.isLoggedIn\">\r\n            <app-animated-candies *ngIf=\"showAnimation\"></app-animated-candies>\r\n            <button\r\n                class=\"app-button\"\r\n                (click)=\"buyCandies()\">\r\n                {{'buy-candies' | translate : [amount || '0']}}\r\n            </button>\r\n        </div>\r\n    </ng-container>\r\n    <div *ngIf=\"!authService.isLoggedIn\">\r\n        <button\r\n            class=\"app-button inverted\"\r\n            (click)=\"authorize()\"\r\n            >\r\n            {{'please-login-through-the-app' | translate | uppercase}}\r\n        </button>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -305,7 +318,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"winner-panel\" [ngClass]=\"['place-'+place]\">\r\n    <div class=\"winner-container\">\r\n        <div class=\"place\">\r\n            {{placeMap[place].name}}\r\n        </div>\r\n        <div *ngIf=\"place === 0\" class=\"first-ticket\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">{{'ticket' | translate}} #{{ticket.ticketNumber}}</div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} BTOK\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"place !== 0\" class=\"table-container\">\r\n            <div *ngFor=\"let ticket of winnerInfo.tickets\" class=\"ticket\">\r\n                <div class=\"username\">{{ticket.userName}}</div>\r\n                <div class=\"number\">\r\n                    {{'ticket' | translate}} #{{ticket.ticketNumber}}&nbsp;\r\n                    <span class=\"you-won\" *ngIf=\"ticket.isMine\">{{'you-won' | translate}}</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} BTOK\r\n                </div>\r\n                <div class=\"dots\" *ngIf=\"place > 1\" (click)=\"goToWinnings()\">\r\n                    ...\r\n                </div>\r\n                <div class=\"count\">\r\n                    {{placeMap[place].winnerCount}} {{'winners' | translate}}\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"winner-panel\" [ngClass]=\"['place-'+place]\">\r\n    <div class=\"winner-container\">\r\n        <div class=\"place\">\r\n            {{placeMap[place].name}}\r\n        </div>\r\n        <div *ngIf=\"place === 0\" class=\"first-candy\">\r\n            <div *ngFor=\"let candy of winnerInfo.candies\">\r\n                <div class=\"username\">{{candy.userName}}</div>\r\n                <div class=\"number\">{{'candy' | translate}} #{{candy.candyNumber}}</div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} BTOK\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"place !== 0\" class=\"table-container\">\r\n            <div *ngFor=\"let candy of winnerInfo.candies\" class=\"candy\">\r\n                <div class=\"username\">{{candy.userName}}</div>\r\n                <div class=\"number\">\r\n                    {{'candy' | translate}} #{{candy.candyNumber}}&nbsp;\r\n                    <span class=\"you-won\" *ngIf=\"candy.isMine\">{{'you-won' | translate}}</span>\r\n                </div>\r\n            </div>\r\n            <div class=\"winnings\" *ngIf=\"winnerInfo.myWinnings\">\r\n                <div class=\"amount\">\r\n                    +{{winnerInfo.myWinnings}} BTOK\r\n                </div>\r\n                <div class=\"dots\" *ngIf=\"place > 1\" (click)=\"goToWinnings()\">\r\n                    ...\r\n                </div>\r\n                <div class=\"count\">\r\n                    {{placeMap[place].winnerCount}} {{'winners' | translate}}\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -318,7 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-tickets' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-tickets' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'ticket-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\">\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"winnings-container\">\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\" \r\n                class=\"winning-panel\" \r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"drawing-info\">\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\">\r\n        <div class=\"heading\">\r\n            {{'drawing-begins-after-candies' | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"subtitle\">\r\n            {{'current-candies' | translate | uppercase}}\r\n        </div>\r\n        <div class=\"value\">\r\n            {{lotteryService.currentLotteryInfo.currentEntries.toLocaleString()}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n        <div class=\"heading\">\r\n            {{(getRemainingBlocks() ? 'drawing-begins-in' : 'candy-entry-limit-reached') | translate : [lotteryService.currentLotteryInfo.availablePrizePool.toLocaleString()] | uppercase}}\r\n        </div>\r\n        <div class=\"value\" *ngIf=\"getRemainingBlocks()\">\r\n            {{getRemainingBlocks()}} {{'blocks' | translate}}\r\n        </div>\r\n    </ng-container>\r\n    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n        <div class=\"winnings-container\">\r\n            <div *ngFor=\"let winner of lotteryService.currentLotteryInfo.winners.main; index as i\"\r\n                class=\"winning-panel\"\r\n                [ngClass]=\"{isHidden: winner.isDrawing}\">\r\n                <app-winner-panel [place]=\"i\" [winnerInfo]=\"winner\"></app-winner-panel>\r\n            </div>\r\n            <app-animated-coins *ngIf=\"myWinningsIncrement > 0\"></app-animated-coins>\r\n            <div class=\"winning-panel\" (dblclick)=\"this.finalizeWinning()\">\r\n              <div class=\"my-winnings\">\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/svgs/icon-moneybag.svg\" alt=\"\">\r\n                  </div>\r\n                  <div>\r\n                      <div class=\"label\">\r\n                          {{'my-winnings' | translate | uppercase}}\r\n                      </div>\r\n                      <div class=\"amount\">\r\n                          +{{myWinningsIncrement}}\r\n                      </div>\r\n                  </div>\r\n                  <div class=\"winning-icon\">\r\n                      <img src=\"../../../assets/images/post-logo.png\" alt=\"\">\r\n                  </div>\r\n              </div>\r\n          </div>\r\n        </div>\r\n    </ng-container>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -331,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-ticket-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <!-- <button class=\"app-button dark-text small-text\" (click)=\"authorize()\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button> -->\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-ticket-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{ticketCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-tickets' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} BTOK\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-tickets' | translate}}\r\n                </div>\r\n                <div class=\"total-tickets\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-ticket-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-tickets' | translate}}\r\n                </div>\r\n                <div class=\"my-tickets\">\r\n                    {{ticketCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-ticket-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-ticket-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\r\n    <div class=\"panels\">\r\n        <div class=\"panel left-panel\">\r\n          <app-animated-confetti *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\"></app-animated-confetti>\r\n            <div>\r\n                <ng-container *ngIf=\"!authService.isLoggedIn\">\r\n                    <div class=\"title\">\r\n                        {{'my-candy-ids' | translate | uppercase}}:\r\n                    </div>\r\n                    <div>\r\n                        <!-- <button class=\"app-button dark-text small-text\" (click)=\"authorize()\">\r\n                            {{'login-register-to-play-now' | translate | uppercase}}\r\n                        </button> -->\r\n                    </div>\r\n                </ng-container>\r\n                <ng-container *ngIf=\"authService.isLoggedIn\">\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '0'\r\n                        || lotteryService.currentLotteryInfo.lotteryStatus === '1'\">\r\n                        <div class=\"title\">\r\n                            {{'my-candy-ids' | translate | uppercase}}:\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <span *ngFor=\"let data of lotteryService.currentLotteryInfo.myEntries | slice:0:8; let last=last;\">\r\n                                <span *ngIf=\"data.start !== data.end\">\r\n                                    #{{data.start}} - #{{data.end}}\r\n                                </span>\r\n                                <span *ngIf=\"data.start === data.end\">\r\n                                    #{{data.start}}\r\n                                </span>\r\n                                <span *ngIf=\"!last || (last && lotteryService.currentLotteryInfo.myEntries.length > 8)\">, </span>\r\n                            </span>\r\n                            <div *ngIf=\"lotteryService.currentLotteryInfo.myEntries.length > 8\">\r\n                                (+{{candyCount(lotteryService.currentLotteryInfo.myEntries.slice(8))}}\r\n                                {{'more-candies' | translate}})\r\n                            </div>\r\n                        </div>\r\n                    </ng-container>\r\n                    <ng-container *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus === '2'\">\r\n                        <div class=\"title\">\r\n                            {{'mini-pool-winner' | translate | uppercase}}\r\n                        </div>\r\n                        <div class=\"text-content\">\r\n                            <!-- 350 Winners -->\r\n                        </div>\r\n                        <div *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.isDrawing\"\r\n                            class=\"minipool-question\"\r\n                            (click)=\"lotteryService.drawMinipool()\">\r\n                            <img class=\"chest\" src=\"../../../assets/images/minipool-chest.png\">\r\n                        </div>\r\n                        <ng-container *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.isDrawing\" class=\"minipool-question\">\r\n                            <div class=\"bonus-section\" *ngIf=\"lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"minipool-winner\">\r\n                                        {{'you-won' | translate | uppercase}}!\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"bonus-container\">\r\n                                    <div class=\"amount\">\r\n                                        +{{lotteryService.currentLotteryInfo.winners.minipool.winningAmount}} BTOK\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"bonus-section no-bonus\" *ngIf=\"!lotteryService.currentLotteryInfo.winners.minipool.winningAmount\">\r\n                                <div>{{'no-bonus-winnings' | translate | uppercase}}</div>\r\n                                <div>{{'try-again-next-time' | translate | uppercase}}!</div>\r\n                            </div>\r\n                        </ng-container>\r\n                    </ng-container>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n        <div class=\"panel right-panel\">\r\n            <div>\r\n                <div class=\"label\">\r\n                    {{'total-candies' | translate}}\r\n                </div>\r\n                <div class=\"total-candies\">\r\n                    {{lotteryService.availablePrizePool}}\r\n                    <img class=\"icon-img large\" src=\"../../../assets/images/svgs/icon-candy-yellow.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'my-candies' | translate}}\r\n                </div>\r\n                <div class=\"my-candies\">\r\n                    {{candyCount(lotteryService.currentLotteryInfo.myEntries)}}\r\n                    <img class=\"icon-img\" src=\"../../../assets/images/svgs/icon-candy-blue.svg\">\r\n                </div>\r\n                <div class=\"label small\">\r\n                    {{'see-all-candy-entries' | translate}}\r\n                    <img class=\"icon-img\" [routerLink]=\"['/my-entries']\" src=\"../../../assets/images/svgs/icon-redirect.svg\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -344,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"home\" *ngIf=\"lotteryService.currentLotteryInfo\">\r\n    <app-main-header></app-main-header>\r\n    <div class=\"home-content\">\r\n        <app-block-chain-info></app-block-chain-info>\r\n        <app-drawing-info></app-drawing-info>\r\n        <div *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\" class=\"buy-ticket-input\">\r\n            <app-buy-ticket-input></app-buy-ticket-input>\r\n        </div>\r\n    </div>\r\n    <div class=\"footer\">\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"home\" *ngIf=\"lotteryService.currentLotteryInfo\">\r\n    <app-main-header></app-main-header>\r\n    <div class=\"home-content\">\r\n        <app-block-chain-info></app-block-chain-info>\r\n        <app-drawing-info></app-drawing-info>\r\n        <div *ngIf=\"lotteryService.currentLotteryInfo.lotteryStatus !== '2'\" class=\"buy-candy-input\">\r\n            <app-buy-candy-input></app-buy-candy-input>\r\n        </div>\r\n    </div>\r\n    <div class=\"footer\">\r\n        <app-footer></app-footer>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -357,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'how-to-play' | translate\"></app-account-header>\r\n<div class=\"how-to-play\">\r\n    <div class=\"title\">\r\n        {{'fair-chance-guarantee' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'fair-chance-guarantee-etc' | translate}}\r\n    </div>\r\n    <div class=\"title\">\r\n        {{'depositing-funds' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'depositing-funds-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'buying-tickets' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'buying-tickets-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'winning' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'winning-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'withdrawing-funds' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'withdrawing-funds-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'payouts' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'payouts-etc' | translate}}\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'how-to-play' | translate\"></app-account-header>\r\n<div class=\"how-to-play\">\r\n    <div class=\"title\">\r\n        {{'fair-chance-guarantee' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'fair-chance-guarantee-etc' | translate}}\r\n    </div>\r\n    <div class=\"title\">\r\n        {{'depositing-funds' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'depositing-funds-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'buying-candies' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'buying-candies-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'winning' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'winning-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'withdrawing-funds' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'withdrawing-funds-etc' | translate}}\r\n    </div>\r\n\r\n    <div class=\"title\">\r\n        {{'payouts' | translate}}\r\n    </div>\r\n    <div class=\"text\">\r\n        {{'payouts-etc' | translate}}\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -370,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'all-tickets' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{lotteryService.currentLotteryInfo.targetBlockHeight}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">    \r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-tickets' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'all-candies' | translate\"></app-account-header>\r\n\r\n<div class=\"my-entries\">\r\n    <div class=\"info\">{{'pool-opened' | translate}} {{lotteryService.currentLotteryInfo.openedDate | date : 'MM-dd-yyyy H:mm'}}</div>\r\n    <div class=\"info\">{{'block' | translate}} {{lotteryService.currentLotteryInfo.targetBlockHeight}}</div>\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'my-candies' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortMyEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleMyEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedMyEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n\r\n\r\n    <div class=\"header\">\r\n        <div class=\"text\">{{'all-candies' | translate}}</div>\r\n        <i class=\"icon-chevronright\"\r\n                    [ngClass]=\"[sortAllEntries ? 'chevron-up' : 'chevron-down']\"\r\n                    (click)=\"toggleAllEntries()\"></i>\r\n    </div>\r\n    <div class=\"data-container\">\r\n        <div class=\"data\" *ngFor=\"let entry of sortedAllEntries()\">\r\n            <div>\r\n                <div class=\"username\">\r\n                    {{entry.userName}}\r\n                </div>\r\n                <div class=\"date\">\r\n                    {{entry.date | date : 'MM-dd-yyyy H:mm'}}\r\n                </div>\r\n            </div>\r\n            <div>\r\n                #{{entry.start}}<ng-container *ngIf=\"entry.end !== entry.start\">-#{{entry.end}}</ng-container>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"info no-further-activity\">{{'no-further-activity' | translate}}</div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -383,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"payout-history-item\">\r\n    <div class=\"item-row info-row\"> \r\n        <div>{{payoutItem.user}}</div>\r\n        <div class=\"amount\">\r\n            <div class=\"place-icon\" [ngClass]=\"[place]\"></div>\r\n            {{payoutItem.prize}}\r\n            BTOK\r\n        </div>\r\n    </div>\r\n    <div class=\"item-row info-two-row\">\r\n        <div>{{payoutItem.time | date: 'MM-dd-yyyy H:mm'}}</div>\r\n        <div>\r\n            {{'ticket'| translate}}\r\n            #{{payoutItem.ticket}}\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"payout-history-item\">\r\n    <div class=\"item-row info-row\">\r\n        <div>{{payoutItem.user}}</div>\r\n        <div class=\"amount\">\r\n            <div class=\"place-icon\" [ngClass]=\"[place]\"></div>\r\n            {{payoutItem.prize}}\r\n            BTOK\r\n        </div>\r\n    </div>\r\n    <div class=\"item-row info-two-row\">\r\n        <div>{{(payoutItem.time * 1000) | date: 'MM-dd-yyyy H:mm'}}</div>\r\n        <div>\r\n            {{'candy'| translate}}\r\n            #{{payoutItem.candy}}\r\n        </div>\r\n    </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -396,7 +409,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'payouts' | translate | uppercase\"></app-account-header>\r\n\r\n<div class=\"action-container\">\r\n    <button class=\"app-button\" *ngFor=\"let place of placeMap\" (click)=\"selectRank(place.rank)\">{{place.name}}</button>    \r\n</div>\r\n<div class=\"payout\"\r\ninfiniteScroll\r\n[infiniteScrollDistance]=\"1\"\r\n[infiniteScrollThrottle]=\"50\"\r\n(scrolled)=\"onScroll()\"\r\n[scrollWindow]=\"false\">\r\n    <app-payout-history-item \r\n        [payoutItem]=\"item\" \r\n        [place]=\"getPlace(item.prize)\" \r\n        *ngFor=\"let item of payoutData[currentLevel].data\"></app-payout-history-item>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'payouts' | translate | uppercase\"></app-account-header>\r\n\r\n<div class=\"game-control\" *ngIf=\"lastTenGames && lastTenGames.length\">\r\n  <div class=\"control\">\r\n    <i *ngIf=\"hasPreviousGame()\"\r\n    (click)=\"getPreviousGame()\"\r\n    class=\"icon icon-chevronleft\"></i>\r\n  </div>\r\n  <div class=\"date\"> <b>#{{selectedGame.id}}</b> - {{(selectedGame.closetime * 1000) | date: 'M/dd/yyyy H:mm'}}</div>\r\n  <div class=\"control\">\r\n    <i *ngIf=\"hasNextGame()\"\r\n      (click)=\"getNextGame()\"\r\n      class=\"icon icon-chevronright\"></i>\r\n  </div>\r\n</div>\r\n<div class=\"action-container\">\r\n    <button class=\"app-button\" *ngFor=\"let place of placeMap\" (click)=\"selectRank(place.rank)\">{{place.name}}</button>\r\n</div>\r\n<ng-container *ngIf=\"payoutData[currentLevel] && payoutData[currentLevel].data\">\r\n  <div class=\"payout\"\r\n    infiniteScroll\r\n    [infiniteScrollDistance]=\"1\"\r\n    [infiniteScrollThrottle]=\"50\"\r\n    (scrolled)=\"onScroll()\"\r\n    [scrollWindow]=\"false\">\r\n        <app-payout-history-item\r\n            [payoutItem]=\"item\"\r\n            [place]=\"getPlace(item.prize)\"\r\n            *ngFor=\"let item of payoutData[currentLevel].data\"></app-payout-history-item>\r\n  </div>\r\n</ng-container>\r\n");
 
 /***/ }),
 
@@ -657,7 +670,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".history {\n  color: white;\n}\n.history ::ng-deep .mat-tab-label {\n  color: white;\n}\n.history .select-type {\n  display: flex;\n  justify-content: center;\n  margin: 24px 0 24px;\n}\n.history .select-type .select-box {\n  border: 2px solid #636363;\n  background-color: #2a2d32;\n  border-radius: 18px;\n  padding: 12px 32px;\n}\n.history .history-table {\n  font-size: 14px;\n  padding: 0 16px;\n  max-height: calc(100vh - 100px);\n  overflow-y: auto;\n}\n.history .history-table .tablerow {\n  height: 40px;\n  width: 100%;\n  overflow: hidden;\n  transition: height 0.3s;\n  border-top: 1px solid #2c3033;\n}\n.history .history-table .tablerow:last-child {\n  border-bottom: 1px solid #2c3033;\n}\n.history .history-table .tablerow .itemrow {\n  display: flex;\n  padding: 12px 0;\n}\n.history .history-table .tablerow.isExpanded {\n  height: 170px;\n  min-height: -webkit-fit-content;\n  min-height: -moz-fit-content;\n  min-height: fit-content;\n}\n.history .history-table .tablerow .icon {\n  width: 25px;\n  flex-basis: 25px;\n  font-size: 14px;\n}\n.history .history-table .tablerow .date {\n  flex-basis: 35%;\n  color: #5c5b60;\n}\n.history .history-table .tablerow .type {\n  padding-left: 12px;\n  flex-basis: 15%;\n}\n.history .history-table .tablerow .amount {\n  text-align: right;\n  padding-right: 16px;\n  flex-grow: 1;\n}\n.history .history-table .tablerow .address {\n  display: flex;\n  margin-bottom: 12px;\n}\n.history .history-table .tablerow .address:first-child {\n  margin-top: 12px;\n  margin-bottom: 16px;\n}\n.history .history-table .tablerow .address .label {\n  color: #5c5b60;\n}\n.history .history-table .tablerow .address .value {\n  font-size: 13px;\n  color: #ffcc01;\n  word-break: break-all;\n  padding: 0 12px;\n}\n.history .history-table .tablerow .address .copy {\n  align-self: center;\n  font-size: 20px;\n  color: #5c5b60;\n}\n.history .history-table .closerow {\n  padding: 6px 0;\n  display: flex;\n  justify-content: flex-end;\n}\n.history .no-futher-activity {\n  height: 500px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LWhpc3RvcnkvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxhY2NvdW50XFxhY2NvdW50LWhpc3RvcnlcXGFjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvYWNjb3VudC9hY2NvdW50LWhpc3RvcnkvYWNjb3VudC1oaXN0b3J5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtBQ0NKO0FERU07RUFDRSxZQUFBO0FDQVI7QURJSTtFQUNJLGFBQUE7RUFDQSx1QkFBQTtFQUNBLG1CQUFBO0FDRlI7QURJUTtFQUNJLHlCQUFBO0VBQ0EseUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDRlo7QURNSTtFQUNJLGVBQUE7RUFDQSxlQUFBO0VBQ0EsK0JBQUE7RUFDQSxnQkFBQTtBQ0pSO0FETVE7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsdUJBQUE7RUFDQSw2QkFBQTtBQ0paO0FES1k7RUFDSSxnQ0FBQTtBQ0hoQjtBRE1ZO0VBQ0ksYUFBQTtFQUNBLGVBQUE7QUNKaEI7QURPWTtFQUNJLGFBQUE7RUFDQSwrQkFBQTtFQUFBLDRCQUFBO0VBQUEsdUJBQUE7QUNMaEI7QURRWTtFQUNJLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNOaEI7QURRWTtFQUNJLGVBQUE7RUFDQSxjQUFBO0FDTmhCO0FEUVk7RUFDSSxrQkFBQTtFQUNBLGVBQUE7QUNOaEI7QURRWTtFQUNJLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0FDTmhCO0FEU1k7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7QUNQaEI7QURRZ0I7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0FDTnBCO0FEUWdCO0VBQ0ksY0FBQTtBQ05wQjtBRFFnQjtFQUNJLGVBQUE7RUFDQSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxlQUFBO0FDTnBCO0FEUWdCO0VBQ0ksa0JBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtBQ05wQjtBRFdRO0VBQ0ksY0FBQTtFQUNBLGFBQUE7RUFDQSx5QkFBQTtBQ1RaO0FEY0k7RUFDSSxhQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUNaUiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1oaXN0b3J5L2FjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oaXN0b3J5IHtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuXHJcbiAgICA6Om5nLWRlZXAge1xyXG4gICAgICAubWF0LXRhYi1sYWJlbCB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLnNlbGVjdC10eXBlIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgIG1hcmdpbjogMjRweCAwIDI0cHg7XHJcblxyXG4gICAgICAgIC5zZWxlY3QtYm94IHtcclxuICAgICAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2MztcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMThweDtcclxuICAgICAgICAgICAgcGFkZGluZzogMTJweCAzMnB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAuaGlzdG9yeS10YWJsZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiAxNHB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDAgMTZweDtcclxuICAgICAgICBtYXgtaGVpZ2h0OiBjYWxjKDEwMHZoIC0gMTAwcHgpO1xyXG4gICAgICAgIG92ZXJmbG93LXk6IGF1dG87XHJcblxyXG4gICAgICAgIC50YWJsZXJvdyB7XHJcbiAgICAgICAgICAgIGhlaWdodDogNDBweDtcclxuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XHJcbiAgICAgICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgICAgIHRyYW5zaXRpb246IGhlaWdodCAuM3M7XHJcbiAgICAgICAgICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjMmMzMDMzO1xyXG4gICAgICAgICAgICAmOmxhc3QtY2hpbGQge1xyXG4gICAgICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYzMwMzM7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5pdGVtcm93IHtcclxuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxMnB4IDA7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICYuaXNFeHBhbmRlZCB7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDE3MHB4O1xyXG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogZml0LWNvbnRlbnQ7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5pY29uIHtcclxuICAgICAgICAgICAgICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgICAgICAgICAgICAgZmxleC1iYXNpczogMjVweDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAuZGF0ZSB7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWJhc2lzOiAzNSU7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogIzVjNWI2MDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAudHlwZSB7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDEycHg7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWJhc2lzOiAxNSU7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLmFtb3VudCB7XHJcbiAgICAgICAgICAgICAgICB0ZXh0LWFsaWduOiByaWdodDtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5hZGRyZXNzIHtcclxuICAgICAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgJjpmaXJzdC1jaGlsZCB7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxNnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogIzVjNWI2MDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIC52YWx1ZSB7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgICAgICAgICAgICAgICAgIGNvbG9yOiAjZmZjYzAxO1xyXG4gICAgICAgICAgICAgICAgICAgIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAuY29weSB7XHJcbiAgICAgICAgICAgICAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogIzVjNWI2MDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmNsb3Nlcm93IHtcclxuICAgICAgICAgICAgcGFkZGluZzogNnB4IDA7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XHJcbiAgICAgICAgfVxyXG5cclxuICAgIH1cclxuXHJcbiAgICAubm8tZnV0aGVyLWFjdGl2aXR5IHtcclxuICAgICAgICBoZWlnaHQ6IDUwMHB4O1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIH1cclxufVxyXG4iLCIuaGlzdG9yeSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5oaXN0b3J5IDo6bmctZGVlcCAubWF0LXRhYi1sYWJlbCB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5oaXN0b3J5IC5zZWxlY3QtdHlwZSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBtYXJnaW46IDI0cHggMCAyNHB4O1xufVxuLmhpc3RvcnkgLnNlbGVjdC10eXBlIC5zZWxlY3QtYm94IHtcbiAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2MztcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJhMmQzMjtcbiAgYm9yZGVyLXJhZGl1czogMThweDtcbiAgcGFkZGluZzogMTJweCAzMnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUge1xuICBmb250LXNpemU6IDE0cHg7XG4gIHBhZGRpbmc6IDAgMTZweDtcbiAgbWF4LWhlaWdodDogY2FsYygxMDB2aCAtIDEwMHB4KTtcbiAgb3ZlcmZsb3cteTogYXV0bztcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyB7XG4gIGhlaWdodDogNDBweDtcbiAgd2lkdGg6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIHRyYW5zaXRpb246IGhlaWdodCAwLjNzO1xuICBib3JkZXItdG9wOiAxcHggc29saWQgIzJjMzAzMztcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdzpsYXN0LWNoaWxkIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMyYzMwMzM7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLml0ZW1yb3cge1xuICBkaXNwbGF5OiBmbGV4O1xuICBwYWRkaW5nOiAxMnB4IDA7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cuaXNFeHBhbmRlZCB7XG4gIGhlaWdodDogMTcwcHg7XG4gIG1pbi1oZWlnaHQ6IGZpdC1jb250ZW50O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5pY29uIHtcbiAgd2lkdGg6IDI1cHg7XG4gIGZsZXgtYmFzaXM6IDI1cHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuZGF0ZSB7XG4gIGZsZXgtYmFzaXM6IDM1JTtcbiAgY29sb3I6ICM1YzViNjA7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLnR5cGUge1xuICBwYWRkaW5nLWxlZnQ6IDEycHg7XG4gIGZsZXgtYmFzaXM6IDE1JTtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuYW1vdW50IHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5oaXN0b3J5IC5oaXN0b3J5LXRhYmxlIC50YWJsZXJvdyAuYWRkcmVzcyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIG1hcmdpbi1ib3R0b206IDEycHg7XG59XG4uaGlzdG9yeSAuaGlzdG9yeS10YWJsZSAudGFibGVyb3cgLmFkZHJlc3M6Zmlyc3QtY2hpbGQge1xuICBtYXJnaW4tdG9wOiAxMnB4O1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC5sYWJlbCB7XG4gIGNvbG9yOiAjNWM1YjYwO1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC52YWx1ZSB7XG4gIGZvbnQtc2l6ZTogMTNweDtcbiAgY29sb3I6ICNmZmNjMDE7XG4gIHdvcmQtYnJlYWs6IGJyZWFrLWFsbDtcbiAgcGFkZGluZzogMCAxMnB4O1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLnRhYmxlcm93IC5hZGRyZXNzIC5jb3B5IHtcbiAgYWxpZ24tc2VsZjogY2VudGVyO1xuICBmb250LXNpemU6IDIwcHg7XG4gIGNvbG9yOiAjNWM1YjYwO1xufVxuLmhpc3RvcnkgLmhpc3RvcnktdGFibGUgLmNsb3Nlcm93IHtcbiAgcGFkZGluZzogNnB4IDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogZmxleC1lbmQ7XG59XG4uaGlzdG9yeSAubm8tZnV0aGVyLWFjdGl2aXR5IHtcbiAgaGVpZ2h0OiA1MDBweDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvYWNjb3VudC1oaXN0b3J5L2FjY291bnQtaGlzdG9yeS5jb21wb25lbnQuc2NzcyJ9 */");
 
 /***/ }),
 
@@ -683,12 +696,6 @@ let AccountHistoryComponent = class AccountHistoryComponent {
     constructor(lotteryService, accountService) {
         this.lotteryService = lotteryService;
         this.accountService = accountService;
-        this.typeMap = {
-            1: 'buy',
-            2: 'withdraw',
-            3: 'deposit',
-            4: 'win'
-        };
         this.depositHistory = [];
         this.withdrawHistory = [];
         this.depositPageNum = 0;
@@ -715,8 +722,7 @@ let AccountHistoryComponent = class AccountHistoryComponent {
             const arr = data.msg;
             arr.forEach((item) => {
                 if (!this.depositHistory.find(dup => {
-                    return dup.id === item.id &&
-                        dup.uid === item.uid;
+                    return dup.orderno === item.orderno;
                 })) {
                     this.depositHistory.push(item);
                 }
@@ -730,8 +736,7 @@ let AccountHistoryComponent = class AccountHistoryComponent {
             const arr = data.msg;
             arr.forEach((item) => {
                 if (!this.withdrawHistory.find(dup => {
-                    return dup.id === item.id &&
-                        dup.uid === item.uid;
+                    return dup.orderno === item.orderno;
                 })) {
                     this.withdrawHistory.push(item);
                 }
@@ -841,11 +846,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./register/register.component */ "./src/app/account/register/register.component.ts");
 /* harmony import */ var _two_factor_two_factor_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./two-factor/two-factor.component */ "./src/app/account/two-factor/two-factor.component.ts");
 /* harmony import */ var _withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./withdraw/withdraw.component */ "./src/app/account/withdraw/withdraw.component.ts");
+/* harmony import */ var _winning_history_winning_history_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./winning-history/winning-history.component */ "./src/app/account/winning-history/winning-history.component.ts");
 
 
 
 
 // Components
+
 
 
 
@@ -867,6 +874,7 @@ AccountModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _register_register_component__WEBPACK_IMPORTED_MODULE_9__["RegisterComponent"],
             _two_factor_two_factor_component__WEBPACK_IMPORTED_MODULE_10__["TwoFactorComponent"],
             _withdraw_withdraw_component__WEBPACK_IMPORTED_MODULE_11__["WithdrawComponent"],
+            _winning_history_winning_history_component__WEBPACK_IMPORTED_MODULE_12__["WinningHistoryComponent"],
         ],
         imports: [
             _common_app_common_module__WEBPACK_IMPORTED_MODULE_3__["AppCommonModule"],
@@ -877,6 +885,7 @@ AccountModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
             _new_account_orientation_new_account_orientation_component__WEBPACK_IMPORTED_MODULE_8__["NewAccountOrientationComponent"],
             _register_register_component__WEBPACK_IMPORTED_MODULE_9__["RegisterComponent"],
+            _winning_history_winning_history_component__WEBPACK_IMPORTED_MODULE_12__["WinningHistoryComponent"],
         ]
     })
 ], AccountModule);
@@ -1302,6 +1311,84 @@ TwoFactorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/account/winning-history/winning-history.component.scss":
+/*!************************************************************************!*\
+  !*** ./src/app/account/winning-history/winning-history.component.scss ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvd2lubmluZy1oaXN0b3J5L3dpbm5pbmctaGlzdG9yeS5jb21wb25lbnQuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/account/winning-history/winning-history.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/account/winning-history/winning-history.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: WinningHistoryComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WinningHistoryComponent", function() { return WinningHistoryComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/lottery.service */ "./src/app/services/lottery.service.ts");
+/* harmony import */ var src_app_services_account_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/account.service */ "./src/app/services/account.service.ts");
+
+
+
+
+let WinningHistoryComponent = class WinningHistoryComponent {
+    constructor(lotteryService, accountService) {
+        this.lotteryService = lotteryService;
+        this.accountService = accountService;
+        this.history = [];
+        this.pageNum = 0;
+        this.isLoading = false;
+    }
+    ngOnInit() {
+        this.accountService.getRewardHistory(1, 20).subscribe((data) => {
+            if (data.code === 200) {
+                this.history = data.msg;
+            }
+        });
+    }
+    onScroll() {
+        this.pageNum++;
+        this.accountService.getRewardHistory(this.pageNum, 100)
+            .subscribe((data) => {
+            const arr = data.msg;
+            arr.forEach((item) => {
+                // if (!this.history.find(dup => {
+                //   return dup.gameid === item.gameid &&
+                //   dup.win === item.win;
+                // })) {
+                this.history.push(item);
+                // }
+            });
+        });
+    }
+};
+WinningHistoryComponent.ctorParameters = () => [
+    { type: src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_2__["LotteryService"] },
+    { type: src_app_services_account_service__WEBPACK_IMPORTED_MODULE_3__["AccountService"] }
+];
+WinningHistoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-winning-history',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./winning-history.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/account/winning-history/winning-history.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./winning-history.component.scss */ "./src/app/account/winning-history/winning-history.component.scss")).default]
+    })
+], WinningHistoryComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/account/withdraw/withdraw.component.scss":
 /*!**********************************************************!*\
   !*** ./src/app/account/withdraw/withdraw.component.scss ***!
@@ -1682,6 +1769,89 @@ AnimatedBackgroundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/common/animated-candies/animated-candies.component.scss":
+/*!*************************************************************************!*\
+  !*** ./src/app/common/animated-candies/animated-candies.component.scss ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("svg {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 100;\n  pointer-events: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2FuaW1hdGVkLWNhbmRpZXMvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxjb21tb25cXGFuaW1hdGVkLWNhbmRpZXNcXGFuaW1hdGVkLWNhbmRpZXMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9hbmltYXRlZC1jYW5kaWVzL2FuaW1hdGVkLWNhbmRpZXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxPQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vYW5pbWF0ZWQtY2FuZGllcy9hbmltYXRlZC1jYW5kaWVzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsic3ZnIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAwO1xyXG4gIGxlZnQ6IDA7XHJcbiAgei1pbmRleDogMTAwO1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG59XHJcbiIsInN2ZyB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB6LWluZGV4OiAxMDA7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/common/animated-candies/animated-candies.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/common/animated-candies/animated-candies.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: AnimatedCandiesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnimatedCandiesComponent", function() { return AnimatedCandiesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let AnimatedCandiesComponent = class AnimatedCandiesComponent {
+    constructor() { }
+    ngOnInit() {
+        this.startAnimation();
+    }
+    getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    randomFloatBetween(minValue, maxValue, precision) {
+        if (typeof (precision) === 'undefined') {
+            precision = 2;
+        }
+        return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)), maxValue).toFixed(precision));
+    }
+    startAnimation() {
+        document.querySelectorAll('svg path, svg g').forEach((el) => {
+            el.removeAttribute('data-name');
+        });
+        document.querySelectorAll('svg [id*="_Group"], svg [id*="_Path"]').forEach((el) => {
+            el.removeAttribute('id');
+        });
+        TweenLite.randomEase = Sine.easeInOut;
+        const confetti = new TimelineMax({
+            repeat: 0,
+        });
+        confetti
+            .to('#candies-animation #candies', .5, { opacity: 1 });
+        document.querySelectorAll('#candies-animation #candies path').forEach((el, index) => {
+            let ntl = new TimelineMax({});
+            let hor = this.getRndInteger(-400, 400);
+            let vert = this.getRndInteger(200, 800);
+            let timeEl = this.randomFloatBetween(2, 3, 2);
+            let elDur = this.randomFloatBetween(0.8, 1.5, 2);
+            let offsetTimeEl = '-=' + timeEl / 3;
+            ntl
+                .to(el, timeEl, { x: hor }, 0)
+                .fromTo(el, timeEl / 2, { y: 100 }, { y: -vert, ease: 'sine.out' }, 0)
+                .to(el, timeEl / 2, { y: 100, ease: 'power1.in' }, timeEl / 2)
+                .to(el, .5, { opacity: 0 }, offsetTimeEl)
+                .to(el, elDur, { transformOrigin: '50% 50%', rotation: Math.random() > .5 ? -360 : 360, repeat: 1.5, ease: Power0.easeNone }, 0);
+            confetti.add(ntl, 0);
+        });
+    }
+};
+AnimatedCandiesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-animated-candies',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./animated-candies.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-candies/animated-candies.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./animated-candies.component.scss */ "./src/app/common/animated-candies/animated-candies.component.scss")).default]
+    })
+], AnimatedCandiesComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/common/animated-coins/animated-coins.component.scss":
 /*!*********************************************************************!*\
   !*** ./src/app/common/animated-coins/animated-coins.component.scss ***!
@@ -1896,89 +2066,6 @@ AnimatedQuestionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/common/animated-tickets/animated-tickets.component.scss":
-/*!*************************************************************************!*\
-  !*** ./src/app/common/animated-tickets/animated-tickets.component.scss ***!
-  \*************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("svg {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 100;\n  pointer-events: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2FuaW1hdGVkLXRpY2tldHMvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxjb21tb25cXGFuaW1hdGVkLXRpY2tldHNcXGFuaW1hdGVkLXRpY2tldHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9hbmltYXRlZC10aWNrZXRzL2FuaW1hdGVkLXRpY2tldHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUNBLE1BQUE7RUFDQSxPQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0FDQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21tb24vYW5pbWF0ZWQtdGlja2V0cy9hbmltYXRlZC10aWNrZXRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsic3ZnIHtcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgdG9wOiAwO1xyXG4gIGxlZnQ6IDA7XHJcbiAgei1pbmRleDogMTAwO1xyXG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xyXG59XHJcbiIsInN2ZyB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICBsZWZ0OiAwO1xuICB6LWluZGV4OiAxMDA7XG4gIHBvaW50ZXItZXZlbnRzOiBub25lO1xufSJdfQ== */");
-
-/***/ }),
-
-/***/ "./src/app/common/animated-tickets/animated-tickets.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/common/animated-tickets/animated-tickets.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: AnimatedTicketsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AnimatedTicketsComponent", function() { return AnimatedTicketsComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-
-
-let AnimatedTicketsComponent = class AnimatedTicketsComponent {
-    constructor() { }
-    ngOnInit() {
-        this.startAnimation();
-    }
-    getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    randomFloatBetween(minValue, maxValue, precision) {
-        if (typeof (precision) === 'undefined') {
-            precision = 2;
-        }
-        return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)), maxValue).toFixed(precision));
-    }
-    startAnimation() {
-        document.querySelectorAll('svg path, svg g').forEach((el) => {
-            el.removeAttribute('data-name');
-        });
-        document.querySelectorAll('svg [id*="_Group"], svg [id*="_Path"]').forEach((el) => {
-            el.removeAttribute('id');
-        });
-        TweenLite.randomEase = Sine.easeInOut;
-        const confetti = new TimelineMax({
-            repeat: 0,
-        });
-        confetti
-            .to('#tickets-animation #tickets', .5, { opacity: 1 });
-        document.querySelectorAll('#tickets-animation #tickets path').forEach((el, index) => {
-            let ntl = new TimelineMax({});
-            let hor = this.getRndInteger(-400, 400);
-            let vert = this.getRndInteger(200, 800);
-            let timeEl = this.randomFloatBetween(2, 3, 2);
-            let elDur = this.randomFloatBetween(0.8, 1.5, 2);
-            let offsetTimeEl = '-=' + timeEl / 3;
-            ntl
-                .to(el, timeEl, { x: hor }, 0)
-                .fromTo(el, timeEl / 2, { y: 100 }, { y: -vert, ease: 'sine.out' }, 0)
-                .to(el, timeEl / 2, { y: 100, ease: 'power1.in' }, timeEl / 2)
-                .to(el, .5, { opacity: 0 }, offsetTimeEl)
-                .to(el, elDur, { transformOrigin: '50% 50%', rotation: Math.random() > .5 ? -360 : 360, repeat: 1.5, ease: Power0.easeNone }, 0);
-            confetti.add(ntl, 0);
-        });
-    }
-};
-AnimatedTicketsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-animated-tickets',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./animated-tickets.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/animated-tickets/animated-tickets.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./animated-tickets.component.scss */ "./src/app/common/animated-tickets/animated-tickets.component.scss")).default]
-    })
-], AnimatedTicketsComponent);
-
-
-
-/***/ }),
-
 /***/ "./src/app/common/app-common.module.ts":
 /*!*********************************************!*\
   !*** ./src/app/common/app-common.module.ts ***!
@@ -2003,12 +2090,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
 /* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
 /* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
-/* harmony import */ var _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./buy-ticket-input/buy-ticket-input.component */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts");
+/* harmony import */ var _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./buy-candy-input/buy-candy-input.component */ "./src/app/common/buy-candy-input/buy-candy-input.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
 /* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
 /* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
-/* harmony import */ var _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-tickets/animated-tickets.component */ "./src/app/common/animated-tickets/animated-tickets.component.ts");
+/* harmony import */ var _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-candies/animated-candies.component */ "./src/app/common/animated-candies/animated-candies.component.ts");
 /* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
 /* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
 /* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
@@ -2049,11 +2136,11 @@ AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_9__["AccountHeaderComponent"],
             _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_10__["AnimatedBackgroundComponent"],
             _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedTicketsComponent"],
+            _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedCandiesComponent"],
             _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedConfettiComponent"],
             _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedCoinsComponent"],
             _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_22__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_14__["BuyTicketInputComponent"],
+            _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_14__["BuyCandyInputComponent"],
             _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_16__["LanguageSelectComponent"],
             _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_11__["MainHeaderComponent"],
             _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_13__["PoolSelectComponent"],
@@ -2078,9 +2165,9 @@ AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedCoinsComponent"],
             _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedConfettiComponent"],
             _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_18__["AnimatedQuestionComponent"],
-            _animated_tickets_animated_tickets_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedTicketsComponent"],
+            _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedCandiesComponent"],
             _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_22__["BlockChainInfoComponent"],
-            _buy_ticket_input_buy_ticket_input_component__WEBPACK_IMPORTED_MODULE_14__["BuyTicketInputComponent"],
+            _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_14__["BuyCandyInputComponent"],
             ngx_clipboard__WEBPACK_IMPORTED_MODULE_7__["ClipboardModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_24__["InfoComponentComponent"],
@@ -2192,29 +2279,29 @@ BlockChainInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/common/buy-ticket-input/buy-ticket-input.component.scss":
-/*!*************************************************************************!*\
-  !*** ./src/app/common/buy-ticket-input/buy-ticket-input.component.scss ***!
-  \*************************************************************************/
+/***/ "./src/app/common/buy-candy-input/buy-candy-input.component.scss":
+/*!***********************************************************************!*\
+  !*** ./src/app/common/buy-candy-input/buy-candy-input.component.scss ***!
+  \***********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".buy-ticket-input {\n  color: #ffcc01;\n}\n.buy-ticket-input .counter {\n  display: flex;\n  align-items: center;\n  margin-bottom: 16px;\n}\n.buy-ticket-input .counter .wrapper {\n  padding: 12px 0;\n}\n.buy-ticket-input .counter .wrapper.line-wrapper {\n  flex-grow: 1;\n}\n.buy-ticket-input .counter .node {\n  height: 8px;\n  width: 8px;\n  border-radius: 50%;\n  border: 2px solid #636363;\n}\n.buy-ticket-input .counter .line {\n  border: 1px solid #636363;\n}\n.buy-ticket-input .counter .node.active, .buy-ticket-input .counter .line.active {\n  border-color: #ffcc01;\n}\n.buy-ticket-input .available-currency {\n  display: flex;\n  justify-content: space-between;\n  font-size: 13px;\n  margin: 16px 0;\n}\n.buy-ticket-input .available-currency .label {\n  color: white;\n}\n.buy-ticket-input .message {\n  font-size: 30px;\n  text-align: center;\n  margin-top: 10vh;\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2J1eS10aWNrZXQtaW5wdXQvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxjb21tb25cXGJ1eS10aWNrZXQtaW5wdXRcXGJ1eS10aWNrZXQtaW5wdXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9idXktdGlja2V0LWlucHV0L2J1eS10aWNrZXQtaW5wdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0FDQ0o7QURDSTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtFQUNBLG1CQUFBO0FDQ1I7QURDUTtFQUNJLGVBQUE7QUNDWjtBREFZO0VBQ0ksWUFBQTtBQ0VoQjtBRENRO0VBQ0ksV0FBQTtFQUNBLFVBQUE7RUFDQSxrQkFBQTtFQUNBLHlCQUFBO0FDQ1o7QURDUTtFQUNJLHlCQUFBO0FDQ1o7QURHWTtFQUNJLHFCQUFBO0FDRGhCO0FES0k7RUFDSSxhQUFBO0VBQ0EsOEJBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtBQ0hSO0FESVE7RUFDSSxZQUFBO0FDRlo7QURNSTtFQUNJLGVBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsWUFBQTtBQ0pSIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL2J1eS10aWNrZXQtaW5wdXQvYnV5LXRpY2tldC1pbnB1dC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idXktdGlja2V0LWlucHV0IHtcclxuICAgIGNvbG9yOiAjZmZjYzAxO1xyXG4gICAgXHJcbiAgICAuY291bnRlciB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDE2cHg7XHJcblxyXG4gICAgICAgIC53cmFwcGVyIHtcclxuICAgICAgICAgICAgcGFkZGluZzogMTJweCAwO1xyXG4gICAgICAgICAgICAmLmxpbmUtd3JhcHBlciB7IFxyXG4gICAgICAgICAgICAgICAgZmxleC1ncm93OiAxO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5ub2RlIHtcclxuICAgICAgICAgICAgaGVpZ2h0OiA4cHg7XHJcbiAgICAgICAgICAgIHdpZHRoOiA4cHg7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxuICAgICAgICAgICAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2MztcclxuICAgICAgICB9XHJcbiAgICAgICAgLmxpbmUge1xyXG4gICAgICAgICAgICBib3JkZXI6IDFweCBzb2xpZCAjNjM2MzYzO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLm5vZGUsIC5saW5lIHtcclxuICAgICAgICAgICAgJi5hY3RpdmUge1xyXG4gICAgICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiAjZmZjYzAxO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgLmF2YWlsYWJsZS1jdXJyZW5jeSB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICAgICAgZm9udC1zaXplOiAxM3B4O1xyXG4gICAgICAgIG1hcmdpbjogMTZweCAwO1xyXG4gICAgICAgIC5sYWJlbCB7XHJcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZVxyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbiAgICAubWVzc2FnZSB7XHJcbiAgICAgICAgZm9udC1zaXplOiAzMHB4O1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMHZoO1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIH1cclxufSIsIi5idXktdGlja2V0LWlucHV0IHtcbiAgY29sb3I6ICNmZmNjMDE7XG59XG4uYnV5LXRpY2tldC1pbnB1dCAuY291bnRlciB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIG1hcmdpbi1ib3R0b206IDE2cHg7XG59XG4uYnV5LXRpY2tldC1pbnB1dCAuY291bnRlciAud3JhcHBlciB7XG4gIHBhZGRpbmc6IDEycHggMDtcbn1cbi5idXktdGlja2V0LWlucHV0IC5jb3VudGVyIC53cmFwcGVyLmxpbmUtd3JhcHBlciB7XG4gIGZsZXgtZ3JvdzogMTtcbn1cbi5idXktdGlja2V0LWlucHV0IC5jb3VudGVyIC5ub2RlIHtcbiAgaGVpZ2h0OiA4cHg7XG4gIHdpZHRoOiA4cHg7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgYm9yZGVyOiAycHggc29saWQgIzYzNjM2Mztcbn1cbi5idXktdGlja2V0LWlucHV0IC5jb3VudGVyIC5saW5lIHtcbiAgYm9yZGVyOiAxcHggc29saWQgIzYzNjM2Mztcbn1cbi5idXktdGlja2V0LWlucHV0IC5jb3VudGVyIC5ub2RlLmFjdGl2ZSwgLmJ1eS10aWNrZXQtaW5wdXQgLmNvdW50ZXIgLmxpbmUuYWN0aXZlIHtcbiAgYm9yZGVyLWNvbG9yOiAjZmZjYzAxO1xufVxuLmJ1eS10aWNrZXQtaW5wdXQgLmF2YWlsYWJsZS1jdXJyZW5jeSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgZm9udC1zaXplOiAxM3B4O1xuICBtYXJnaW46IDE2cHggMDtcbn1cbi5idXktdGlja2V0LWlucHV0IC5hdmFpbGFibGUtY3VycmVuY3kgLmxhYmVsIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuLmJ1eS10aWNrZXQtaW5wdXQgLm1lc3NhZ2Uge1xuICBmb250LXNpemU6IDMwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luLXRvcDogMTB2aDtcbiAgY29sb3I6IHdoaXRlO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".buy-candy-input {\n  color: #ffcc01;\n}\n.buy-candy-input .counter {\n  display: flex;\n  align-items: center;\n  margin-bottom: 16px;\n}\n.buy-candy-input .counter .wrapper {\n  padding: 12px 0;\n}\n.buy-candy-input .counter .wrapper.line-wrapper {\n  flex-grow: 1;\n}\n.buy-candy-input .counter .node {\n  height: 8px;\n  width: 8px;\n  border-radius: 50%;\n  border: 2px solid #636363;\n}\n.buy-candy-input .counter .line {\n  border: 1px solid #636363;\n}\n.buy-candy-input .counter .node.active, .buy-candy-input .counter .line.active {\n  border-color: #ffcc01;\n}\n.buy-candy-input .available-currency {\n  display: flex;\n  justify-content: space-between;\n  font-size: 13px;\n  margin: 16px 0;\n}\n.buy-candy-input .available-currency .label {\n  color: white;\n}\n.buy-candy-input .message {\n  font-size: 30px;\n  text-align: center;\n  margin-top: 10vh;\n  color: white;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL2J1eS1jYW5keS1pbnB1dC9DOlxcbG9jYWxkZXZcXG15LXByb2plY3RzXFxjaGF0LWxvdHRlcnkvc3JjXFxhcHBcXGNvbW1vblxcYnV5LWNhbmR5LWlucHV0XFxidXktY2FuZHktaW5wdXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9idXktY2FuZHktaW5wdXQvYnV5LWNhbmR5LWlucHV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksY0FBQTtBQ0NKO0FEQ0k7RUFDSSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtBQ0NSO0FEQ1E7RUFDSSxlQUFBO0FDQ1o7QURBWTtFQUNJLFlBQUE7QUNFaEI7QURDUTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtBQ0NaO0FEQ1E7RUFDSSx5QkFBQTtBQ0NaO0FER1k7RUFDSSxxQkFBQTtBQ0RoQjtBREtJO0VBQ0ksYUFBQTtFQUNBLDhCQUFBO0VBQ0EsZUFBQTtFQUNBLGNBQUE7QUNIUjtBRElRO0VBQ0ksWUFBQTtBQ0ZaO0FETUk7RUFDSSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7QUNKUiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi9idXktY2FuZHktaW5wdXQvYnV5LWNhbmR5LWlucHV0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJ1eS1jYW5keS1pbnB1dCB7XHJcbiAgICBjb2xvcjogI2ZmY2MwMTtcclxuXHJcbiAgICAuY291bnRlciB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDE2cHg7XHJcblxyXG4gICAgICAgIC53cmFwcGVyIHtcclxuICAgICAgICAgICAgcGFkZGluZzogMTJweCAwO1xyXG4gICAgICAgICAgICAmLmxpbmUtd3JhcHBlciB7XHJcbiAgICAgICAgICAgICAgICBmbGV4LWdyb3c6IDE7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgICAgLm5vZGUge1xyXG4gICAgICAgICAgICBoZWlnaHQ6IDhweDtcclxuICAgICAgICAgICAgd2lkdGg6IDhweDtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgICAgICAgICBib3JkZXI6IDJweCBzb2xpZCAjNjM2MzYzO1xyXG4gICAgICAgIH1cclxuICAgICAgICAubGluZSB7XHJcbiAgICAgICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICM2MzYzNjM7XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAubm9kZSwgLmxpbmUge1xyXG4gICAgICAgICAgICAmLmFjdGl2ZSB7XHJcbiAgICAgICAgICAgICAgICBib3JkZXItY29sb3I6ICNmZmNjMDE7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICAuYXZhaWxhYmxlLWN1cnJlbmN5IHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBmb250LXNpemU6IDEzcHg7XHJcbiAgICAgICAgbWFyZ2luOiAxNnB4IDA7XHJcbiAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlXHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5tZXNzYWdlIHtcclxuICAgICAgICBmb250LXNpemU6IDMwcHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDEwdmg7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgfVxyXG59XHJcbiIsIi5idXktY2FuZHktaW5wdXQge1xuICBjb2xvcjogI2ZmY2MwMTtcbn1cbi5idXktY2FuZHktaW5wdXQgLmNvdW50ZXIge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBtYXJnaW4tYm90dG9tOiAxNnB4O1xufVxuLmJ1eS1jYW5keS1pbnB1dCAuY291bnRlciAud3JhcHBlciB7XG4gIHBhZGRpbmc6IDEycHggMDtcbn1cbi5idXktY2FuZHktaW5wdXQgLmNvdW50ZXIgLndyYXBwZXIubGluZS13cmFwcGVyIHtcbiAgZmxleC1ncm93OiAxO1xufVxuLmJ1eS1jYW5keS1pbnB1dCAuY291bnRlciAubm9kZSB7XG4gIGhlaWdodDogOHB4O1xuICB3aWR0aDogOHB4O1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGJvcmRlcjogMnB4IHNvbGlkICM2MzYzNjM7XG59XG4uYnV5LWNhbmR5LWlucHV0IC5jb3VudGVyIC5saW5lIHtcbiAgYm9yZGVyOiAxcHggc29saWQgIzYzNjM2Mztcbn1cbi5idXktY2FuZHktaW5wdXQgLmNvdW50ZXIgLm5vZGUuYWN0aXZlLCAuYnV5LWNhbmR5LWlucHV0IC5jb3VudGVyIC5saW5lLmFjdGl2ZSB7XG4gIGJvcmRlci1jb2xvcjogI2ZmY2MwMTtcbn1cbi5idXktY2FuZHktaW5wdXQgLmF2YWlsYWJsZS1jdXJyZW5jeSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgZm9udC1zaXplOiAxM3B4O1xuICBtYXJnaW46IDE2cHggMDtcbn1cbi5idXktY2FuZHktaW5wdXQgLmF2YWlsYWJsZS1jdXJyZW5jeSAubGFiZWwge1xuICBjb2xvcjogd2hpdGU7XG59XG4uYnV5LWNhbmR5LWlucHV0IC5tZXNzYWdlIHtcbiAgZm9udC1zaXplOiAzMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbi10b3A6IDEwdmg7XG4gIGNvbG9yOiB3aGl0ZTtcbn0iXX0= */");
 
 /***/ }),
 
-/***/ "./src/app/common/buy-ticket-input/buy-ticket-input.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/common/buy-ticket-input/buy-ticket-input.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: BuyTicketInputComponent */
+/***/ "./src/app/common/buy-candy-input/buy-candy-input.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/common/buy-candy-input/buy-candy-input.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: BuyCandyInputComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyTicketInputComponent", function() { return BuyTicketInputComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuyCandyInputComponent", function() { return BuyCandyInputComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
@@ -2223,7 +2310,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let BuyTicketInputComponent = class BuyTicketInputComponent {
+let BuyCandyInputComponent = class BuyCandyInputComponent {
     constructor(authService, lotteryService) {
         this.authService = authService;
         this.lotteryService = lotteryService;
@@ -2233,9 +2320,9 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
     }
     ngOnInit() {
     }
-    buyTickets() {
+    buyCandies() {
         if (this.amount > 0 && this.amount * .01 <= this.authService.user.amountAvailable) {
-            this.lotteryService.buyTicket(this.amount)
+            this.lotteryService.buyCandy(this.amount)
                 .subscribe(() => {
             });
             this.showAnimation = true;
@@ -2303,17 +2390,17 @@ let BuyTicketInputComponent = class BuyTicketInputComponent {
         this.authService.authorize();
     }
 };
-BuyTicketInputComponent.ctorParameters = () => [
+BuyCandyInputComponent.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
     { type: src_app_services_lottery_service__WEBPACK_IMPORTED_MODULE_3__["LotteryService"] }
 ];
-BuyTicketInputComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+BuyCandyInputComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-buy-ticket-input',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./buy-ticket-input.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/buy-ticket-input/buy-ticket-input.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./buy-ticket-input.component.scss */ "./src/app/common/buy-ticket-input/buy-ticket-input.component.scss")).default]
+        selector: 'app-buy-candy-input',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./buy-candy-input.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/buy-candy-input/buy-candy-input.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./buy-candy-input.component.scss */ "./src/app/common/buy-candy-input/buy-candy-input.component.scss")).default]
     })
-], BuyTicketInputComponent);
+], BuyCandyInputComponent);
 
 
 
@@ -2587,7 +2674,7 @@ WindowRef = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".winner-panel {\n  border-radius: 16px;\n  letter-spacing: 0;\n}\n.winner-panel.place-0 {\n  background-color: #ffcc00;\n  color: black;\n  min-height: 45px;\n}\n.winner-panel.place-1 {\n  color: black;\n  background-color: #07f79a;\n  min-height: 83px;\n}\n.winner-panel.place-2 {\n  color: white;\n  background-color: #7b16e3;\n  min-height: 83px;\n}\n.winner-panel.place-3 {\n  background-color: #2977d7;\n  color: white;\n  min-height: 83px;\n}\n.winner-panel.place-4 {\n  color: white;\n  background-color: #762846;\n  min-height: 83px;\n}\n.winner-panel.place-5 {\n  color: white;\n  background-color: #d36d12;\n  min-height: 83px;\n}\n.winner-panel .winner-container {\n  display: flex;\n}\n.winner-panel .place {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  padding: 0 16px;\n}\n.winner-panel .first-ticket {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 6px;\n  text-align: center;\n  flex-basis: 100%;\n}\n.winner-panel .first-ticket .winnings {\n  flex-basis: 40%;\n  padding-right: 12px;\n}\n.winner-panel .first-ticket .username {\n  font-size: 15px;\n}\n.winner-panel .first-ticket .number {\n  font-size: 12px;\n}\n.winner-panel .table-container {\n  flex-grow: 1;\n  display: flex;\n  flex-wrap: wrap;\n}\n.winner-panel .table-container .ticket {\n  padding: 2px;\n  text-align: center;\n  flex-basis: 49%;\n}\n.winner-panel .table-container .ticket .username {\n  font-size: 12px;\n  line-height: 12px;\n}\n.winner-panel .table-container .ticket .number {\n  font-size: 10px;\n  line-height: 11px;\n}\n.winner-panel .table-container .ticket .you-won {\n  color: black;\n  background-color: #FFCC00;\n  border-radius: 10px;\n  font-size: 9px;\n  padding: 1px 2px;\n}\n.winner-panel .winnings {\n  flex-basis: 100% !important;\n  padding-right: 16px;\n  text-align: left;\n  justify-content: space-between;\n  display: flex;\n}\n.winner-panel .winnings .amount {\n  display: inline-block;\n  font-size: 11px;\n  color: white;\n  padding: 3px 12px;\n  background-color: #2b3036;\n  border-radius: 10px;\n  margin-bottom: 4px;\n}\n.winner-panel .winnings .dots {\n  color: white;\n  font-size: 44px;\n  line-height: 0;\n}\n.winner-panel .winnings .count {\n  font-size: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3dpbm5lci1wYW5lbC9DOlxcbG9jYWxkZXZcXG15LXByb2plY3RzXFxjaGF0LWxvdHRlcnkvc3JjXFxhcHBcXGNvbW1vblxcd2lubmVyLXBhbmVsXFx3aW5uZXItcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi93aW5uZXItcGFuZWwvd2lubmVyLXBhbmVsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQUE7RUFDQSxpQkFBQTtBQ0NKO0FEQUk7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0VSO0FEQ0k7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0NSO0FERUk7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0FSO0FERUk7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0FSO0FER0k7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0RSO0FESUk7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0ZSO0FES0k7RUFDSSxhQUFBO0FDSFI7QURNSTtFQUNJLFlBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0FDSlI7QURPSTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7QUNMUjtBRE1RO0VBQ0ksZUFBQTtFQUNBLG1CQUFBO0FDSlo7QURPUTtFQUNJLGVBQUE7QUNMWjtBRE9RO0VBQ0ksZUFBQTtBQ0xaO0FEVUk7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGVBQUE7QUNSUjtBRFNRO0VBQ0ksWUFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ1BaO0FEUVk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNOaEI7QURRWTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtBQ05oQjtBRFFZO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7QUNOaEI7QURXSTtFQUNJLDJCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0VBQ0EsYUFBQTtBQ1RSO0FEVVE7RUFDSSxxQkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNSWjtBRFdRO0VBQ0ksWUFBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0FDVFo7QURZUTtFQUNJLGVBQUE7QUNWWiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi93aW5uZXItcGFuZWwvd2lubmVyLXBhbmVsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndpbm5lci1wYW5lbCB7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDA7XHJcbiAgICAmLnBsYWNlLTAge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDQ1cHg7XHJcbiAgICB9XHJcblxyXG4gICAgJi5wbGFjZS0xIHtcclxuICAgICAgICBjb2xvcjogYmxhY2s7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzA3Zjc5YTtcclxuICAgICAgICBtaW4taGVpZ2h0OiA4M3B4O1xyXG4gICAgfVxyXG5cclxuICAgICYucGxhY2UtMiB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM3YjE2ZTM7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuICAgICYucGxhY2UtMyB7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI5NzdkNztcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuXHJcbiAgICAmLnBsYWNlLTQge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNzYyODQ2O1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDgzcHg7XHJcbiAgICB9XHJcblxyXG4gICAgJi5wbGFjZS01IHtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2QzNmQxMjtcclxuICAgICAgICBtaW4taGVpZ2h0OiA4M3B4O1xyXG4gICAgfVxyXG5cclxuICAgIC53aW5uZXItY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgfVxyXG5cclxuICAgIC5wbGFjZSB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5maXJzdC10aWNrZXQge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICAgICAgcGFkZGluZzogNnB4O1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBmbGV4LWJhc2lzOiAxMDAlO1xyXG4gICAgICAgIC53aW5uaW5ncyB7XHJcbiAgICAgICAgICAgIGZsZXgtYmFzaXM6IDQwJTtcclxuICAgICAgICAgICAgcGFkZGluZy1yaWdodDogMTJweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC51c2VybmFtZSB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgICAgICB9XHJcbiAgICAgICAgLm51bWJlciB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG5cclxuICAgIC50YWJsZS1jb250YWluZXIge1xyXG4gICAgICAgIGZsZXgtZ3JvdzogMTtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgICAgICAudGlja2V0IHtcclxuICAgICAgICAgICAgcGFkZGluZzogMnB4O1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgICAgIGZsZXgtYmFzaXM6IDQ5JTtcclxuICAgICAgICAgICAgLnVzZXJuYW1lIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxMnB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC5udW1iZXIge1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDExcHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLnlvdS13b24ge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI0ZGQ0MwMDtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDlweDtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDFweCAycHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgLndpbm5pbmdzIHtcclxuICAgICAgICBmbGV4LWJhc2lzOiAxMDAlICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgcGFkZGluZy1yaWdodDogMTZweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTFweDtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAzcHggMTJweDtcclxuICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzJiMzAzNjtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogNHB4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmRvdHMge1xyXG4gICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogNDRweDtcclxuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDAgO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmNvdW50IHtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iLCIud2lubmVyLXBhbmVsIHtcbiAgYm9yZGVyLXJhZGl1czogMTZweDtcbiAgbGV0dGVyLXNwYWNpbmc6IDA7XG59XG4ud2lubmVyLXBhbmVsLnBsYWNlLTAge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZjYzAwO1xuICBjb2xvcjogYmxhY2s7XG4gIG1pbi1oZWlnaHQ6IDQ1cHg7XG59XG4ud2lubmVyLXBhbmVsLnBsYWNlLTEge1xuICBjb2xvcjogYmxhY2s7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwN2Y3OWE7XG4gIG1pbi1oZWlnaHQ6IDgzcHg7XG59XG4ud2lubmVyLXBhbmVsLnBsYWNlLTIge1xuICBjb2xvcjogd2hpdGU7XG4gIGJhY2tncm91bmQtY29sb3I6ICM3YjE2ZTM7XG4gIG1pbi1oZWlnaHQ6IDgzcHg7XG59XG4ud2lubmVyLXBhbmVsLnBsYWNlLTMge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjk3N2Q3O1xuICBjb2xvcjogd2hpdGU7XG4gIG1pbi1oZWlnaHQ6IDgzcHg7XG59XG4ud2lubmVyLXBhbmVsLnBsYWNlLTQge1xuICBjb2xvcjogd2hpdGU7XG4gIGJhY2tncm91bmQtY29sb3I6ICM3NjI4NDY7XG4gIG1pbi1oZWlnaHQ6IDgzcHg7XG59XG4ud2lubmVyLXBhbmVsLnBsYWNlLTUge1xuICBjb2xvcjogd2hpdGU7XG4gIGJhY2tncm91bmQtY29sb3I6ICNkMzZkMTI7XG4gIG1pbi1oZWlnaHQ6IDgzcHg7XG59XG4ud2lubmVyLXBhbmVsIC53aW5uZXItY29udGFpbmVyIHtcbiAgZGlzcGxheTogZmxleDtcbn1cbi53aW5uZXItcGFuZWwgLnBsYWNlIHtcbiAgY29sb3I6IHdoaXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZm9udC1zaXplOiAyNHB4O1xuICBwYWRkaW5nOiAwIDE2cHg7XG59XG4ud2lubmVyLXBhbmVsIC5maXJzdC10aWNrZXQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHBhZGRpbmc6IDZweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmbGV4LWJhc2lzOiAxMDAlO1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtdGlja2V0IC53aW5uaW5ncyB7XG4gIGZsZXgtYmFzaXM6IDQwJTtcbiAgcGFkZGluZy1yaWdodDogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLmZpcnN0LXRpY2tldCAudXNlcm5hbWUge1xuICBmb250LXNpemU6IDE1cHg7XG59XG4ud2lubmVyLXBhbmVsIC5maXJzdC10aWNrZXQgLm51bWJlciB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciB7XG4gIGZsZXgtZ3JvdzogMTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiB3cmFwO1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC50aWNrZXQge1xuICBwYWRkaW5nOiAycHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZmxleC1iYXNpczogNDklO1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC50aWNrZXQgLnVzZXJuYW1lIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBsaW5lLWhlaWdodDogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciAudGlja2V0IC5udW1iZXIge1xuICBmb250LXNpemU6IDEwcHg7XG4gIGxpbmUtaGVpZ2h0OiAxMXB4O1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC50aWNrZXQgLnlvdS13b24ge1xuICBjb2xvcjogYmxhY2s7XG4gIGJhY2tncm91bmQtY29sb3I6ICNGRkNDMDA7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIGZvbnQtc2l6ZTogOXB4O1xuICBwYWRkaW5nOiAxcHggMnB4O1xufVxuLndpbm5lci1wYW5lbCAud2lubmluZ3Mge1xuICBmbGV4LWJhc2lzOiAxMDAlICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgZGlzcGxheTogZmxleDtcbn1cbi53aW5uZXItcGFuZWwgLndpbm5pbmdzIC5hbW91bnQge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTFweDtcbiAgY29sb3I6IHdoaXRlO1xuICBwYWRkaW5nOiAzcHggMTJweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzJiMzAzNjtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogNHB4O1xufVxuLndpbm5lci1wYW5lbCAud2lubmluZ3MgLmRvdHMge1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogNDRweDtcbiAgbGluZS1oZWlnaHQ6IDA7XG59XG4ud2lubmVyLXBhbmVsIC53aW5uaW5ncyAuY291bnQge1xuICBmb250LXNpemU6IDEwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".winner-panel {\n  border-radius: 16px;\n  letter-spacing: 0;\n}\n.winner-panel.place-0 {\n  background-color: #ffcc00;\n  color: black;\n  min-height: 45px;\n}\n.winner-panel.place-1 {\n  color: black;\n  background-color: #07f79a;\n  min-height: 83px;\n}\n.winner-panel.place-2 {\n  color: white;\n  background-color: #7b16e3;\n  min-height: 83px;\n}\n.winner-panel.place-3 {\n  background-color: #2977d7;\n  color: white;\n  min-height: 83px;\n}\n.winner-panel.place-4 {\n  color: white;\n  background-color: #762846;\n  min-height: 83px;\n}\n.winner-panel.place-5 {\n  color: white;\n  background-color: #d36d12;\n  min-height: 83px;\n}\n.winner-panel .winner-container {\n  display: flex;\n}\n.winner-panel .place {\n  color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 24px;\n  padding: 0 16px;\n}\n.winner-panel .first-candy {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 6px;\n  text-align: center;\n  flex-basis: 100%;\n}\n.winner-panel .first-candy .winnings {\n  flex-basis: 40%;\n  padding-right: 12px;\n}\n.winner-panel .first-candy .username {\n  font-size: 15px;\n}\n.winner-panel .first-candy .number {\n  font-size: 12px;\n}\n.winner-panel .table-container {\n  flex-grow: 1;\n  display: flex;\n  flex-wrap: wrap;\n}\n.winner-panel .table-container .candy {\n  padding: 2px;\n  text-align: center;\n  flex-basis: 49%;\n}\n.winner-panel .table-container .candy .username {\n  font-size: 12px;\n  line-height: 12px;\n}\n.winner-panel .table-container .candy .number {\n  font-size: 10px;\n  line-height: 11px;\n}\n.winner-panel .table-container .candy .you-won {\n  color: black;\n  background-color: #FFCC00;\n  border-radius: 10px;\n  font-size: 9px;\n  padding: 1px 2px;\n}\n.winner-panel .winnings {\n  flex-basis: 100% !important;\n  padding-right: 16px;\n  text-align: left;\n  justify-content: space-between;\n  display: flex;\n}\n.winner-panel .winnings .amount {\n  display: inline-block;\n  font-size: 11px;\n  color: white;\n  padding: 3px 12px;\n  background-color: #2b3036;\n  border-radius: 10px;\n  margin-bottom: 4px;\n}\n.winner-panel .winnings .dots {\n  color: white;\n  font-size: 44px;\n  line-height: 0;\n}\n.winner-panel .winnings .count {\n  font-size: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3dpbm5lci1wYW5lbC9DOlxcbG9jYWxkZXZcXG15LXByb2plY3RzXFxjaGF0LWxvdHRlcnkvc3JjXFxhcHBcXGNvbW1vblxcd2lubmVyLXBhbmVsXFx3aW5uZXItcGFuZWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi93aW5uZXItcGFuZWwvd2lubmVyLXBhbmVsLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQUE7RUFDQSxpQkFBQTtBQ0NKO0FEQUk7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0VSO0FEQ0k7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0NSO0FERUk7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0FSO0FERUk7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQ0FSO0FER0k7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0RSO0FESUk7RUFDSSxZQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0ZSO0FES0k7RUFDSSxhQUFBO0FDSFI7QURNSTtFQUNJLFlBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx1QkFBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0FDSlI7QURPSTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtFQUNBLDhCQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7QUNMUjtBRE1RO0VBQ0ksZUFBQTtFQUNBLG1CQUFBO0FDSlo7QURPUTtFQUNJLGVBQUE7QUNMWjtBRE9RO0VBQ0ksZUFBQTtBQ0xaO0FEVUk7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGVBQUE7QUNSUjtBRFNRO0VBQ0ksWUFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQ1BaO0FEUVk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNOaEI7QURRWTtFQUNJLGVBQUE7RUFDQSxpQkFBQTtBQ05oQjtBRFFZO0VBQ0ksWUFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7QUNOaEI7QURXSTtFQUNJLDJCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLDhCQUFBO0VBQ0EsYUFBQTtBQ1RSO0FEVVE7RUFDSSxxQkFBQTtFQUNBLGVBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSx5QkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNSWjtBRFdRO0VBQ0ksWUFBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0FDVFo7QURZUTtFQUNJLGVBQUE7QUNWWiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi93aW5uZXItcGFuZWwvd2lubmVyLXBhbmVsLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLndpbm5lci1wYW5lbCB7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxNnB4O1xyXG4gICAgbGV0dGVyLXNwYWNpbmc6IDA7XHJcbiAgICAmLnBsYWNlLTAge1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmNjMDA7XHJcbiAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDQ1cHg7XHJcbiAgICB9XHJcblxyXG4gICAgJi5wbGFjZS0xIHtcclxuICAgICAgICBjb2xvcjogYmxhY2s7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzA3Zjc5YTtcclxuICAgICAgICBtaW4taGVpZ2h0OiA4M3B4O1xyXG4gICAgfVxyXG5cclxuICAgICYucGxhY2UtMiB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM3YjE2ZTM7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuICAgICYucGxhY2UtMyB7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI5NzdkNztcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgbWluLWhlaWdodDogODNweDtcclxuICAgIH1cclxuXHJcbiAgICAmLnBsYWNlLTQge1xyXG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjNzYyODQ2O1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDgzcHg7XHJcbiAgICB9XHJcblxyXG4gICAgJi5wbGFjZS01IHtcclxuICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2QzNmQxMjtcclxuICAgICAgICBtaW4taGVpZ2h0OiA4M3B4O1xyXG4gICAgfVxyXG5cclxuICAgIC53aW5uZXItY29udGFpbmVyIHtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgfVxyXG5cclxuICAgIC5wbGFjZSB7XHJcbiAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICBmb250LXNpemU6IDI0cHg7XHJcbiAgICAgICAgcGFkZGluZzogMCAxNnB4O1xyXG4gICAgfVxyXG5cclxuICAgIC5maXJzdC1jYW5keSB7XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcclxuICAgICAgICBwYWRkaW5nOiA2cHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGZsZXgtYmFzaXM6IDEwMCU7XHJcbiAgICAgICAgLndpbm5pbmdzIHtcclxuICAgICAgICAgICAgZmxleC1iYXNpczogNDAlO1xyXG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxMnB4O1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLnVzZXJuYW1lIHtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgICAgIH1cclxuICAgICAgICAubnVtYmVyIHtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcblxyXG4gICAgLnRhYmxlLWNvbnRhaW5lciB7XHJcbiAgICAgICAgZmxleC1ncm93OiAxO1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgZmxleC13cmFwOiB3cmFwO1xyXG4gICAgICAgIC5jYW5keSB7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDJweDtcclxuICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgICAgICBmbGV4LWJhc2lzOiA0OSU7XHJcbiAgICAgICAgICAgIC51c2VybmFtZSB7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMTJweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAubnVtYmVyIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxMXB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC55b3Utd29uIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNGRkNDMDA7XHJcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiA5cHg7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxcHggMnB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC53aW5uaW5ncyB7XHJcbiAgICAgICAgZmxleC1iYXNpczogMTAwJSAhaW1wb3J0YW50O1xyXG4gICAgICAgIHBhZGRpbmctcmlnaHQ6IDE2cHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcclxuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbiAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAuYW1vdW50IHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDExcHg7XHJcbiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgcGFkZGluZzogM3B4IDEycHg7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYjMwMzY7XHJcbiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDRweDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5kb3RzIHtcclxuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDQ0cHg7XHJcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAwIDtcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5jb3VudCB7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLndpbm5lci1wYW5lbCB7XG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XG4gIGxldHRlci1zcGFjaW5nOiAwO1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0wIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmY2MwMDtcbiAgY29sb3I6IGJsYWNrO1xuICBtaW4taGVpZ2h0OiA0NXB4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0xIHtcbiAgY29sb3I6IGJsYWNrO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDdmNzlhO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0yIHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjN2IxNmUzO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS0zIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzI5NzdkNztcbiAgY29sb3I6IHdoaXRlO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS00IHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNzYyODQ2O1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbC5wbGFjZS01IHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZDM2ZDEyO1xuICBtaW4taGVpZ2h0OiA4M3B4O1xufVxuLndpbm5lci1wYW5lbCAud2lubmVyLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGZsZXg7XG59XG4ud2lubmVyLXBhbmVsIC5wbGFjZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgcGFkZGluZzogMCAxNnB4O1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtY2FuZHkge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIHBhZGRpbmc6IDZweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmbGV4LWJhc2lzOiAxMDAlO1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtY2FuZHkgLndpbm5pbmdzIHtcbiAgZmxleC1iYXNpczogNDAlO1xuICBwYWRkaW5nLXJpZ2h0OiAxMnB4O1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtY2FuZHkgLnVzZXJuYW1lIHtcbiAgZm9udC1zaXplOiAxNXB4O1xufVxuLndpbm5lci1wYW5lbCAuZmlyc3QtY2FuZHkgLm51bWJlciB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbn1cbi53aW5uZXItcGFuZWwgLnRhYmxlLWNvbnRhaW5lciB7XG4gIGZsZXgtZ3JvdzogMTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiB3cmFwO1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC5jYW5keSB7XG4gIHBhZGRpbmc6IDJweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBmbGV4LWJhc2lzOiA0OSU7XG59XG4ud2lubmVyLXBhbmVsIC50YWJsZS1jb250YWluZXIgLmNhbmR5IC51c2VybmFtZSB7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgbGluZS1oZWlnaHQ6IDEycHg7XG59XG4ud2lubmVyLXBhbmVsIC50YWJsZS1jb250YWluZXIgLmNhbmR5IC5udW1iZXIge1xuICBmb250LXNpemU6IDEwcHg7XG4gIGxpbmUtaGVpZ2h0OiAxMXB4O1xufVxuLndpbm5lci1wYW5lbCAudGFibGUtY29udGFpbmVyIC5jYW5keSAueW91LXdvbiB7XG4gIGNvbG9yOiBibGFjaztcbiAgYmFja2dyb3VuZC1jb2xvcjogI0ZGQ0MwMDtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgZm9udC1zaXplOiA5cHg7XG4gIHBhZGRpbmc6IDFweCAycHg7XG59XG4ud2lubmVyLXBhbmVsIC53aW5uaW5ncyB7XG4gIGZsZXgtYmFzaXM6IDEwMCUgIWltcG9ydGFudDtcbiAgcGFkZGluZy1yaWdodDogMTZweDtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBkaXNwbGF5OiBmbGV4O1xufVxuLndpbm5lci1wYW5lbCAud2lubmluZ3MgLmFtb3VudCB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZm9udC1zaXplOiAxMXB4O1xuICBjb2xvcjogd2hpdGU7XG4gIHBhZGRpbmc6IDNweCAxMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmIzMDM2O1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiA0cHg7XG59XG4ud2lubmVyLXBhbmVsIC53aW5uaW5ncyAuZG90cyB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiA0NHB4O1xuICBsaW5lLWhlaWdodDogMDtcbn1cbi53aW5uZXItcGFuZWwgLndpbm5pbmdzIC5jb3VudCB7XG4gIGZvbnQtc2l6ZTogMTBweDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -2660,7 +2747,8 @@ __webpack_require__.r(__webpack_exports__);
 const ChineseTranslations = {
     '2fa-verification': '2FA验证',
     '6-digit-code': '6位数代码',
-    'all-tickets': '幸运票总数',
+    'account-history': '存提历史记录',
+    'all-candies': '幸运糖果总数',
     'an-error-has-occurred': '发生了错误。',
     'available': '可用余数',
     'balance': '余数',
@@ -2668,9 +2756,9 @@ const ChineseTranslations = {
     'block': '封锁',
     'blocks': '封锁',
     'buy': '购买',
-    'buy-tickets': '购买 {0} 票',
-    'buying-tickets': '购买幸运票',
-    'buying-tickets-etc': '在主页上，您可以购买幸运票。幸运池会在所有幸运票购买完成之后自动从区块链上选出幸运中奖者。',
+    'buy-candies': '购买 {0} 糖果',
+    'buying-candies': '幸运投票',
+    'buying-candies-etc': '在主页上，您可以参与幸运投票。目前参与幸运投票的只限BTOK，每投一票需要消耗0.01枚BTOK，可以多投。幸运池会在所有幸运投票票完成之后自动从区块链上选出参与者得到幸运糖果。',
     'confirm': '确认',
     'connect-2fa': '连接2FA',
     'copy-address': '复制地址',
@@ -2678,14 +2766,14 @@ const ChineseTranslations = {
     'copy-code': '复制代码',
     'copy-memo': '复制备忘录',
     'create-new-account': '建立新帐户',
-    'current-tickets': '当前幸运票数',
+    'current-candies': '当前幸运票糖果',
     'current-users-entered': '当前加入的玩家',
     'deposit': '存入',
     'depositing-any-other-asset-here-may-result-in-permanent-loss': '在此处存放任何其他资产可能会导致永久损失。',
     'deposit-funds': '存入余数',
-    'depositing-funds': '存入资金',
+    'depositing-funds': '存入',
     'depositing-funds-etc': '您必须按照“存入”页面上的说明将资金存入您的钱包。',
-    'drawing-begins-after-tickets': '累计 {0} 票后开始抽奖',
+    'drawing-begins-after-candies': '累计 {0} 票后开始抽奖',
     'drawing-begins-after-users-enter': ' {0} 名用户加入后开始抽奖',
     'drawing-begins-in': '开奖倒计时',
     'enter-your-2fa-code-and-press-confirm-to-bind-your-account': '输入您的2FA代码，然后按“确认”以绑定您的帐户。',
@@ -2705,9 +2793,9 @@ const ChineseTranslations = {
     'logout': '登出',
     'max-buy': '最高买入',
     'mini-pool-winner': '迷你幸运池优胜者',
-    'more-tickets': '购买更多',
-    'my-ticket-ids': '我的幸运票号',
-    'my-tickets': '我的幸运票号',
+    'more-candies': '购买更多',
+    'my-candy-ids': '我的幸运糖果',
+    'my-candies': '我的幸运糖果',
     'my-winnings': '我的幸运奖',
     'next-pool-starts-in': '下一个幸运池即将开始于',
     'next-step': '下一步',
@@ -2718,9 +2806,9 @@ const ChineseTranslations = {
     'only-deposit-post-to-this-address': '请仅将BTOK存入此地址。如在此处存放任何其他资产可能会永久损失。',
     'optional': '可选',
     'password': '密码',
-    'payout-history': '幸运奖励历史',
+    'payout-history': '幸运奖金历史',
     'payouts': '幸运奖金支出',
-    'payouts-etc': '一等奖 = 80币(1名) \n 二等奖 = 20币(4名) \n 三等奖 = 5币(20名) \n 4等奖 = 0.2币(100名) \n 5等奖 = 0.1币(200名) \n 6等奖 = 0.02币(10,000名) \n 安慰奖 = 0.01币(30,000名)',
+    'payouts-etc': '一等幸运糖果 = 80币(1名) \n二等幸运糖果 = 20币(4名) \n三等幸运糖果 = 5币(20名) \n4等幸运糖果 = 0.2币(100名) \n5等幸运糖果 = 0.1币(200名) \n 6等幸运糖果 = 0.02币(10,000名) \n安慰奖 = 0.01币(30,000名)',
     'play-now': '即刻开玩',
     'please-backup-this-code-somewhere': '请将此代码备份到某处。',
     'please-confirm-your-withdrawal-address': '请确认您的提出地址',
@@ -2730,23 +2818,24 @@ const ChineseTranslations = {
     'register-new-account': '注册新帐号',
     'remember-your-profile-is-anonymous-etc': '请记住：您的个人资料是匿名的，这意味着如果您忘记密码，我们将无法恢复您的帐户。若启用2FA可获得额外的安全性！',
     'scan-this-code-with-your-2fa-app': '使用2FA应用程序扫描此代码。请将此代码备份到某处。绑定帐户后，您将无法再次查看此代码。',
-    'see-all-ticket-entries': '查看所有幸运票数',
+    'see-all-candy-entries': '查看所有幸运票数',
     'sign-up-for-an-anonymous-acount-and-start-playing-today': '立即注册一个匿名帐户并开始获得好运!',
     'submit-withdrawal': '申请提出',
     'success': '成功',
     'target-block-height': '区块数量',
-    'ticket': '幸运票号',
-    'ticket-entry-limit-reached': '本期购买已截止',
-    'total-tickets': '幸运票总数',
+    'candy': '幸运糖果',
+    'candy-entry-limit-reached': '本期购买已截止',
+    'total-candies': '幸运票总数',
     'try-again-next-time': '再试一次',
     'username': '用户名',
     'win': '赢得',
-    'winners': '幸运优胜者',
-    'winning': '中奖',
-    'winning-etc': '当您中奖时，您的奖金将自动添加到您的可用余数中。',
+    'winners': '幸运糖果优胜者',
+    'winning': '幸运结果',
+    'winning-etc': '当您得到幸运糖果时，您的糖果将自动添加到您的可用余数中。',
+    'winnings-history': '中奖记录',
     'withdraw': '提出',
-    'withdrawing-funds': '提取资金',
-    'withdrawing-funds-etc': '您可以通过“提出”页面提出。请按照说明进行操作，并确保验证您的提出地址。',
+    'withdrawing-funds': '提取',
+    'withdrawing-funds-etc': '您可以通过“提取”页面提取幸运糖果。请按照说明进行操作，并确保验证您的提取地址。幸运糖果支出。',
     'withdraw-process-usually-takes-about-1-hour-or-less': '提出过程通常需要大约1小时或更短。',
     'withdrawal-address': '提出地址',
     'withdrawal-amount': '提出金额',
@@ -2854,7 +2943,8 @@ __webpack_require__.r(__webpack_exports__);
 const EnglishTranslations = {
     '2fa-verification': '2FA Verification',
     '6-digit-code': '6-Digit Code',
-    'all-tickets': 'All Tickets',
+    'account-history': 'Account History',
+    'all-candies': 'All Candies',
     'an-error-has-occurred': 'An error has occurred.',
     'available': 'Available',
     'balance': 'Balance',
@@ -2862,9 +2952,9 @@ const EnglishTranslations = {
     'block': 'Block',
     'blocks': 'Blocks',
     'buy': 'Buy',
-    'buy-tickets': 'Buy {0} tickets',
-    'buying-tickets': 'Buying Tickets',
-    'buying-tickets-etc': 'On the main page, you can buy tickets using your available funds. Once a ticket is purchased, you must wait until the requirements for the prize pool are fulfilled before the winners will be drawn',
+    'buy-candies': 'Buy {0} candies',
+    'buying-candies': 'Buying Candies',
+    'buying-candies-etc': 'On the main page, you can buy candies using your available funds. Each candy costs 0.01 BTOK. Once candy is purchased, you must wait until the requirements for the prize pool are fulfilled before the winners will be drawn',
     'confirm': 'Confirm',
     'connect-2fa': 'Connect 2FA',
     'copy-address': 'Copy Address',
@@ -2872,13 +2962,13 @@ const EnglishTranslations = {
     'copy-code': 'Copy Code',
     'copy-memo': 'Copy Memo',
     'create-new-account': 'Create New Account',
-    'current-tickets': 'Current Tickets',
+    'current-candies': 'Current Candies',
     'deposit': 'Deposit',
     'depositing-any-other-asset-here-may-result-in-permanent-loss': 'Depositing any other assets here may result in permanent loss',
     'deposit-funds': 'Deposit Funds',
     'depositing-funds': 'Depositing Funds',
     'depositing-funds-etc': 'You must deposit funds into your wallet by following the instructions on the "Deposit" page',
-    'drawing-begins-after-tickets': 'Drawing Begins \n After {0} Tickets',
+    'drawing-begins-after-candies': 'Drawing Begins \n After {0} Candies',
     'drawing-begins-in': 'Drawing Begins In',
     'enter-your-2fa-code-and-press-confirm-to-bind-your-account': 'Enter you 2FA code and press \"confirm\" to bind your account',
     'fair-chance-guarantee': 'Fair Chance Guarantee',
@@ -2897,9 +2987,9 @@ const EnglishTranslations = {
     'logout': 'Logout',
     'max-buy': 'Max Buy',
     'mini-pool-winner': 'Mini Pool Winner',
-    'more-tickets': 'More Tickets',
-    'my-ticket-ids': 'My Ticket IDs',
-    'my-tickets': 'My Tickets',
+    'more-candies': 'More Candies',
+    'my-candy-ids': 'My Candy IDs',
+    'my-candies': 'My Candies',
     'my-winnings': 'My Winnings',
     'next-pool-starts-in': 'Next Pool Starts In',
     'next-step': 'Next Step',
@@ -2922,19 +3012,20 @@ const EnglishTranslations = {
     'register-new-account': 'Register New Account',
     'remember-your-profile-is-anonymous-etc': 'Remember: your profile is anonymous, which means we can\'t recover your account if you forget your password. Enable 2FA for extra security',
     'scan-this-code-with-your-2fa-app': 'Scan this code with your 2FA app',
-    'see-all-ticket-entries': 'See all ticket entries',
+    'see-all-candy-entries': 'See all candy entries',
     'sign-up-for-an-anonymous-acount-and-start-playing-today': 'Sign up for an anonymous account and start playing today',
     'submit-withdrawal': 'Submit Withdrawal',
     'success': 'Success',
     'target-block-height': 'Target Block Height',
-    'ticket': 'Ticket',
-    'ticket-entry-limit-reached': 'Ticket Entry Limit Reached',
-    'total-tickets': 'Total Tickets',
+    'candy': 'Candy',
+    'candy-entry-limit-reached': 'Candy Entry Limit Reached',
+    'total-candies': 'Total Candies',
     'try-again-next-time': 'Try again next time',
     'username': 'Username',
     'win': 'Win',
     'winners': 'Winners',
     'winning': 'Winning',
+    'winnings-history': 'Winnings History',
     'winning-etc': 'When you win, your winnings will be automatically added to your available balance',
     'withdraw': 'Withdraw',
     'withdrawing-funds': 'Withdrawing Funds',
@@ -3072,7 +3163,7 @@ DrawingInfoComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".block-info {\n  position: absolute;\n  top: -17px;\n  right: 12px;\n  color: #a3acb5;\n  font-size: 12px;\n  background-color: transparent;\n}\n\n.footer {\n  position: relative;\n}\n\n.footer .panels {\n  display: flex;\n  text-align: center;\n  background-color: #1c2023;\n}\n\n.footer .panels .panel {\n  padding: 8px 4px;\n  flex-basis: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n@media screen and (min-height: 700px) {\n  .footer .panels .panel {\n    padding-bottom: 4vh;\n  }\n}\n\n.footer .panels .left-panel {\n  border-right: 1px solid #2b2f32;\n  font-weight: 500;\n}\n\n.footer .panels .left-panel .title {\n  color: #fccd02;\n  font-size: 18px;\n  margin-bottom: 3px;\n}\n\n.footer .panels .left-panel .text-content {\n  color: white;\n}\n\n.footer .panels .left-panel .bonus-section {\n  height: 50%;\n  padding-top: 3px;\n}\n\n.footer .panels .left-panel .bonus-section .bonus-container {\n  text-align: center;\n}\n\n.footer .panels .left-panel .bonus-section .minipool-winner {\n  display: inline-block;\n  font-weight: bold;\n  background-color: #fccd02;\n  border-radius: 14px;\n  padding: 2px 12px;\n}\n\n.footer .panels .left-panel .bonus-section .amount {\n  font-weight: 500;\n  display: inline-block;\n  background-color: #2a2d32;\n  color: white;\n  font-size: 12px;\n  margin-top: 4px;\n  border-radius: 16px;\n  padding: 2px 6px;\n}\n\n.footer .panels .left-panel .no-bonus {\n  color: #67666b;\n  line-height: 18px;\n  font-size: 16px;\n}\n\n.footer .panels .left-panel .minipool-question {\n  height: 60px;\n  border-radius: 14px;\n  margin-top: 4px;\n  background-color: #109df5;\n  color: white;\n  font-weight: bold;\n  font-size: 34px;\n}\n\n.footer .panels .left-panel .minipool-question .chest {\n  height: 54px;\n  margin-top: 3px;\n  display: inline-block;\n  -webkit-animation: rotation 1.5s infinite linear;\n          animation: rotation 1.5s infinite linear;\n}\n\n@-webkit-keyframes rotation {\n  25% {\n    transform: rotate(15deg);\n  }\n  50% {\n    transform: rotate(0deg);\n  }\n  75% {\n    transform: rotate(-15deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n\n@keyframes rotation {\n  25% {\n    transform: rotate(15deg);\n  }\n  50% {\n    transform: rotate(0deg);\n  }\n  75% {\n    transform: rotate(-15deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n\n.footer .panels .right-panel {\n  border-left: 1px solid #2b2f32;\n  color: #636267;\n  font-weight: 500;\n}\n\n.footer .panels .right-panel .my-tickets {\n  color: white;\n  font-size: 20px;\n}\n\n.footer .panels .right-panel .total-tickets {\n  color: white;\n  line-height: 34px;\n  font-size: 28px;\n}\n\n.footer .panels .right-panel .total-tickets .icon-img.large {\n  margin-left: 0px;\n}\n\n.footer .panels .right-panel .label {\n  font-size: 14px;\n  line-height: 14px;\n}\n\n.footer .panels .right-panel .label.small {\n  font-size: 12px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img {\n  margin-left: 4px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img.large {\n  height: 22px;\n}\n\n.footer .panels .right-panel .icon-redirect {\n  color: #1499e3;\n  margin-left: 4px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mb290ZXIvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxob21lXFxmb290ZXJcXGZvb3Rlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvaG9tZS9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksa0JBQUE7RUFDQSxVQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsNkJBQUE7QUNBSjs7QURFQTtFQUNJLGtCQUFBO0FDQ0o7O0FEQUk7RUFDSSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtBQ0VSOztBREFRO0VBQ0ksZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUNFWjs7QURBWTtFQVBKO0lBUVEsbUJBQUE7RUNHZDtBQUNGOztBREFRO0VBQ0ksK0JBQUE7RUFDQSxnQkFBQTtBQ0VaOztBRERZO0VBQ0ksY0FBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtBQ0doQjs7QURBWTtFQUNJLFlBQUE7QUNFaEI7O0FEQ1k7RUFDSSxXQUFBO0VBQ0EsZ0JBQUE7QUNDaEI7O0FEQ2dCO0VBQ0ksa0JBQUE7QUNDcEI7O0FERWdCO0VBQ0kscUJBQUE7RUFDQSxpQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtBQ0FwQjs7QURHZ0I7RUFDSSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0EseUJBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FDRHBCOztBREtZO0VBQ0ksY0FBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtBQ0hoQjs7QURNWTtFQUNJLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUNKaEI7O0FETWdCO0VBQ0ksWUFBQTtFQUNBLGVBQUE7RUFDQSxxQkFBQTtFQUNBLGdEQUFBO1VBQUEsd0NBQUE7QUNKcEI7O0FET29CO0VBQ0k7SUFDSSx3QkFBQTtFQ0wxQjtFRE9zQjtJQUNJLHVCQUFBO0VDTDFCO0VET3NCO0lBQ0kseUJBQUE7RUNMMUI7RURPc0I7SUFDSSx1QkFBQTtFQ0wxQjtBQUNGOztBRFBvQjtFQUNJO0lBQ0ksd0JBQUE7RUNMMUI7RURPc0I7SUFDSSx1QkFBQTtFQ0wxQjtFRE9zQjtJQUNJLHlCQUFBO0VDTDFCO0VET3NCO0lBQ0ksdUJBQUE7RUNMMUI7QUFDRjs7QURZUTtFQUNJLDhCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0FDVlo7O0FEWVk7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ1ZoQjs7QURZWTtFQUNJLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUNWaEI7O0FEV2dCO0VBQ0UsZ0JBQUE7QUNUbEI7O0FEYVk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNYaEI7O0FEWWdCO0VBQ0ksZUFBQTtFQUNBLFlBQUE7QUNWcEI7O0FEYVk7RUFDSSxnQkFBQTtFQUNBLFlBQUE7QUNYaEI7O0FEYWdCO0VBQ0ksWUFBQTtBQ1hwQjs7QURlWTtFQUNJLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNiaEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLmJsb2NrLWluZm8ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAtMTdweDtcclxuICAgIHJpZ2h0OiAxMnB4O1xyXG4gICAgY29sb3I6ICNhM2FjYjU7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxufVxyXG4uZm9vdGVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIC5wYW5lbHMge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxYzIwMjM7XHJcblxyXG4gICAgICAgIC5wYW5lbCB7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDhweCA0cHg7XHJcbiAgICAgICAgICAgIGZsZXgtYmFzaXM6IDUwJTtcclxuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gICAgICAgICAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLWhlaWdodDogNzAwcHgpIHtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmctYm90dG9tOiA0dmg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5sZWZ0LXBhbmVsIHtcclxuICAgICAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgIzJiMmYzMjtcclxuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgICAgICAgICAgLnRpdGxlIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiAjZmNjZDAyO1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogM3B4O1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAudGV4dC1jb250ZW50IHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLmJvbnVzLXNlY3Rpb24ge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiA1MCU7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLXRvcDogM3B4O1xyXG5cclxuICAgICAgICAgICAgICAgIC5ib251cy1jb250YWluZXIge1xyXG4gICAgICAgICAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAubWluaXBvb2wtd2lubmVyIHtcclxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZjY2QwMjtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxNHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDJweCAxMnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJkMzI7XHJcbiAgICAgICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA0cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAycHggNnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAubm8tYm9udXMge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICM2NzY2NmI7XHJcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMThweDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLm1pbmlwb29sLXF1ZXN0aW9uIHtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogNjBweDtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE0cHg7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA0cHg7XHJcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTA5ZGY1O1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDM0cHg7XHJcblxyXG4gICAgICAgICAgICAgICAgLmNoZXN0IHtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDU0cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogM3B4O1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgICAgICAgICBhbmltYXRpb246IHJvdGF0aW9uIDEuNXMgaW5maW5pdGUgbGluZWFyO1xyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgICAgIEBrZXlmcmFtZXMgcm90YXRpb24ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAyNSUge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMTVkZWcpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDUwJSB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICA3NSUge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoLTE1ZGVnKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAxMDAlIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLnJpZ2h0LXBhbmVsIHtcclxuICAgICAgICAgICAgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjMmIyZjMyO1xyXG4gICAgICAgICAgICBjb2xvcjogIzYzNjI2NztcclxuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuXHJcbiAgICAgICAgICAgIC5teS10aWNrZXRzIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAudG90YWwtdGlja2V0cyB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogd2hpdGU7XHJcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMzRweDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjhweDtcclxuICAgICAgICAgICAgICAgIC5pY29uLWltZy5sYXJnZSB7XHJcbiAgICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiAwcHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5sYWJlbCB7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDE0cHg7XHJcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMTRweDtcclxuICAgICAgICAgICAgICAgICYuc21hbGwge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDEzcHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLmljb24taW1nIHtcclxuICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiA0cHg7XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDEzcHg7XHJcblxyXG4gICAgICAgICAgICAgICAgJi5sYXJnZSB7XHJcbiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAyMnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAuaWNvbi1yZWRpcmVjdCB7XHJcbiAgICAgICAgICAgICAgICBjb2xvcjogIzE0OTllMztcclxuICAgICAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiA0cHg7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcbn1cclxuIiwiLmJsb2NrLWluZm8ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHRvcDogLTE3cHg7XG4gIHJpZ2h0OiAxMnB4O1xuICBjb2xvcjogI2EzYWNiNTtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbn1cblxuLmZvb3RlciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5mb290ZXIgLnBhbmVscyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzFjMjAyMztcbn1cbi5mb290ZXIgLnBhbmVscyAucGFuZWwge1xuICBwYWRkaW5nOiA4cHggNHB4O1xuICBmbGV4LWJhc2lzOiA1MCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi1oZWlnaHQ6IDcwMHB4KSB7XG4gIC5mb290ZXIgLnBhbmVscyAucGFuZWwge1xuICAgIHBhZGRpbmctYm90dG9tOiA0dmg7XG4gIH1cbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCB7XG4gIGJvcmRlci1yaWdodDogMXB4IHNvbGlkICMyYjJmMzI7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLnRpdGxlIHtcbiAgY29sb3I6ICNmY2NkMDI7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgbWFyZ2luLWJvdHRvbTogM3B4O1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC50ZXh0LWNvbnRlbnQge1xuICBjb2xvcjogd2hpdGU7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLmJvbnVzLXNlY3Rpb24ge1xuICBoZWlnaHQ6IDUwJTtcbiAgcGFkZGluZy10b3A6IDNweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAuYm9udXMtc2VjdGlvbiAuYm9udXMtY29udGFpbmVyIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5ib251cy1zZWN0aW9uIC5taW5pcG9vbC13aW5uZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmNjZDAyO1xuICBib3JkZXItcmFkaXVzOiAxNHB4O1xuICBwYWRkaW5nOiAycHggMTJweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAuYm9udXMtc2VjdGlvbiAuYW1vdW50IHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMmEyZDMyO1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMTJweDtcbiAgbWFyZ2luLXRvcDogNHB4O1xuICBib3JkZXItcmFkaXVzOiAxNnB4O1xuICBwYWRkaW5nOiAycHggNnB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5uby1ib251cyB7XG4gIGNvbG9yOiAjNjc2NjZiO1xuICBsaW5lLWhlaWdodDogMThweDtcbiAgZm9udC1zaXplOiAxNnB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5taW5pcG9vbC1xdWVzdGlvbiB7XG4gIGhlaWdodDogNjBweDtcbiAgYm9yZGVyLXJhZGl1czogMTRweDtcbiAgbWFyZ2luLXRvcDogNHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTA5ZGY1O1xuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBmb250LXNpemU6IDM0cHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLm1pbmlwb29sLXF1ZXN0aW9uIC5jaGVzdCB7XG4gIGhlaWdodDogNTRweDtcbiAgbWFyZ2luLXRvcDogM3B4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGFuaW1hdGlvbjogcm90YXRpb24gMS41cyBpbmZpbml0ZSBsaW5lYXI7XG59XG5Aa2V5ZnJhbWVzIHJvdGF0aW9uIHtcbiAgMjUlIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgxNWRlZyk7XG4gIH1cbiAgNTAlIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgfVxuICA3NSUge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKC0xNWRlZyk7XG4gIH1cbiAgMTAwJSB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG4gIH1cbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwge1xuICBib3JkZXItbGVmdDogMXB4IHNvbGlkICMyYjJmMzI7XG4gIGNvbG9yOiAjNjM2MjY3O1xuICBmb250LXdlaWdodDogNTAwO1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAubXktdGlja2V0cyB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAyMHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAudG90YWwtdGlja2V0cyB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgbGluZS1oZWlnaHQ6IDM0cHg7XG4gIGZvbnQtc2l6ZTogMjhweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLnRvdGFsLXRpY2tldHMgLmljb24taW1nLmxhcmdlIHtcbiAgbWFyZ2luLWxlZnQ6IDBweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLmxhYmVsIHtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBsaW5lLWhlaWdodDogMTRweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLmxhYmVsLnNtYWxsIHtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBoZWlnaHQ6IDEzcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5pY29uLWltZyB7XG4gIG1hcmdpbi1sZWZ0OiA0cHg7XG4gIGhlaWdodDogMTNweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLmljb24taW1nLmxhcmdlIHtcbiAgaGVpZ2h0OiAyMnB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAuaWNvbi1yZWRpcmVjdCB7XG4gIGNvbG9yOiAjMTQ5OWUzO1xuICBtYXJnaW4tbGVmdDogNHB4O1xuICBmb250LXNpemU6IDIwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".block-info {\n  position: absolute;\n  top: -17px;\n  right: 12px;\n  color: #a3acb5;\n  font-size: 12px;\n  background-color: transparent;\n}\n\n.footer {\n  position: relative;\n}\n\n.footer .panels {\n  display: flex;\n  text-align: center;\n  background-color: #1c2023;\n}\n\n.footer .panels .panel {\n  padding: 8px 4px;\n  flex-basis: 50%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n@media screen and (min-height: 700px) {\n  .footer .panels .panel {\n    padding-bottom: 4vh;\n  }\n}\n\n.footer .panels .left-panel {\n  border-right: 1px solid #2b2f32;\n  font-weight: 500;\n}\n\n.footer .panels .left-panel .title {\n  color: #fccd02;\n  font-size: 18px;\n  margin-bottom: 3px;\n}\n\n.footer .panels .left-panel .text-content {\n  color: white;\n}\n\n.footer .panels .left-panel .bonus-section {\n  height: 50%;\n  padding-top: 3px;\n}\n\n.footer .panels .left-panel .bonus-section .bonus-container {\n  text-align: center;\n}\n\n.footer .panels .left-panel .bonus-section .minipool-winner {\n  display: inline-block;\n  font-weight: bold;\n  background-color: #fccd02;\n  border-radius: 14px;\n  padding: 2px 12px;\n}\n\n.footer .panels .left-panel .bonus-section .amount {\n  font-weight: 500;\n  display: inline-block;\n  background-color: #2a2d32;\n  color: white;\n  font-size: 12px;\n  margin-top: 4px;\n  border-radius: 16px;\n  padding: 2px 6px;\n}\n\n.footer .panels .left-panel .no-bonus {\n  color: #67666b;\n  line-height: 18px;\n  font-size: 16px;\n}\n\n.footer .panels .left-panel .minipool-question {\n  height: 60px;\n  border-radius: 14px;\n  margin-top: 4px;\n  background-color: #109df5;\n  color: white;\n  font-weight: bold;\n  font-size: 34px;\n}\n\n.footer .panels .left-panel .minipool-question .chest {\n  height: 54px;\n  margin-top: 3px;\n  display: inline-block;\n  -webkit-animation: rotation 1.5s infinite linear;\n          animation: rotation 1.5s infinite linear;\n}\n\n@-webkit-keyframes rotation {\n  25% {\n    transform: rotate(15deg);\n  }\n  50% {\n    transform: rotate(0deg);\n  }\n  75% {\n    transform: rotate(-15deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n\n@keyframes rotation {\n  25% {\n    transform: rotate(15deg);\n  }\n  50% {\n    transform: rotate(0deg);\n  }\n  75% {\n    transform: rotate(-15deg);\n  }\n  100% {\n    transform: rotate(0deg);\n  }\n}\n\n.footer .panels .right-panel {\n  border-left: 1px solid #2b2f32;\n  color: #636267;\n  font-weight: 500;\n}\n\n.footer .panels .right-panel .my-candies {\n  color: white;\n  font-size: 20px;\n}\n\n.footer .panels .right-panel .total-candies {\n  color: white;\n  line-height: 34px;\n  font-size: 28px;\n}\n\n.footer .panels .right-panel .total-candies .icon-img.large {\n  margin-left: 0px;\n}\n\n.footer .panels .right-panel .label {\n  font-size: 14px;\n  line-height: 14px;\n}\n\n.footer .panels .right-panel .label.small {\n  font-size: 12px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img {\n  margin-left: 4px;\n  height: 13px;\n}\n\n.footer .panels .right-panel .icon-img.large {\n  height: 22px;\n}\n\n.footer .panels .right-panel .icon-redirect {\n  color: #1499e3;\n  margin-left: 4px;\n  font-size: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9mb290ZXIvQzpcXGxvY2FsZGV2XFxteS1wcm9qZWN0c1xcY2hhdC1sb3R0ZXJ5L3NyY1xcYXBwXFxob21lXFxmb290ZXJcXGZvb3Rlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvaG9tZS9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0ksa0JBQUE7RUFDQSxVQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsNkJBQUE7QUNBSjs7QURFQTtFQUNJLGtCQUFBO0FDQ0o7O0FEQUk7RUFDSSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtBQ0VSOztBREFRO0VBQ0ksZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUNFWjs7QURBWTtFQVBKO0lBUVEsbUJBQUE7RUNHZDtBQUNGOztBREFRO0VBQ0ksK0JBQUE7RUFDQSxnQkFBQTtBQ0VaOztBRERZO0VBQ0ksY0FBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtBQ0doQjs7QURBWTtFQUNJLFlBQUE7QUNFaEI7O0FEQ1k7RUFDSSxXQUFBO0VBQ0EsZ0JBQUE7QUNDaEI7O0FEQ2dCO0VBQ0ksa0JBQUE7QUNDcEI7O0FERWdCO0VBQ0kscUJBQUE7RUFDQSxpQkFBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxpQkFBQTtBQ0FwQjs7QURHZ0I7RUFDSSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0EseUJBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0FDRHBCOztBREtZO0VBQ0ksY0FBQTtFQUNBLGlCQUFBO0VBQ0EsZUFBQTtBQ0hoQjs7QURNWTtFQUNJLFlBQUE7RUFDQSxtQkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUNKaEI7O0FETWdCO0VBQ0ksWUFBQTtFQUNBLGVBQUE7RUFDQSxxQkFBQTtFQUNBLGdEQUFBO1VBQUEsd0NBQUE7QUNKcEI7O0FET29CO0VBQ0k7SUFDSSx3QkFBQTtFQ0wxQjtFRE9zQjtJQUNJLHVCQUFBO0VDTDFCO0VET3NCO0lBQ0kseUJBQUE7RUNMMUI7RURPc0I7SUFDSSx1QkFBQTtFQ0wxQjtBQUNGOztBRFBvQjtFQUNJO0lBQ0ksd0JBQUE7RUNMMUI7RURPc0I7SUFDSSx1QkFBQTtFQ0wxQjtFRE9zQjtJQUNJLHlCQUFBO0VDTDFCO0VET3NCO0lBQ0ksdUJBQUE7RUNMMUI7QUFDRjs7QURZUTtFQUNJLDhCQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0FDVlo7O0FEWVk7RUFDSSxZQUFBO0VBQ0EsZUFBQTtBQ1ZoQjs7QURZWTtFQUNJLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUNWaEI7O0FEV2dCO0VBQ0UsZ0JBQUE7QUNUbEI7O0FEYVk7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7QUNYaEI7O0FEWWdCO0VBQ0ksZUFBQTtFQUNBLFlBQUE7QUNWcEI7O0FEYVk7RUFDSSxnQkFBQTtFQUNBLFlBQUE7QUNYaEI7O0FEYWdCO0VBQ0ksWUFBQTtBQ1hwQjs7QURlWTtFQUNJLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7QUNiaEIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLmJsb2NrLWluZm8ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAtMTdweDtcclxuICAgIHJpZ2h0OiAxMnB4O1xyXG4gICAgY29sb3I6ICNhM2FjYjU7XHJcbiAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcclxufVxyXG4uZm9vdGVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIC5wYW5lbHMge1xyXG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMxYzIwMjM7XHJcblxyXG4gICAgICAgIC5wYW5lbCB7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDhweCA0cHg7XHJcbiAgICAgICAgICAgIGZsZXgtYmFzaXM6IDUwJTtcclxuICAgICAgICAgICAgZGlzcGxheTogZmxleDtcclxuICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gICAgICAgICAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLWhlaWdodDogNzAwcHgpIHtcclxuICAgICAgICAgICAgICAgIHBhZGRpbmctYm90dG9tOiA0dmg7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5sZWZ0LXBhbmVsIHtcclxuICAgICAgICAgICAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgIzJiMmYzMjtcclxuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgICAgICAgICAgLnRpdGxlIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiAjZmNjZDAyO1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogM3B4O1xyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAudGV4dC1jb250ZW50IHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLmJvbnVzLXNlY3Rpb24ge1xyXG4gICAgICAgICAgICAgICAgaGVpZ2h0OiA1MCU7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLXRvcDogM3B4O1xyXG5cclxuICAgICAgICAgICAgICAgIC5ib251cy1jb250YWluZXIge1xyXG4gICAgICAgICAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgICAgICAubWluaXBvb2wtd2lubmVyIHtcclxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2ZjY2QwMjtcclxuICAgICAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxNHB4O1xyXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IDJweCAxMnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgICAgIC5hbW91bnQge1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyYTJkMzI7XHJcbiAgICAgICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcclxuICAgICAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA0cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTZweDtcclxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiAycHggNnB4O1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICAubm8tYm9udXMge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6ICM2NzY2NmI7XHJcbiAgICAgICAgICAgICAgICBsaW5lLWhlaWdodDogMThweDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTZweDtcclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLm1pbmlwb29sLXF1ZXN0aW9uIHtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogNjBweDtcclxuICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE0cHg7XHJcbiAgICAgICAgICAgICAgICBtYXJnaW4tdG9wOiA0cHg7XHJcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTA5ZGY1O1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgICAgICAgICBmb250LXNpemU6IDM0cHg7XHJcblxyXG4gICAgICAgICAgICAgICAgLmNoZXN0IHtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDU0cHg7XHJcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luLXRvcDogM3B4O1xyXG4gICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgICAgICAgICBhbmltYXRpb246IHJvdGF0aW9uIDEuNXMgaW5maW5pdGUgbGluZWFyO1xyXG5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgQGtleWZyYW1lcyByb3RhdGlvbiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDI1JSB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgxNWRlZyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgNTAlIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDc1JSB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgtMTVkZWcpO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDEwMCUge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICB9XHJcblxyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG5cclxuICAgICAgICAucmlnaHQtcGFuZWwge1xyXG4gICAgICAgICAgICBib3JkZXItbGVmdDogMXB4IHNvbGlkICMyYjJmMzI7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjNjM2MjY3O1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG5cclxuICAgICAgICAgICAgLm15LWNhbmRpZXMge1xyXG4gICAgICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIC50b3RhbC1jYW5kaWVzIHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAzNHB4O1xyXG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAyOHB4O1xyXG4gICAgICAgICAgICAgICAgLmljb24taW1nLmxhcmdlIHtcclxuICAgICAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDBweDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgICAgLmxhYmVsIHtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcclxuICAgICAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxNHB4O1xyXG4gICAgICAgICAgICAgICAgJi5zbWFsbCB7XHJcbiAgICAgICAgICAgICAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICAgICAgICAgICAgICAgIGhlaWdodDogMTNweDtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAuaWNvbi1pbWcge1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDRweDtcclxuICAgICAgICAgICAgICAgIGhlaWdodDogMTNweDtcclxuXHJcbiAgICAgICAgICAgICAgICAmLmxhcmdlIHtcclxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IDIycHg7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuXHJcbiAgICAgICAgICAgIC5pY29uLXJlZGlyZWN0IHtcclxuICAgICAgICAgICAgICAgIGNvbG9yOiAjMTQ5OWUzO1xyXG4gICAgICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IDRweDtcclxuICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iLCIuYmxvY2staW5mbyB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAtMTdweDtcbiAgcmlnaHQ6IDEycHg7XG4gIGNvbG9yOiAjYTNhY2I1O1xuICBmb250LXNpemU6IDEycHg7XG4gIGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xufVxuXG4uZm9vdGVyIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmZvb3RlciAucGFuZWxzIHtcbiAgZGlzcGxheTogZmxleDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWMyMDIzO1xufVxuLmZvb3RlciAucGFuZWxzIC5wYW5lbCB7XG4gIHBhZGRpbmc6IDhweCA0cHg7XG4gIGZsZXgtYmFzaXM6IDUwJTtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5AbWVkaWEgc2NyZWVuIGFuZCAobWluLWhlaWdodDogNzAwcHgpIHtcbiAgLmZvb3RlciAucGFuZWxzIC5wYW5lbCB7XG4gICAgcGFkZGluZy1ib3R0b206IDR2aDtcbiAgfVxufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIHtcbiAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgIzJiMmYzMjtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAudGl0bGUge1xuICBjb2xvcjogI2ZjY2QwMjtcbiAgZm9udC1zaXplOiAxOHB4O1xuICBtYXJnaW4tYm90dG9tOiAzcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLnRleHQtY29udGVudCB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAuYm9udXMtc2VjdGlvbiB7XG4gIGhlaWdodDogNTAlO1xuICBwYWRkaW5nLXRvcDogM3B4O1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5ib251cy1zZWN0aW9uIC5ib251cy1jb250YWluZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLmJvbnVzLXNlY3Rpb24gLm1pbmlwb29sLXdpbm5lciB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmY2NkMDI7XG4gIGJvcmRlci1yYWRpdXM6IDE0cHg7XG4gIHBhZGRpbmc6IDJweCAxMnB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5sZWZ0LXBhbmVsIC5ib251cy1zZWN0aW9uIC5hbW91bnQge1xuICBmb250LXdlaWdodDogNTAwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGJhY2tncm91bmQtY29sb3I6ICMyYTJkMzI7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxMnB4O1xuICBtYXJnaW4tdG9wOiA0cHg7XG4gIGJvcmRlci1yYWRpdXM6IDE2cHg7XG4gIHBhZGRpbmc6IDJweCA2cHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLm5vLWJvbnVzIHtcbiAgY29sb3I6ICM2NzY2NmI7XG4gIGxpbmUtaGVpZ2h0OiAxOHB4O1xuICBmb250LXNpemU6IDE2cHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLmxlZnQtcGFuZWwgLm1pbmlwb29sLXF1ZXN0aW9uIHtcbiAgaGVpZ2h0OiA2MHB4O1xuICBib3JkZXItcmFkaXVzOiAxNHB4O1xuICBtYXJnaW4tdG9wOiA0cHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxMDlkZjU7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGZvbnQtc2l6ZTogMzRweDtcbn1cbi5mb290ZXIgLnBhbmVscyAubGVmdC1wYW5lbCAubWluaXBvb2wtcXVlc3Rpb24gLmNoZXN0IHtcbiAgaGVpZ2h0OiA1NHB4O1xuICBtYXJnaW4tdG9wOiAzcHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYW5pbWF0aW9uOiByb3RhdGlvbiAxLjVzIGluZmluaXRlIGxpbmVhcjtcbn1cbkBrZXlmcmFtZXMgcm90YXRpb24ge1xuICAyNSUge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDE1ZGVnKTtcbiAgfVxuICA1MCUge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDBkZWcpO1xuICB9XG4gIDc1JSB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoLTE1ZGVnKTtcbiAgfVxuICAxMDAlIHtcbiAgICB0cmFuc2Zvcm06IHJvdGF0ZSgwZGVnKTtcbiAgfVxufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCB7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgIzJiMmYzMjtcbiAgY29sb3I6ICM2MzYyNjc7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5teS1jYW5kaWVzIHtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDIwcHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC50b3RhbC1jYW5kaWVzIHtcbiAgY29sb3I6IHdoaXRlO1xuICBsaW5lLWhlaWdodDogMzRweDtcbiAgZm9udC1zaXplOiAyOHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAudG90YWwtY2FuZGllcyAuaWNvbi1pbWcubGFyZ2Uge1xuICBtYXJnaW4tbGVmdDogMHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAubGFiZWwge1xuICBmb250LXNpemU6IDE0cHg7XG4gIGxpbmUtaGVpZ2h0OiAxNHB4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAubGFiZWwuc21hbGwge1xuICBmb250LXNpemU6IDEycHg7XG4gIGhlaWdodDogMTNweDtcbn1cbi5mb290ZXIgLnBhbmVscyAucmlnaHQtcGFuZWwgLmljb24taW1nIHtcbiAgbWFyZ2luLWxlZnQ6IDRweDtcbiAgaGVpZ2h0OiAxM3B4O1xufVxuLmZvb3RlciAucGFuZWxzIC5yaWdodC1wYW5lbCAuaWNvbi1pbWcubGFyZ2Uge1xuICBoZWlnaHQ6IDIycHg7XG59XG4uZm9vdGVyIC5wYW5lbHMgLnJpZ2h0LXBhbmVsIC5pY29uLXJlZGlyZWN0IHtcbiAgY29sb3I6ICMxNDk5ZTM7XG4gIG1hcmdpbi1sZWZ0OiA0cHg7XG4gIGZvbnQtc2l6ZTogMjBweDtcbn0iXX0= */");
 
 /***/ }),
 
@@ -3101,10 +3192,10 @@ let FooterComponent = class FooterComponent {
     }
     ngOnInit() {
     }
-    ticketCount(ticketArr) {
+    candyCount(candyArr) {
         let count = 0;
-        if (ticketArr && ticketArr.length) {
-            ticketArr.forEach(item => { count += item.count; });
+        if (candyArr && candyArr.length) {
+            candyArr.forEach(item => { count += item.count; });
         }
         return count || 0;
     }
@@ -3137,7 +3228,7 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".home {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.home .home-content {\n  font-weight: 500;\n  flex-grow: 1;\n  flex-shrink: 1;\n  min-height: 0;\n  padding-bottom: 16px;\n  position: relative;\n  overflow-y: auto;\n}\n.home .buy-ticket-input {\n  margin-top: 20px;\n  padding: 0 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcbG9jYWxkZXZcXG15LXByb2plY3RzXFxjaGF0LWxvdHRlcnkvc3JjXFxhcHBcXGhvbWVcXGhvbWUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7QUNDSjtBRENJO0VBQ0ksZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7QUNDUjtBREVJO0VBQ0ksZ0JBQUE7RUFDQSxlQUFBO0FDQVIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9tZSB7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHJcbiAgICAuaG9tZS1jb250ZW50e1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgZmxleC1ncm93OiAxO1xyXG4gICAgICAgIGZsZXgtc2hyaW5rOiAxO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDA7XHJcbiAgICAgICAgcGFkZGluZy1ib3R0b206IDE2cHg7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICB9XHJcbiAgICBcclxuICAgIC5idXktdGlja2V0LWlucHV0IHtcclxuICAgICAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgICAgIHBhZGRpbmc6IDAgMjBweDtcclxuICAgIH1cclxufSIsIi5ob21lIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuLmhvbWUgLmhvbWUtY29udGVudCB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIGZsZXgtZ3JvdzogMTtcbiAgZmxleC1zaHJpbms6IDE7XG4gIG1pbi1oZWlnaHQ6IDA7XG4gIHBhZGRpbmctYm90dG9tOiAxNnB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIG92ZXJmbG93LXk6IGF1dG87XG59XG4uaG9tZSAuYnV5LXRpY2tldC1pbnB1dCB7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG4gIHBhZGRpbmc6IDAgMjBweDtcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".home {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.home .home-content {\n  font-weight: 500;\n  flex-grow: 1;\n  flex-shrink: 1;\n  min-height: 0;\n  padding-bottom: 16px;\n  position: relative;\n  overflow-y: auto;\n}\n.home .buy-candy-input {\n  margin-top: 20px;\n  padding: 0 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9DOlxcbG9jYWxkZXZcXG15LXByb2plY3RzXFxjaGF0LWxvdHRlcnkvc3JjXFxhcHBcXGhvbWVcXGhvbWUuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7QUNDSjtBRENJO0VBQ0ksZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGFBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7QUNDUjtBREVJO0VBQ0ksZ0JBQUE7RUFDQSxlQUFBO0FDQVIiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9tZSB7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuXHJcbiAgICAuaG9tZS1jb250ZW50e1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgZmxleC1ncm93OiAxO1xyXG4gICAgICAgIGZsZXgtc2hyaW5rOiAxO1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IDA7XHJcbiAgICAgICAgcGFkZGluZy1ib3R0b206IDE2cHg7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbiAgICB9XHJcblxyXG4gICAgLmJ1eS1jYW5keS1pbnB1dCB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgICAgICBwYWRkaW5nOiAwIDIwcHg7XHJcbiAgICB9XHJcbn1cclxuIiwiLmhvbWUge1xuICBoZWlnaHQ6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG59XG4uaG9tZSAuaG9tZS1jb250ZW50IHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZmxleC1ncm93OiAxO1xuICBmbGV4LXNocmluazogMTtcbiAgbWluLWhlaWdodDogMDtcbiAgcGFkZGluZy1ib3R0b206IDE2cHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgb3ZlcmZsb3cteTogYXV0bztcbn1cbi5ob21lIC5idXktY2FuZHktaW5wdXQge1xuICBtYXJnaW4tdG9wOiAyMHB4O1xuICBwYWRkaW5nOiAwIDIwcHg7XG59Il19 */");
 
 /***/ }),
 
@@ -3349,6 +3440,30 @@ class PrizePool {
 
 /***/ }),
 
+/***/ "./src/app/models/lottery/candy.ts":
+/*!*****************************************!*\
+  !*** ./src/app/models/lottery/candy.ts ***!
+  \*****************************************/
+/*! exports provided: Candy */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Candy", function() { return Candy; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Candy {
+    constructor(candy, userName, amount, isMine) {
+        this.candyNumber = candy;
+        this.userName = userName;
+        this.isMine = isMine;
+        this.amount = amount;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/models/lottery/lottery-obj.ts":
 /*!***********************************************!*\
   !*** ./src/app/models/lottery/lottery-obj.ts ***!
@@ -3385,30 +3500,6 @@ class MyEntries {
 
 /***/ }),
 
-/***/ "./src/app/models/lottery/ticket.ts":
-/*!******************************************!*\
-  !*** ./src/app/models/lottery/ticket.ts ***!
-  \******************************************/
-/*! exports provided: Ticket */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Ticket", function() { return Ticket; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class Ticket {
-    constructor(ticket, userName, amount, isMine) {
-        this.ticketNumber = ticket;
-        this.userName = userName;
-        this.isMine = isMine;
-        this.amount = amount;
-    }
-}
-
-
-/***/ }),
-
 /***/ "./src/app/models/lottery/winner-info.ts":
 /*!***********************************************!*\
   !*** ./src/app/models/lottery/winner-info.ts ***!
@@ -3423,7 +3514,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class WinnerInfo {
     constructor(preDisplayWinnings = 0) {
-        this.tickets = [];
+        this.candies = [];
         this.preDisplayWinnings = preDisplayWinnings;
         this.myWinnings = 0;
         this.isDrawing = true;
@@ -3608,7 +3699,7 @@ PayoutHistoryItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".payout {\n  padding: 0 24px 36px;\n  height: calc(100% - 51px);\n  overflow-y: auto;\n}\n\n.action-container {\n  margin: 16px 8px 8px;\n  display: flex;\n  justify-content: space-evenly;\n}\n\n.action-container button.app-button {\n  line-height: 12px;\n  min-height: auto;\n  min-width: auto;\n  height: auto;\n  width: auto;\n  font-size: 12px;\n  width: 15%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF5b3V0L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxccGF5b3V0XFxwYXlvdXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BheW91dC9wYXlvdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxvQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURFQTtFQUNJLG9CQUFBO0VBQ0EsYUFBQTtFQUNBLDZCQUFBO0FDQ0o7O0FEQ0k7RUFDSSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtFQUNBLFVBQUE7QUNDUiIsImZpbGUiOiJzcmMvYXBwL3BheW91dC9wYXlvdXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucGF5b3V0IHtcclxuICAgIHBhZGRpbmc6IDAgMjRweCAzNnB4O1xyXG4gICAgaGVpZ2h0OiBjYWxjKDEwMCUgLSA1MXB4KTtcclxuICAgIG92ZXJmbG93LXk6IGF1dG87XHJcbn1cclxuXHJcbi5hY3Rpb24tY29udGFpbmVyIHtcclxuICAgIG1hcmdpbjogMTZweCA4cHggOHB4O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xyXG5cclxuICAgIGJ1dHRvbi5hcHAtYnV0dG9uIHtcclxuICAgICAgICBsaW5lLWhlaWdodDogMTJweDtcclxuICAgICAgICBtaW4taGVpZ2h0OiBhdXRvO1xyXG4gICAgICAgIG1pbi13aWR0aDogYXV0bztcclxuICAgICAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICAgICAgd2lkdGg6IGF1dG87XHJcbiAgICAgICAgZm9udC1zaXplOiAxMnB4O1xyXG4gICAgICAgIHdpZHRoOiAxNSU7XHJcbiAgICB9XHJcbn1cclxuIiwiLnBheW91dCB7XG4gIHBhZGRpbmc6IDAgMjRweCAzNnB4O1xuICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDUxcHgpO1xuICBvdmVyZmxvdy15OiBhdXRvO1xufVxuXG4uYWN0aW9uLWNvbnRhaW5lciB7XG4gIG1hcmdpbjogMTZweCA4cHggOHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn1cbi5hY3Rpb24tY29udGFpbmVyIGJ1dHRvbi5hcHAtYnV0dG9uIHtcbiAgbGluZS1oZWlnaHQ6IDEycHg7XG4gIG1pbi1oZWlnaHQ6IGF1dG87XG4gIG1pbi13aWR0aDogYXV0bztcbiAgaGVpZ2h0OiBhdXRvO1xuICB3aWR0aDogYXV0bztcbiAgZm9udC1zaXplOiAxMnB4O1xuICB3aWR0aDogMTUlO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".payout {\n  padding: 0 24px 36px;\n  height: calc(100% - 91px);\n  overflow-y: auto;\n}\n\n.game-control {\n  color: white;\n  height: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.game-control .control {\n  width: 50px;\n  text-align: center;\n  cursor: pointer;\n}\n\n.action-container {\n  margin: 8px;\n  display: flex;\n  justify-content: space-evenly;\n}\n\n.action-container button.app-button {\n  line-height: 12px;\n  min-height: auto;\n  min-width: auto;\n  height: auto;\n  width: auto;\n  font-size: 12px;\n  width: 15%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGF5b3V0L0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxccGF5b3V0XFxwYXlvdXQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL3BheW91dC9wYXlvdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxvQkFBQTtFQUNBLHlCQUFBO0VBQ0EsZ0JBQUE7QUNDSjs7QURFQTtFQUNFLFlBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHVCQUFBO0VBQ0EsbUJBQUE7QUNDRjs7QURDRTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUNDSjs7QURHQTtFQUNJLFdBQUE7RUFDQSxhQUFBO0VBQ0EsNkJBQUE7QUNBSjs7QURFSTtFQUNJLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsVUFBQTtBQ0FSIiwiZmlsZSI6InNyYy9hcHAvcGF5b3V0L3BheW91dC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYXlvdXQge1xyXG4gICAgcGFkZGluZzogMCAyNHB4IDM2cHg7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMTAwJSAtIDkxcHgpO1xyXG4gICAgb3ZlcmZsb3cteTogYXV0bztcclxufVxyXG5cclxuLmdhbWUtY29udHJvbCB7XHJcbiAgY29sb3I6IHdoaXRlO1xyXG4gIGhlaWdodDogNDBweDtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcblxyXG4gIC5jb250cm9sIHtcclxuICAgIHdpZHRoOiA1MHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gIH1cclxufVxyXG5cclxuLmFjdGlvbi1jb250YWluZXIge1xyXG4gICAgbWFyZ2luOiA4cHg7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1ldmVubHk7XHJcblxyXG4gICAgYnV0dG9uLmFwcC1idXR0b24ge1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAxMnB4O1xyXG4gICAgICAgIG1pbi1oZWlnaHQ6IGF1dG87XHJcbiAgICAgICAgbWluLXdpZHRoOiBhdXRvO1xyXG4gICAgICAgIGhlaWdodDogYXV0bztcclxuICAgICAgICB3aWR0aDogYXV0bztcclxuICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICAgICAgd2lkdGg6IDE1JTtcclxuICAgIH1cclxufVxyXG4iLCIucGF5b3V0IHtcbiAgcGFkZGluZzogMCAyNHB4IDM2cHg7XG4gIGhlaWdodDogY2FsYygxMDAlIC0gOTFweCk7XG4gIG92ZXJmbG93LXk6IGF1dG87XG59XG5cbi5nYW1lLWNvbnRyb2wge1xuICBjb2xvcjogd2hpdGU7XG4gIGhlaWdodDogNDBweDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4uZ2FtZS1jb250cm9sIC5jb250cm9sIHtcbiAgd2lkdGg6IDUwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4uYWN0aW9uLWNvbnRhaW5lciB7XG4gIG1hcmdpbjogOHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWV2ZW5seTtcbn1cbi5hY3Rpb24tY29udGFpbmVyIGJ1dHRvbi5hcHAtYnV0dG9uIHtcbiAgbGluZS1oZWlnaHQ6IDEycHg7XG4gIG1pbi1oZWlnaHQ6IGF1dG87XG4gIG1pbi13aWR0aDogYXV0bztcbiAgaGVpZ2h0OiBhdXRvO1xuICB3aWR0aDogYXV0bztcbiAgZm9udC1zaXplOiAxMnB4O1xuICB3aWR0aDogMTUlO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -3639,7 +3730,6 @@ let PayoutComponent = class PayoutComponent {
         this.route = route;
         this.lotteryService = lotteryService;
         this.payoutService = payoutService;
-        this.currentGameId = this.lotteryService.lastGameId;
         this.payoutData = {};
         this.placeMap = _constants_placeMap__WEBPACK_IMPORTED_MODULE_5__["PlaceMapArr"];
         this.rankingMap = {
@@ -3648,17 +3738,71 @@ let PayoutComponent = class PayoutComponent {
             third: 0
         };
         this.lastTenGames = [];
+        this.currentLevel = '1';
     }
     ngOnInit() {
         this.route.queryParams.subscribe((params) => {
             this.currentLevel = params.level || '1';
-            this.getData(this.currentLevel);
+            this.initialize();
         });
+    }
+    initialize() {
         this.lotteryService.getLastTenGames()
             .subscribe((data) => {
-            alert(JSON.stringify(data));
-            this.lastTenGames = data;
+            if (data && data.msg) {
+                this.lastTenGames = data.msg;
+            }
+            if (this.lastTenGames && this.lastTenGames.length) {
+                this.selectedGame = this.lastTenGames[0];
+            }
+            this.getData(this.currentLevel);
         });
+    }
+    hasPreviousGame() {
+        if (this.lastTenGames &&
+            this.lastTenGames.length &&
+            this.lastTenGames.indexOf(this.selectedGame) !== -1 &&
+            this.lastTenGames[this.lastTenGames.indexOf(this.selectedGame) + 1]) {
+            return this.lastTenGames[this.lastTenGames.indexOf(this.selectedGame) + 1];
+        }
+        return null;
+    }
+    getPreviousGame() {
+        const newGame = this.hasPreviousGame();
+        if (newGame) {
+            this.selectedGame = newGame;
+            this.currentLevel = '1';
+            this.payoutData = {};
+            this.payoutData[this.currentLevel] = {
+                data: [],
+                page: 1,
+                isEnded: false
+            };
+            this.getData(this.currentLevel);
+        }
+    }
+    hasNextGame() {
+        if (this.lastTenGames &&
+            this.lastTenGames.length &&
+            this.lastTenGames.indexOf(this.selectedGame) > 0 &&
+            this.lastTenGames[this.lastTenGames.indexOf(this.selectedGame) - 1]) {
+            return this.lastTenGames[this.lastTenGames.indexOf(this.selectedGame) - 1];
+        }
+        return null;
+    }
+    getNextGame() {
+        const newGame = this.hasNextGame();
+        if (newGame) {
+            this.selectedGame = newGame;
+            this.currentLevel = '1';
+            this.payoutData = {};
+            this.payoutData[this.currentLevel] = {
+                data: [],
+                page: 1,
+                isEnded: false
+            };
+            this.getData(this.currentLevel);
+        }
     }
     selectRank(rank) {
         this.currentLevel = rank;
@@ -3667,9 +3811,8 @@ let PayoutComponent = class PayoutComponent {
         }
     }
     getData(level) {
-        if (this.currentGameId !== this.lotteryService.lastGameId) {
-            this.payoutData = {};
-            this.currentGameId = this.lotteryService.lastGameId;
+        if (!this.selectedGame) {
+            return;
         }
         if (!this.payoutData[level]) {
             this.payoutData[level] = {
@@ -3678,8 +3821,8 @@ let PayoutComponent = class PayoutComponent {
                 isEnded: false
             };
         }
-        if (this.lotteryService && this.lotteryService.lastGameId) {
-            this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, level, this.payoutData[level].page, 100)
+        if (this.lastTenGames && this.lastTenGames.length && this.selectedGame) {
+            this.payoutService.getPayoutHistory(this.selectedGame.id.toString(), level, this.payoutData[level].page, 100)
                 .subscribe((data) => {
                 this.payoutData[level].page++;
                 this.payoutData[level].data = data.msg;
@@ -3734,7 +3877,7 @@ let PayoutComponent = class PayoutComponent {
             arr.forEach(item => {
                 if (!this.payoutData[this.currentLevel].data.find(dup => {
                     return dup.user === item.user &&
-                        dup.ticket === item.ticket &&
+                        dup.candy === item.candy &&
                         dup.time === item.time;
                 })) {
                     this.payoutData[this.currentLevel].data.push(item);
@@ -3924,6 +4067,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _my_entries_my_entries_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../my-entries/my-entries.component */ "./src/app/my-entries/my-entries.component.ts");
 /* harmony import */ var _account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../account/authguard.guard */ "./src/app/account/authguard.guard.ts");
 /* harmony import */ var _common_info_component_info_component_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../common/info-component/info-component.component */ "./src/app/common/info-component/info-component.component.ts");
+/* harmony import */ var _account_winning_history_winning_history_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../account/winning-history/winning-history.component */ "./src/app/account/winning-history/winning-history.component.ts");
+
 
 
 
@@ -3972,6 +4117,11 @@ const routes = [
     {
         path: 'account-history',
         component: _account_account_history_account_history_component__WEBPACK_IMPORTED_MODULE_10__["AccountHistoryComponent"],
+        canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+    },
+    {
+        path: 'winning-history',
+        component: _account_winning_history_winning_history_component__WEBPACK_IMPORTED_MODULE_16__["WinningHistoryComponent"],
         canActivate: [_account_authguard_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
     },
     {
@@ -4148,7 +4298,6 @@ __webpack_require__.r(__webpack_exports__);
 let AuthService = class AuthService {
     constructor(httpClient, windowRef) {
         // Test
-        // this.dataObj =  {"userMail":"shan26@bccto.me","token":"eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYwNjc5MjAsImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.nf2g2tpehqh4hisodn5r7qs1rq1smakf8pa0rb6dqmhop30f32"}
         this.httpClient = httpClient;
         this.windowRef = windowRef;
         this.isLoggedIn = false;
@@ -4163,9 +4312,6 @@ let AuthService = class AuthService {
             memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
-        // this.user.appToken = this.dataObj.token;
-        // this.loginWithToken();
-        // END TEST
         if (this.windowRef.nativeWindow) {
             this.windowRef.nativeWindow.SyncCallback = (method, data) => {
                 const response = JSON.parse(data);
@@ -4449,7 +4595,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/lottery/winner-info */ "./src/app/models/lottery/winner-info.ts");
-/* harmony import */ var _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/lottery/ticket */ "./src/app/models/lottery/ticket.ts");
+/* harmony import */ var _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/lottery/candy */ "./src/app/models/lottery/candy.ts");
 /* harmony import */ var _block_chain_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./block-chain.service */ "./src/app/services/block-chain.service.ts");
 
 
@@ -4500,12 +4646,12 @@ let LotteryService = class LotteryService {
             let currentStatus;
             this.availablePrizePool = prizePool;
             let myEntries = [];
-            if (msg.mytickets) {
-                myEntries = msg.mytickets.map((ticket) => {
+            if (msg.mycandies) {
+                myEntries = msg.mycandies.map((candy) => {
                     let entry = new _models_lottery_my_entries__WEBPACK_IMPORTED_MODULE_4__["MyEntries"]();
-                    entry.userName = ticket.user;
-                    entry.start = parseInt(ticket.start, 10);
-                    entry.end = parseInt(ticket.end, 10);
+                    entry.userName = candy.user;
+                    entry.start = parseInt(candy.start, 10);
+                    entry.end = parseInt(candy.end, 10);
                     entry.count = entry.end - entry.start + 1;
                     return entry;
                 });
@@ -4632,7 +4778,7 @@ let LotteryService = class LotteryService {
                     this.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(item => item.win === i + 1).amount));
                 }
                 prize.forEach((item) => {
-                    this.currentLotteryInfo.winners.main[i].tickets.push(new _models_lottery_ticket__WEBPACK_IMPORTED_MODULE_11__["Ticket"](item.ticket, item.user, item.prize, item.user === (this.authService.user && this.authService.user.userName)));
+                    this.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (this.authService.user && this.authService.user.userName)));
                 });
             });
         }
@@ -4660,7 +4806,7 @@ let LotteryService = class LotteryService {
     setLotteryStatus(status, prizePool) {
         this.lotteryObj[prizePool].lotteryStatus = status;
     }
-    buyTicket(amount) {
+    buyCandy(amount) {
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]()
                 .set("Content-Type", "application/x-www-form-urlencoded")
@@ -4700,9 +4846,8 @@ let LotteryService = class LotteryService {
     getLastTenGames() {
         const options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('token', this.authService.user.token)
         };
-        return this.httpClient.post(`${this.url}/account/getBetsHistory`, null, options);
+        return this.httpClient.post(`${this.url}/game/getLastTenGames`, null, options);
     }
     drawMinipool() {
         const prizePool = this.lotteryObj[this.availablePrizePool];

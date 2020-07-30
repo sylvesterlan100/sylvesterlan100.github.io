@@ -1,0 +1,104 @@
+.history {
+  color: white;
+
+  .mat-tab-label {
+    color: white;
+  }
+
+  .select-type {
+      display: flex;
+      justify-content: center;
+      margin: 24px 0 24px;
+
+      .select-box {
+          border: 2px solid #636363;
+          background-color: #2a2d32;
+          border-radius: 18px;
+          padding: 12px 32px;
+      }
+  }
+
+  .history-table {
+      font-size: 14px;
+      padding: 0 16px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+
+      .tablerow {
+          height: 40px;
+          width: 100%;
+          overflow: hidden;
+          transition: height .3s;
+          border-top: 1px solid #2c3033;
+          &:last-child {
+              border-bottom: 1px solid #2c3033;
+          }
+
+          .itemrow {
+              display: flex;
+              padding: 12px 0;
+          }
+
+          &.isExpanded {
+              height: 170px;
+              min-height: fit-content;
+          }
+
+          .icon {
+              width: 25px;
+              flex-basis: 25px;
+              font-size: 14px;
+          }
+          .date {
+              flex-basis: 35%;
+              color: #5c5b60;
+          }
+          .type {
+              padding-left: 12px;
+              flex-basis: 15%;
+          }
+          .amount {
+              text-align: right;
+              padding-right: 16px;
+              flex-grow: 1;
+          }
+
+          .address {
+              display: flex;
+              margin-bottom: 12px;
+              &:first-child {
+                  margin-top: 12px;
+                  margin-bottom: 16px;
+              }
+              .label {
+                  color: #5c5b60;
+              }
+              .value {
+                  font-size: 13px;
+                  color: #ffcc01;
+                  word-break: break-all;
+                  padding: 0 12px;
+              }
+              .copy {
+                  align-self: center;
+                  font-size: 20px;
+                  color: #5c5b60;
+              }
+          }
+      }
+
+      .closerow {
+          padding: 6px 0;
+          display: flex;
+          justify-content: flex-end;
+      }
+
+  }
+
+  .no-futher-activity {
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+}
