@@ -1311,12 +1311,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           var _this = this;
 
+          this.isLoadingDeposit = true;
           this.accountService.getDepositHistory(1, 20).subscribe(function (data) {
+            _this.isLoadingDeposit = false;
+
             if (data.code === 200) {
               _this.depositHistory = data.msg;
             }
           });
+          this.isLoadingWithdrawal = true;
           this.accountService.getWithdrawalHistory(1, 20).subscribe(function (data) {
+            _this.isLoadingWithdrawal = false;
+
             if (data.code === 200) {
               _this.withdrawHistory = data.msg;
             }
@@ -1331,7 +1337,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.isLoadingDeposit = true;
           this.accountService.getDepositHistory(this.depositPageNum, 100).subscribe(function (data) {
             var arr = data.msg;
-            _this2.isLoadingDeposit = true;
+            _this2.isLoadingDeposit = false;
             arr.forEach(function (item) {
               if (!_this2.depositHistory.find(function (dup) {
                 return dup.orderno === item.orderno;
@@ -1350,7 +1356,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.isLoadingWithdrawal = true;
           this.accountService.getWithdrawalHistory(this.withdrawPageNum, 100).subscribe(function (data) {
             var arr = data.msg;
-            _this3.isLoadingWithdrawal = true;
+            _this3.isLoadingWithdrawal = false;
             arr.forEach(function (item) {
               if (!_this3.withdrawHistory.find(function (dup) {
                 return dup.orderno === item.orderno;
@@ -2392,7 +2398,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           var _this9 = this;
 
+          this.isLoading = true;
           this.accountService.getRewardHistory(1, 20).subscribe(function (data) {
+            _this9.isLoading = false;
+
             if (data.code === 200) {
               _this9.history = data.msg;
             }

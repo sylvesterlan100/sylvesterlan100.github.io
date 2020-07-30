@@ -704,12 +704,16 @@ let AccountHistoryComponent = class AccountHistoryComponent {
         this.isLoadingWithdrawal = false;
     }
     ngOnInit() {
+        this.isLoadingDeposit = true;
         this.accountService.getDepositHistory(1, 20).subscribe((data) => {
+            this.isLoadingDeposit = false;
             if (data.code === 200) {
                 this.depositHistory = data.msg;
             }
         });
+        this.isLoadingWithdrawal = true;
         this.accountService.getWithdrawalHistory(1, 20).subscribe((data) => {
+            this.isLoadingWithdrawal = false;
             if (data.code === 200) {
                 this.withdrawHistory = data.msg;
             }
@@ -721,7 +725,7 @@ let AccountHistoryComponent = class AccountHistoryComponent {
         this.accountService.getDepositHistory(this.depositPageNum, 100)
             .subscribe((data) => {
             const arr = data.msg;
-            this.isLoadingDeposit = true;
+            this.isLoadingDeposit = false;
             arr.forEach((item) => {
                 if (!this.depositHistory.find(dup => {
                     return dup.orderno === item.orderno;
@@ -737,7 +741,7 @@ let AccountHistoryComponent = class AccountHistoryComponent {
         this.accountService.getWithdrawalHistory(this.withdrawPageNum, 100)
             .subscribe((data) => {
             const arr = data.msg;
-            this.isLoadingWithdrawal = true;
+            this.isLoadingWithdrawal = false;
             arr.forEach((item) => {
                 if (!this.withdrawHistory.find(dup => {
                     return dup.orderno === item.orderno;
@@ -1355,7 +1359,9 @@ let WinningHistoryComponent = class WinningHistoryComponent {
         this.isLoading = false;
     }
     ngOnInit() {
+        this.isLoading = true;
         this.accountService.getRewardHistory(1, 20).subscribe((data) => {
+            this.isLoading = false;
             if (data.code === 200) {
                 this.history = data.msg;
             }
