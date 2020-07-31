@@ -4375,19 +4375,12 @@ let AuthService = class AuthService {
                         this.loginWithToken();
                         break;
                     case 'Recharge':
-                        alert(JSON.stringify(data));
-                        alert('0 ' + data.errorCode);
-                        alert('1 ' + data.callback.amount);
-                        alert('2 ' + data.callback.currencyTag);
-                        alert('2 ' + data.callback.msg);
-                        if ((data.errorCode === '0' || data.errorCode === 0) && data.callback) {
-                            alert('a');
-                            const responseObj = data.callback;
+                        if ((response.errorCode === '0' || response.errorCode === 0) && response.callback) {
+                            const responseObj = response.callback;
                             alert(`${responseObj.amount}${responseObj.currencyTag} ${responseObj.msg}`);
                         }
                         else {
-                            alert('b');
-                            alert(data.message);
+                            alert(response.message);
                         }
                         break;
                 }
