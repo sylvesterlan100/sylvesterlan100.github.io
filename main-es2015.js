@@ -4367,6 +4367,7 @@ let AuthService = class AuthService {
                 switch (method) {
                     case 'Authorizedlogin':
                         if (response.status !== 'ok' || !response.callback) {
+                            alert(data.message);
                             return;
                         }
                         this.user.appToken = response.callback.token;
@@ -4374,7 +4375,12 @@ let AuthService = class AuthService {
                         this.loginWithToken();
                         break;
                     case 'Recharge':
-                        alert(JSON.stringify(data));
+                        if (data.errorCode === '0' && data.callback) {
+                            alert(`${data.callback.amount}${data.callback.currencyTag} ${data.callback.msg}`);
+                        }
+                        else {
+                            alert(data.message);
+                        }
                         break;
                 }
             };

@@ -7108,6 +7108,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             switch (method) {
               case 'Authorizedlogin':
                 if (response.status !== 'ok' || !response.callback) {
+                  alert(data.message);
                   return;
                 }
 
@@ -7119,7 +7120,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case 'Recharge':
-                alert(JSON.stringify(data));
+                if (data.errorCode === '0' && data.callback) {
+                  alert("".concat(data.callback.amount).concat(data.callback.currencyTag, " ").concat(data.callback.msg));
+                } else {
+                  alert(data.message);
+                }
+
                 break;
             }
           };
