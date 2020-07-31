@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"number\" step=\".0001\" [(ngModel)]=\"amount\" (ngModelChange)=\"updateAmount()\" (blur)=\"updateAmount()\" [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\">\r\n        <button [disabled]=\"isLoading\" class=\"app-button\" (click)=\"withdraw()\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-account-header [title]=\"'withdraw' | translate\"></app-account-header>\r\n<div class=\"withdraw\">\r\n    <div class=\"message\">\r\n        {{'withdraw-process-usually-takes-about-1-hour-or-less' | translate}}.\r\n    </div>\r\n    <div class=\"amount\">\r\n        <div class=\"available\">{{'available' | translate}}</div>\r\n        <div>{{authService.user.amountAvailable | toNumber | number : '0.0-4'}} BTOK</div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <input type=\"number\"\r\n        step=\".0001\"\r\n        [(ngModel)]=\"amount\"\r\n        (ngModelChange)=\"updateAmount()\"\r\n        (blur)=\"updateAmount()\"\r\n        (focus)=\"amount = !amount ? null : amount\"\r\n        [placeholder]=\"'withdrawal-amount'|translate\" class=\"app-input\">\r\n    </div>\r\n    <!-- <div class=\"row\">\r\n        <div class=\"withdraw-address\">\r\n            <div *ngIf=\"!showIcon\" class=\"placeholder\">\r\n                {{'withdrawal-address' | translate}}...\r\n            </div>\r\n            <i *ngIf=\"!showIcon\" class=\"icon-qrcode\" (click)=\"showIcon = true\"></i>\r\n            <div *ngIf=\"showIcon\">\r\n                {{address || 'work-in-progress' | translate}}\r\n            </div>\r\n        </div>\r\n    </div> -->\r\n    <div class=\"row\">\r\n        <button [disabled]=\"isLoading\" class=\"app-button\" (click)=\"withdraw()\">{{'submit-withdrawal' | translate | uppercase}}</button>\r\n    </div>\r\n    <div class=\"message\">\r\n        {{message | translate}}\r\n    </div>\r\n    <!-- <div class=\"message\">\r\n        {{'please-confirm-your-withdrawal-address' | translate}}\r\n    </div> -->\r\n</div>\r\n");
 
 /***/ }),
 
@@ -2797,8 +2797,8 @@ const ChineseTranslations = {
     'balance': '余数',
     'betting-history': '投票记录',
     'bind-2fa': '绑定2FA',
-    'block': '封锁',
-    'blocks': '封锁',
+    'block': '区块',
+    'blocks': '区块',
     'buy': '购买',
     'buy-candies': '购买 {0} 糖果',
     'buying-candies': '幸运投票',
@@ -2825,7 +2825,7 @@ const ChineseTranslations = {
     'fair-chance-guarantee-etc': '该游戏的结果是通过区块链智能合约技术自动生成的，无法更改。所有结果均为最终结果，概不退还。每个区块都可以通过区块链浏览器进行验证。',
     'finished': '完成',
     'from': '来源',
-    'generating-winners': '采摘幸运糖果',
+    'generating-winners': '获取幸运者',
     'hello': '你好',
     'hi-your-new-account-is-ready': '嗨 {0},\n 您的新帐户已准备就绪！',
     'history': '存提历史记录',
