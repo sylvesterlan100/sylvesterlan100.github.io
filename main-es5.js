@@ -7120,6 +7120,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case 'Recharge':
+                alert(JSON.stringify(data));
                 alert(data);
 
                 if ((data.errorCode === '0' || data.errorCode === 0) && data.callback) {

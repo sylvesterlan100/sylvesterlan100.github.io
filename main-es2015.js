@@ -4375,6 +4375,7 @@ let AuthService = class AuthService {
                         this.loginWithToken();
                         break;
                     case 'Recharge':
+                        alert(JSON.stringify(data));
                         alert(data);
                         if ((data.errorCode === '0' || data.errorCode === 0) && data.callback) {
                             const responseObj = data.callback;
