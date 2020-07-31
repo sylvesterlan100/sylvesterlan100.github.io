@@ -7216,7 +7216,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   _this31.user.amountAvailable = parseFloat(response.msg.balance);
                 }
               });
-            }, 30000);
+            }, 5000);
           }, function (err) {
             alert('error ' + JSON.stringify(err));
           });
@@ -7677,8 +7677,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               clearInterval(currentPrizePool.countDownInterval);
 
               _this37.startStatusCheckInterval();
-
-              _this37.authService.loginWithToken();
 
               _this37.blockChainService.startLog();
             }

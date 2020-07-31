@@ -4457,7 +4457,7 @@ let AuthService = class AuthService {
                         this.user.amountAvailable = parseFloat(response.msg.balance);
                     }
                 });
-            }, 30000);
+            }, 5000);
         }, (err) => {
             alert('error ' + JSON.stringify(err));
         });
@@ -4764,7 +4764,6 @@ let LotteryService = class LotteryService {
                 if (currentPrizePool.countDown <= 1) {
                     clearInterval(currentPrizePool.countDownInterval);
                     this.startStatusCheckInterval();
-                    this.authService.loginWithToken();
                     this.blockChainService.startLog();
                 }
                 this.lotteryObj[prizePool].countDown--;
