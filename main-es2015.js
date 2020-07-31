@@ -4374,6 +4374,7 @@ let AuthService = class AuthService {
                         this.loginWithToken();
                         break;
                     case 'Recharge':
+                        alert(JSON.stringify(data));
                         break;
                 }
             };
