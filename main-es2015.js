@@ -4376,12 +4376,17 @@ let AuthService = class AuthService {
                         break;
                     case 'Recharge':
                         alert(JSON.stringify(data));
-                        alert(data);
+                        alert('0 ' + data.errorCode);
+                        alert('1 ' + data.callback.amount);
+                        alert('2 ' + data.callback.currencyTag);
+                        alert('2 ' + data.callback.msg);
                         if ((data.errorCode === '0' || data.errorCode === 0) && data.callback) {
+                            alert('a');
                             const responseObj = data.callback;
                             alert(`${responseObj.amount}${responseObj.currencyTag} ${responseObj.msg}`);
                         }
                         else {
+                            alert('b');
                             alert(data.message);
                         }
                         break;
