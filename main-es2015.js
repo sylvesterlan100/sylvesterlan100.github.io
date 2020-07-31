@@ -1839,7 +1839,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let AnimatedCandiesComponent = class AnimatedCandiesComponent {
     constructor() { }
-    ngOnInit() {
+    ngAfterViewInit() {
         this.startAnimation();
     }
     getRndInteger(min, max) {
@@ -1860,11 +1860,11 @@ let AnimatedCandiesComponent = class AnimatedCandiesComponent {
         });
         TweenLite.randomEase = Sine.easeInOut;
         const confetti = new TimelineMax({
-            repeat: 0,
+            repeat: -1,
             repeatDelay: 1.5
         });
         confetti.to('#candies-animation #candies-group', .5, { opacity: 1 });
-        document.querySelectorAll('#candies-animation #candies-group path').forEach(function (el, index) {
+        document.querySelectorAll('#candies-animation #candies-group path').forEach((el, index) => {
             ntl = new TimelineMax({});
             const hor = this.getRndInteger(-400, 400);
             const vert = this.getRndInteger(200, 800);
@@ -2007,7 +2007,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let AnimatedConfettiComponent = class AnimatedConfettiComponent {
     constructor() { }
-    ngOnInit() {
+    ngAfterViewInit() {
         this.startAnimation();
     }
     getRndInteger(min, max) {

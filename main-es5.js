@@ -3169,8 +3169,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(AnimatedCandiesComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
           this.startAnimation();
         }
       }, {
@@ -3190,6 +3190,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
+          var _this15 = this;
+
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
           });
@@ -3198,7 +3200,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           TweenLite.randomEase = Sine.easeInOut;
           var confetti = new TimelineMax({
-            repeat: 0,
+            repeat: -1,
             repeatDelay: 1.5
           });
           confetti.to('#candies-animation #candies-group', .5, {
@@ -3206,10 +3208,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           document.querySelectorAll('#candies-animation #candies-group path').forEach(function (el, index) {
             ntl = new TimelineMax({});
-            var hor = this.getRndInteger(-400, 400);
-            var vert = this.getRndInteger(200, 800);
-            var timeEl = this.randomFloatBetween(2, 3);
-            var elDur = this.randomFloatBetween(0.8, 1.5);
+
+            var hor = _this15.getRndInteger(-400, 400);
+
+            var vert = _this15.getRndInteger(200, 800);
+
+            var timeEl = _this15.randomFloatBetween(2, 3);
+
+            var elDur = _this15.randomFloatBetween(0.8, 1.5);
+
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
               x: hor
@@ -3328,7 +3335,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "animate",
         value: function animate() {
-          var _this15 = this;
+          var _this16 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3347,13 +3354,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#coins-animation #coins-parts g').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this15.getRndInteger(-400, 400);
+            var hor = _this16.getRndInteger(-400, 400);
 
-            var vert = _this15.getRndInteger(200, 800);
+            var vert = _this16.getRndInteger(200, 800);
 
-            var timeEl = _this15.randomFloatBetween(2, 3, 2);
+            var timeEl = _this16.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this15.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this16.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -3376,7 +3383,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               ease: 'linear'
             }, 0).to(el, elDur, {
               transformOrigin: '50% 50%',
-              scaleX: _this15.randomFloatBetween(.3, .8, 2),
+              scaleX: _this16.randomFloatBetween(.3, .8, 2),
               repeat: 7,
               yoyo: true,
               ease: 'linear'
@@ -3459,8 +3466,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(AnimatedConfettiComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
+        key: "ngAfterViewInit",
+        value: function ngAfterViewInit() {
           this.startAnimation();
         }
       }, {
@@ -3480,7 +3487,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startAnimation",
         value: function startAnimation() {
-          var _this16 = this;
+          var _this17 = this;
 
           document.querySelectorAll('svg path, svg g').forEach(function (el) {
             el.removeAttribute('data-name');
@@ -3499,13 +3506,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           document.querySelectorAll('#confetti #confetti-particles rect').forEach(function (el, index) {
             var ntl = new TimelineMax({});
 
-            var hor = _this16.getRndInteger(-400, 400);
+            var hor = _this17.getRndInteger(-400, 400);
 
-            var vert = _this16.getRndInteger(200, 800);
+            var vert = _this17.getRndInteger(200, 800);
 
-            var timeEl = _this16.randomFloatBetween(2, 3, 2);
+            var timeEl = _this17.randomFloatBetween(2, 3, 2);
 
-            var elDur = _this16.randomFloatBetween(0.8, 1.5, 2);
+            var elDur = _this17.randomFloatBetween(0.8, 1.5, 2);
 
             var offsetTimeEl = '-=' + timeEl / 3;
             ntl.to(el, timeEl, {
@@ -4033,37 +4040,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyCandies",
         value: function buyCandies() {
-          var _this17 = this;
+          var _this18 = this;
 
           if (this.amount > 0 && this.amount * .01 <= this.authService.user.amountAvailable) {
             this.lotteryService.buyCandy(this.amount).subscribe(function () {});
             this.showAnimation = true;
             setTimeout(function () {
-              _this17.showAnimation = false;
+              _this18.showAnimation = false;
             }, 2000);
           }
         }
       }, {
         key: "updateAmount",
         value: function updateAmount(callback) {
-          var _this18 = this;
+          var _this19 = this;
 
           setTimeout(function () {
-            if (_this18.amount === null) {
+            if (_this19.amount === null) {
               return null;
             }
 
-            if (_this18.amount < .0001) {
-              _this18.amount = 0;
+            if (_this19.amount < .0001) {
+              _this19.amount = 0;
               return;
             }
 
-            if (_this18.amount) {
-              var amountStr = _this18.amount.toString();
+            if (_this19.amount) {
+              var amountStr = _this19.amount.toString();
 
               if (amountStr.indexOf('.') === 0) {
                 if (amountStr.length > 5) {
-                  _this18.amount = parseFloat(amountStr.substr(0, 5));
+                  _this19.amount = parseFloat(amountStr.substr(0, 5));
                 }
               } else {
                 var arr = amountStr.split('.');
@@ -4072,7 +4079,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   arr[1] = arr[1].substr(0, 4);
                 }
 
-                _this18.amount = parseFloat(arr.join('.'));
+                _this19.amount = parseFloat(arr.join('.'));
               }
             }
 
@@ -4082,11 +4089,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkValue",
         value: function checkValue() {
-          var _this19 = this;
+          var _this20 = this;
 
           this.updateAmount(function () {
-            if (_this19.amount > _this19.authService.user.amountAvailable / .01) {
-              _this19.amount = _this19.authService.user.amountAvailable / .01;
+            if (_this20.amount > _this20.authService.user.amountAvailable / .01) {
+              _this20.amount = _this20.authService.user.amountAvailable / .01;
             }
           });
         }
@@ -4217,10 +4224,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(InfoComponentComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this20 = this;
+          var _this21 = this;
 
           setTimeout(function () {
-            _this20.data = JSON.stringify(_this20.authService.dataObj);
+            _this21.data = JSON.stringify(_this21.authService.dataObj);
           }, 2000);
         }
       }]);
@@ -5146,15 +5153,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "monitorWinnings",
         value: function monitorWinnings() {
-          var _this21 = this;
+          var _this22 = this;
 
           this.checkWinningInterval = setTimeout(function () {
-            if (_this21.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
-              _this21.incrementInterval = 500;
-              _this21.myWinningsIncrement = 0;
+            if (_this22.lotteryService.currentLotteryInfo.lotteryStatus !== '2') {
+              _this22.incrementInterval = 500;
+              _this22.myWinningsIncrement = 0;
             } else {
-              _this21.incrementInterval = 20;
-              var winners = _this21.lotteryService.currentLotteryInfo.winners;
+              _this22.incrementInterval = 20;
+              var winners = _this22.lotteryService.currentLotteryInfo.winners;
               var myWinnings = winners.minipool.winningAmount;
               winners.main.forEach(function (item) {
                 if (item && item.myWinnings) {
@@ -5162,15 +5169,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }
               });
 
-              if (!myWinnings || _this21.myWinningsIncrement >= myWinnings) {
-                _this21.myWinningsIncrement = _this21.myWinningsIncrement;
-                _this21.incrementInterval = 500;
-              } else if (_this21.myWinningsIncrement < myWinnings) {
-                _this21.myWinningsIncrement += 1;
+              if (!myWinnings || _this22.myWinningsIncrement >= myWinnings) {
+                _this22.myWinningsIncrement = _this22.myWinningsIncrement;
+                _this22.incrementInterval = 500;
+              } else if (_this22.myWinningsIncrement < myWinnings) {
+                _this22.myWinningsIncrement += 1;
               }
             }
 
-            _this21.monitorWinnings();
+            _this22.monitorWinnings();
           }, this.incrementInterval);
         }
       }, {
@@ -5191,13 +5198,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "finalizeWinning",
         value: function finalizeWinning() {
-          var _this22 = this;
+          var _this23 = this;
 
           var winners = this.lotteryService.currentLotteryInfo.winners;
           this.myWinningsIncrement = winners.minipool.winningAmount;
           winners.main.forEach(function (item) {
             if (item && item.myWinnings) {
-              _this22.myWinningsIncrement += item.myWinnings;
+              _this23.myWinningsIncrement += item.myWinnings;
             }
           });
         }
@@ -5960,19 +5967,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "sortedMyEntries",
         value: function sortedMyEntries() {
-          var _this23 = this;
+          var _this24 = this;
 
           return this.lotteryService.currentLotteryInfo.myEntries.sort(function (a, b) {
-            return _this23.sortMyEntries ? a.start - b.start : b.start - a.start;
+            return _this24.sortMyEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }, {
         key: "sortedAllEntries",
         value: function sortedAllEntries() {
-          var _this24 = this;
+          var _this25 = this;
 
           return this.lotteryService.currentLotteryInfo.allEntries.sort(function (a, b) {
-            return _this24.sortAllEntries ? a.start - b.start : b.start - a.start;
+            return _this25.sortAllEntries ? a.start - b.start : b.start - a.start;
           });
         }
       }]);
@@ -6240,29 +6247,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(PayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this25 = this;
+          var _this26 = this;
 
           this.route.queryParams.subscribe(function (params) {
-            _this25.currentLevel = params.level || '1';
+            _this26.currentLevel = params.level || '1';
 
-            _this25.initialize();
+            _this26.initialize();
           });
         }
       }, {
         key: "initialize",
         value: function initialize() {
-          var _this26 = this;
+          var _this27 = this;
 
           this.lotteryService.getLastTenGames().subscribe(function (data) {
             if (data && data.msg) {
-              _this26.lastTenGames = data.msg;
+              _this27.lastTenGames = data.msg;
             }
 
-            if (_this26.lastTenGames && _this26.lastTenGames.length) {
-              _this26.selectedGame = _this26.lastTenGames[0];
+            if (_this27.lastTenGames && _this27.lastTenGames.length) {
+              _this27.selectedGame = _this27.lastTenGames[0];
             }
 
-            _this26.getData(_this26.currentLevel);
+            _this27.getData(_this27.currentLevel);
           });
         }
       }, {
@@ -6329,7 +6336,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getData",
         value: function getData(level) {
-          var _this27 = this;
+          var _this28 = this;
 
           if (!this.selectedGame) {
             return;
@@ -6345,16 +6352,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (this.lastTenGames && this.lastTenGames.length && this.selectedGame) {
             this.payoutService.getPayoutHistory(this.selectedGame.id.toString(), level, this.payoutData[level].page, 100).subscribe(function (data) {
-              _this27.payoutData[level].page++;
-              _this27.payoutData[level].data = data.msg;
+              _this28.payoutData[level].page++;
+              _this28.payoutData[level].data = data.msg;
 
-              _this27.payoutData[level].data.forEach(function (item) {
-                _this27.setPlaceMap(item.prize);
+              _this28.payoutData[level].data.forEach(function (item) {
+                _this28.setPlaceMap(item.prize);
               });
             });
           } else {
             setTimeout(function () {
-              _this27.getData(level);
+              _this28.getData(level);
             }, 100);
           }
         }
@@ -6396,16 +6403,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onScroll",
         value: function onScroll() {
-          var _this28 = this;
+          var _this29 = this;
 
           this.payoutData[this.currentLevel].page++;
           this.payoutService.getPayoutHistory(this.lotteryService.lastGameId, this.currentLevel, this.payoutData[this.currentLevel].page, 100).subscribe(function (data) {
             var arr = data.msg;
             arr.forEach(function (item) {
-              if (!_this28.payoutData[_this28.currentLevel].data.find(function (dup) {
+              if (!_this29.payoutData[_this29.currentLevel].data.find(function (dup) {
                 return dup.user === item.user && dup.candy === item.candy && dup.time === item.time;
               })) {
-                _this28.payoutData[_this28.currentLevel].data.push(item);
+                _this29.payoutData[_this29.currentLevel].data.push(item);
               }
             });
           });
@@ -7076,7 +7083,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var AuthService = /*#__PURE__*/function () {
       function AuthService(httpClient, windowRef) {
-        var _this29 = this;
+        var _this30 = this;
 
         _classCallCheck(this, AuthService);
 
@@ -7105,10 +7112,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                   return;
                 }
 
-                _this29.user.appToken = response.callback.token;
-                _this29.dataObj = response.callback;
+                _this30.user.appToken = response.callback.token;
+                _this30.dataObj = response.callback;
 
-                _this29.loginWithToken();
+                _this30.loginWithToken();
 
                 break;
 
@@ -7176,7 +7183,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "loginWithToken",
         value: function loginWithToken() {
-          var _this30 = this;
+          var _this31 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -7188,26 +7195,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.httpClient.post("".concat(this.url, "/passport/getToken"), request.toString(), options).subscribe(function (results) {
             if (results.code === 200) {
               if (results && results.msg) {
-                _this30.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this30.user.token = results.msg.token;
+                _this31.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this31.user.token = results.msg.token;
               }
 
-              _this30.isLoggedIn = true;
-              return _this30.user;
+              _this31.isLoggedIn = true;
+              return _this31.user;
             }
 
-            if (_this30.accountUpdateInterval) {
-              clearInterval(_this30.accountUpdateInterval);
+            if (_this31.accountUpdateInterval) {
+              clearInterval(_this31.accountUpdateInterval);
             }
 
-            _this30.accountUpdateInterval = setInterval(function () {
-              if (_this30.accountUpdateSub) {
-                _this30.accountUpdateSub.unsubscribe();
+            _this31.accountUpdateInterval = setInterval(function () {
+              if (_this31.accountUpdateSub) {
+                _this31.accountUpdateSub.unsubscribe();
               }
 
-              _this30.accountUpdateSub = _this30.getAccountTotal().subscribe(function (response) {
+              _this31.accountUpdateSub = _this31.getAccountTotal().subscribe(function (response) {
                 if (response.code === 200) {
-                  _this30.user.amountAvailable = parseFloat(response.msg.balance);
+                  _this31.user.amountAvailable = parseFloat(response.msg.balance);
                 }
               });
             }, 30000);
@@ -7218,7 +7225,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "login",
         value: function login(loginObj) {
-          var _this31 = this;
+          var _this32 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -7235,24 +7242,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           return this.httpClient.post("".concat(this.url, "/passport/login"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(function (results) {
             if (results.code === 200) {
-              _this31.user.userName = loginObj.userName;
+              _this32.user.userName = loginObj.userName;
 
               if (results && results.msg) {
-                _this31.user.amountAvailable = parseFloat(results.msg.balance) || 0;
-                _this31.user.token = results.msg.token;
-                _this31.user.memo = results.msg.memo;
-                _this31.user.depositAccount = results.msg.depositaccount;
+                _this32.user.amountAvailable = parseFloat(results.msg.balance) || 0;
+                _this32.user.token = results.msg.token;
+                _this32.user.memo = results.msg.memo;
+                _this32.user.depositAccount = results.msg.depositaccount;
               }
 
-              _this31.isLoggedIn = true;
-              return _this31.user;
+              _this32.isLoggedIn = true;
+              return _this32.user;
             }
           }));
         }
       }, {
         key: "register",
         value: function register(registrationObj) {
-          var _this32 = this;
+          var _this33 = this;
 
           this.isLoggedIn = false;
           var options = {
@@ -7263,7 +7270,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('password', js_md5__WEBPACK_IMPORTED_MODULE_3___default()(registrationObj.password));
           return this.httpClient.post("".concat(this.url, "/passport/register"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["switchMap"])(function (results) {
             if (results.code === 200) {
-              return _this32.login(registrationObj);
+              return _this33.login(registrationObj);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["of"])(null);
@@ -7354,7 +7361,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BlockChainService, [{
         key: "getNextBlock",
         value: function getNextBlock() {
-          var _this33 = this;
+          var _this34 = this;
 
           if (this.getBlockSub) {
             this.getBlockSub.unsubscribe();
@@ -7362,12 +7369,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.getBlockSub = this.getSpecificBlock('0x' + this.currentBlock).subscribe(function (response) {
             if (response.result) {
-              _this33.currentBlock = (parseInt(_this33.currentBlock, 16) + 1).toString(16);
+              _this34.currentBlock = (parseInt(_this34.currentBlock, 16) + 1).toString(16);
 
-              _this33.rollingLog.unshift(response.result);
+              _this34.rollingLog.unshift(response.result);
 
-              if (_this33.rollingLog.length > 20) {
-                _this33.rollingLog.pop();
+              if (_this34.rollingLog.length > 20) {
+                _this34.rollingLog.pop();
               }
             }
           });
@@ -7375,7 +7382,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "startLog",
         value: function startLog() {
-          var _this34 = this;
+          var _this35 = this;
 
           this.isSingleRow = false;
 
@@ -7385,15 +7392,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             }
 
             this.getLatestBlockSub = this.getLatestBlock().subscribe(function (response) {
-              _this34.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+              _this35.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
 
-              if (_this34.getBlockSub) {
-                _this34.getBlockSub.unsubscribe();
+              if (_this35.getBlockSub) {
+                _this35.getBlockSub.unsubscribe();
               }
 
-              _this34.getBlockSub = _this34.getSpecificBlock(response.result).subscribe(function (response) {
+              _this35.getBlockSub = _this35.getSpecificBlock(response.result).subscribe(function (response) {
                 if (response.result) {
-                  _this34.rollingLog.push(response.result);
+                  _this35.rollingLog.push(response.result);
                 }
               });
             });
@@ -7401,16 +7408,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (!this.rollingInterval) {
             this.rollingInterval = setInterval(function () {
-              if (_this34.targetBlock && _this34.targetBlock - parseInt(_this34.rollingLog[0].number, 16) > 50) {
-                if (_this34.getLatestBlockSub) {
-                  _this34.getLatestBlockSub.unsubscribe();
+              if (_this35.targetBlock && _this35.targetBlock - parseInt(_this35.rollingLog[0].number, 16) > 50) {
+                if (_this35.getLatestBlockSub) {
+                  _this35.getLatestBlockSub.unsubscribe();
                 }
 
-                _this34.getLatestBlockSub = _this34.getLatestBlock().subscribe(function (response) {
-                  _this34.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
+                _this35.getLatestBlockSub = _this35.getLatestBlock().subscribe(function (response) {
+                  _this35.currentBlock = (parseInt(response.result, 16) + 1).toString(16);
                 });
               } else {
-                _this34.getNextBlock();
+                _this35.getNextBlock();
               }
             }, 2000);
           }
@@ -7425,13 +7432,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setSingleBlock",
         value: function setSingleBlock(blockNumber) {
-          var _this35 = this;
+          var _this36 = this;
 
           this.isSingleRow = true;
           this.stopLog();
           this.getSpecificBlock('0x' + blockNumber.toString(16)).subscribe(function (response) {
             if (response.result) {
-              _this35.rollingLog = [response.result];
+              _this36.rollingLog = [response.result];
             }
           });
         }
@@ -7562,7 +7569,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LotteryService = /*#__PURE__*/function () {
       function LotteryService(authService, blockChainService, httpClient) {
-        var _this36 = this;
+        var _this37 = this;
 
         _classCallCheck(this, LotteryService);
 
@@ -7597,9 +7604,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var lotteryStatus = msg.status.toString();
           var currentEntries = msg.currententry;
           var currentStatus;
-          _this36.availablePrizePool = prizePool;
+          _this37.availablePrizePool = prizePool;
           var myEntries = [];
-          _this36.blockChainService.targetBlock = msg.targetblockheight;
+          _this37.blockChainService.targetBlock = msg.targetblockheight;
 
           if (msg.mytickets) {
             myEntries = msg.mytickets.map(function (candy) {
@@ -7612,15 +7619,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
           }
 
-          if (!_this36.lotteryObj[prizePool]) {
-            _this36.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
+          if (!_this37.lotteryObj[prizePool]) {
+            _this37.lotteryObj[prizePool] = new _models_lottery_available_prize_pool__WEBPACK_IMPORTED_MODULE_3__["PrizePool"](prizePool, gameId, lotteryStatus, currentEntries, myEntries, msg.targetblockheight);
           } else {
-            currentStatus = _this36.lotteryObj[prizePool].lotteryStatus;
-            _this36.lotteryObj[prizePool].gameId = gameId;
-            _this36.lotteryObj[prizePool].currentEntries = currentEntries;
-            _this36.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
-            _this36.lotteryObj[prizePool].myEntries = myEntries;
-            _this36.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
+            currentStatus = _this37.lotteryObj[prizePool].lotteryStatus;
+            _this37.lotteryObj[prizePool].gameId = gameId;
+            _this37.lotteryObj[prizePool].currentEntries = currentEntries;
+            _this37.lotteryObj[prizePool].lotteryStatus = lotteryStatus;
+            _this37.lotteryObj[prizePool].myEntries = myEntries;
+            _this37.lotteryObj[prizePool].targetBlockHeight = msg.targetblockheight;
           }
 
           if (currentStatus !== lotteryStatus) {
@@ -7632,15 +7639,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case '2':
-                clearInterval(_this36.checkStatusInterval);
+                clearInterval(_this37.checkStatusInterval);
 
-                _this36.setPrizePool(msg);
+                _this37.setPrizePool(msg);
 
-                _this36.setDrawWinners(prizePool);
+                _this37.setDrawWinners(prizePool);
 
-                _this36.blockChainService.stopLog();
+                _this37.blockChainService.stopLog();
 
-                _this36.finishPendingProcess(prizePool);
+                _this37.finishPendingProcess(prizePool);
 
                 break;
             }
@@ -7648,19 +7655,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
 
         this.startPendingProcess = function (prizePool) {
-          var currentPrizePool = _this36.lotteryObj[prizePool];
+          var currentPrizePool = _this37.lotteryObj[prizePool];
 
           if (currentPrizePool.lotteryStatus !== '0') {
             return;
           }
 
-          _this36.setLotteryStatus('1', prizePool);
+          _this37.setLotteryStatus('1', prizePool);
         };
 
         this.finishPendingProcess = function (prizePool) {
-          var currentPrizePool = _this36.lotteryObj[prizePool];
+          var currentPrizePool = _this37.lotteryObj[prizePool];
           currentPrizePool.countDown = 60;
-          _this36.lastGameId = _this36.currentLotteryInfo.gameId;
+          _this37.lastGameId = _this37.currentLotteryInfo.gameId;
 
           if (currentPrizePool.countDownInterval) {
             clearInterval(currentPrizePool.countDownInterval);
@@ -7670,14 +7677,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (currentPrizePool.countDown <= 1) {
               clearInterval(currentPrizePool.countDownInterval);
 
-              _this36.startStatusCheckInterval();
+              _this37.startStatusCheckInterval();
 
-              _this36.authService.loginWithToken();
+              _this37.authService.loginWithToken();
 
-              _this36.blockChainService.startLog();
+              _this37.blockChainService.startLog();
             }
 
-            _this36.lotteryObj[prizePool].countDown--;
+            _this37.lotteryObj[prizePool].countDown--;
           }, 1000);
         };
 
@@ -7687,7 +7694,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(LotteryService, [{
         key: "startStatusCheckInterval",
         value: function startStatusCheckInterval() {
-          var _this37 = this;
+          var _this38 = this;
 
           if (this.checkStatusInterval) {
             clearInterval(this.checkStatusInterval);
@@ -7699,9 +7706,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.statusSubscription = this.checkGameStatus().subscribe(function () {});
           this.checkStatusInterval = setInterval(function () {
-            _this37.statusSubscription.unsubscribe();
+            _this38.statusSubscription.unsubscribe();
 
-            _this37.statusSubscription = _this37.checkGameStatus().subscribe(function () {});
+            _this38.statusSubscription = _this38.checkGameStatus().subscribe(function () {});
           }, 3000);
         }
       }, {
@@ -7717,7 +7724,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkGameStatus",
         value: function checkGameStatus() {
-          var _this38 = this;
+          var _this39 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token || 'anonymous')
@@ -7726,7 +7733,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('type', 'active');
           return this.httpClient.post("".concat(this.url, "/game/status"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results) {
-              _this38.setAvailablePrizePool(results);
+              _this39.setAvailablePrizePool(results);
 
               return results;
             }
@@ -7744,21 +7751,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setPrizePool",
         value: function setPrizePool(msg) {
-          var _this39 = this;
+          var _this40 = this;
 
           var prizeList = msg.prizelist;
           this.clearWinners();
 
           if (prizeList && msg.myprizelist) {
             prizeList.forEach(function (prize, i) {
-              if (!_this39.currentLotteryInfo.winners.main[i]) {
-                _this39.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
+              if (!_this40.currentLotteryInfo.winners.main[i]) {
+                _this40.currentLotteryInfo.winners.main[i] = new _models_lottery_winner_info__WEBPACK_IMPORTED_MODULE_10__["WinnerInfo"](parseFloat(msg.myprizelist.find(function (item) {
                   return item.win === i + 1;
                 }).amount));
               }
 
               prize.forEach(function (item) {
-                _this39.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (_this39.authService.user && _this39.authService.user.userName)));
+                _this40.currentLotteryInfo.winners.main[i].candies.push(new _models_lottery_candy__WEBPACK_IMPORTED_MODULE_11__["Candy"](item.candy, item.user, item.prize, item.user === (_this40.authService.user && _this40.authService.user.userName)));
               });
             });
             this.currentLotteryInfo.winners.minipool.winningPreDisplay = parseFloat(msg.myprizelist.find(function (item) {
@@ -7798,7 +7805,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "buyCandy",
         value: function buyCandy(amount) {
-          var _this40 = this;
+          var _this41 = this;
 
           var options = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpHeaders"]().set('Content-Type', 'application/x-www-form-urlencoded').set('token', this.authService.user.token)
@@ -7808,9 +7815,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           request.set('gameid', this.currentLotteryInfo.gameId);
           return this.httpClient.post("".concat(this.url, "/bets/buyTickets"), request.toString(), options).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])(function (results) {
             if (results.code === 200) {
-              _this40.authService.user.amountAvailable = parseFloat(results.msg.balance);
+              _this41.authService.user.amountAvailable = parseFloat(results.msg.balance);
 
-              _this40.startStatusCheckInterval();
+              _this41.startStatusCheckInterval();
 
               return results.msg;
             }
@@ -7941,7 +7948,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/rxjs/_esm2015/operators/index.js");
 
     var NavigationService = function NavigationService(router) {
-      var _this41 = this;
+      var _this42 = this;
 
       _classCallCheck(this, NavigationService);
 
@@ -7950,7 +7957,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (e) {
         return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["RoutesRecognized"];
       }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["pairwise"])()).subscribe(function (e) {
-        _this41.previousRoute = e[0].urlAfterRedirects; // previous url
+        _this42.previousRoute = e[0].urlAfterRedirects; // previous url
       });
     };
 
