@@ -7120,8 +7120,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 break;
 
               case 'Recharge':
-                if (data.errorCode === '0' && data.callback) {
-                  alert("".concat(data.callback.amount).concat(data.callback.currencyTag, " ").concat(data.callback.msg));
+                alert(data);
+
+                if ((data.errorCode === '0' || data.errorCode === 0) && data.callback) {
+                  var responseObj = data.callback;
+                  alert("".concat(responseObj.amount).concat(responseObj.currencyTag, " ").concat(responseObj.msg));
                 } else {
                   alert(data.message);
                 }

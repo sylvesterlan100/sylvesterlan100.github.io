@@ -4375,8 +4375,10 @@ let AuthService = class AuthService {
                         this.loginWithToken();
                         break;
                     case 'Recharge':
-                        if (data.errorCode === '0' && data.callback) {
-                            alert(`${data.callback.amount}${data.callback.currencyTag} ${data.callback.msg}`);
+                        alert(data);
+                        if ((data.errorCode === '0' || data.errorCode === 0) && data.callback) {
+                            const responseObj = data.callback;
+                            alert(`${responseObj.amount}${responseObj.currencyTag} ${responseObj.msg}`);
                         }
                         else {
                             alert(data.message);
