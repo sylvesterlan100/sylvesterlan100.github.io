@@ -4082,7 +4082,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }
             }
 
-            callback();
+            if (callback) {
+              callback();
+            }
           }, 0);
         }
       }, {
@@ -4769,7 +4771,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'deposit-funds': '存入余数',
       'depositing-funds': '存入',
       'depositing-funds-etc': '您必须按照“存入”页面上的说明将资金存入您的钱包。',
-      'drawing-begins-after-candies': '累计{0}幸运投票开启幸运糖果',
+      'drawing-begins-after-candies': '累计{0}幸运投票\n开启幸运糖果',
       'drawing-begins-after-users-enter': '{0} 名用户加入后开始抽奖',
       'drawing-begins-in': '开奖倒计时',
       'enter-your-2fa-code-and-press-confirm-to-bind-your-account': '输入您的2FA代码，然后按“确认”以绑定您的帐户。',
@@ -4791,7 +4793,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'max-buy': '最高投票',
       'mini-pool-winner': '迷你幸运池优胜者',
       'more-candies': '投票更多',
-      'my-candy-ids': '本轮我的幸运投票编号',
+      'my-candy-ids': '我的幸运投票编号',
       'my-candies': '我的投票总数',
       'my-winnings': '我的幸运奖',
       'next-pool-starts-in': '下一个幸运池即将开始于',

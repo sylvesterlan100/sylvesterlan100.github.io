@@ -2398,7 +2398,9 @@ let BuyCandyInputComponent = class BuyCandyInputComponent {
                     this.amount = parseFloat(arr.join('.'));
                 }
             }
-            callback();
+            if (callback) {
+                callback();
+            }
         }, 0);
     }
     checkValue() {
