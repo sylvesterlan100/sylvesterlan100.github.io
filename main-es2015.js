@@ -309,6 +309,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/popup/popup.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/popup/popup.component.html ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"popup\">\n  <div class=\"body\">\n    <div>\n      {{this.data.message}}\n    </div>\n  </div>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/winner-panel/winner-panel.component.html":
 /*!*******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common/winner-panel/winner-panel.component.html ***!
@@ -2123,28 +2136,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm2015/progress-spinner.js");
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm2015/select.js");
-/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
-/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
-/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
-/* harmony import */ var ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-infinite-scroll */ "./node_modules/ngx-infinite-scroll/modules/ngx-infinite-scroll.js");
-/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
-/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
-/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
-/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
-/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
-/* harmony import */ var _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./buy-candy-input/buy-candy-input.component */ "./src/app/common/buy-candy-input/buy-candy-input.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
-/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
-/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
-/* harmony import */ var _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./animated-candies/animated-candies.component */ "./src/app/common/animated-candies/animated-candies.component.ts");
-/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
-/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
-/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
-/* harmony import */ var _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../pipes/to-number.pipe */ "./src/app/pipes/to-number.pipe.ts");
-/* harmony import */ var _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./info-component/info-component.component */ "./src/app/common/info-component/info-component.component.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm2015/progress-spinner.js");
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/select */ "./node_modules/@angular/material/esm2015/select.js");
+/* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm2015/slider.js");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/tabs */ "./node_modules/@angular/material/esm2015/tabs.js");
+/* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/fesm2015/ngx-clipboard.js");
+/* harmony import */ var ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ngx-infinite-scroll */ "./node_modules/ngx-infinite-scroll/modules/ngx-infinite-scroll.js");
+/* harmony import */ var _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./account-header/account-header.component */ "./src/app/common/account-header/account-header.component.ts");
+/* harmony import */ var _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./animated-background/animated-background.component */ "./src/app/common/animated-background/animated-background.component.ts");
+/* harmony import */ var _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main-header/main-header.component */ "./src/app/common/main-header/main-header.component.ts");
+/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
+/* harmony import */ var _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pool-select/pool-select.component */ "./src/app/common/pool-select/pool-select.component.ts");
+/* harmony import */ var _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./buy-candy-input/buy-candy-input.component */ "./src/app/common/buy-candy-input/buy-candy-input.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./language-select/language-select.component */ "./src/app/common/language-select/language-select.component.ts");
+/* harmony import */ var _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./winner-panel/winner-panel.component */ "./src/app/common/winner-panel/winner-panel.component.ts");
+/* harmony import */ var _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./animated-question/animated-question.component */ "./src/app/common/animated-question/animated-question.component.ts");
+/* harmony import */ var _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./animated-candies/animated-candies.component */ "./src/app/common/animated-candies/animated-candies.component.ts");
+/* harmony import */ var _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./animated-confetti/animated-confetti.component */ "./src/app/common/animated-confetti/animated-confetti.component.ts");
+/* harmony import */ var _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./animated-coins/animated-coins.component */ "./src/app/common/animated-coins/animated-coins.component.ts");
+/* harmony import */ var _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./block-chain-info/block-chain-info.component */ "./src/app/common/block-chain-info/block-chain-info.component.ts");
+/* harmony import */ var _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../pipes/to-number.pipe */ "./src/app/pipes/to-number.pipe.ts");
+/* harmony import */ var _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./info-component/info-component.component */ "./src/app/common/info-component/info-component.component.ts");
+/* harmony import */ var _popup_popup_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./popup/popup.component */ "./src/app/common/popup/popup.component.ts");
+
 
 
 
@@ -2173,62 +2189,68 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AppCommonModule = class AppCommonModule {
 };
 AppCommonModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_10__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_11__["AnimatedBackgroundComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedQuestionComponent"],
-            _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedCandiesComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedConfettiComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_22__["AnimatedCoinsComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_23__["BlockChainInfoComponent"],
-            _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_15__["BuyCandyInputComponent"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_17__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_12__["MainHeaderComponent"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_14__["PoolSelectComponent"],
-            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_24__["ToNumberPipe"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_13__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_18__["WinnerPanelComponent"],
-            _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_25__["InfoComponentComponent"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_11__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_12__["AnimatedBackgroundComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedQuestionComponent"],
+            _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedCandiesComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_22__["AnimatedConfettiComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_23__["AnimatedCoinsComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_24__["BlockChainInfoComponent"],
+            _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_16__["BuyCandyInputComponent"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_18__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_13__["MainHeaderComponent"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_15__["PoolSelectComponent"],
+            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_25__["ToNumberPipe"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_14__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_19__["WinnerPanelComponent"],
+            _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_26__["InfoComponentComponent"],
+            _popup_popup_component__WEBPACK_IMPORTED_MODULE_27__["PopupComponent"],
         ],
         imports: [
-            ngx_clipboard__WEBPACK_IMPORTED_MODULE_8__["ClipboardModule"],
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_9__["ClipboardModule"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_9__["InfiniteScrollModule"],
-            _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_4__["MatProgressSpinnerModule"],
-            _angular_material_select__WEBPACK_IMPORTED_MODULE_5__["MatSelectModule"],
-            _angular_material_slider__WEBPACK_IMPORTED_MODULE_6__["MatSliderModule"],
-            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_16__["RouterModule"]
+            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_10__["InfiniteScrollModule"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogModule"],
+            _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__["MatProgressSpinnerModule"],
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_6__["MatSelectModule"],
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_7__["MatSliderModule"],
+            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabsModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_17__["RouterModule"]
         ],
         exports: [
-            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_10__["AccountHeaderComponent"],
-            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_11__["AnimatedBackgroundComponent"],
-            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_22__["AnimatedCoinsComponent"],
-            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedConfettiComponent"],
-            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_19__["AnimatedQuestionComponent"],
-            _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedCandiesComponent"],
-            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_23__["BlockChainInfoComponent"],
-            _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_15__["BuyCandyInputComponent"],
-            ngx_clipboard__WEBPACK_IMPORTED_MODULE_8__["ClipboardModule"],
+            _account_header_account_header_component__WEBPACK_IMPORTED_MODULE_11__["AccountHeaderComponent"],
+            _animated_background_animated_background_component__WEBPACK_IMPORTED_MODULE_12__["AnimatedBackgroundComponent"],
+            _animated_coins_animated_coins_component__WEBPACK_IMPORTED_MODULE_23__["AnimatedCoinsComponent"],
+            _animated_confetti_animated_confetti_component__WEBPACK_IMPORTED_MODULE_22__["AnimatedConfettiComponent"],
+            _animated_question_animated_question_component__WEBPACK_IMPORTED_MODULE_20__["AnimatedQuestionComponent"],
+            _animated_candies_animated_candies_component__WEBPACK_IMPORTED_MODULE_21__["AnimatedCandiesComponent"],
+            _block_chain_info_block_chain_info_component__WEBPACK_IMPORTED_MODULE_24__["BlockChainInfoComponent"],
+            _buy_candy_input_buy_candy_input_component__WEBPACK_IMPORTED_MODULE_16__["BuyCandyInputComponent"],
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_9__["ClipboardModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_25__["InfoComponentComponent"],
-            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_9__["InfiniteScrollModule"],
-            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_17__["LanguageSelectComponent"],
-            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_12__["MainHeaderComponent"],
-            _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_4__["MatProgressSpinnerModule"],
-            _angular_material_select__WEBPACK_IMPORTED_MODULE_5__["MatSelectModule"],
-            _angular_material_slider__WEBPACK_IMPORTED_MODULE_6__["MatSliderModule"],
-            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_7__["MatTabsModule"],
-            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_14__["PoolSelectComponent"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_16__["RouterModule"],
-            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_24__["ToNumberPipe"],
-            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_13__["TranslatePipe"],
-            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_18__["WinnerPanelComponent"]
+            _info_component_info_component_component__WEBPACK_IMPORTED_MODULE_26__["InfoComponentComponent"],
+            ngx_infinite_scroll__WEBPACK_IMPORTED_MODULE_10__["InfiniteScrollModule"],
+            _language_select_language_select_component__WEBPACK_IMPORTED_MODULE_18__["LanguageSelectComponent"],
+            _main_header_main_header_component__WEBPACK_IMPORTED_MODULE_13__["MainHeaderComponent"],
+            _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_5__["MatProgressSpinnerModule"],
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_6__["MatSelectModule"],
+            _angular_material_slider__WEBPACK_IMPORTED_MODULE_7__["MatSliderModule"],
+            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabsModule"],
+            _pool_select_pool_select_component__WEBPACK_IMPORTED_MODULE_15__["PoolSelectComponent"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_17__["RouterModule"],
+            _pipes_to_number_pipe__WEBPACK_IMPORTED_MODULE_25__["ToNumberPipe"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_14__["TranslatePipe"],
+            _winner_panel_winner_panel_component__WEBPACK_IMPORTED_MODULE_19__["WinnerPanelComponent"]
+        ],
+        entryComponents: [
+            _popup_popup_component__WEBPACK_IMPORTED_MODULE_27__["PopupComponent"]
         ]
     })
 ], AppCommonModule);
@@ -2678,6 +2700,58 @@ PoolSelectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./pool-select.component.scss */ "./src/app/common/pool-select/pool-select.component.scss")).default]
     })
 ], PoolSelectComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/common/popup/popup.component.scss":
+/*!***************************************************!*\
+  !*** ./src/app/common/popup/popup.component.scss ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".popup {\n  width: 100%;\n  padding: 16px;\n}\n.popup .body {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tbW9uL3BvcHVwL0M6XFxsb2NhbGRldlxcbXktcHJvamVjdHNcXGNoYXQtbG90dGVyeS9zcmNcXGFwcFxcY29tbW9uXFxwb3B1cFxccG9wdXAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbW1vbi9wb3B1cC9wb3B1cC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7RUFDQSxhQUFBO0FDQ0Y7QURBRTtFQUNFLFdBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQ0VKIiwiZmlsZSI6InNyYy9hcHAvY29tbW9uL3BvcHVwL3BvcHVwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBvcHVwIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBwYWRkaW5nOiAxNnB4O1xyXG4gIC5ib2R5IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICB9XHJcbn1cclxuIiwiLnBvcHVwIHtcbiAgd2lkdGg6IDEwMCU7XG4gIHBhZGRpbmc6IDE2cHg7XG59XG4ucG9wdXAgLmJvZHkge1xuICB3aWR0aDogMTAwJTtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/common/popup/popup.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/common/popup/popup.component.ts ***!
+  \*************************************************/
+/*! exports provided: PopupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopupComponent", function() { return PopupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+
+
+
+let PopupComponent = class PopupComponent {
+    constructor(data) {
+        this.data = data;
+    }
+    ngOnInit() {
+    }
+};
+PopupComponent.ctorParameters = () => [
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"],] }] }
+];
+PopupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-popup',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./popup.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common/popup/popup.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./popup.component.scss */ "./src/app/common/popup/popup.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"]))
+], PopupComponent);
 
 
 
@@ -4346,6 +4420,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/window-ref */ "./src/app/common/window-ref.ts");
 /* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm2015/dialog.js");
+/* harmony import */ var _common_popup_popup_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../common/popup/popup.component */ "./src/app/common/popup/popup.component.ts");
+
+
 
 
 
@@ -4356,8 +4434,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AuthService = class AuthService {
-    constructor(httpClient, translate, windowRef) {
+    constructor(dialog, httpClient, translate, windowRef) {
         // this.dataObj = {"userMail":"shan26@bccto.me","token":"eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYzNTIxNjksImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.4nho9kilct4ngio93ga9nuoln7divgu2bf5ptucnn6jqoo4203h"}
+        this.dialog = dialog;
         this.httpClient = httpClient;
         this.translate = translate;
         this.windowRef = windowRef;
@@ -4391,7 +4470,13 @@ let AuthService = class AuthService {
                     case 'Recharge':
                         if ((response.errorCode === '0' || response.errorCode === 0) && response.callback) {
                             const responseObj = response.callback;
-                            alert(`${responseObj.amount}${responseObj.currencyTag} ${responseObj.msg} - ${this.translate.transform('your-account-will-be-updated')}`);
+                            this.dialog.open(_common_popup_popup_component__WEBPACK_IMPORTED_MODULE_10__["PopupComponent"], {
+                                width: '300px',
+                                maxWidth: '90vw',
+                                data: {
+                                    message: `${this.translate.transform('success')} (${responseObj.amount}${responseObj.currencyTag}) - ${this.translate.transform('your-account-will-be-updated')}`
+                                }
+                            });
                         }
                         else {
                             alert(response.message);
@@ -4530,6 +4615,7 @@ let AuthService = class AuthService {
     }
 };
 AuthService.ctorParameters = () => [
+    { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__["MatDialog"] },
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
     { type: _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_8__["TranslatePipe"] },
     { type: _common_window_ref__WEBPACK_IMPORTED_MODULE_7__["WindowRef"] }
