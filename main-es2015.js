@@ -4276,8 +4276,8 @@ let AccountService = class AccountService {
         const request = new URLSearchParams();
         request.set('page', page.toString());
         request.set('offset', offset.toString());
-        alert(1 + this.authService.user.token);
-        alert(2 + JSON.stringify(request));
+        alert(11 + this.authService.user.token);
+        alert(22 + JSON.stringify(page + ' ' + offset));
         return this.httpClient.post(`${this.url}/account/getDepositHistory`, request.toString(), options);
     }
     getWithdrawalHistory(page, offset) {
