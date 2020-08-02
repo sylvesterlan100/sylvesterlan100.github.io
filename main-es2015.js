@@ -1616,6 +1616,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_translate_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/translate.service */ "./src/app/services/translate.service.ts");
 /* harmony import */ var _services_payout_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/payout.service */ "./src/app/services/payout.service.ts");
 /* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./common/window-ref */ "./src/app/common/window-ref.ts");
+/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
 
 
 
@@ -1634,6 +1635,7 @@ __webpack_require__.r(__webpack_exports__);
 // Components
 
 // Services
+
 
 
 
@@ -1670,6 +1672,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__["NavigationService"],
             _services_payout_service__WEBPACK_IMPORTED_MODULE_21__["PayoutService"],
             _services_translate_service__WEBPACK_IMPORTED_MODULE_20__["TranslateService"],
+            _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_23__["TranslatePipe"],
             _common_window_ref__WEBPACK_IMPORTED_MODULE_22__["WindowRef"],
             {
                 provide: _angular_common__WEBPACK_IMPORTED_MODULE_13__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_13__["HashLocationStrategy"]
@@ -2889,7 +2892,8 @@ const ChineseTranslations = {
     'withdrawal-amount': '提出金额',
     'work-in-progress': '工作正在进行中',
     'you-won': '您中奖了！',
-    'your-account-is-now-bound': '您的帐户现已绑定。'
+    'your-account-is-now-bound': '您的帐户现已绑定。',
+    'your-account-will-be-updated': '您的充值将在几分钟内到账，请留意账户余额更新。'
 };
 
 
@@ -3085,7 +3089,8 @@ const EnglishTranslations = {
     'withdrawal-amount': 'Withdrawal Amount',
     'work-in-progress': 'Work in Progress',
     'you-won': 'YOU WON!',
-    'your-account-is-now-bound': 'Your account is now bound'
+    'your-account-is-now-bound': 'Your account is now bound',
+    'your-account-will-be-updated': 'Your account will be updated in a few minutes.'
 };
 
 
@@ -4340,6 +4345,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
 /* harmony import */ var _common_window_ref__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/window-ref */ "./src/app/common/window-ref.ts");
+/* harmony import */ var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../pipes/translate.pipe */ "./src/app/pipes/translate.pipe.ts");
+
 
 
 
@@ -4349,9 +4356,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AuthService = class AuthService {
-    constructor(httpClient, windowRef) {
+    constructor(httpClient, translate, windowRef) {
         // this.dataObj = {"userMail":"shan26@bccto.me","token":"eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYzNTIxNjksImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.4nho9kilct4ngio93ga9nuoln7divgu2bf5ptucnn6jqoo4203h"}
         this.httpClient = httpClient;
+        this.translate = translate;
         this.windowRef = windowRef;
         this.isLoggedIn = false;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
@@ -4383,7 +4391,7 @@ let AuthService = class AuthService {
                     case 'Recharge':
                         if ((response.errorCode === '0' || response.errorCode === 0) && response.callback) {
                             const responseObj = response.callback;
-                            alert(`${responseObj.amount}${responseObj.currencyTag} ${responseObj.msg}`);
+                            alert(`${responseObj.amount}${responseObj.currencyTag} ${responseObj.msg} - ${this.translate.transform('your-account-will-be-updated')}`);
                         }
                         else {
                             alert(response.message);
@@ -4523,6 +4531,7 @@ let AuthService = class AuthService {
 };
 AuthService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_8__["TranslatePipe"] },
     { type: _common_window_ref__WEBPACK_IMPORTED_MODULE_7__["WindowRef"] }
 ];
 AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([

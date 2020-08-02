@@ -2882,7 +2882,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _common_window_ref__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
     /*! ./common/window-ref */
-    "./src/app/common/window-ref.ts"); // Modules
+    "./src/app/common/window-ref.ts");
+    /* harmony import */
+
+
+    var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    /*! ./pipes/translate.pipe */
+    "./src/app/pipes/translate.pipe.ts"); // Modules
     // Components
     // Services
 
@@ -2894,7 +2900,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_14__["AppComponent"]],
       imports: [_account_account_module__WEBPACK_IMPORTED_MODULE_6__["AccountModule"], _common_app_common_module__WEBPACK_IMPORTED_MODULE_7__["AppCommonModule"], _routing_app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _home_home_module__WEBPACK_IMPORTED_MODULE_9__["HomeModule"], _how_to_play_how_to_play_module__WEBPACK_IMPORTED_MODULE_10__["HowToPlayModule"], _my_entries_my_entries_module__WEBPACK_IMPORTED_MODULE_11__["MyEntriesModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"], _payout_payout_module__WEBPACK_IMPORTED_MODULE_12__["PayoutModule"]],
-      providers: [_services_account_service__WEBPACK_IMPORTED_MODULE_15__["AccountService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_16__["AuthService"], _services_block_chain_service__WEBPACK_IMPORTED_MODULE_17__["BlockChainService"], _services_lottery_service__WEBPACK_IMPORTED_MODULE_18__["LotteryService"], _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__["NavigationService"], _services_payout_service__WEBPACK_IMPORTED_MODULE_21__["PayoutService"], _services_translate_service__WEBPACK_IMPORTED_MODULE_20__["TranslateService"], _common_window_ref__WEBPACK_IMPORTED_MODULE_22__["WindowRef"], {
+      providers: [_services_account_service__WEBPACK_IMPORTED_MODULE_15__["AccountService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_16__["AuthService"], _services_block_chain_service__WEBPACK_IMPORTED_MODULE_17__["BlockChainService"], _services_lottery_service__WEBPACK_IMPORTED_MODULE_18__["LotteryService"], _services_navigation_service__WEBPACK_IMPORTED_MODULE_19__["NavigationService"], _services_payout_service__WEBPACK_IMPORTED_MODULE_21__["PayoutService"], _services_translate_service__WEBPACK_IMPORTED_MODULE_20__["TranslateService"], _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_23__["TranslatePipe"], _common_window_ref__WEBPACK_IMPORTED_MODULE_22__["WindowRef"], {
         provide: _angular_common__WEBPACK_IMPORTED_MODULE_13__["LocationStrategy"],
         useClass: _angular_common__WEBPACK_IMPORTED_MODULE_13__["HashLocationStrategy"]
       }],
@@ -4840,7 +4846,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'withdrawal-amount': '提出金额',
       'work-in-progress': '工作正在进行中',
       'you-won': '您中奖了！',
-      'your-account-is-now-bound': '您的帐户现已绑定。'
+      'your-account-is-now-bound': '您的帐户现已绑定。',
+      'your-account-will-be-updated': '您的充值将在几分钟内到账，请留意账户余额更新。'
     };
     /***/
   },
@@ -5060,7 +5067,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       'withdrawal-amount': 'Withdrawal Amount',
       'work-in-progress': 'Work in Progress',
       'you-won': 'YOU WON!',
-      'your-account-is-now-bound': 'Your account is now bound'
+      'your-account-is-now-bound': 'Your account is now bound',
+      'your-account-will-be-updated': 'Your account will be updated in a few minutes.'
     };
     /***/
   },
@@ -7081,15 +7089,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _common_window_ref__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ../common/window-ref */
     "./src/app/common/window-ref.ts");
+    /* harmony import */
+
+
+    var _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ../pipes/translate.pipe */
+    "./src/app/pipes/translate.pipe.ts");
 
     var AuthService = /*#__PURE__*/function () {
-      function AuthService(httpClient, windowRef) {
+      function AuthService(httpClient, translate, windowRef) {
         var _this30 = this;
 
         _classCallCheck(this, AuthService);
 
         // this.dataObj = {"userMail":"shan26@bccto.me","token":"eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYzNTIxNjksImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.4nho9kilct4ngio93ga9nuoln7divgu2bf5ptucnn6jqoo4203h"}
         this.httpClient = httpClient;
+        this.translate = translate;
         this.windowRef = windowRef;
         this.isLoggedIn = false;
         this.url = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].url;
@@ -7126,7 +7141,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               case 'Recharge':
                 if ((response.errorCode === '0' || response.errorCode === 0) && response.callback) {
                   var responseObj = response.callback;
-                  alert("".concat(responseObj.amount).concat(responseObj.currencyTag, " ").concat(responseObj.msg));
+                  alert("".concat(responseObj.amount).concat(responseObj.currencyTag, " ").concat(responseObj.msg, " - ").concat(_this30.translate.transform('your-account-will-be-updated')));
                 } else {
                   alert(response.message);
                 }
@@ -7295,6 +7310,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AuthService.ctorParameters = function () {
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }, {
+        type: _pipes_translate_pipe__WEBPACK_IMPORTED_MODULE_8__["TranslatePipe"]
       }, {
         type: _common_window_ref__WEBPACK_IMPORTED_MODULE_7__["WindowRef"]
       }];
