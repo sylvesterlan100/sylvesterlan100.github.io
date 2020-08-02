@@ -6958,8 +6958,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var request = new URLSearchParams();
           request.set('page', page.toString());
           request.set('offset', offset.toString());
-          alert(11 + this.authService.user.token);
-          alert(22 + JSON.stringify(page + ' ' + offset));
           return this.httpClient.post("".concat(this.url, "/account/getDepositHistory"), request.toString(), options);
         }
       }, {
@@ -7090,6 +7088,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _classCallCheck(this, AuthService);
 
+        // this.dataObj = {"userMail":"shan26@bccto.me","token":"eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYzNTIxNjksImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.4nho9kilct4ngio93ga9nuoln7divgu2bf5ptucnn6jqoo4203h"}
         this.httpClient = httpClient;
         this.windowRef = windowRef;
         this.isLoggedIn = false;
@@ -7103,7 +7102,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           depositAccount: null,
           memo: null
         };
-        this.appKey = 'btopen8yg2dfaau4x';
+        this.appKey = 'btopen8yg2dfaau4x'; // this.user.appToken = this.dataObj.appToken;
+        // this.loginWithToken();
 
         if (this.windowRef.nativeWindow) {
           this.windowRef.nativeWindow.SyncCallback = function (method, data) {
@@ -7211,24 +7211,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }
 
               _this31.isLoggedIn = true;
-              return _this31.user;
-            }
 
-            if (_this31.accountUpdateInterval) {
-              clearInterval(_this31.accountUpdateInterval);
-            }
-
-            _this31.accountUpdateInterval = setInterval(function () {
-              if (_this31.accountUpdateSub) {
-                _this31.accountUpdateSub.unsubscribe();
+              if (_this31.accountUpdateInterval) {
+                clearInterval(_this31.accountUpdateInterval);
               }
 
-              _this31.accountUpdateSub = _this31.getAccountTotal().subscribe(function (response) {
-                if (response.code === 200) {
-                  _this31.user.amountAvailable = parseFloat(response.msg.balance);
+              _this31.accountUpdateInterval = setInterval(function () {
+                if (_this31.accountUpdateSub) {
+                  _this31.accountUpdateSub.unsubscribe();
                 }
-              });
-            }, 5000);
+
+                _this31.accountUpdateSub = _this31.getAccountTotal().subscribe(function (response) {
+                  if (response.code === 200) {
+                    _this31.user.amountAvailable = parseFloat(response.msg.balance);
+                  }
+                });
+              }, 5000);
+              return _this31.user;
+            }
           }, function (err) {
             alert('error ' + JSON.stringify(err));
           });
@@ -8235,7 +8235,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var environment = {
       production: false,
-      url: 'http://api.luckystrike.one/api',
+      url: 'https://api.luckystrike.one/api',
       etherscanUrl: 'https://api-cn.etherscan.com/api'
     };
     /*

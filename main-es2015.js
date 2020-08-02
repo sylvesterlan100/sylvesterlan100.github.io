@@ -4276,8 +4276,6 @@ let AccountService = class AccountService {
         const request = new URLSearchParams();
         request.set('page', page.toString());
         request.set('offset', offset.toString());
-        alert(11 + this.authService.user.token);
-        alert(22 + JSON.stringify(page + ' ' + offset));
         return this.httpClient.post(`${this.url}/account/getDepositHistory`, request.toString(), options);
     }
     getWithdrawalHistory(page, offset) {
@@ -4352,6 +4350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let AuthService = class AuthService {
     constructor(httpClient, windowRef) {
+        // this.dataObj = {"userMail":"shan26@bccto.me","token":"eyJhbGciOiJIQTI1NiIsInR5cGUiOiJKV1QifQ==.eyJhdWQiOiJvdGNfYWRtaW4iLCJpYXQiOjE1OTYzNTIxNjksImlzcyI6Imh0dHBzOi8vaS5kaWRpZHUuY29tIiwic3ViIjoib3RjX2FwaSIsInVzZXJJZCI6IkRudFB6SE0wWHM1azA0UUtuNGJFL0ZKSzczZVV5eStMR0xDQ2pVWEF0ZmNqV0pRY08weVNjRDB5M004WUpZZHUifQ==.4nho9kilct4ngio93ga9nuoln7divgu2bf5ptucnn6jqoo4203h"}
         this.httpClient = httpClient;
         this.windowRef = windowRef;
         this.isLoggedIn = false;
@@ -4366,6 +4365,8 @@ let AuthService = class AuthService {
             memo: null
         };
         this.appKey = 'btopen8yg2dfaau4x';
+        // this.user.appToken = this.dataObj.appToken;
+        // this.loginWithToken();
         if (this.windowRef.nativeWindow) {
             this.windowRef.nativeWindow.SyncCallback = (method, data) => {
                 const response = JSON.parse(data);
@@ -4455,22 +4456,22 @@ let AuthService = class AuthService {
                     this.user.token = results.msg.token;
                 }
                 this.isLoggedIn = true;
+                if (this.accountUpdateInterval) {
+                    clearInterval(this.accountUpdateInterval);
+                }
+                this.accountUpdateInterval = setInterval(() => {
+                    if (this.accountUpdateSub) {
+                        this.accountUpdateSub.unsubscribe();
+                    }
+                    this.accountUpdateSub = this.getAccountTotal()
+                        .subscribe((response) => {
+                        if (response.code === 200) {
+                            this.user.amountAvailable = parseFloat(response.msg.balance);
+                        }
+                    });
+                }, 5000);
                 return this.user;
             }
-            if (this.accountUpdateInterval) {
-                clearInterval(this.accountUpdateInterval);
-            }
-            this.accountUpdateInterval = setInterval(() => {
-                if (this.accountUpdateSub) {
-                    this.accountUpdateSub.unsubscribe();
-                }
-                this.accountUpdateSub = this.getAccountTotal()
-                    .subscribe((response) => {
-                    if (response.code === 200) {
-                        this.user.amountAvailable = parseFloat(response.msg.balance);
-                    }
-                });
-            }, 5000);
         }, (err) => {
             alert('error ' + JSON.stringify(err));
         });
@@ -5133,7 +5134,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    url: 'http://api.luckystrike.one/api',
+    url: 'https://api.luckystrike.one/api',
     etherscanUrl: 'https://api-cn.etherscan.com/api'
 };
 /*
