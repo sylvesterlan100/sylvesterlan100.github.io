@@ -710,6 +710,8 @@ let AccountHistoryComponent = class AccountHistoryComponent {
             if (data.code === 200) {
                 this.depositHistory = data.msg;
             }
+        }, (err) => {
+            alert(JSON.stringify(err));
         });
         this.isLoadingWithdrawal = true;
         this.accountService.getWithdrawalHistory(1, 20).subscribe((data) => {
