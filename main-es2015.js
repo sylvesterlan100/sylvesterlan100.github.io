@@ -711,7 +711,6 @@ let AccountHistoryComponent = class AccountHistoryComponent {
                 this.depositHistory = data.msg;
             }
         }, (err) => {
-            alert(JSON.stringify(err));
         });
         this.isLoadingWithdrawal = true;
         this.accountService.getWithdrawalHistory(1, 20).subscribe((data) => {
@@ -5132,7 +5131,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    url: 'https://api.luckystrike.one/api',
+    url: 'http://api.luckystrike.one/api',
     etherscanUrl: 'https://api-cn.etherscan.com/api'
 };
 /*

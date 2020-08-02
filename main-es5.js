@@ -1318,9 +1318,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (data.code === 200) {
               _this.depositHistory = data.msg;
             }
-          }, function (err) {
-            alert(JSON.stringify(err));
-          });
+          }, function (err) {});
           this.isLoadingWithdrawal = true;
           this.accountService.getWithdrawalHistory(1, 20).subscribe(function (data) {
             _this.isLoadingWithdrawal = false;
@@ -8235,7 +8233,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var environment = {
       production: false,
-      url: 'https://api.luckystrike.one/api',
+      url: 'http://api.luckystrike.one/api',
       etherscanUrl: 'https://api-cn.etherscan.com/api'
     };
     /*
