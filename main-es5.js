@@ -1318,7 +1318,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (data.code === 200) {
               _this.depositHistory = data.msg;
             }
-          }, function (err) {});
+          }, function (err) {
+            alert('Deposit history: ' + JSON.stringify(err));
+          });
           this.isLoadingWithdrawal = true;
           this.accountService.getWithdrawalHistory(1, 20).subscribe(function (data) {
             _this.isLoadingWithdrawal = false;
