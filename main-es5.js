@@ -1318,9 +1318,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (data.code === 200) {
               _this.depositHistory = data.msg;
             }
-          }, function (err) {
-            alert('Deposit history: ' + JSON.stringify(err));
-          });
+          }, function (err) {});
           this.isLoadingWithdrawal = true;
           this.accountService.getWithdrawalHistory(1, 20).subscribe(function (data) {
             _this.isLoadingWithdrawal = false;
@@ -6960,6 +6958,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var request = new URLSearchParams();
           request.set('page', page.toString());
           request.set('offset', offset.toString());
+          alert(1 + this.authService.user.token);
+          alert(2 + JSON.stringify(request));
           return this.httpClient.post("".concat(this.url, "/account/getDepositHistory"), request.toString(), options);
         }
       }, {

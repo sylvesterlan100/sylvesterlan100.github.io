@@ -711,7 +711,6 @@ let AccountHistoryComponent = class AccountHistoryComponent {
                 this.depositHistory = data.msg;
             }
         }, (err) => {
-            alert('Deposit history: ' + JSON.stringify(err));
         });
         this.isLoadingWithdrawal = true;
         this.accountService.getWithdrawalHistory(1, 20).subscribe((data) => {
@@ -4277,6 +4276,8 @@ let AccountService = class AccountService {
         const request = new URLSearchParams();
         request.set('page', page.toString());
         request.set('offset', offset.toString());
+        alert(1 + this.authService.user.token);
+        alert(2 + JSON.stringify(request));
         return this.httpClient.post(`${this.url}/account/getDepositHistory`, request.toString(), options);
     }
     getWithdrawalHistory(page, offset) {
