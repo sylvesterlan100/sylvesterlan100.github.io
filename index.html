@@ -1,24 +1,52 @@
-<!doctype html>
-<!--
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>BlockchainLottery</title>
-  <base href="/">
-  <script src="assets/js/gsap.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-  <app-root></app-root>
-<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
-</html>
--->
-<html lang="en">
-  <body>
-<a href="https://www.applink.vellhealth.com/?code=0911e5ddbff4cd532d24608ac1dd7ade6b164760" target="_blank">TEST</a>
-  </body>
+	<head>
+		<title>Earth and Moon</title>
+		<meta charset="utf-8">
+		<meta name="generator" content="Three.js Editor">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: sans-serif;
+				font-size: 11px;
+				background-color: #000;
+				margin: 0px;
+			}
+			canvas {
+				display: block;
+			}
+		</style>
+	</head>
+	<body ontouchstart="">
+		<script type="module">
+
+			import * as THREE from './js/three.module.js';
+			import { APP } from './js/app.js';
+			import { VRButton } from './js/VRButton.js';
+
+			window.THREE = THREE; // Used by APP Scripts.
+			window.VRButton = VRButton; // Used by APP Scripts.
+
+			var loader = new THREE.FileLoader();
+			loader.load( 'app.json', function ( text ) {
+
+				var player = new APP.Player();
+				player.load( JSON.parse( text ) );
+				player.setSize( window.innerWidth, window.innerHeight );
+				player.play();
+
+				document.body.appendChild( player.dom );
+
+				window.addEventListener( 'resize', function () {
+
+					player.setSize( window.innerWidth, window.innerHeight );
+
+				} );
+
+			} );
+
+
+
+		</script>
+	</body>
 </html>
